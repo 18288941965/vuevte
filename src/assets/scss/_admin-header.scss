@@ -1,0 +1,97 @@
+.admin-header{
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-b);
+  display: flex;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 20px;
+}
+
+.admin-header-menu-card{
+  position: relative;
+  margin-left: 15px;
+
+  & button{
+    width: initial;
+    & span{
+      padding: 0 6px;
+    }
+  }
+
+  & .admin-header-menu-panel{
+    position: absolute;
+    top: 36px;
+    background-color: #ffffff;
+    padding: 8px;
+    box-shadow: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
+    width: 260px;
+    max-height: 400px;
+    min-height: 200px;
+    border-radius: 12px;
+
+    & .admin-header-menu-item{
+      display: grid;
+      grid-template-columns: 30px 1fr 10px;
+      height: 32px;
+      line-height: 32px;
+      align-items: center;
+      margin-bottom: 6px;
+      cursor: pointer;
+      padding: 0 10px;
+      border-radius: 6px;
+      &:hover{
+        background-color: var(--header-icon-bg-color);
+      }
+      & i{
+        display: flex;
+        align-items: center;
+      }
+      & .admin-header-menu-cache {
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #2BC385;
+      }
+    }
+
+    & .admin-header-menu-active{
+      font-weight: bold;
+    }
+  }
+}
+
+.admin-header-button{
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--header-text-color);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    background-color: var(--header-icon-bg-color);
+  }
+
+  & + button{
+    margin-left: 15px;
+  }
+}
+
+.admin-header-menu-collapse {
+  & svg{
+    transition: transform 0.3s;
+  }
+  & .admin-header-mo{
+    transform: rotate(180deg);
+  }
+  & .admin-header-mc{
+    transform: rotate(0);
+  }
+}

@@ -1,0 +1,7 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="99.9998" cy="100" r="100" transform="rotate(90 99.9998 100)" fill="#1F2328"/>
+<path d="M167 111L127 111V101C127 84.4315 140.431 71 157 71H167V111Z" fill="white"/>
+<path d="M144 140C144 156.569 130.569 170 114 170H84L84 110L144 110V140Z" fill="white"/>
+<path d="M84 63L54 63L54 33V33C70.5685 33 84 46.4315 84 63V63Z" fill="white"/>
+<path d="M84 110H64C47.4315 110 34 96.5686 34 80L34 60L84 60L84 110Z" fill="white"/>
+</svg>

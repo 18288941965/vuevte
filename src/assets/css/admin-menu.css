@@ -1,0 +1,21 @@
+.admin-el-menu{
+    border-right: 0;
+    margin-top: 20px;
+}
+.admin-el-menu .el-menu-item{
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+.admin-el-menu-icon{
+    vertical-align: middle;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.admin-el-menu-active{
+    background-color: var(--menu-active-bg-color);
+}
+.admin-el-menu-active:hover{
+    background-color: var(--menu-active-bg-color);
+}
