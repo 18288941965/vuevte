@@ -14,7 +14,10 @@
           管理员
         </li>
         <li class="li-divider" />
-        <li class="li-oper">
+        <li
+          class="li-oper"
+          @click="logout"
+        >
           退出登录
         </li>
       </ul>
@@ -26,6 +29,7 @@
 import {defineComponent} from 'vue';
 import avatar from '../../assets/avatar.png'
 import showContext from '../../context/showContext';
+import {doLogout, logoutContext} from '../../context/signContext';
 
 export default defineComponent({
   name: 'AdminAvatar',
@@ -34,11 +38,20 @@ export default defineComponent({
       panelShow,
       setPanelShow
     } = showContext()
+
+     const {
+       logoutSuccess
+     } = logoutContext()
+
+     const logout = () => {
+      doLogout(logoutSuccess)
+     }
      
     return {
       avatar,
       panelShow,
-      setPanelShow
+      setPanelShow,
+      logout
     }
    }
 })

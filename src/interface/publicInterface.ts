@@ -10,7 +10,13 @@ interface ChannelData {
     msg: string
 }
 
+interface LoginBean{
+    username: string,
+    password: string
+}
+
 export type {
     AxiosResult,
-    ChannelData
+    ChannelData,
+    LoginBean
 }

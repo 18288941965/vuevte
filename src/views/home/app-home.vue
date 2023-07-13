@@ -4,13 +4,17 @@
       网页标题
     </h1>
 
-    <div style="border-top: 1px solid #30363D;"></div>
+    <el-button
+      type="danger"
+      @click="logout"
+    >
+      退出登录
+    </el-button>
+    <div style="border-top: 1px solid #30363D;" />
 
     <div style="display: grid;grid-template-columns: 200px 1fr">
-
-      <div></div>
-      <div></div>
-
+      <div />
+      <div />
 
       <router-link
         to="/admin/theme"
@@ -25,13 +29,22 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import logo from '../../assets/logo.png'
+import {doLogout, logoutContext} from '../../context/signContext';
 
 export default defineComponent({
   name: 'AppHome',
   setup () {
+    const {
+      logoutSuccess
+    } = logoutContext()
 
+    const logout = () => {
+      doLogout(logoutSuccess)
+    }
+    
     return {
-      logo
+      logo,
+      logout
     }
   }
 })

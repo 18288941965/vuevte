@@ -2,18 +2,18 @@
   <div class="app-login">
     <header class="app-login-header">
       <a
-        href="https://github.com/18288941965/vue-vite-typescript-element"
+        href="https://github.com/18288941965/vuevte"
         target="_blank"
       >
-        <img
-          :src="github"
-          alt=" "
-        >
+        <GitHub color="#6D6D72" />
       </a>
     </header>
 
     <main class="app-login-main">
-      <img :src="logo" style="width: 48px;height: 48px;">
+      <img
+        :src="logo"
+        alt=" "
+      >
       <p class="app-login-message">
         登录到 Vuevte
       </p>
@@ -23,6 +23,8 @@
           v-model.trim="loginBean.username"
           size="large"
           placeholder="账号"
+          autofocus
+          @keyup.enter="login"
         >
           <template #prefix>
             <Account />
@@ -35,6 +37,7 @@
           size="large"
           show-password
           type="password"
+          @keyup.enter="login"
         >
           <template #prefix>
             <Lock />
@@ -42,10 +45,10 @@
         </el-input>
 
         <el-button
-          color="#000000"
+          color="#1F2328"
           size="large"
           style="width: 100%"
-          @click="doLogin"
+          @click="login"
         >
           登录
         </el-button>
@@ -55,47 +58,53 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
-import {ElMessage} from 'element-plus';
+import {defineComponent, inject, provide, reactive} from 'vue';
 import {useRouter} from 'vue-router';
-import github from '../../assets/github.svg'
 import logo from '../../assets/logo.svg'
 import {
   Account,
-  Lock
+  Lock,
+  GitHub
 } from '../../components/svicon/other/otherIcon';
+import {LoginBean} from '../../interface/publicInterface';
+import {doLogin} from '../../context/signContext';
+import {LoginSuccess} from '../../types/baseType';
+import BChannel from '../../BChannel';
+import {BCEnum} from '../../enum/enum';
 
 export default defineComponent({
   name: 'AppLogin',
   components: {
     Account,
-    Lock
+    Lock,
+    GitHub
   },
   setup () {
     const router = useRouter()
+    const channel = inject('channel') as BroadcastChannel
+    const {
+      postMessage
+    } = BChannel(channel)
 
-    const loginBean = reactive({
+    const loginBean = reactive<LoginBean>({
       username: 'admin@163.com',
       password: 'admin'
     })
-    
-    const doLogin = () => {
-      if (!loginBean.username || !loginBean.password) {
-        ElMessage.error('用户名或密码不能为空！')
-        return
-      }
-      if (loginBean.username !== 'admin@163.com' || loginBean.password !== 'admin') {
-        ElMessage.error('用户名或密码错误！')
-        return
-      }
+
+    const loginSuccess: LoginSuccess = () => {
+      localStorage.setItem('vuevte-login-status', '1')
+      postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })
       router.replace('/app/home')
+    }
+
+    const login = () => {
+      doLogin(loginBean, loginSuccess)
     }
     
     return {
       logo,
-      github,
       loginBean,
-      doLogin
+      login
     }
   }
 })
@@ -104,7 +113,7 @@ export default defineComponent({
 <style scoped lang="scss">
   .app-login{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
   }
 
@@ -122,6 +131,10 @@ export default defineComponent({
     text-align: center;
     left: 50%;
     margin-left: -160px;
+    & img:first-child{
+      width: 48px;
+      height: 48px;
+    }
     & section{
       background-color: #F6F8FA;
       border: 1px solid #DBDCDD;

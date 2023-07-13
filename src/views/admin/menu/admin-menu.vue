@@ -86,7 +86,7 @@ import AdminMenuChild from './admin-menu-child.vue';
 import {MenuBean} from '../../../interface/menuInterface';
 import {MenuContext} from '../../../context/menuContext';
 import {useRouter} from 'vue-router';
-import {PushRouter} from '../../../types/menuType';
+import {PushRouter} from '../../../types/baseType';
 import AdminLogo from '../logo/admin-logo.vue';
 import menuDfs from '../../../algo/menuDfs';
 
