@@ -1,7 +1,14 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="99.9998" cy="100" r="100" transform="rotate(90 99.9998 100)" fill="#1F2328"/>
-<path d="M167 111L127 111V101C127 84.4315 140.431 71 157 71H167V111Z" fill="white"/>
-<path d="M144 140C144 156.569 130.569 170 114 170H84L84 110L144 110V140Z" fill="white"/>
-<path d="M84 63L54 63L54 33V33C70.5685 33 84 46.4315 84 63V63Z" fill="white"/>
-<path d="M84 110H64C47.4315 110 34 96.5686 34 80L34 60L84 60L84 110Z" fill="white"/>
+<svg width="200" height="203" viewBox="0 0 200 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M92.7477 197.87L0.521027 32.2545C-0.601884 30.2381 0.142085 27.7482 2.25404 26.7435C23.3506 16.7075 124.762 -29.1044 102.846 28.5747C83.3515 79.8838 161.447 49.2983 193.785 34.8524C197.628 33.1358 201.579 37.4889 199.357 41.0009L99.9653 198.066C98.2798 200.729 94.2796 200.621 92.7477 197.87Z" fill="url(#paint0_linear_341_63)"/>
+<path d="M94.5036 201.376L37.323 98.6943C36.6268 97.4441 37.0881 95.9004 38.3975 95.2775C51.4774 89.0552 114.352 60.6518 100.765 96.4129C88.6779 128.224 137.097 109.262 157.147 100.305C159.529 99.2407 161.979 101.94 160.602 104.117L98.9785 201.497C97.9335 203.149 95.4534 203.082 94.5036 201.376Z" fill="url(#paint1_linear_341_63)"/>
+<defs>
+<linearGradient id="paint0_linear_341_63" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F54E1C"/>
+<stop offset="0.43" stop-color="#FF7C6B"/>
+</linearGradient>
+<linearGradient id="paint1_linear_341_63" x1="99" y1="78.6965" x2="99" y2="221" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B160FF"/>
+<stop offset="0.754047" stop-color="#15D387"/>
+</linearGradient>
+</defs>
 </svg>
