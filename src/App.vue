@@ -1,16 +1,11 @@
 <template>
   <template v-if="reloadFlag">
-    <div style="min-height: 10px;border: 1px solid ">
-      <ul>
-        <li
-          v-for="(item, index) in systemMessageList"
-          :key="'s-m-' + index"
-        >
-          {{ item.code }} - {{ item.msg }}
-        </li>
-      </ul>
-    </div>
     <router-view />
+
+    <app-message
+      :system-message-list="systemMessageList"
+      @close-message="closeMessage"
+    />
   </template>
 </template>
 
@@ -21,9 +16,13 @@ import NProgress from './NProgress';
 import BChannel from './BChannel';
 import {isLogin} from './context/signContext';
 import {ReloadApp} from './types/baseType';
-import {RUEnum} from './enum/enum';
+import {BCEnum, RUEnum} from './enum/enum';
+import AppMessage from './app-message.vue';
 
 export default defineComponent({
+  components: {
+    AppMessage
+  },
   setup() {
     const router = useRouter()
     const reloadFlag = ref(true)
@@ -32,7 +31,8 @@ export default defineComponent({
     const {
       systemMessageList,
       postMessage,
-      channelOnMessage
+      channelOnMessage,
+      resetChannel
     } = BChannel(channel)
 
     const reloadApp: ReloadApp = () => {
@@ -42,8 +42,19 @@ export default defineComponent({
       }, 100)
     }
 
+    // 接收到广播消息
     const onMessage = (ev: MessageEvent) => {
       channelOnMessage(ev, reloadApp)
+    }
+
+    // 关闭消息窗口
+    // 根据不同的消息做不同的事
+    const closeMessage = () => {
+      const codes = systemMessageList.value.map(item => item.code)
+      resetChannel()
+      if (codes.includes(BCEnum.LOGOUT)) {
+        router.replace(RUEnum.LOGIN)
+      }
     }
 
     const {
@@ -86,6 +97,8 @@ export default defineComponent({
     return {
       systemMessageList,
       postMessage,
+      closeMessage,
+
       reloadFlag
     }
   }
