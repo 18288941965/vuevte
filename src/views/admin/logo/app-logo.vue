@@ -1,12 +1,15 @@
 <template>
   <div class="app-logo">
-    <img :src="logo" alt=" ">
+    <img
+      :src="logo"
+      alt=" "
+    >
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent } from 'vue';
-import logo from '../../../assets/logo-text.svg'
+import logo from '../../../assets/logo-text-w.svg'
 
 export default defineComponent({
   name: 'AppLogo',

@@ -3,6 +3,7 @@
     <el-avatar
       :src="avatar"
       :size="32"
+      style="background-color: transparent;border: 0;"
       @click.stop="setPanelShow(undefined)"
     />
     <div

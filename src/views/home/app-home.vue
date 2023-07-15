@@ -5,8 +5,11 @@
 
       <div class="app-menu">
         <div class="app-menu-title">
-          <span>网页模板</span>
-          <Expand color="#BBBBBB" />
+          <span>主题</span>
+          <Expand
+            color="#BBBBBB"
+            :size="20"
+          />
         </div>
 
         <div class="app-menu-card">
@@ -18,7 +21,7 @@
                 class="app-menu-item"
               >
                 admin模板
-                <OpenInNew />
+                <OpenInNew :size="20" />
               </router-link>
             </li>
           </ul>
@@ -59,17 +62,17 @@ export default defineComponent({
     min-width: 100vw;
     min-height: 100vh;
     background-color: #0D1117;
-    padding: 0 20px;
   }
 
   .app-header{
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
+    padding: 0 30px;
   }
 
   .app-menu{
-    margin-left: 30px;
+    margin-left: 20px;
     position: relative;
     &:hover {
       & .app-menu-card{
@@ -80,6 +83,7 @@ export default defineComponent({
       }
     }
     & .app-menu-title{
+      padding: 0 10px;
       font-size: 16px;
       color: #FFFFFF;
       display: flex;
@@ -88,6 +92,7 @@ export default defineComponent({
       cursor: pointer;
       transition: color 0.3s;
       & svg{
+        margin-left: 2px;
         transition: transform 0.3s;
       }
       &:hover{
@@ -110,15 +115,17 @@ export default defineComponent({
         display: grid;
         padding: 6px 12px;
         font-size: 16px;
-        grid-template-columns: 1fr 40px;
+        grid-template-columns: 1fr 30px;
         align-items: center;
+        overflow: clip;
         & svg{
-          display: none;
+          transform: translateX(40px);
+          transition: all 0.3s;
         }
         &:hover{
           color: #409eff;
           & svg{
-            display: block;
+            transform: translateX(10px) scale(1.2);
           }
         }
       }

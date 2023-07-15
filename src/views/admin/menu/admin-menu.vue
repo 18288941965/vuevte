@@ -29,7 +29,7 @@
           <i class="admin-el-menu-icon">
             <component
               :is="menu.icon"
-              :size="24"
+              :size="20"
             />
           </i>
 
@@ -47,7 +47,7 @@
             <i class="admin-el-menu-icon">
               <component
                 :is="menu.icon"
-                :size="24"
+                :size="20"
               />
             </i>
             <span>{{ menu.label }}</span>
@@ -60,22 +60,6 @@
         </el-sub-menu>
       </template>
 
-      <!--      测试数据-->
-      <!--      
-  <el-menu-item-group>
-        <template #title>
-          <span>Group One</span>
-        </template>
-        <el-menu-item
-          v-for="item in 20"
-          :key="'1-' + item"
-          :index="'1-' + item"
-        >
-          item {{ item }}
-        </el-menu-item>
-      </el-menu-item-group>
-      
-      -->
     </el-menu>
   </template>
 </template>
