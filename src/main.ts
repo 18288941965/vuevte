@@ -9,7 +9,8 @@ import './assets/css/scroll.css'
 import './assets/css/nprogress.css'
 
 // 模拟后端数据：在自己的项目中请删除此引用
-import './adminMock'
+import './mocks/adminMock'
+import './mocks/evElMock'
 
 import * as menuIcon from './components/svicon/menu/menuIcon'
 

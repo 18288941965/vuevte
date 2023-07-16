@@ -43,7 +43,7 @@
           >
             <i>
               <component
-                :is="menu.icon ? menu.icon : 'LabelIcon'"
+                :is="menu.icon ? menu.icon : 'Labeled'"
                 color="var(--header-text-color)"
                 :size="20"
               />

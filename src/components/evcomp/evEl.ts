@@ -1,0 +1,101 @@
+import {PropType, ref} from 'vue';
+import axios from 'axios';
+
+export const uniqueKey = () : string => {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+}
+
+// 字典
+export interface LabelValue {
+    label: string
+    value: string
+}
+
+// 后端统一返回值接口
+export interface AxiosResult {
+    code: number
+    msg: string
+    data: any | null
+}
+
+// 默认属性
+export const defaultProps = {
+    dicType: {
+        type: String,
+        default: undefined,
+        require: true
+    },
+    reqUrl: {
+        type: String,
+        default: undefined
+    },
+    dataList: {
+        type: Array,
+        default: undefined
+    },
+    labelUpdate: {
+        type: Boolean,
+        default: false
+    },
+    defaultAttr: {
+        type: Object as PropType<LabelValue>,
+        default: () => {
+            return { label: 'label', value: 'value' }
+        }
+    }
+}
+
+export function getEvElContent () {
+    const dicList = ref<LabelValue[]>([])
+
+    /**
+     * 根据字典类型获取字典.
+     * 这里的url是固定的
+     */
+    const getDataByDicType = (dicType: string) => {
+        axios.post('/api/admin/getDict', { dicType }).then((res: {data: AxiosResult}) => {
+            if (res.data.code === 200) {
+                dicList.value = res.data.data
+            }
+        })
+    }
+
+    /**
+     * 根据请求地址获取数据。
+     * 根据数据读取字段重构对象。
+     * 必须是GET请求
+     */
+    const getDataByReqUrl = (reqUrl: string, defaultAttr: LabelValue) => {
+        axios.get(reqUrl).then((res: {data: AxiosResult}) => {
+            if (res.data.code === 200) {
+                dicList.value = res.data.data.map((row: any) => {
+                    return {
+                        label: row[defaultAttr.label],
+                        value: row[defaultAttr.label]
+                    }
+                })
+            }
+        })
+    }
+
+    /**
+     * 解析已有的数据
+     * @param dataList
+     * @param defaultAttr
+     */
+    const getDataByDataList = (dataList: any, defaultAttr: LabelValue) => {
+        dicList.value = dataList.map((row: any) => {
+            return {
+                label: row[defaultAttr.label],
+                value: row[defaultAttr.label]
+            }
+        })
+    }
+
+    return {
+        dicList,
+        getDataByDicType,
+        getDataByReqUrl,
+        getDataByDataList
+    }
+}

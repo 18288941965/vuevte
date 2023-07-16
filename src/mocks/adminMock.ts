@@ -16,8 +16,8 @@ Mock.mock('/api/admin/getMenus', {
             children: [
                 { label: '首页', icon: 'Dashboard', url: '/admin/theme/menu/demo', id: '02', pid: '01', cache: true, name: 'MenuDemo' },
                 {
-                    label: '层级一',
-                    icon: 'MenuDemo',
+                    label: '二次封装组件',
+                    icon: 'Cards',
                     url: null,
                     id: '03',
                     pid: '01',
@@ -25,33 +25,31 @@ Mock.mock('/api/admin/getMenus', {
                     name: null,
                     children:  [
                         {
-                            label: '层级二',
-                            icon: 'DotIcon',
-                            url: null,
-                            id: '04',
+                            label: 'checkbox组件',
+                            icon: '',
+                            url: '/admin/theme/ev/el/checkbox',
+                            id: '03-01',
                             pid: '03',
-                            cache: false,
-                            name: null,
-                            children:  [
-                                {
-                                    label: '菜单一',
-                                    icon: '',
-                                    url: '/admin/theme/menu/demo2',
-                                    id: '05',
-                                    pid: '04',
-                                    cache: false,
-                                    name: 'MenuDemo2'
-                                },
-                                {
-                                    label: '菜单二',
-                                    icon: '',
-                                    url: '/admin/theme/menu/demo3',
-                                    id: '06',
-                                    pid: '04',
-                                    cache: true,
-                                    name: 'MenuDemo3'
-                                }
-                            ]
+                            cache: true,
+                            name: 'EvElCheckboxDemo'
+                        },
+                        {
+                            label: 'radio组件',
+                            icon: '',
+                            url: '/admin/theme/ev/el/radio',
+                            id: '03-02',
+                            pid: '03',
+                            cache: true,
+                            name: 'EvElRadioDemo'
+                        },
+                        {
+                            label: 'select组件',
+                            icon: '',
+                            url: '/admin/theme/ev/el/select',
+                            id: '03-03',
+                            pid: '03',
+                            cache: true,
+                            name: 'EvElSelectDemo'
                         }
                     ]
                 }

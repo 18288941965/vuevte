@@ -62,6 +62,14 @@ ul{
   padding: 0;
 }
 
+.mg-20{
+  margin: 20px;
+}
+
+.pd-20{
+  padding: 20px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

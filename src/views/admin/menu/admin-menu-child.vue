@@ -59,7 +59,7 @@ export default defineComponent({
   },
   emits: ['push-router'],
   setup (props, { emit }) {
-    const menuGroupIcon = 'DotIcon'
+    const menuGroupIcon = 'Dot'
 
     const pushRouter = (menu: MenuBean) => {
       if (menu.id === props.menuId) {
