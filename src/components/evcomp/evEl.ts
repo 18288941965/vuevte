@@ -20,7 +20,7 @@ export interface AxiosResult {
 
 // 默认属性
 export const defaultProps = {
-    dicType: {
+    dictType: {
         type: String,
         default: undefined,
         require: true
@@ -46,16 +46,16 @@ export const defaultProps = {
 }
 
 export function getEvElContent () {
-    const dicList = ref<LabelValue[]>([])
+    const dictList = ref<LabelValue[]>([])
 
     /**
      * 根据字典类型获取字典.
      * 这里的url是固定的
      */
-    const getDataByDicType = (dicType: string) => {
-        axios.post('/api/admin/getDict', { dicType }).then((res: {data: AxiosResult}) => {
+    const getDataByDictType = (dictType: string) => {
+        axios.post('/api/admin/getDict', { dictType }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
-                dicList.value = res.data.data
+                dictList.value = res.data.data
             }
         })
     }
@@ -68,7 +68,7 @@ export function getEvElContent () {
     const getDataByReqUrl = (reqUrl: string, defaultAttr: LabelValue) => {
         axios.get(reqUrl).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
-                dicList.value = res.data.data.map((row: any) => {
+                dictList.value = res.data.data.map((row: any) => {
                     return {
                         label: row[defaultAttr.label],
                         value: row[defaultAttr.label]
@@ -84,7 +84,7 @@ export function getEvElContent () {
      * @param defaultAttr
      */
     const getDataByDataList = (dataList: any, defaultAttr: LabelValue) => {
-        dicList.value = dataList.map((row: any) => {
+        dictList.value = dataList.map((row: any) => {
             return {
                 label: row[defaultAttr.label],
                 value: row[defaultAttr.label]
@@ -93,8 +93,8 @@ export function getEvElContent () {
     }
 
     return {
-        dicList,
-        getDataByDicType,
+        dictList,
+        getDataByDictType,
         getDataByReqUrl,
         getDataByDataList
     }

@@ -6,7 +6,7 @@
     @change="updateSelectLabel"
   >
     <el-option
-      v-for="item in dicList"
+      v-for="item in dictList"
       :key="item.value"
       :value="item.value"
       :label="item.label"
@@ -36,34 +36,34 @@ export default defineComponent({
   setup (props, { attrs, emit }) {
 
     const {
-      dicList,
-      getDataByDicType,
+      dictList,
+      getDataByDictType,
       getDataByReqUrl,
       getDataByDataList
     } = getEvElContent()
 
     const updateSelectLabel = (val: Array<string> | string) => {
-      if (!dicList.value || !props.labelUpdate) {
+      if (!dictList.value || !props.labelUpdate) {
         return
       }
       // 单选
       if (typeof val === 'string') {
-        const obj = dicList.value.find(item => item.value === val)
+        const obj = dictList.value.find(item => item.value === val)
         emit('update:selectLabel', obj ? obj.label : undefined)
         return
       }
       // 多选
       const labels: Array<string> = []
       val.forEach(value => {
-        const obj = dicList.value.find(item => item.value === value) as LabelValue
+        const obj = dictList.value.find(item => item.value === value) as LabelValue
         labels.push(obj.label)
       })
       emit('update:selectLabel', labels)
     }
 
     onMounted(() => {
-      if (props.dicType) {
-        return getDataByDicType(props.dicType)
+      if (props.dictType) {
+        return getDataByDictType(props.dictType)
       }
 
       if (props.reqUrl) {
@@ -78,7 +78,7 @@ export default defineComponent({
     return {
       attrs,
       updateSelectLabel,
-      dicList,
+      dictList,
       uniqueKey
     }
   }

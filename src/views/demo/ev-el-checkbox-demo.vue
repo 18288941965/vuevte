@@ -7,7 +7,7 @@
       <div class="ev-comp-demo-grid2">
         <ev-el-checkbox
           v-model="evElSelectValue.value"
-          dic-type="ev_dic_demo"
+          dict-type="ev_dict_demo"
         />
         <span>{{ evElSelectValue.valueText }}</span>
       </div>

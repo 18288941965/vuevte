@@ -1,12 +1,12 @@
 <template>
   <el-checkbox-group
-    v-if="dicList.length > 0"
+    v-if="dictList.length > 0"
     v-bind="attrs"
     :key="uniqueKey"
     @change="updateSelectLabel"
   >
     <el-checkbox
-      v-for="item in dicList"
+      v-for="item in dictList"
       :key="item.value"
       :border="border"
       :label="item.value"
@@ -41,28 +41,28 @@ export default defineComponent({
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
     const {
-      dicList,
-      getDataByDicType,
+      dictList,
+      getDataByDictType,
       getDataByReqUrl,
       getDataByDataList
     } = getEvElContent()
 
     const updateSelectLabel = (val: Array<string>) => {
-      if (!dicList.value || !props.labelUpdate) {
+      if (!dictList.value || !props.labelUpdate) {
         return
       }
 
       const labels: Array<string> = []
       val.forEach(value => {
-        const obj = dicList.value.find(item => item.value === value) as LabelValue
+        const obj = dictList.value.find(item => item.value === value) as LabelValue
         labels.push(obj.label)
       })
       emit('update:selectLabel', labels)
     }
 
     onMounted(() => {
-      if (props.dicType) {
-        return getDataByDicType(props.dicType)
+      if (props.dictType) {
+        return getDataByDictType(props.dictType)
       }
 
       if (props.reqUrl) {
@@ -78,7 +78,7 @@ export default defineComponent({
       attrs,
       uniqueKey,
       updateSelectLabel,
-      dicList
+      dictList
     }
   }
 })
