@@ -5,6 +5,10 @@
   >
     <div class="app-message-body">
       <header class="app-message-header">
+        <div>
+          <Sms color="#FFFFFF" />
+        </div>
+        <span>平台消息</span>
         <button
           @click="closeMessage"
         >
@@ -17,7 +21,7 @@
           v-for="(item, index) in systemMessageList"
           :key="'s-m-l-' + index"
         >
-          <Sms /> {{ item.msg }}
+          {{ item.msg }}
         </li>
       </ul>
     </div>
@@ -80,10 +84,25 @@ export default defineComponent({
     box-shadow: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
     & .app-message-header{
       display: flex;
-      justify-content: flex-end;
       position: sticky;
+      height: 50px;
       top: 0;
+      & div{
+        margin: 10px 0 0 10px;
+        background-color: #FFC12E;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        border-radius: 18px;
+      }
+      & span{
+        display: inline-block;
+        margin: 16px 0 0 14px;
+        font-size: 16px;
+        font-weight: bolder;
+      }
       & button{
+        margin-left: auto;
         background-color: transparent;
         border: 0;
         height: 32px;
@@ -97,14 +116,13 @@ export default defineComponent({
       }
     }
     & ul {
-      margin: 20px;
+      margin: 10px 20px 20px 60px;
     }
     & li{
       font-size: 1.2rem;
       margin-bottom: 10px;
         height: 40px;
         display: grid;
-        grid-template-columns: 40px 1fr;
         align-items: center;
     }
   }

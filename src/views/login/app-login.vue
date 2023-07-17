@@ -115,6 +115,7 @@ export default defineComponent({
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background-color: #FFFFFF;
   }
 
   .app-login-header{

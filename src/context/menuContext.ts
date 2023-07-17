@@ -7,19 +7,33 @@ import menuDfs from '../algo/menuDfs';
 
 export function MenuStatusContext() {
     const keepAliveInclude = ref<String[]>([])
-    const updateKeepAliveInclude = (name: string) => {
+    const activeMenus = reactive<ActiveMenus>({
+        menuId: '',
+        menus: []
+    })
+
+    const updateKeepAliveInclude = (name: string, clean = false) => {
+        // 清除历史
+        if (clean) {
+            if (!activeMenus.menus[0].cache) {
+                keepAliveInclude.value = []
+            } else {
+                keepAliveInclude.value.splice(1, keepAliveInclude.value.length - 1)
+            }
+            return
+        }
         if (keepAliveInclude.value.includes(name)) {
             keepAliveInclude.value.splice(keepAliveInclude.value.indexOf(name), 1)
         }
         keepAliveInclude.value.unshift(name)
     }
 
-    const activeMenus = reactive<ActiveMenus>({
-        menuId: '',
-        menus: []
-    })
-
-    const updateActiveMenus = (menu: MenuBean) => {
+    const updateActiveMenus = (menu: MenuBean, clean= false) => {
+        // 清除历史
+        if (clean) {
+            activeMenus.menus.splice(1, activeMenus.menus.length - 1)
+            return
+        }
         activeMenus.menuId = menu.id
         const menuIds = activeMenus.menus.map(item => item.id)
         if (menuIds.includes(menu.id)) {

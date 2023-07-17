@@ -31,7 +31,7 @@ Mock.mock('/api/admin/getMenus', {
                             url: '/admin/theme/ev/el/checkbox',
                             id: '03-01',
                             pid: '03',
-                            cache: true,
+                            cache: false,
                             name: 'EvElCheckboxDemo'
                         },
                         {

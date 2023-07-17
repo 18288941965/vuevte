@@ -21,6 +21,7 @@
         @set-menu-collapse="setMenuCollapse"
         @push-router="pushRouter"
         @menu-open="menuOpen"
+        @clean-history="cleanHistory"
       />
 
       <main>
@@ -30,7 +31,6 @@
           </keep-alive>
         </router-view>
       </main>
-
     </div>
   </div>
 </template>
@@ -73,6 +73,11 @@ export default defineComponent({
       adminThemeMenuRef.value?.menuOpen(index)
     }
 
+    const cleanHistory = () => {
+      updateKeepAliveInclude(keepAliveInclude.value[0], true)
+      updateActiveMenus(activeMenus.menus[0], true)
+    }
+
     return {
       adminThemeMenuRef,
       activeMenus,
@@ -81,7 +86,8 @@ export default defineComponent({
       keepAliveInclude,
 
       pushRouter,
-      menuOpen
+      menuOpen,
+      cleanHistory
     }
   }
 })

@@ -33,25 +33,36 @@
         v-show="panelShow"
         class="admin-header-menu-panel"
       >
-        <ul>
-          <li
-            v-for="(menu, index) in activeMenus.menus"
-            :key="'header-menu-' + index"
-            class="admin-header-menu-item"
-            :class="{'admin-header-menu-active': menu.id === activeMenus.menuId }"
-            @click.stop="pushRouter(menu)"
+        <div class="admin-header-menu-panel-content card-scroll">
+          <ul>
+            <li
+              v-for="(menu, index) in activeMenus.menus"
+              :key="'header-menu-' + index"
+              class="admin-header-menu-item"
+              :class="{'admin-header-menu-active': menu.id === activeMenus.menuId }"
+              @click.stop="pushRouter(menu)"
+            >
+              <i>
+                <component
+                  :is="menu.icon ? menu.icon : 'Labeled'"
+                  color="var(--header-text-color)"
+                  :size="20"
+                />
+              </i>
+              <span>{{ menu.label }}</span>
+              <span :class="{'admin-header-menu-cache' : menu.cache}" />
+            </li>
+          </ul>
+
+          <button
+            v-if="activeMenus.menus.length > 1"
+            class="admin-header-button"
+            @click="cleanHistory"
           >
-            <i>
-              <component
-                :is="menu.icon ? menu.icon : 'Labeled'"
-                color="var(--header-text-color)"
-                :size="20"
-              />
-            </i>
-            <span>{{ menu.label }}</span>
-            <span :class="{'admin-header-menu-cache' : menu.cache}" />
-          </li>
-        </ul>
+            <Close :size="20" />
+            清空历史
+          </button>
+        </div>
       </div>
     </div>
 
@@ -60,14 +71,15 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType, computed, onMounted, reactive} from 'vue';
+import {defineComponent, PropType, computed} from 'vue';
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface';
 import adminAvatar from '../../../components/avatar/admin-avatar.vue';
 import {
   Adjust,
   ArrowDropDown,
   MenuOpen,
-  Search
+  Search,
+  Close
 } from '../../../components/svicon/otherIcon';
 import showContext from '../../../context/showContext';
 
@@ -78,6 +90,7 @@ export default defineComponent({
     ArrowDropDown,
     MenuOpen,
     Search,
+    Close,
     adminAvatar
   },
   props: {
@@ -95,7 +108,7 @@ export default defineComponent({
       }
     }
   },
-  emits: ['set-menu-collapse', 'push-router', 'menu-open'],
+  emits: ['set-menu-collapse', 'push-router', 'menu-open', 'clean-history'],
   setup (props, {emit}) {
     const {
       panelShow,
@@ -127,9 +140,15 @@ export default defineComponent({
       }
     }
 
+    const cleanHistory = () => {
+      emit('clean-history')
+    }
+
     return {
       panelShow,
       setPanelShow,
+
+      cleanHistory,
       
       setMenuCollapse,
       getMenuLabel,
