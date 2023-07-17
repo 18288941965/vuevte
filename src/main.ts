@@ -12,7 +12,7 @@ import './assets/css/nprogress.css'
 import './mocks/adminMock'
 import './mocks/evElMock'
 
-import * as menuIcon from './components/svicon/menu/menuIcon'
+import * as menuIcon from './components/svicon/menuIcon'
 
 const app = createApp(App)
 app.use(router)

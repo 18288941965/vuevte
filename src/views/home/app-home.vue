@@ -40,7 +40,7 @@ import AdminAvatar from '../../components/avatar/admin-avatar.vue';
 import {
   Expand,
   OpenInNew
-} from '../../components/svicon/other/otherIcon';
+} from '../../components/svicon/otherIcon';
 
 export default defineComponent({
   name: 'AppHome',

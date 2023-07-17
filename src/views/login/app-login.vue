@@ -27,7 +27,7 @@
           @keyup.enter="login"
         >
           <template #prefix>
-            <Account />
+            <Person />
           </template>
         </el-input>
 
@@ -62,10 +62,10 @@ import {defineComponent, inject, provide, reactive} from 'vue';
 import {useRouter} from 'vue-router';
 import logo from '../../assets/logo.svg'
 import {
-  Account,
+  Person,
   Lock,
   GitHub
-} from '../../components/svicon/other/otherIcon';
+} from '../../components/svicon/otherIcon';
 import {LoginBean} from '../../interface/publicInterface';
 import {doLogin} from '../../context/signContext';
 import {LoginSuccess} from '../../types/baseType';
@@ -75,7 +75,7 @@ import {BCEnum} from '../../enum/enum';
 export default defineComponent({
   name: 'AppLogin',
   components: {
-    Account,
+    Person,
     Lock,
     GitHub
   },

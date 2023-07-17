@@ -30,7 +30,7 @@ import {ChannelData} from './interface/publicInterface';
 import {
   Close,
   Sms
-} from './components/svicon/other/otherIcon';
+} from './components/svicon/otherIcon';
 
 export default defineComponent({
   name: 'AppMessage',

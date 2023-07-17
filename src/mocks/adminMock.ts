@@ -6,7 +6,7 @@ Mock.mock('/api/admin/getMenus', {
     msg: null,
     data: [
         {
-            label: '基础模板',
+            label: 'admin模板',
             icon: 'admin-theme.png',
             url: null,
             id: '01',
@@ -15,8 +15,9 @@ Mock.mock('/api/admin/getMenus', {
             name: null,
             children: [
                 { label: '首页', icon: 'Dashboard', url: '/admin/theme/menu/demo', id: '02', pid: '01', cache: true, name: 'MenuDemo' },
+                { label: '图标', icon: 'Mood', url: '/admin/theme/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
                 {
-                    label: '二次封装组件',
+                    label: '组件',
                     icon: 'Cards',
                     url: null,
                     id: '03',

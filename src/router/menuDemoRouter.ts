@@ -20,6 +20,12 @@ const menuDemoRouter: RouteRecordRaw[] = [
     meta: { title: 'MenuDemo3' }
   },
   {
+    path: 'icon/demo',
+    name: 'IconDemo',
+    component: () => import('../views/demo/icon-demo.vue'),
+    meta: { title: 'IconDemo' }
+  },
+  {
     path: 'ev/el/checkbox',
     name: 'EvElCheckboxDemo',
     component: () => import('../views/demo/ev-el-checkbox-demo.vue'),

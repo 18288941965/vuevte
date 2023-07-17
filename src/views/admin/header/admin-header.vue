@@ -68,7 +68,7 @@ import {
   ArrowDropDown,
   MenuOpen,
   Search
-} from '../../../components/svicon/other/otherIcon';
+} from '../../../components/svicon/otherIcon';
 import showContext from '../../../context/showContext';
 
 export default defineComponent({
