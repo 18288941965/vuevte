@@ -20,7 +20,10 @@
       <Adjust />
     </button>
 
-    <div class="admin-header-menu-card">
+    <div
+      v-show="activeMenus.menus.length > 0"
+      class="admin-header-menu-card"
+    >
       <button
         class="admin-header-button"
         @click.stop="setPanelShow(undefined)"
