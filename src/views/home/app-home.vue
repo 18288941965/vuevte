@@ -43,6 +43,7 @@
     </header>
 
     <section class="app-snapshot">
+      <img :src="logo3d" alt=" ">
       <h1 class="a-s-title">
         前端 开源 框架
       </h1>
@@ -64,6 +65,7 @@ import {
   GitHub
 } from '../../components/svicon/otherIcon';
 import AppAttached from './app-attached.vue'
+import logo3d from '../../assets/logo-3d.png'
 
 export default defineComponent({
   name: 'AppHome',
@@ -77,6 +79,7 @@ export default defineComponent({
   },
   setup () {
     return {
+      logo3d
     }
   }
 })
@@ -84,13 +87,14 @@ export default defineComponent({
 <style>
   body{
     background-color: #18181a;
+    background-image: url("../../assets/image/bg/home-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
   }
 </style>
 <style scoped lang="scss">
   .app-home{
-    background-image: url("../../assets/image/bg/home-bg.png");
-    background-repeat: no-repeat;
-    background-position: top center;
+
   }
   .app-header{
     height: 80px;
@@ -166,19 +170,20 @@ export default defineComponent({
   }
 
   .app-snapshot{
-    height: 420px;
-    padding-top: 40px;
-    padding-left: 20px;
-    width: 1280px;
-    margin: auto;
-    border-radius: 6px;
-    margin-top: 20px;
+    height: 540px;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -270px;
+    text-align: center;
     & .a-s-title{
       color: #FFFFFF;
       font-size: 60px;
     }
     & .a-s-base{
-      color: #737A85;
+      color: #acb3bf;
       line-height: 100px;
     }
   }

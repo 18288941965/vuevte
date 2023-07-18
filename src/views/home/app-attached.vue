@@ -44,9 +44,10 @@ import elementLogo from '../../assets/image/other/element-logo.svg'
 <style scoped lang="scss">
   .app-attached{
     font-size: 32px;
-    color: #737A85;
+    color: #acb3bf;
     display: flex;
     align-items: center;
+    justify-content: center;
     & img{
       width: 32px;
       height: 32px;
