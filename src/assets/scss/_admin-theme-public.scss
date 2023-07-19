@@ -1,0 +1,28 @@
+.admin-theme{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  width: 100vw;
+  height: 100vh;
+  transition: grid-template-columns 0.3s;
+}
+
+.admin-theme-menu-collapse{
+  grid-template-columns: 76px 1fr;
+}
+
+.admin-theme-left-panel{
+  background-color: var(--menu-bg-color);
+  height: 100%;
+  border-right: 1px solid var(--menu-bd-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.menu-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: var(--menu-scroll-bg-color);
+}
+
+.admin-theme-right-panel{
+  overflow: auto;
+}
+

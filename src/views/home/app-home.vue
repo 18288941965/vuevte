@@ -24,6 +24,16 @@
                 <OpenInNew :size="16" />
               </router-link>
             </li>
+            <li>
+              <router-link
+                to="/admin/theme2"
+                target="_blank"
+                class="app-menu-item"
+              >
+                admin模板2
+                <OpenInNew :size="16" />
+              </router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -39,7 +49,10 @@
         />
       </a>
 
-      <admin-avatar style="margin-left: 0" />
+      <admin-avatar
+        style="margin-left: 0"
+        icon-color="#0A0A0A"
+      />
     </header>
 
     <section class="app-snapshot">

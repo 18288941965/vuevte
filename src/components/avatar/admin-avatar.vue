@@ -1,11 +1,18 @@
 <template>
   <div class="admin-avatar">
     <el-avatar
-      :src="avatar"
       :size="32"
-      style="background-color: transparent;border: 0;"
+      style="cursor: pointer;"
+      :style="{ 'background-color' : bgColor }"
       @click.stop="setPanelShow(undefined)"
-    />
+    >
+      <template #default>
+        <PersonFill
+          :size="32"
+          :color="iconColor"
+        />
+      </template>
+    </el-avatar>
     <div
       v-show="panelShow"
       class="admin-avatar-card"
@@ -28,12 +35,27 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import avatar from '../../assets/avatar.png'
 import showContext from '../../context/showContext';
 import {doLogout, logoutContext} from '../../context/signContext';
+import {
+  PersonFill
+} from '../svicon/otherIcon';
 
 export default defineComponent({
   name: 'AdminAvatar',
+  components: {
+    PersonFill
+  },
+  props: {
+    bgColor: {
+      type: String,
+      default: '#FFFFFF'
+    },
+    iconColor: {
+      type: String,
+      default: '#333940'
+    }
+  },
    setup () {
     const {
       panelShow,
@@ -49,7 +71,6 @@ export default defineComponent({
      }
      
     return {
-      avatar,
       panelShow,
       setPanelShow,
       logout

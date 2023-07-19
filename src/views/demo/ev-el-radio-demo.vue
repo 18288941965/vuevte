@@ -82,6 +82,8 @@ export default defineComponent({
     background-color: #FFFFFF;
     padding: 20px;
     margin-top: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
   }
 
   .ev-comp-demo-grid2{

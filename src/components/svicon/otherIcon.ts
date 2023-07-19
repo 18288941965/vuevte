@@ -4,6 +4,7 @@ export { default as MenuOpen } from './gw400/sv-menu-open-icon.vue'
 export { default as Search } from './gw400/sv-search-icon.vue'
 export { default as Sms } from './gw400/sv-sms-icon.vue'
 export { default as OpenInNew } from './gw400/sv-open-in-new-icon.vue'
+export { default as PersonFill } from './gw400/sv-person-fill-icon.vue'
 
 export { default as Close } from './gw200/sv-close-icon.vue'
 export { default as Expand } from './gw200/sv-expand-icon.vue'

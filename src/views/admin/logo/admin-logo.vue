@@ -50,13 +50,14 @@ export default defineComponent({
     z-index: var(--z-index-b);
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: var(--menu-text-color);
     font-size: 16px;
     position: relative;
     cursor: pointer;
+    border-bottom: 1px solid var(--logo-border-color);
+    background-color: var(--logo-bg);
     & img{
       width: 24px;
-      height: 24px;
       margin: 0 12px;
     }
     & #admin-logo-text{

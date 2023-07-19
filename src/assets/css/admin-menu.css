@@ -3,8 +3,10 @@
     margin-top: 20px;
 }
 .admin-el-menu .el-menu-item{
-    border-radius: 6px;
     margin-bottom: 6px;
+}
+.admin-el-menu .el-menu-item:hover{
+    background-color: var(--menu-hover-color);
 }
 .admin-el-menu-icon{
     vertical-align: middle;

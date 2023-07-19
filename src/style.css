@@ -7,27 +7,10 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 
-  /*菜单背景颜色*/
-  --menu-bg-color: #161B22;
-  /*菜单文字颜色*/
-  --menu-text-color: #E2E8F0;
-  /*菜单滚动条背景颜色*/
-  --menu-scroll-bg-color: #576986;
-  /*激活菜单的背景颜色*/
-  --menu-active-bg-color: rgba(255,255,255,0.1);
-
-  /*头部背景*/
-  --header-bg-color: #F6F8FA;
-  /*头部文字图标颜色*/
-  --header-text-color: #666666;
-  /*头部鼠标移上去背景*/
-  --header-icon-bg-color: #E8EAED;
   /*主题的顶部高度*/
   --header-height: 60px;
-
   /*边框颜色-取自Google顶部边框颜色*/
   --border-color: #DBDCDD;
-
   /*覆盖element框架的样式*/
   --el-menu-item-height: 46px;
 

@@ -94,14 +94,11 @@ export default defineComponent({
 </script>
 
 <style>
-  body,html,#app{
-    overflow: hidden;
-    background-color: #F6F8FA;
-  }
-  .admin-theme-header-ht{
-    height: var(--header-height);
-  }
+@import "../../assets/scss/_admin-theme2.scss";
+/*
+@import "../../assets/scss/_admin-theme2.scss";
+*/
 </style>
 <style scoped lang="scss">
-  @import "../../assets/scss/_admin-theme.scss";
+  @import "../../assets/scss/admin-theme-public";
 </style>
