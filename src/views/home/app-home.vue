@@ -5,7 +5,7 @@
 
       <div class="app-menu">
         <div class="app-menu-title">
-          <span>主题</span>
+          <span>产品</span>
           <Expand
             color="#BBBBBB"
             :size="20"
@@ -21,7 +21,7 @@
                 class="app-menu-item"
               >
                 admin模板
-                <OpenInNew :size="20" />
+                <OpenInNew :size="16" />
               </router-link>
             </li>
           </ul>
@@ -43,7 +43,10 @@
     </header>
 
     <section class="app-snapshot">
-      <img :src="logo3d" alt=" ">
+      <img
+        :src="logo3d"
+        alt=" "
+      >
       <h1 class="a-s-title">
         前端 开源 框架
       </h1>
@@ -65,7 +68,7 @@ import {
   GitHub
 } from '../../components/svicon/otherIcon';
 import AppAttached from './app-attached.vue'
-import logo3d from '../../assets/logo-3d.png'
+import logo3d from '../../assets/logo.png'
 
 export default defineComponent({
   name: 'AppHome',
@@ -178,6 +181,10 @@ export default defineComponent({
     margin-left: -500px;
     margin-top: -270px;
     text-align: center;
+    & img{
+      width: 200px;
+      height: 200px;
+    }
     & .a-s-title{
       color: #FFFFFF;
       font-size: 60px;

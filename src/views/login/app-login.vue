@@ -58,9 +58,9 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, inject, provide, reactive} from 'vue';
+import {defineComponent, inject, reactive} from 'vue';
 import {useRouter} from 'vue-router';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import {
   Person,
   Lock,
