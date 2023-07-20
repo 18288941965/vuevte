@@ -28,6 +28,7 @@ export default defineComponent({
     cursor: pointer;
     color: #FFFFFF;
     font-size: 16px;
+    padding-right: 20px;
     & img{
       height: 16px;
     }

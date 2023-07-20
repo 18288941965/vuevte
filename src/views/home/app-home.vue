@@ -5,7 +5,7 @@
 
       <div class="app-menu">
         <div class="app-menu-title">
-          <span>产品</span>
+          <span>管理</span>
           <Expand
             color="#BBBBBB"
             :size="20"
@@ -20,17 +20,32 @@
                 target="_blank"
                 class="app-menu-item"
               >
-                admin模板
+                后台管理模板
                 <OpenInNew :size="16" />
               </router-link>
             </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="app-menu">
+        <div class="app-menu-title">
+          <span>桌面</span>
+          <Expand
+            color="#BBBBBB"
+            :size="20"
+          />
+        </div>
+
+        <div class="app-menu-card">
+          <ul>
             <li>
               <router-link
-                to="/admin/theme2"
+                to="/desktop/theme"
                 target="_blank"
                 class="app-menu-item"
               >
-                admin模板2
+                桌面模板
                 <OpenInNew :size="16" />
               </router-link>
             </li>
@@ -124,7 +139,7 @@ export default defineComponent({
       height: 32px;
     }
     & .app-menu{
-      margin-left: 20px;
+      margin-left: 10px;
       position: relative;
       &:hover {
         & .app-menu-card{
