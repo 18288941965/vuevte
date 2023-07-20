@@ -60,7 +60,7 @@
       >
         <GitHub
           color="#FFFFFF"
-          :size="32"
+          :size="24"
         />
       </a>
 
@@ -128,18 +128,18 @@ export default defineComponent({
 
   }
   .app-header{
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 20px;
     & .app-a{
       margin-right: 30px;
       margin-left: auto;
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
     }
     & .app-menu{
-      margin-left: 10px;
+      margin-left: 30px;
       position: relative;
       &:hover {
         & .app-menu-card{
@@ -150,7 +150,6 @@ export default defineComponent({
         }
       }
       & .app-menu-title{
-        padding: 0 10px;
         font-size: 16px;
         color: #FFFFFF;
         display: flex;
@@ -207,7 +206,7 @@ export default defineComponent({
     top: 50%;
     left: 50%;
     margin-left: -500px;
-    margin-top: -270px;
+    margin-top: -280px;
     text-align: center;
     & img{
       width: 200px;
@@ -218,7 +217,7 @@ export default defineComponent({
       font-size: 60px;
     }
     & .a-s-base{
-      color: #acb3bf;
+      color: #BBBBBB;
       line-height: 100px;
     }
   }

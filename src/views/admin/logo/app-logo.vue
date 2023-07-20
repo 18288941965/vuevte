@@ -27,10 +27,9 @@ export default defineComponent({
     align-items: center;
     cursor: pointer;
     color: #FFFFFF;
-    font-size: 16px;
-    padding-right: 20px;
+    padding-right: 10px;
     & img{
-      height: 16px;
+      height: 14px;
     }
   }
 </style>
