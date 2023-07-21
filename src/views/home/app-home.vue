@@ -118,14 +118,20 @@ export default defineComponent({
 <style>
   body{
     background-color: #18181a;
-    background-image: url("../../assets/image/bg/home-bg.png");
+    background-image: url("../../assets/image/bg/home-bg-black.png");
     background-repeat: no-repeat;
     background-position: top center;
+  }
+  html, body, #app{
+    height: 100%;
+    width: 100%;
   }
 </style>
 <style scoped lang="scss">
   .app-home{
-
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(50% 50% at 50% 50%,rgba(23,23,23,0) 0%,rgba(23,23,23,.8) 100%);
   }
   .app-header{
     height: 60px;
