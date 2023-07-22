@@ -1,87 +1,134 @@
 <template>
-  <div style="height: 100%;width: 100%;color: #FFFFFF;">
+  <div>
     <header class="de-th-he">
-      项目名称, 在线人数，消息通知，用户信息，搜索功能
+      <div style="height: 100%;max-width: 1280px;margin: auto;">
+        <p style="font-size: 120px;color: #FFFFFF;margin: 0">
+          VUEVTE
+        </p>
+      </div>
     </header>
 
     <main class="de-th-ma">
-      <div>
-        <div class="de-th-ma-apps">
-          <div>
-            <img :src="L1" alt=" ">
-            <span>应用L1</span>
-          </div>
+      <div
+        style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;justify-content: center;
+grid-gap: 40px;"
+      >
+        <section>
+          <h2>常用应用</h2>
+          <ul>
+            <li v-for="(item, index) in 10" class="de-th-ma-apps-item">
+              <img
+                :src="L1"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用名称</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div>
-            <img :src="L2" alt=" ">
-            <span>应用L1</span>
-          </div>
+        <section>
+          <h2>收藏应用</h2>
+          <ul>
+            <li v-for="(item, index) in 6" class="de-th-ma-apps-item">
+              <img
+                :src="L2"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div>
-            <img :src="L3" alt=" ">
-            <span>应用L1</span>
-          </div>
+        <section>
+          <h2>其他应用</h2>
+          <ul>
+            <li v-for="(item, index) in 3" class="de-th-ma-apps-item">
+              <img
+                :src="L3"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div>
-            <img :src="L4" alt=" ">
-            <span>应用L1</span>
-          </div>
+        <section>
+          <h2>分组</h2>
+          <ul>
+            <li v-for="(item, index) in 4" class="de-th-ma-apps-item">
+              <img
+                :src="L4"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div>
-            <img :src="L5" alt=" ">
-            <span>应用L1</span>
-          </div>
-        </div>
+        <section>
+          <h2>自定义分组</h2>
+          <ul>
+            <li v-for="(item, index) in 2" class="de-th-ma-apps-item">
+              <img
+                :src="L5"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-        <div style="background-color: rgba(0, 0, 0, 0.1);
-        height: 80px;margin-top: 20px;display: flex;justify-content: center;
-        column-gap: 20px;
-align-items: center">
+        <section>
+          <h2>查询</h2>
+          <ul>
+            <li v-for="(item, index) in 7" class="de-th-ma-apps-item">
+              <img
+                :src="L6"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div style="display: flex;align-items: center;">
-            <img :src="H1" alt=" " style="width: 32px;height: 32px;">
-             <span>首页</span>
-          </div>
+        <section>
+          <h2>分析</h2>
+          <ul>
+            <li v-for="(item, index) in 1" class="de-th-ma-apps-item">
+              <img
+                :src="L7"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
 
-          <div style="display: flex;align-items: center;">
-            <img :src="H3" alt=" " style="width: 32px;height: 32px;">
-            <span>首页</span>
-          </div>
+        <section>
+          <h2>未分组应用</h2>
+          <ul>
+            <li v-for="(item, index) in 6" class="de-th-ma-apps-item">
+              <img
+                :src="L8"
+                style="width: 24px;height: 24px;"
+              >
+              <span>模拟应用</span>
 
-          <div style="display: flex;align-items: center;background-color: rgba(255,255,255,0.2);
-padding: 8px 16px;border-radius: 24px;">
-            <img :src="H2" alt=" " style="width: 32px;height: 32px;margin-right: 8px;">
-            <span>首页</span>
-          </div>
-
-          <div style="display: flex;align-items: center;">
-            <img :src="H4" alt=" " style="width: 32px;height: 32px;">
-            <span>首页</span>
-          </div>
-
-          <div style="display: flex;align-items: center;">
-            <img :src="H5" alt=" " style="width: 32px;height: 32px;">
-            <span>最近使用</span>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="de-th-ma-nav">
-        <ul>
-          <li></li>
-          <li>查询</li>
-          <li>历史</li>
-          <li>场景</li>
-          <li>绘制</li>
-        </ul>
+              <ArrowLine :size="16" />
+            </li>
+          </ul>
+        </section>
       </div>
     </main>
 
-    <footer class="de-th-fo">
-        <div>实用工具、意见反馈</div>
-    </footer>
-
+    <footer class="de-th-fo" />
   </div>
 </template>
 
@@ -107,9 +154,15 @@ import H2 from '../../assets/image/desktop/2.svg'
 import H3 from '../../assets/image/desktop/3.svg'
 import H4 from '../../assets/image/desktop/4.svg'
 import H5 from '../../assets/image/desktop/5.svg'
+import {
+  ArrowLine
+} from '../../components/svicon/otherIcon';
 
 export default defineComponent({
   name: 'DesktopTheme',
+  components: {
+    ArrowLine
+  },
   setup () {
     return {
       L1,
@@ -136,64 +189,58 @@ export default defineComponent({
 })
 </script>
 
-<style>
-body{
+<style lang="scss">
+.de-th-he{
   background-color: #18181a;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(50,55,249,0.4) 0%, rgba(1,4,92, 0.5) 100%), url("../../assets/image/bg/home-bg-blue.png");
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(50,55,249,0.4) 0%, rgba(1,4,92, 0.5) 100%), url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='80' patternTransform='scale(3) rotate(140)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(69,12.1%,43.7%,1)'/><path d='M-50.129 12.685C-33.346 12.358-16.786 4.918 0 5c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(60,14.2%,54.3%,1)' fill='none'/><path d='M-50.129 32.685C-33.346 32.358-16.786 24.918 0 25c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(39,100%,70.6%,1)' fill='none'/><path d='M-50.129 52.685C-33.346 52.358-16.786 44.918 0 45c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(23,47.6%,71.6%,1)' fill='none'/><path d='M-50.129 72.685C-33.346 72.358-16.786 64.918 0 65c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(43,72.5%,80%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
 }
 html, body, #app{
   height: 100%;
   width: 100%;
 }
+.de-th-ma-apps-item{
+  &:hover {
+    & .arrow-line-svg{
+      transform: translateX(4px);
+    }
+    & .arrow-line-path{
+      stroke-dashoffset: 34;
+    }
+  }
+}
 </style>
 <style scoped lang="scss">
 .de-th-he{
-  height: 60px;
-  border: 1px solid pink;
+  height: 360px;
 }
 
   .de-th-ma{
     max-width: 1280px;
     display: grid;
-    grid-template-columns: 1fr 140px ;
-    grid-column-gap: 20px;
-    margin: 40px auto 0 auto;
+    margin: 60px auto 0 auto;
     min-height: 600px;
-  }
-  .de-th-ma-nav{
-    border: 1px solid #FFFFFF;
-  }
-  .de-th-ma-apps{
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    flex-wrap: wrap;
-    height: calc(100% - 100px);
-    border-radius: 12px;
-    & img{
-      width: 72px;
-      height: 72px;
-    }
-    & div{
-      margin: 10px;
-      border-radius: 12px;
-      width: 102px;
-      height: 102px;
-      text-align: center;
-      background-color: rgba(255,255,255,0.1);
-      & span{
-        display: block;
-      }
-    }
-  }
 
+    & section{
+      width: 100%;
+    }
+    & section li{
+      display: grid;
+      grid-template-columns: 40px 1fr 20px;
+      align-items: center;
+      line-height: 40px;
+      margin-bottom: 10px;
+      border: 1px solid var(--border-color);
+      padding: 0 20px;
+    }
+  }
 
   .de-th-fo{
-    height: 60px;
+    height: 200px;
     text-align: right;
-    margin-top: 40px;
-    border: 1px solid yellow;
+    margin-top: 60px;
+    border-top: 2px dotted #666666;
   }
 </style>

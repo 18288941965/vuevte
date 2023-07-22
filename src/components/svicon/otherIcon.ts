@@ -12,3 +12,4 @@ export { default as Person } from './gw200/sv-person-icon.vue'
 export { default as Lock } from './gw200/sv-lock-icon.vue'
 
 export { default as GitHub } from './other/sv-github-icon.vue'
+export { default as ArrowLine } from './other/sv-arrow-line-icon.vue'

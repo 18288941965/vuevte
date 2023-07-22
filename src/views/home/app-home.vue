@@ -20,7 +20,7 @@
                 target="_blank"
                 class="app-menu-item"
               >
-                后台管理模板
+                后台管理模板Ⅰ
                 <OpenInNew :size="16" />
               </router-link>
             </li>
@@ -45,7 +45,17 @@
                 target="_blank"
                 class="app-menu-item"
               >
-                桌面模板
+                桌面模板Ⅰ
+                <OpenInNew :size="16" />
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="/desktop/theme2"
+                target="_blank"
+                class="app-menu-item"
+              >
+                桌面模板Ⅱ
                 <OpenInNew :size="16" />
               </router-link>
             </li>
