@@ -1,18 +1,20 @@
 <template>
   <div class="admin-logo">
-    <img
-      v-if="moduleIcon"
-      :src="getModuleIconUrl(moduleIcon)"
-      alt=" "
-    >
-    <Transition name="slide-fade">
-      <span
-        v-if="!menuCollapse"
-        id="admin-logo-text"
+    <a href="/">
+      <img
+        v-if="moduleIcon"
+        :src="getModuleIconUrl(moduleIcon)"
+        alt=" "
       >
-        {{ moduleLabel }}
-      </span>
-    </Transition>
+      <Transition name="slide-fade">
+        <span
+          v-if="!menuCollapse"
+          id="admin-logo-text"
+        >
+          {{ moduleLabel }}
+        </span>
+      </Transition>
+    </a>
   </div>
 </template>
 
@@ -48,17 +50,23 @@ export default defineComponent({
   .admin-logo{
     width: 100%;
     z-index: var(--z-index-b);
-    display: flex;
-    align-items: center;
-    color: var(--menu-text-color);
     font-size: 16px;
     position: relative;
-    cursor: pointer;
     border-bottom: 1px solid var(--logo-border-color);
     background-color: var(--logo-bg);
+    display: flex;
+    align-items: center;
+    & a{
+      display: inline-flex;
+      align-items: center;
+      color: var(--menu-text-color);
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 18px;
+    }
     & img{
       width: 24px;
-      margin: 0 12px;
+      margin-right: 12px;
     }
     & #admin-logo-text{
       margin-right: 16px;

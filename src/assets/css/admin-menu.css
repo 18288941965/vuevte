@@ -1,13 +1,19 @@
 .admin-el-menu{
-    border-right: 0;
+    border: 0;
     margin-top: 20px;
 }
-.admin-el-menu .el-menu-item{
+
+/*这里影响了全局*/
+.el-menu-item{
     margin-bottom: 6px;
 }
-.admin-el-menu .el-menu-item:hover{
+.el-popper.is-light{
+    border-color: var(--menu-bd-color);
+}
+.el-menu-item:hover{
     background-color: var(--menu-hover-color);
 }
+
 .admin-el-menu-icon{
     vertical-align: middle;
     text-align: center;

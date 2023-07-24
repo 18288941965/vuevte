@@ -1,16 +1,16 @@
 :root{
   /*菜单背景颜色*/
-  --menu-bg-color: #FFFFFF;
+  --menu-bg-color: #161B22;
   /*菜单文字颜色*/
-  --menu-text-color: #1F2328;
+  --menu-text-color: #E2E8F0;
   /*菜单滚动条背景颜色*/
-  --menu-scroll-bg-color: #576986;
+  --menu-scroll-bg-color: #575757;
   /*激活菜单的背景颜色*/
-  --menu-active-bg-color: rgb(247, 228, 253);
+  --menu-active-bg-color: rgba(255, 255, 255, 0.2);
   /*菜单hover颜色*/
-  --menu-hover-color: #FBF9F8;
+  --menu-hover-color: rgba(255, 255, 255, 0.1);
   /*菜单的边框颜色*/
-  --menu-bd-color: var(--border-color);
+  --menu-bd-color: #161B22;
   /*头部背景*/
   --header-bg-color: #F6F8FA;
   /*头部文字图标颜色*/
@@ -18,14 +18,14 @@
   /*头部鼠标移上去背景*/
   --header-icon-bg-color: #E8EAED;
   /*logo背景*/
-  --logo-bg: var(--header-bg-color);
+  --logo-bg: var(--menu-bg-color);
   /*logo边框*/
-  --logo-border-color: var(--border-color)
+  --logo-border-color: var(--menu-bg-color)
 }
 body,html,#app{
   overflow: hidden;
+  background-color: #F6F8FA;
 }
 .admin-theme-header-ht{
   height: var(--header-height);
 }
-

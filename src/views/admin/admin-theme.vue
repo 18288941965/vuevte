@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from 'vue';
+import {defineComponent, ref, onMounted} from 'vue';
 import AdminMenu from './menu/admin-menu.vue';
 import AdminHeader from './header/admin-header.vue';
 import {MenuStatusContext} from '../../context/menuContext';
@@ -78,6 +78,16 @@ export default defineComponent({
       updateActiveMenus(activeMenus.menus[0], true)
     }
 
+    onMounted(() => {
+      // TODO 这里只是方便切换主题查看，实际应用中请在style中引入css
+      const id = router.currentRoute.value.query.id
+      if (id && id === '2') {
+        import('../../assets/css/_admin-theme2.css')
+      } else {
+        import('../../assets/css/_admin-theme.css')
+      }
+    })
+
     return {
       adminThemeMenuRef,
       activeMenus,
@@ -93,12 +103,6 @@ export default defineComponent({
 })
 </script>
 
-<style>
-@import "../../assets/scss/_admin-theme2.scss";
-/*
-@import "../../assets/scss/_admin-theme2.scss";
-*/
-</style>
 <style scoped lang="scss">
   @import "../../assets/scss/admin-theme-public";
 </style>

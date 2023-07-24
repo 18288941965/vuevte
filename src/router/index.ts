@@ -20,7 +20,7 @@ const router = createRouter({
       path: '/admin/theme',
       name: 'AdminTheme',
       component: () => import('../views/admin/admin-theme.vue'),
-      meta: { title: '后台管理模板Ⅰ' },
+      meta: { title: '后台管理模板Ⅰ'},
       children: menuDemoRouter
     },
     {

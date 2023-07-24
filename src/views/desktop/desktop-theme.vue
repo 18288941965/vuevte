@@ -202,8 +202,13 @@ html, body, #app{
   width: 100%;
 }
 .de-th-ma-apps-item{
+  color: #BBBBBB;
+  & span{
+    color: initial;
+  }
   &:hover {
     & .arrow-line-svg{
+      color: initial;
       transform: translateX(4px);
     }
     & .arrow-line-path{
@@ -230,10 +235,11 @@ html, body, #app{
       display: grid;
       grid-template-columns: 40px 1fr 20px;
       align-items: center;
-      line-height: 40px;
+      line-height: 46px;
       margin-bottom: 10px;
       border: 1px solid var(--border-color);
       padding: 0 20px;
+      cursor: pointer;
     }
   }
 

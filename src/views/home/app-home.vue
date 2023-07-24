@@ -24,6 +24,16 @@
                 <OpenInNew :size="16" />
               </router-link>
             </li>
+            <li>
+              <router-link
+                to="/admin/theme?id=2"
+                target="_blank"
+                class="app-menu-item"
+              >
+                后台管理模板Ⅱ
+                <OpenInNew :size="16" />
+              </router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -148,6 +158,8 @@ export default defineComponent({
     display: flex;
     align-items: center;
     padding: 0 20px;
+    z-index: 1;
+    position: relative;
     & .app-a{
       margin-right: 30px;
       margin-left: auto;
