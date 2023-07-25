@@ -48,6 +48,7 @@ import elementLogo from '../../assets/image/other/element-logo.svg'
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     & img{
       width: 32px;
       height: 32px;

@@ -1,15 +1,33 @@
 <template>
-  <div class="icon-demo">
-    <div
-      v-for="(item, index) in componentIs"
-      :key="'c-i-' + index"
-      class="icon-demo-item"
-    >
-      <component
-        :is="item"
-        :size="48"
-      />
-      <span>{{ item }}</span>
+  <div class="mg-20">
+    <h2>菜单图标</h2>
+    <div class="icon-demo">
+      <div
+        v-for="(item, index) in menuIcons"
+        :key="'m-i-' + index"
+        class="icon-demo-item"
+      >
+        <component
+          :is="item"
+          :size="48"
+        />
+        <span>{{ item }}</span>
+      </div>
+    </div>
+
+    <h2>其他图标</h2>
+    <div class="icon-demo">
+      <div
+        v-for="(item, index) in otherIcons"
+        :key="'o-i-' + index"
+        class="icon-demo-item"
+      >
+        <component
+          :is="item"
+          :size="48"
+        />
+        <span>{{ item }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -26,17 +44,19 @@ export default defineComponent({
     ...otherIcon
   },
   setup () {
-    const componentIs = ref<Array<String>>([])
+    const menuIcons = ref<Array<String>>([])
+    const otherIcons = ref<Array<String>>([])
 
     for (const name in menuIcon) {
-      componentIs.value.push(name)
+      menuIcons.value.push(name)
     }
     
     for (const name in otherIcon) {
-      componentIs.value.push(name)
+      otherIcons.value.push(name)
     }
     return {
-      componentIs
+      menuIcons,
+      otherIcons
     }
   }
 })

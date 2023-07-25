@@ -72,6 +72,7 @@ export default defineComponent({
       margin-right: 16px;
       white-space: nowrap;
       overflow: clip;
+      font-weight: bolder;
     }
   }
 

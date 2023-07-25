@@ -71,6 +71,7 @@ import {doLogin} from '../../context/signContext';
 import {LoginSuccess} from '../../types/baseType';
 import BChannel from '../../BChannel';
 import {BCEnum} from '../../enum/enum';
+import LocalStorage from '../../class/LocalStorage';
 
 export default defineComponent({
   name: 'AppLogin',
@@ -91,8 +92,10 @@ export default defineComponent({
       password: 'admin'
     })
 
+    const local = new LocalStorage()
+
     const loginSuccess: LoginSuccess = () => {
-      localStorage.setItem('vuevte-login-status', '1')
+      local.setLoginStatus(true, loginBean.username)
       postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })
       router.replace('/app/home')
     }

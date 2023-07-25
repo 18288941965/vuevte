@@ -62,7 +62,6 @@
             class="admin-header-button"
             @click="cleanHistory"
           >
-            <Close :size="20" />
             清空历史
           </button>
         </div>

@@ -6,7 +6,7 @@ Mock.mock('/api/admin/getMenus', {
     msg: null,
     data: [
         {
-            label: 'admin模板',
+            label: 'Vuevte',
             icon: 'admin-theme.png',
             url: null,
             id: '01',

@@ -6,6 +6,7 @@ import {useRouter} from 'vue-router';
 import {inject} from 'vue';
 import BChannel from '../BChannel';
 import {BCEnum} from '../enum/enum';
+import LocalStorage from '../class/LocalStorage';
 
 // 退出系统
 export const doLogout = (logoutSuccess: LogoutSuccess) => {
@@ -35,20 +36,21 @@ export const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
 
 // 是否登录
 export const isLogin = () => {
-    const loginStatus = localStorage.getItem('vuevte-login-status');
-    return loginStatus === '1'
+    const local = new LocalStorage()
+    return local.getLoginStatus() === '1'
 }
 
 // 退出登录的回调函数内容
 export function logoutContext () {
     const router = useRouter();
     const channel = inject('channel') as BroadcastChannel
+    const local = new LocalStorage()
     const {
         postMessage
     } = BChannel(channel)
 
     const logoutSuccess: LogoutSuccess = () => {
-        localStorage.removeItem('vuevte-login-status')
+        local.setLoginStatus(false)
         postMessage({ code: BCEnum.LOGOUT, msg: '您已在其他窗口退出登录' })
         router.replace('/')
     }

@@ -19,7 +19,7 @@
     >
       <ul>
         <li class="li-oper">
-          管理员
+          {{ userName }}
         </li>
         <li class="li-divider" />
         <li
@@ -34,12 +34,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref, onMounted} from 'vue';
 import showContext from '../../context/showContext';
 import {doLogout, logoutContext} from '../../context/signContext';
 import {
   PersonFill
 } from '../svicon/otherIcon';
+import LocalStorage from '../../class/LocalStorage';
 
 export default defineComponent({
   name: 'AdminAvatar',
@@ -61,6 +62,8 @@ export default defineComponent({
       panelShow,
       setPanelShow
     } = showContext()
+     
+     const userName = ref('')
 
      const {
        logoutSuccess
@@ -69,11 +72,17 @@ export default defineComponent({
      const logout = () => {
       doLogout(logoutSuccess)
      }
+
+     onMounted(() => {
+       const local = new LocalStorage()
+       userName.value = local.getLoginStatus(false, true)
+     })
      
     return {
       panelShow,
       setPanelShow,
-      logout
+      logout,
+      userName
     }
    }
 })

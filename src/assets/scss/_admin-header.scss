@@ -14,20 +14,28 @@
   position: relative;
   margin-left: 15px;
 
-  & button{
+  & button:first-child {
     width: initial;
+    background-color: #0D99FF;
+    color: #FFFFFF;
+    border-color: #008bef;
     & span{
       padding: 0 6px;
+      font-weight: bolder;
+    }
+    &:hover{
+      background-color: #008bef;
     }
   }
 
   & .admin-header-menu-panel{
     position: absolute;
-    top: 36px;
+    top: 40px;
     background-color: #ffffff;
-    box-shadow: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
+    box-shadow: var(--color-shadow-large);
     width: 260px;
     border-radius: 12px;
+    border: 1px solid var(--border-color);
   }
   & .admin-header-menu-panel-content{
     overflow: auto;
@@ -37,7 +45,8 @@
     margin: 12px;
     & button{
       width: 90px;
-      margin: auto auto 10px auto;
+      margin: auto auto 0 auto;
+      color: #CF222E;
     }
 
     & .admin-header-menu-item{
