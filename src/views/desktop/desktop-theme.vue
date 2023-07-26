@@ -13,6 +13,14 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
       <div style="flex: 1;"></div>
 
       <button class="dt1-hd-bt-tmbj">
+        <Question />
+      </button>
+
+      <button class="dt1-hd-bt-tmbj">
+        <Build />
+      </button>
+
+      <button class="dt1-hd-bt-tmbj">
         <Send />
       </button>
 
@@ -24,7 +32,7 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
     </header>
 
     <section class="de-th-bld">
-      <div style="height: 100%;max-width: 1340px;margin: auto;padding-top: 70px;">
+      <div style="height: 100%;max-width: 1340px;margin: auto;padding-top: 30px;">
 
         <a style="border: 1px solid #dbdbff; display: inline-grid;
         grid-template-columns: 50px 1fr;
@@ -34,6 +42,7 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
         cursor: pointer;
         align-items: center;
         height: 60px;
+        margin-bottom: 20px;
           font-weight: bolder;
          padding: 4px 20px 5px 5px;">
           <span style="background-color: #FFFFFF;text-align: center;height: 50px;
@@ -46,12 +55,31 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
           </span>
         </a>
 
-        <p style="font-size: 60px;font-weight: bolder;margin: 25px 0;">
-          前端开源框架
-        </p>
-        <p style="font-size: 34px;color: #666666; margin: 0">
-          易用易读易扩展
-        </p>
+        <div class="de-th-tjmk">
+          <div class="de-th-tjmk-item">
+            <span>在线人数</span>
+            <span>200</span>
+            <small>人</small>
+          </div>
+
+          <div class="de-th-tjmk-item">
+            <span>使用天数</span>
+            <span>721</span>
+            <small>天</small>
+          </div>
+
+          <div class="de-th-tjmk-item">
+            <span>操作日志</span>
+            <span>16530</span>
+            <small>条</small>
+          </div>
+
+          <div class="de-th-tjmk-item">
+            <span>系统应用</span>
+            <span>100</span>
+            <small>项</small>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -199,7 +227,16 @@ grid-gap: 40px;"
       </div>
     </main>
 
-    <footer class="de-th-fo" />
+    <footer class="de-th-fo" >
+      <h2>Vuevte</h2>
+      <a
+        href="https://github.com/18288941965/vuevte"
+        target="_blank"
+      >
+        <GitHub color="#6D6D72" />
+        GitHub
+      </a>
+    </footer>
   </div>
 </template>
 
@@ -230,7 +267,10 @@ import {
   Forum,
   Send,
   Notifications,
-  Search
+  Search,
+  GitHub,
+  Build,
+  Question
 } from '../../components/svicon/otherIcon';
 import DesktopLogo from '../admin/logo/desktop-logo.vue';
 import AdminAvatar from '../../components/avatar/admin-avatar.vue';
@@ -244,6 +284,9 @@ export default defineComponent({
     Send,
     Notifications,
     Search,
+    GitHub,
+    Build,
+    Question,
     AdminAvatar
   },
   setup () {
@@ -305,6 +348,7 @@ html, body, #app{
 }
 </style>
 <style scoped lang="scss">
+  @import "../../assets/scss/desktop-theme";
 
   .de-th-ma{
     max-width: 1340px;

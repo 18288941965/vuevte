@@ -8,6 +8,8 @@ export { default as PersonFill } from './gw400/sv-person-fill-icon.vue'
 export { default as Send } from './gw400/sv-send-icon.vue'
 export { default as Notifications } from './gw400/sv-notifications-icon.vue'
 export { default as Forum } from './gw400/sv-forum-icon.vue'
+export { default as Question } from './gw400/sv-question-icon.vue'
+export { default as Build } from './gw400/sv-build-icon.vue'
 
 export { default as Close } from './gw200/sv-close-icon.vue'
 export { default as Expand } from './gw200/sv-expand-icon.vue'
