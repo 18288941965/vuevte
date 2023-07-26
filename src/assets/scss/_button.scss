@@ -1,0 +1,54 @@
+/*桌面顶部Ⅰ*/
+.dt1-hd-bt-tmbj{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  margin-right: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover{
+    color: #21A9FB;
+    background-color: #F7F7F8;
+  }
+}
+
+/*后台顶部Ⅰ | Ⅱ */
+.ad-hd-bt-bk{
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--header-text-color);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    background-color: var(--header-icon-bg-color);
+  }
+
+  & + button{
+    margin-left: 15px;
+  }
+}
+.bt-ls{
+  width: initial;
+  background-color: #0D99FF;
+  color: #FFFFFF;
+  border-color: #008bef;
+  & span{
+    padding: 0 6px;
+    font-weight: bolder;
+  }
+  &:hover{
+    background-color: #008bef;
+  }
+}
+.bt-hs{
+  width: 90px;
+  margin: auto auto 0 auto;
+  color: #CF222E;
+}

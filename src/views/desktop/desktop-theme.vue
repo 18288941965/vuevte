@@ -1,12 +1,59 @@
 <template>
   <div>
     <header class="de-th-he">
-      <div style="height: 100%;max-width: 1280px;margin: auto;">
-        <p style="font-size: 120px;color: #FFFFFF;margin: 0">
-          VUEVTE
+      <DesktopLogo />
+
+      <div style="border: 1px solid #DCDFE6; height: 32px; border-radius: 6px;
+       width: 320px;margin-left: 20px;cursor: pointer;display: inline-grid; grid-template-columns: 22px 1fr;
+align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
+         <Search :size="20" />
+         <span>搜索...</span>
+      </div>
+
+      <div style="flex: 1;"></div>
+
+      <button class="dt1-hd-bt-tmbj">
+        <Send />
+      </button>
+
+      <button class="dt1-hd-bt-tmbj">
+        <Notifications />
+      </button>
+
+      <AdminAvatar />
+    </header>
+
+    <section class="de-th-bld">
+      <div style="height: 100%;max-width: 1340px;margin: auto;padding-top: 70px;">
+
+        <a style="border: 1px solid #dbdbff; display: inline-grid;
+        grid-template-columns: 50px 1fr;
+        border-radius: 30px;
+        grid-gap: 10px;
+        background-color: rgba(255,255,255,0.4);
+        cursor: pointer;
+        align-items: center;
+        height: 60px;
+          font-weight: bolder;
+         padding: 4px 20px 5px 5px;">
+          <span style="background-color: #FFFFFF;text-align: center;height: 50px;
+          border: 1px solid #e0e0fd;
+          padding-top: 13px;border-radius: 50%;">
+            <Forum color="#947BD9" />
+          </span>
+          <span>
+            2023年7月26系统消息：页面初始创建
+          </span>
+        </a>
+
+        <p style="font-size: 60px;font-weight: bolder;margin: 25px 0;">
+          前端开源框架
+        </p>
+        <p style="font-size: 34px;color: #666666; margin: 0">
+          易用易读易扩展
         </p>
       </div>
-    </header>
+    </section>
 
     <main class="de-th-ma">
       <div
@@ -16,7 +63,10 @@ grid-gap: 40px;"
         <section>
           <h2>常用应用</h2>
           <ul>
-            <li v-for="(item, index) in 10" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 10"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L1"
                 style="width: 24px;height: 24px;"
@@ -30,7 +80,10 @@ grid-gap: 40px;"
         <section>
           <h2>收藏应用</h2>
           <ul>
-            <li v-for="(item, index) in 6" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 6"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L2"
                 style="width: 24px;height: 24px;"
@@ -44,7 +97,10 @@ grid-gap: 40px;"
         <section>
           <h2>其他应用</h2>
           <ul>
-            <li v-for="(item, index) in 3" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 3"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L3"
                 style="width: 24px;height: 24px;"
@@ -58,7 +114,10 @@ grid-gap: 40px;"
         <section>
           <h2>分组</h2>
           <ul>
-            <li v-for="(item, index) in 4" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 4"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L4"
                 style="width: 24px;height: 24px;"
@@ -72,7 +131,10 @@ grid-gap: 40px;"
         <section>
           <h2>自定义分组</h2>
           <ul>
-            <li v-for="(item, index) in 2" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 2"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L5"
                 style="width: 24px;height: 24px;"
@@ -86,7 +148,10 @@ grid-gap: 40px;"
         <section>
           <h2>查询</h2>
           <ul>
-            <li v-for="(item, index) in 7" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 7"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L6"
                 style="width: 24px;height: 24px;"
@@ -100,7 +165,10 @@ grid-gap: 40px;"
         <section>
           <h2>分析</h2>
           <ul>
-            <li v-for="(item, index) in 1" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 1"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L7"
                 style="width: 24px;height: 24px;"
@@ -114,7 +182,10 @@ grid-gap: 40px;"
         <section>
           <h2>未分组应用</h2>
           <ul>
-            <li v-for="(item, index) in 6" class="de-th-ma-apps-item">
+            <li
+              v-for="(item, index) in 6"
+              class="de-th-ma-apps-item"
+            >
               <img
                 :src="L8"
                 style="width: 24px;height: 24px;"
@@ -155,13 +226,25 @@ import H3 from '../../assets/image/desktop/3.svg'
 import H4 from '../../assets/image/desktop/4.svg'
 import H5 from '../../assets/image/desktop/5.svg'
 import {
-  ArrowLine
+  ArrowLine,
+  Forum,
+  Send,
+  Notifications,
+  Search
 } from '../../components/svicon/otherIcon';
+import DesktopLogo from '../admin/logo/desktop-logo.vue';
+import AdminAvatar from '../../components/avatar/admin-avatar.vue';
 
 export default defineComponent({
   name: 'DesktopTheme',
   components: {
-    ArrowLine
+    ArrowLine,
+    DesktopLogo,
+    Forum,
+    Send,
+    Notifications,
+    Search,
+    AdminAvatar
   },
   setup () {
     return {
@@ -191,18 +274,22 @@ export default defineComponent({
 
 <style lang="scss">
 .de-th-he{
-  background-color: #18181a;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-attachment: fixed;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(50,55,249,0.4) 0%, rgba(1,4,92, 0.5) 100%), url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='80' patternTransform='scale(3) rotate(140)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(69,12.1%,43.7%,1)'/><path d='M-50.129 12.685C-33.346 12.358-16.786 4.918 0 5c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(60,14.2%,54.3%,1)' fill='none'/><path d='M-50.129 32.685C-33.346 32.358-16.786 24.918 0 25c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(39,100%,70.6%,1)' fill='none'/><path d='M-50.129 52.685C-33.346 52.358-16.786 44.918 0 45c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(23,47.6%,71.6%,1)' fill='none'/><path d='M-50.129 72.685C-33.346 72.358-16.786 64.918 0 65c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='0.5' stroke='hsla(43,72.5%,80%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.de-th-bld{
+  height: 400px;
+  background-image: url("../../assets/image/bg/home-bg-scope.png");
+  background-position: top right;
 }
 html, body, #app{
   height: 100%;
   width: 100%;
 }
 .de-th-ma-apps-item{
-  color: #BBBBBB;
+  color: transparent;
   & span{
     color: initial;
   }
@@ -218,12 +305,9 @@ html, body, #app{
 }
 </style>
 <style scoped lang="scss">
-.de-th-he{
-  height: 360px;
-}
 
   .de-th-ma{
-    max-width: 1280px;
+    max-width: 1340px;
     display: grid;
     margin: 60px auto 0 auto;
     min-height: 600px;

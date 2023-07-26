@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import {defineComponent } from 'vue';
-import {getModuleIconUrl} from '../../../util/base';
+import {getModuleIconUrl} from '../../../util/baseUtil';
 
 export default defineComponent({
   name: 'AdminLogo',
@@ -35,7 +35,7 @@ export default defineComponent({
     },
     moduleLabel: {
       type: String,
-      default: ''
+      default: 'Vuevte'
     }
   },
   setup () {

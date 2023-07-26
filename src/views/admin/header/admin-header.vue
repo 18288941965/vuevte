@@ -1,7 +1,7 @@
 <template>
   <header class="admin-header">
     <button
-      class="admin-header-button admin-header-menu-collapse"
+      class="ad-hd-bt-bk admin-header-menu-collapse"
       @click="setMenuCollapse"
     >
       <MenuOpen
@@ -9,12 +9,12 @@
       />
     </button>
 
-    <button class="admin-header-button">
+    <button class="ad-hd-bt-bk">
       <Search />
     </button>
 
     <button
-      class="admin-header-button"
+      class="ad-hd-bt-bk"
       @click="menuOpen"
     >
       <Adjust />
@@ -25,7 +25,7 @@
       class="admin-header-menu-card"
     >
       <button
-        class="admin-header-button"
+        class="ad-hd-bt-bk bt-ls"
         @click.stop="setPanelShow(undefined)"
       >
         <span>{{ getMenuLabel }}</span>
@@ -59,7 +59,7 @@
 
           <button
             v-if="activeMenus.menus.length > 1"
-            class="admin-header-button"
+            class="ad-hd-bt-bk bt-hs"
             @click="cleanHistory"
           >
             清空历史
