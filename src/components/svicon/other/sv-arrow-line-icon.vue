@@ -32,14 +32,3 @@ withDefaults(defineProps<Props>(), {
   size: 24
 })
 </script>
-<style lang="scss" scoped>
-.arrow-line-svg{
-  transition: transform 0.2s;
-  transform: translateX(0);
-}
-.arrow-line-path{
-  stroke-dasharray: 14;
-  stroke-dashoffset: 14;
-  transition: stroke-dashoffset 0.2s;
-}
-</style>

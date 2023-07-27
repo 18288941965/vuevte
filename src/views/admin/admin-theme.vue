@@ -82,9 +82,9 @@ export default defineComponent({
       // TODO 这里只是方便切换主题查看，实际应用中请在style中引入css
       const id = router.currentRoute.value.query.id
       if (id && id === '2') {
-        import('../../assets/css/_admin-theme2.css')
+        import('../../assets/css/admin-theme2.css')
       } else {
-        import('../../assets/css/_admin-theme.css')
+        import('../../assets/css/admin-theme.css')
       }
     })
 

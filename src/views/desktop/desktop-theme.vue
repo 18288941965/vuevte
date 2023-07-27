@@ -3,14 +3,17 @@
     <header class="de-th-he">
       <DesktopLogo />
 
-      <div style="border: 1px solid #DCDFE6; height: 32px; border-radius: 6px;
+      <div
+        style="height: 36px; border-radius: 18px;
+        background-color: #F4F5FB;
        width: 320px;margin-left: 20px;cursor: pointer;display: inline-grid; grid-template-columns: 22px 1fr;
-align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
-         <Search :size="20" />
-         <span>搜索...</span>
+align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
+      >
+        <Search :size="20" />
+        <span>搜索...</span>
       </div>
 
-      <div style="flex: 1;"></div>
+      <div style="flex: 1;" />
 
       <button class="dt1-hd-bt-tmbj">
         <Question />
@@ -32,27 +35,18 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
     </header>
 
     <section class="de-th-bld">
-      <div style="height: 100%;max-width: 1340px;margin: auto;padding-top: 30px;">
-
-        <a style="border: 1px solid #dbdbff; display: inline-grid;
-        grid-template-columns: 50px 1fr;
-        border-radius: 30px;
-        grid-gap: 10px;
-        background-color: rgba(255,255,255,0.4);
-        cursor: pointer;
-        align-items: center;
-        height: 60px;
-        margin-bottom: 20px;
-          font-weight: bolder;
-         padding: 4px 20px 5px 5px;">
-          <span style="background-color: #FFFFFF;text-align: center;height: 50px;
-          border: 1px solid #e0e0fd;
-          padding-top: 13px;border-radius: 50%;">
-            <Forum color="#947BD9" />
+      <div style="height: 100%;max-width: 1340px;margin: auto;">
+        <a
+          class="de-th-xtgg al-hover"
+          href="/"
+        >
+          <span class="icon">
+            <Forum />
           </span>
           <span>
             2023年7月26系统消息：页面初始创建
           </span>
+          <ArrowLine :size="16" />
         </a>
 
         <div class="de-th-tjmk">
@@ -89,179 +83,94 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;">
 grid-gap: 40px;"
       >
         <section>
-          <h2>常用应用</h2>
+          <h2>后台模板</h2>
           <ul>
-            <li
-              v-for="(item, index) in 10"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L1"
-                style="width: 24px;height: 24px;"
+            <li>
+              <router-link
+                to="/admin/theme"
+                target="_blank"
+                class="d-t-menu-item al-hover"
               >
-              <span>模拟应用名称</span>
-              <ArrowLine :size="16" />
+                模板Ⅰ
+                <ArrowLine
+                  :size="16"
+                />
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="/admin/theme?id=2"
+                target="_blank"
+                class="d-t-menu-item al-hover"
+              >
+                模板Ⅱ
+                <ArrowLine
+                  :size="16"
+                />
+              </router-link>
             </li>
           </ul>
         </section>
 
         <section>
-          <h2>收藏应用</h2>
+          <h2>桌面模板</h2>
           <ul>
-            <li
-              v-for="(item, index) in 6"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L2"
-                style="width: 24px;height: 24px;"
+            <li>
+              <router-link
+                to="/desktop/theme"
+                target="_blank"
+                class="d-t-menu-item al-hover"
               >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
+                模板Ⅰ
+                <ArrowLine
+                  :size="16"
+                />
+              </router-link>
             </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>其他应用</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 3"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L3"
-                style="width: 24px;height: 24px;"
+            <li>
+              <router-link
+                to="/desktop/theme2"
+                target="_blank"
+                class="d-t-menu-item al-hover"
               >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>分组</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 4"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L4"
-                style="width: 24px;height: 24px;"
-              >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>自定义分组</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 2"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L5"
-                style="width: 24px;height: 24px;"
-              >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>查询</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 7"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L6"
-                style="width: 24px;height: 24px;"
-              >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>分析</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 1"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L7"
-                style="width: 24px;height: 24px;"
-              >
-              <span>模拟应用</span>
-              <ArrowLine :size="16" />
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>未分组应用</h2>
-          <ul>
-            <li
-              v-for="(item, index) in 6"
-              class="de-th-ma-apps-item"
-            >
-              <img
-                :src="L8"
-                style="width: 24px;height: 24px;"
-              >
-              <span>模拟应用</span>
-
-              <ArrowLine :size="16" />
+                模板Ⅱ
+                <ArrowLine
+                  :size="16"
+                />
+              </router-link>
             </li>
           </ul>
         </section>
       </div>
     </main>
 
-    <footer class="de-th-fo" >
-      <h2>Vuevte</h2>
-      <a
-        href="https://github.com/18288941965/vuevte"
-        target="_blank"
-      >
-        <GitHub color="#6D6D72" />
-        GitHub
-      </a>
+    <footer class="de-th-fo">
+      <section class="de-th-wd footer-section">
+        <div class="footer-left">
+          <a
+            href="/"
+            class="de-th-xmmc"
+          >
+            Vuevte
+          </a>
+        </div>
+        <div class="footer-right">
+          <a
+            href="https://github.com/18288941965/vuevte"
+            target="_blank"
+            class="github-a"
+          >
+            <GitHub color="#6D6D72" />
+            <span>GitHub</span>
+          </a>
+        </div>
+      </section>
     </footer>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import L1 from '../../assets/image/desktop/L1.svg'
-import L2 from '../../assets/image/desktop/L2.svg'
-import L3 from '../../assets/image/desktop/L3.svg'
-import L4 from '../../assets/image/desktop/L4.svg'
-import L5 from '../../assets/image/desktop/L5.svg'
-import L6 from '../../assets/image/desktop/L6.svg'
-import L7 from '../../assets/image/desktop/L7.svg'
-import L8 from '../../assets/image/desktop/L8.svg'
-import L9 from '../../assets/image/desktop/L9.svg'
-import L10 from '../../assets/image/desktop/L10.svg'
-import L11 from '../../assets/image/desktop/L11.svg'
-import L12 from '../../assets/image/desktop/L12.svg'
-import L13 from '../../assets/image/desktop/L13.svg'
-import L14 from '../../assets/image/desktop/L14.svg'
-
-import H1 from '../../assets/image/desktop/1.svg'
-import H2 from '../../assets/image/desktop/2.svg'
-import H3 from '../../assets/image/desktop/3.svg'
-import H4 from '../../assets/image/desktop/4.svg'
-import H5 from '../../assets/image/desktop/5.svg'
 import {
   ArrowLine,
   Forum,
@@ -291,25 +200,6 @@ export default defineComponent({
   },
   setup () {
     return {
-      L1,
-      L2,
-      L3,
-      L4,
-      L5,
-      L6,
-      L7,
-      L8,
-      L9,
-      L10,
-      L11,
-      L12,
-      L13,
-      L14,
-      H1,
-      H2,
-      H3,
-      H4,
-      H5
     }
   }
 })
@@ -325,56 +215,82 @@ export default defineComponent({
 .de-th-bld{
   height: 400px;
   background-image: url("../../assets/image/bg/home-bg-scope.png");
-  background-position: top right;
+  background-position: top center;
 }
 html, body, #app{
   height: 100%;
   width: 100%;
 }
-.de-th-ma-apps-item{
-  color: transparent;
-  & span{
-    color: initial;
+
+.d-t-menu-item{
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  line-height: 56px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  padding: 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  & svg{
+    color: transparent;
   }
-  &:hover {
-    & .arrow-line-svg{
-      color: initial;
-      transform: translateX(4px);
-    }
-    & .arrow-line-path{
-      stroke-dashoffset: 34;
+  &:hover{
+    & svg{
+      color: inherit;
     }
   }
 }
+
 </style>
 <style scoped lang="scss">
   @import "../../assets/scss/desktop-theme";
+
+  .de-th-wd{
+    max-width: 1344px;
+    margin: auto;
+  }
 
   .de-th-ma{
     max-width: 1340px;
     display: grid;
     margin: 60px auto 0 auto;
-    min-height: 600px;
-
-    & section{
-      width: 100%;
-    }
-    & section li{
-      display: grid;
-      grid-template-columns: 40px 1fr 20px;
-      align-items: center;
-      line-height: 46px;
-      margin-bottom: 10px;
-      border: 1px solid var(--border-color);
-      padding: 0 20px;
-      cursor: pointer;
-    }
   }
 
   .de-th-fo{
     height: 200px;
-    text-align: right;
     margin-top: 60px;
     border-top: 2px dotted #666666;
+  }
+
+  .footer-section{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 40px 0;
+    & .de-th-xmmc{
+      color: #CB84D9;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: bolder;
+      font-size: 20px;
+    }
+  }
+
+  .footer-right{
+    & .github-a{
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      & span{
+        padding-left: 10px;
+      }
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 </style>
