@@ -1,21 +1,16 @@
 <template>
-  <div>
-    <header class="de-th-he">
+  <div class="desktop-theme">
+    <header class="header-ht theme-header">
       <DesktopLogo />
 
       <div
-        style="height: 36px; border-radius: 18px;
-        background-color: #F4F5FB;
-       width: 320px;margin-left: 20px;cursor: pointer;display: inline-grid; grid-template-columns: 22px 1fr;
-align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
+        class="header-search"
       >
         <Search :size="20" />
         <span>搜索...</span>
       </div>
 
-      <div style="flex: 1;" />
-
-      <button class="btn-tran">
+      <button class="btn-tran mgl-auto">
         <Question />
       </button>
 
@@ -34,10 +29,10 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
       <AdminAvatar />
     </header>
 
-    <section class="de-th-bld">
-      <div style="height: 100%;max-width: 1340px;margin: auto;">
+    <section class="theme-banner">
+      <div class="theme-mw">
         <a
-          class="de-th-xtgg al-hover"
+          class="banner-tzgg al-hover"
           href="/"
         >
           <span class="icon">
@@ -49,26 +44,26 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
           <ArrowLine :size="16" />
         </a>
 
-        <div class="de-th-tjmk">
-          <div class="de-th-tjmk-item">
+        <div class="banner-count">
+          <div class="count-item">
             <span>组件</span>
             <span>200</span>
             <small>人</small>
           </div>
 
-          <div class="de-th-tjmk-item">
+          <div class="count-item">
             <span>图标</span>
             <span>721</span>
             <small>天</small>
           </div>
 
-          <div class="de-th-tjmk-item">
+          <div class="count-item">
             <span>模板</span>
             <span>16530</span>
             <small>条</small>
           </div>
 
-          <div class="de-th-tjmk-item">
+          <div class="count-item">
             <span>使用人数</span>
             <span>100</span>
             <small>项</small>
@@ -77,11 +72,8 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
       </div>
     </section>
 
-    <main class="de-th-ma">
-      <div
-        style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;justify-content: center;
-grid-gap: 40px;"
-      >
+    <main class="theme-mw theme-main">
+      <div class="main-wrapper">
         <section>
           <h2>后台模板</h2>
           <ul>
@@ -89,7 +81,7 @@ grid-gap: 40px;"
               <router-link
                 to="/admin/theme"
                 target="_blank"
-                class="d-t-menu-item al-hover"
+                class="wrapper-menu-item al-hover"
               >
                 模板Ⅰ
                 <ArrowLine
@@ -101,7 +93,7 @@ grid-gap: 40px;"
               <router-link
                 to="/admin/theme?id=2"
                 target="_blank"
-                class="d-t-menu-item al-hover"
+                class="wrapper-menu-item al-hover"
               >
                 模板Ⅱ
                 <ArrowLine
@@ -119,7 +111,7 @@ grid-gap: 40px;"
               <router-link
                 to="/desktop/theme"
                 target="_blank"
-                class="d-t-menu-item al-hover"
+                class="wrapper-menu-item al-hover"
               >
                 模板Ⅰ
                 <ArrowLine
@@ -131,7 +123,7 @@ grid-gap: 40px;"
               <router-link
                 to="/desktop/theme2"
                 target="_blank"
-                class="d-t-menu-item al-hover"
+                class="wrapper-menu-item al-hover"
               >
                 模板Ⅱ
                 <ArrowLine
@@ -144,8 +136,8 @@ grid-gap: 40px;"
       </div>
     </main>
 
-    <footer class="de-th-fo">
-      <section class="de-th-wd footer-section">
+    <footer class="theme-footer">
+      <section class="theme-mw footer-section">
         <div class="footer-left">
           <a
             href="/"
@@ -205,88 +197,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.de-th-he{
-  height: 72px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-.de-th-bld{
-  height: 400px;
-  background-image: url("../../assets/image/bg/home-bg-scope.png");
-  background-position: top center;
-}
-
-.d-t-menu-item{
-  display: grid;
-  grid-template-columns: 1fr 20px;
-  align-items: center;
-  line-height: 56px;
-  margin-bottom: 20px;
-  border: var(--color-border-1);
-  padding: 0 20px;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 12px;
-  & svg{
-    color: transparent;
-  }
-  &:hover{
-    & svg{
-      color: inherit;
-    }
-  }
-}
-
-</style>
 <style scoped lang="scss">
   @import "../../assets/scss/desktop-theme";
-
-  .de-th-wd{
-    max-width: 1344px;
-    margin: auto;
-  }
-
-  .de-th-ma{
-    max-width: 1340px;
-    display: grid;
-    margin: 60px auto 0 auto;
-  }
-
-  .de-th-fo{
-    height: 200px;
-    margin-top: 60px;
-    border-top: 2px dotted #666666;
-  }
-
-  .footer-section{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    padding: 40px 0;
-    & .de-th-xmmc{
-      color: #CB84D9;
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: bolder;
-      font-size: 20px;
-    }
-  }
-
-  .footer-right{
-    & .github-a{
-      color: inherit;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      & span{
-        padding-left: 10px;
-      }
-
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-  }
 </style>

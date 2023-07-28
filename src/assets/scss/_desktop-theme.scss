@@ -1,5 +1,36 @@
+.theme-mw{
+  max-width: 1344px;
+  margin: auto;
+}
 
-.de-th-xtgg{
+
+.theme-header{
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.header-search{
+  height: 36px;
+  border-radius: 18px;
+  background-color: #F4F5FB;
+  width: 320px;
+  margin-left: 20px;
+  cursor: pointer;
+  display: inline-grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  padding: 0 10px;
+  grid-gap: 4px;
+  color: #7E7E7E;
+}
+
+
+.theme-banner{
+  height: 400px;
+  background-image: url("../../assets/image/bg/home-bg-scope.png");
+  background-position: top center;
+}
+.banner-tzgg{
   border: 1px solid #76B9FD;
   display: inline-grid;
   grid-template-columns: 50px 1fr 40px;
@@ -26,14 +57,13 @@
     background-color: #FFFFFF;
   }
 }
-
-.de-th-tjmk{
+.banner-count{
   display: grid;
   grid-template-columns: repeat(4, 150px);
   border-radius: 20px;
   grid-gap: 20px;
   align-content: center;
-  & .de-th-tjmk-item{
+  & .count-item{
     height: 160px;
     text-align: center;
     background-color: rgba(255,255,255,0.3);
@@ -56,5 +86,71 @@
     line-height: 60px;
     display: block;
     font-size: 34px;
+  }
+}
+
+
+.theme-main{
+  margin-top: 60px;
+}
+.main-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  grid-gap: 40px;
+}
+.wrapper-menu-item{
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  line-height: 56px;
+  margin-bottom: 20px;
+  border: var(--color-border-1);
+  padding: 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  & svg{
+    color: transparent;
+  }
+  &:hover{
+    & svg{
+      color: inherit;
+    }
+  }
+}
+
+
+.theme-footer{
+  height: 200px;
+  margin-top: 60px;
+  border-top: 2px dotted #666666;
+}
+.footer-section{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 40px 0;
+  & .de-th-xmmc{
+    color: #CB84D9;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+}
+.footer-right{
+  & .github-a{
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    & span{
+      padding-left: 10px;
+    }
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
