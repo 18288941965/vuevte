@@ -15,19 +15,19 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
 
       <div style="flex: 1;" />
 
-      <button class="dt1-hd-bt-tmbj">
+      <button class="btn-tran">
         <Question />
       </button>
 
-      <button class="dt1-hd-bt-tmbj">
+      <button class="btn-tran">
         <Build />
       </button>
 
-      <button class="dt1-hd-bt-tmbj">
+      <button class="btn-tran">
         <Send />
       </button>
 
-      <button class="dt1-hd-bt-tmbj">
+      <button class="btn-tran">
         <Notifications />
       </button>
 
@@ -51,25 +51,25 @@ align-items: center;padding: 0 10px;grid-gap: 4px;color: #7E7E7E;"
 
         <div class="de-th-tjmk">
           <div class="de-th-tjmk-item">
-            <span>在线人数</span>
+            <span>组件</span>
             <span>200</span>
             <small>人</small>
           </div>
 
           <div class="de-th-tjmk-item">
-            <span>使用天数</span>
+            <span>图标</span>
             <span>721</span>
             <small>天</small>
           </div>
 
           <div class="de-th-tjmk-item">
-            <span>操作日志</span>
+            <span>模板</span>
             <span>16530</span>
             <small>条</small>
           </div>
 
           <div class="de-th-tjmk-item">
-            <span>系统应用</span>
+            <span>使用人数</span>
             <span>100</span>
             <small>项</small>
           </div>
@@ -217,10 +217,6 @@ export default defineComponent({
   background-image: url("../../assets/image/bg/home-bg-scope.png");
   background-position: top center;
 }
-html, body, #app{
-  height: 100%;
-  width: 100%;
-}
 
 .d-t-menu-item{
   display: grid;
@@ -228,7 +224,7 @@ html, body, #app{
   align-items: center;
   line-height: 56px;
   margin-bottom: 20px;
-  border: 1px solid var(--border-color);
+  border: var(--color-border-1);
   padding: 0 20px;
   cursor: pointer;
   text-decoration: none;

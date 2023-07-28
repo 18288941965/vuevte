@@ -1,6 +1,6 @@
 <template>
   <div class="app-login">
-    <header class="app-login-header">
+    <header class="login-header">
       <a
         href="https://github.com/18288941965/vuevte"
         target="_blank"
@@ -9,12 +9,12 @@
       </a>
     </header>
 
-    <main class="app-login-main">
+    <main class="login-main">
       <img
         :src="logo"
         alt=" "
       >
-      <p class="app-login-message">
+      <p class="login-message">
         登录到 Vuevte
       </p>
 
@@ -121,7 +121,7 @@ export default defineComponent({
     background-color: #FFFFFF;
   }
 
-  .app-login-header{
+  .login-header{
     display: flex;
     justify-content: flex-end;
     height: 80px;
@@ -129,7 +129,7 @@ export default defineComponent({
     padding-right: 20px;
   }
 
-  .app-login-main{
+  .login-main{
     position: absolute;
     width: 320px;
     text-align: center;
@@ -149,7 +149,7 @@ export default defineComponent({
     }
   }
 
-  .app-login-message{
+  .login-message{
     font-size: 20px;
     line-height: 50px;
   }

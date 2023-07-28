@@ -5,19 +5,23 @@
   font-size: 14px;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #F9F9F9;
 
   /*主题的顶部高度*/
   --header-height: 60px;
-  /*边框颜色-取自Google顶部边框颜色*/
-  --border-color: #DBDCDD;
+
   /*覆盖element框架的样式*/
   --el-menu-item-height: 46px;
+
+  --color-bd: #DBDCDD;
+  --color-border-1: 1px solid #DBDCDD;
+  --color-border-2: 2px solid #DBDCDD;
 
   --color-shadow-small: 0 1px 0 rgba(31,35,40,0.04);
   --color-shadow-medium: 0 3px 6px rgba(140,149,159,0.15);
   --color-shadow-large: 0 8px 24px rgba(140,149,159,0.2);
   --color-shadow-extra-large: 0 12px 28px rgba(140,149,159,0.3);
+  --color-shadow-panel: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
 
   /*层级*/
   --z-index-a: 1;
@@ -58,8 +62,16 @@ ul{
   padding: 20px;
 }
 
+.mgl-auto{
+  margin-left: auto;
+}
+
+.header-ht{
+  height: var(--header-height);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #212121;
   }
 }

@@ -7,7 +7,7 @@
       v-if="!menu.children || menu.children.length === 0"
       :key="menu.id"
       :index="menu.id"
-      :class="{'admin-el-menu-active' : menu.id === menuId }"
+      :class="{'menu-active' : menu.id === menuId }"
       @click="pushRouter(menu)"
     >
       <template #title>
@@ -21,7 +21,7 @@
       :index="menu.id"
     >
       <template #title>
-        <i class="admin-el-menu-icon">
+        <i class="menu-icon">
           <component
             :is="menuGroupIcon"
             :size="16"

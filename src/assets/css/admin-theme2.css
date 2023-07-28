@@ -10,7 +10,7 @@
   /*菜单hover颜色*/
   --menu-hover-color: #F2F2F2;
   /*菜单的边框颜色*/
-  --menu-bd-color: var(--border-color);
+  --menu-bd-color: var(--color-bd);
   /*头部背景*/
   --header-bg-color: #F6F8FA;
   /*头部文字图标颜色*/
@@ -20,12 +20,9 @@
   /*logo背景*/
   --logo-bg: var(--header-bg-color);
   /*logo边框*/
-  --logo-border-color: var(--border-color)
+  --logo-border-color: var(--color-bd)
 }
 body,html,#app{
   overflow: hidden;
-}
-.admin-theme-header-ht{
-  height: var(--header-height);
 }
 

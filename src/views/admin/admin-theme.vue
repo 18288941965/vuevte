@@ -1,10 +1,10 @@
 <template>
   <div
     class="admin-theme"
-    :class="{'admin-theme-menu-collapse' : menuCollapse}"
+    :class="{'menu-collapse' : menuCollapse}"
   >
     <div
-      class="admin-theme-left-panel menu-scroll"
+      class="left-wrapper menu-scroll"
     >
       <admin-menu
         ref="adminThemeMenuRef"
@@ -13,9 +13,9 @@
         @push-router="pushRouter"
       />
     </div>
-    <div class="admin-theme-right-panel">
+    <div class="right-wrapper">
       <admin-header
-        class="admin-theme-header-ht"
+        class="header-ht"
         :menu-collapse="menuCollapse"
         :active-menus="activeMenus"
         @set-menu-collapse="setMenuCollapse"

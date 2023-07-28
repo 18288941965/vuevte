@@ -93,10 +93,6 @@ export default defineComponent({
 </script>
 
 <style>
-html, body, #app{
-  height: 100%;
-  width: 100%;
-}
 :root{
   --bg-color: rgb(20, 20, 20);
   --card-color: rgb(23,23,23);

@@ -1,20 +1,20 @@
 <template>
   <header class="admin-header">
     <button
-      class="ad-hd-bt-bk admin-header-menu-collapse"
+      class="btn-dft menu-collapse-icon"
       @click="setMenuCollapse"
     >
       <MenuOpen
-        :class="{'admin-header-mo' : menuCollapse, 'admin-header-mc' : !menuCollapse }"
+        :class="{'icon-rotate' : menuCollapse }"
       />
     </button>
 
-    <button class="ad-hd-bt-bk">
+    <button class="btn-dft">
       <Search />
     </button>
 
     <button
-      class="ad-hd-bt-bk"
+      class="btn-dft"
       @click="menuOpen"
     >
       <Adjust />
@@ -22,10 +22,10 @@
 
     <div
       v-show="activeMenus.menus.length > 0"
-      class="admin-header-menu-card"
+      class="header-menu-card"
     >
       <button
-        class="ad-hd-bt-bk bt-ls"
+        class="btn-dft btn-blue"
         @click.stop="setPanelShow(undefined)"
       >
         <span>{{ getMenuLabel }}</span>
@@ -34,15 +34,15 @@
 
       <div
         v-show="panelShow"
-        class="admin-header-menu-panel"
+        class="header-menu-panel"
       >
-        <div class="admin-header-menu-panel-content card-scroll">
+        <div class="menu-panel-content card-scroll">
           <ul>
             <li
               v-for="(menu, index) in activeMenus.menus"
               :key="'header-menu-' + index"
-              class="admin-header-menu-item"
-              :class="{'admin-header-menu-active': menu.id === activeMenus.menuId }"
+              class="menu-item"
+              :class="{'menu-active': menu.id === activeMenus.menuId }"
               @click.stop="pushRouter(menu)"
             >
               <i>
@@ -53,13 +53,13 @@
                 />
               </i>
               <span>{{ menu.label }}</span>
-              <span :class="{'admin-header-menu-cache' : menu.cache}" />
+              <span :class="{'menu-cache' : menu.cache}" />
             </li>
           </ul>
 
           <button
             v-if="activeMenus.menus.length > 1"
-            class="ad-hd-bt-bk bt-hs"
+            class="btn-dft btn-red"
             @click="cleanHistory"
           >
             清空历史
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <admin-avatar />
+    <admin-avatar class="mgl-auto" />
   </header>
 </template>
 

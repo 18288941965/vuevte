@@ -82,7 +82,7 @@ export default defineComponent({
     background-color: #FFFFFF;
     padding: 20px;
     margin-top: 20px;
-    border: 1px solid var(--border-color);
+    border: var(--color-border-1);
     border-radius: 6px;
   }
 

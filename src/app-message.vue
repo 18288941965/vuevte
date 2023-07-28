@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="systemMessageList.length > 0"
-    class="app-message-dialog"
+    class="app-message"
   >
-    <div class="app-message-body">
-      <header class="app-message-header">
+    <div class="message-body">
+      <header class="message-header">
         <div>
           <Sms color="#FFFFFF" />
         </div>
@@ -65,7 +65,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  .app-message-dialog{
+  .app-message{
     position: fixed;
     top: 0;
     right: 0;
@@ -76,45 +76,12 @@ export default defineComponent({
     overflow: auto;
   }
 
-  .app-message-body{
+  .message-body{
     max-width: 600px;
     min-height: 200px;
     margin: 80px auto 0 auto;
     background-color: #FFFFFF;
-    box-shadow: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
-    & .app-message-header{
-      display: flex;
-      position: sticky;
-      height: 50px;
-      top: 0;
-      & div{
-        margin: 10px 0 0 10px;
-        background-color: #FFC12E;
-        width: 36px;
-        height: 36px;
-        padding: 6px;
-        border-radius: 18px;
-      }
-      & span{
-        display: inline-block;
-        margin: 16px 0 0 14px;
-        font-size: 16px;
-        font-weight: bolder;
-      }
-      & button{
-        margin-left: auto;
-        background-color: transparent;
-        border: 0;
-        height: 32px;
-        width: 56px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        &:hover{
-          background-color: red;
-          color: #FFFFFF;
-        }
-      }
-    }
+    box-shadow: var(--color-shadow-panel);
     & ul {
       margin: 10px 20px 20px 60px;
     }
@@ -124,6 +91,40 @@ export default defineComponent({
         height: 40px;
         display: grid;
         align-items: center;
+    }
+  }
+
+  .message-header{
+    display: flex;
+    position: sticky;
+    height: 50px;
+    top: 0;
+    & div{
+      margin: 10px 0 0 10px;
+      background-color: #FFC12E;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      border-radius: 18px;
+    }
+    & span{
+      display: inline-block;
+      margin: 16px 0 0 14px;
+      font-size: 16px;
+      font-weight: bolder;
+    }
+    & button{
+      margin-left: auto;
+      background-color: transparent;
+      border: 0;
+      height: 32px;
+      width: 56px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover{
+        background-color: red;
+        color: #FFFFFF;
+      }
     }
   }
 </style>

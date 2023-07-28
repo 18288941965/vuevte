@@ -1,7 +1,7 @@
 <template>
   <template v-if="menus.length > 0">
     <admin-logo
-      class="admin-theme-header-ht"
+      class="header-ht"
       :menu-collapse="collapse"
       :module-icon="menus[0].icon"
       :module-label="menus[0].label"
@@ -23,10 +23,10 @@
           v-if="!menu.children || menu.children.length === 0"
           :key="menu.id"
           :index="menu.id"
-          :class="{'admin-el-menu-active' : menu.id === menuId }"
+          :class="{'menu-active' : menu.id === menuId }"
           @click="pushRouter(menu)"
         >
-          <i class="admin-el-menu-icon">
+          <i class="menu-icon">
             <component
               :is="menu.icon"
               :size="20"
@@ -44,7 +44,7 @@
           :index="menu.id"
         >
           <template #title>
-            <i class="admin-el-menu-icon">
+            <i class="menu-icon">
               <component
                 :is="menu.icon"
                 :size="20"
@@ -102,7 +102,7 @@ export default defineComponent({
 
     // 2、滚动到当前的元素
     const scrollTarget = () => {
-      const targetElement = document.getElementsByClassName('admin-el-menu-active');
+      const targetElement = document.getElementsByClassName('menu-active');
       if (targetElement.length > 0) {
         targetElement[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
       }

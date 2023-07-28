@@ -26,6 +26,3 @@ body,html,#app{
   overflow: hidden;
   background-color: #F6F8FA;
 }
-.admin-theme-header-ht{
-  height: var(--header-height);
-}

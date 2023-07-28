@@ -14,16 +14,16 @@
     background-color: var(--menu-hover-color);
 }
 
-.admin-el-menu-icon{
+.menu-icon{
     vertical-align: middle;
     text-align: center;
     display: flex;
     align-items: center;
     margin-right: 10px;
 }
-.admin-el-menu-active{
+.menu-active{
     background-color: var(--menu-active-bg-color);
 }
-.admin-el-menu-active:hover{
+.menu-active:hover{
     background-color: var(--menu-active-bg-color);
 }
