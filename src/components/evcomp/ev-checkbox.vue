@@ -1,41 +1,41 @@
 <template>
-  <el-radio-group
+  <el-checkbox-group
+    v-if="dictList.length > 0"
     v-bind="attrs"
     :key="uniqueKey"
     @change="updateSelectLabel"
   >
-    <slot name="custom" />
-    <el-radio
+    <el-checkbox
       v-for="item in dictList"
       :key="item.value"
       :border="border"
       :label="item.value"
     >
       {{ item.label }}
-    </el-radio>
-  </el-radio-group>
+    </el-checkbox>
+  </el-checkbox-group>
 </template>
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import {ElRadioGroup, ElRadio} from 'element-plus/es'
-import {defaultProps, uniqueKey, getEvElContent, LabelValue} from './evEl';
+import {defaultProps, LabelValue, uniqueKey, getEvElContent} from './evEl';
+import {ElCheckboxGroup, ElCheckbox} from 'element-plus';
 
 export default defineComponent({
-  name: 'EvElRadio',
+  name: 'EvCheckbox',
   components: {
-    ElRadioGroup,
-    ElRadio
+    ElCheckboxGroup,
+    ElCheckbox
   },
   props: {
     ...defaultProps,
+    selectLabel: {
+      type: Array,
+      default: undefined
+    },
     border: {
       type: Boolean,
       default: true
-    },
-    selectLabel: {
-      type: String,
-      default: undefined
     }
   },
   emits: ['update:selectLabel'],
@@ -47,12 +47,17 @@ export default defineComponent({
       getDataByDataList
     } = getEvElContent()
 
-    const updateSelectLabel = (val: string) => {
+    const updateSelectLabel = (val: Array<string>) => {
       if (!dictList.value || !props.labelUpdate) {
         return
       }
-      const obj = dictList.value.find(item => item.value === val)
-      emit('update:selectLabel', obj ? obj.label : undefined)
+
+      const labels: Array<string> = []
+      val.forEach(value => {
+        const obj = dictList.value.find(item => item.value === value) as LabelValue
+        labels.push(obj.label)
+      })
+      emit('update:selectLabel', labels)
     }
 
     onMounted(() => {

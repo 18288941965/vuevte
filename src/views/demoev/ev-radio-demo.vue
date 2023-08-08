@@ -1,46 +1,46 @@
 <template>
   <div class="mg-20">
-    <p>基于 Element Plus → Select 二次封装的选择器，对不同的数据选择做统一处理。</p>
+    <p>基于 Element Plus → Radio 二次封装的选择器，对不同的数据选择做统一处理。</p>
 
     <section>
       <h2>根据字典类型获取数据</h2>
       <div class="ev-comp-demo-grid2">
-        <ev-el-select
-          v-model="evElSelectValue.value"
+        <ev-radio
+          v-model="evSelectValue.value"
           dict-type="ev_dict_demo"
         />
-        <span>{{ evElSelectValue.valueText }}</span>
+        <span>{{ evSelectValue.valueText }}</span>
       </div>
     </section>
 
     <section>
       <h2>根据URL获取数据</h2>
       <div class="ev-comp-demo-grid2">
-        <ev-el-select
-          v-model="evElSelectValue.value2"
-          v-model:select-label="evElSelectValue.value2Text"
+        <ev-radio
+          v-model="evSelectValue.value2"
+          v-model:select-label="evSelectValue.value2Text"
           req-url="/api/admin/getDict2"
           :default-attr="{ label: 'mc', value: 'dm' }"
           :label-update="true"
           clearable
         />
-        <span>{{ evElSelectValue.value2Text }}</span>
+        <span>{{ evSelectValue.value2Text }}</span>
       </div>
     </section>
 
     <section>
       <h2>根据已有数据加载</h2>
       <div class="ev-comp-demo-grid2">
-        <ev-el-select
-          v-model="evElSelectValue.value3"
-          v-model:select-label="evElSelectValue.value3Text"
-          :data-list="evElSelectValue.dataList"
+        <ev-radio
+          v-model="evSelectValue.value3"
+          v-model:select-label="evSelectValue.value3Text"
+          :data-list="evSelectValue.dataList"
           :default-attr="{ label: 'mc', value: 'dm' }"
           :label-update="true"
           multiple
           clearable
         />
-        <span>{{ evElSelectValue.value3Text }}</span>
+        <span>{{ evSelectValue.value3Text }}</span>
       </div>
     </section>
   </div>
@@ -48,15 +48,15 @@
 
 <script lang="ts">
 import {defineComponent, reactive} from 'vue';
-import EvElSelect from '../../components/evcomp/ev-el-select.vue';
+import EvRadio from '../../components/evcomp/ev-radio.vue';
 
 export default defineComponent({
-  name: 'EvElSelectDemo',
+  name: 'EvRadioDemo',
   components: {
-    EvElSelect
+    EvRadio
   },
   setup () {
-    const evElSelectValue = reactive({
+    const evSelectValue = reactive({
       value: '',
       valueText: '',
       value2: '',
@@ -71,7 +71,7 @@ export default defineComponent({
       ]
     })
     return {
-      evElSelectValue
+      evSelectValue
     }
   }
 })

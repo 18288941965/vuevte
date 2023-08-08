@@ -15,7 +15,7 @@
     </el-avatar>
     <div
       v-show="panelShow"
-      class="admin-avatar-card"
+      class="avatar-card"
     >
       <ul>
         <li class="li-oper">

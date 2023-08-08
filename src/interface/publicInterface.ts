@@ -14,6 +14,14 @@ interface LoginBean{
     username: string,
     password: string
 }
+// 分页对象
+interface Pagination {
+    pageNum: number,
+    pageSize: number,
+    total: number,
+    list: Array<any>
+}
+
 // 无参对话框
 interface DialogEmpty{
     show: boolean
@@ -31,6 +39,7 @@ export type {
     AxiosResult,
     ChannelData,
     LoginBean,
+    Pagination,
 
     DialogEmpty,
     DialogBase,

@@ -1,45 +1,40 @@
 <template>
-  <el-checkbox-group
-    v-if="dictList.length > 0"
+  <el-select
     v-bind="attrs"
     :key="uniqueKey"
+    style="width: 100%"
     @change="updateSelectLabel"
   >
-    <el-checkbox
+    <el-option
       v-for="item in dictList"
       :key="item.value"
-      :border="border"
-      :label="item.value"
-    >
-      {{ item.label }}
-    </el-checkbox>
-  </el-checkbox-group>
+      :value="item.value"
+      :label="item.label"
+    />
+  </el-select>
 </template>
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
+import {ElSelect, ElOption} from 'element-plus/es'
 import {defaultProps, LabelValue, uniqueKey, getEvElContent} from './evEl';
-import {ElCheckboxGroup, ElCheckbox} from 'element-plus';
 
 export default defineComponent({
-  name: 'EvElCheckbox',
+  name: 'EvSelect',
   components: {
-    ElCheckboxGroup,
-    ElCheckbox
+    ElSelect,
+    ElOption
   },
   props: {
     ...defaultProps,
     selectLabel: {
-      type: Array,
+      type: [Array, String],
       default: undefined
-    },
-    border: {
-      type: Boolean,
-      default: true
     }
   },
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
+
     const {
       dictList,
       getDataByDictType,
@@ -47,11 +42,17 @@ export default defineComponent({
       getDataByDataList
     } = getEvElContent()
 
-    const updateSelectLabel = (val: Array<string>) => {
+    const updateSelectLabel = (val: Array<string> | string) => {
       if (!dictList.value || !props.labelUpdate) {
         return
       }
-
+      // 单选
+      if (typeof val === 'string') {
+        const obj = dictList.value.find(item => item.value === val)
+        emit('update:selectLabel', obj ? obj.label : undefined)
+        return
+      }
+      // 多选
       const labels: Array<string> = []
       val.forEach(value => {
         const obj = dictList.value.find(item => item.value === value) as LabelValue
@@ -76,9 +77,9 @@ export default defineComponent({
 
     return {
       attrs,
-      uniqueKey,
       updateSelectLabel,
-      dictList
+      dictList,
+      uniqueKey
     }
   }
 })

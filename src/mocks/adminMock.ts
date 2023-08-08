@@ -28,29 +28,38 @@ Mock.mock('/api/admin/getMenus', {
                         {
                             label: 'checkbox组件',
                             icon: '',
-                            url: '/admin/theme/ev/el/checkbox',
+                            url: '/admin/theme/ev/checkbox',
                             id: '03-01',
                             pid: '03',
                             cache: false,
-                            name: 'EvElCheckboxDemo'
+                            name: 'EvCheckboxDemo'
                         },
                         {
                             label: 'radio组件',
                             icon: '',
-                            url: '/admin/theme/ev/el/radio',
+                            url: '/admin/theme/ev/radio',
                             id: '03-02',
                             pid: '03',
                             cache: true,
-                            name: 'EvElRadioDemo'
+                            name: 'EvRadioDemo'
                         },
                         {
                             label: 'select组件',
                             icon: '',
-                            url: '/admin/theme/ev/el/select',
+                            url: '/admin/theme/ev/select',
                             id: '03-03',
                             pid: '03',
                             cache: true,
-                            name: 'EvElSelectDemo'
+                            name: 'EvSelectDemo'
+                        },
+                        {
+                            label: 'pagination组件',
+                            icon: '',
+                            url: '/admin/theme/ev/pagination',
+                            id: '03-04',
+                            pid: '03',
+                            cache: true,
+                            name: 'EvPagination'
                         }
                     ]
                 }

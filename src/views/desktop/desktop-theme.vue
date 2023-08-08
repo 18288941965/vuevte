@@ -83,6 +83,7 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
+                <img :src="menuA1" alt=" ">
                 模板Ⅰ
                 <ArrowLine
                   :size="16"
@@ -95,6 +96,7 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
+                <img :src="menuA1" alt=" ">
                 模板Ⅱ
                 <ArrowLine
                   :size="16"
@@ -113,6 +115,7 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
+                <img :src="menuD1" alt=" ">
                 模板Ⅰ
                 <ArrowLine
                   :size="16"
@@ -125,6 +128,7 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
+                <img :src="menuD1" alt=" ">
                 模板Ⅱ
                 <ArrowLine
                   :size="16"
@@ -175,6 +179,8 @@ import {
 } from '../../components/svicon/otherIcon';
 import DesktopLogo from '../admin/logo/desktop-logo.vue';
 import AdminAvatar from '../../components/avatar/admin-avatar.vue';
+import menuA1 from '../../assets/image/desktop/menu-a1.png'
+import menuD1 from '../../assets/image/desktop/menu-d1.png'
 
 export default defineComponent({
   name: 'DesktopTheme',
@@ -192,6 +198,8 @@ export default defineComponent({
   },
   setup () {
     return {
+      menuA1,
+      menuD1
     }
   }
 })

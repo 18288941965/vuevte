@@ -1,40 +1,45 @@
 <template>
-  <el-select
+  <el-radio-group
     v-bind="attrs"
     :key="uniqueKey"
-    style="width: 100%"
     @change="updateSelectLabel"
   >
-    <el-option
+    <slot name="custom" />
+    <el-radio
       v-for="item in dictList"
       :key="item.value"
-      :value="item.value"
-      :label="item.label"
-    />
-  </el-select>
+      :border="border"
+      :label="item.value"
+    >
+      {{ item.label }}
+    </el-radio>
+  </el-radio-group>
 </template>
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import {ElSelect, ElOption} from 'element-plus/es'
-import {defaultProps, LabelValue, uniqueKey, getEvElContent} from './evEl';
+import {ElRadioGroup, ElRadio} from 'element-plus/es'
+import {defaultProps, uniqueKey, getEvElContent, LabelValue} from './evEl';
 
 export default defineComponent({
-  name: 'EvElSelect',
+  name: 'EvRadio',
   components: {
-    ElSelect,
-    ElOption
+    ElRadioGroup,
+    ElRadio
   },
   props: {
     ...defaultProps,
+    border: {
+      type: Boolean,
+      default: true
+    },
     selectLabel: {
-      type: [Array, String],
+      type: String,
       default: undefined
     }
   },
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
-
     const {
       dictList,
       getDataByDictType,
@@ -42,23 +47,12 @@ export default defineComponent({
       getDataByDataList
     } = getEvElContent()
 
-    const updateSelectLabel = (val: Array<string> | string) => {
+    const updateSelectLabel = (val: string) => {
       if (!dictList.value || !props.labelUpdate) {
         return
       }
-      // 单选
-      if (typeof val === 'string') {
-        const obj = dictList.value.find(item => item.value === val)
-        emit('update:selectLabel', obj ? obj.label : undefined)
-        return
-      }
-      // 多选
-      const labels: Array<string> = []
-      val.forEach(value => {
-        const obj = dictList.value.find(item => item.value === value) as LabelValue
-        labels.push(obj.label)
-      })
-      emit('update:selectLabel', labels)
+      const obj = dictList.value.find(item => item.value === val)
+      emit('update:selectLabel', obj ? obj.label : undefined)
     }
 
     onMounted(() => {
@@ -77,9 +71,9 @@ export default defineComponent({
 
     return {
       attrs,
+      uniqueKey,
       updateSelectLabel,
-      dictList,
-      uniqueKey
+      dictList
     }
   }
 })
