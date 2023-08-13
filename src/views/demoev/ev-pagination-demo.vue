@@ -33,6 +33,7 @@
 
       <el-table
         :data="pager2.list"
+        ref="scrollTable"
         border
         style="width: 100%"
         height="500px"
@@ -91,6 +92,7 @@ export default defineComponent({
     // ================== 后端分页===================== end ===
 
     // ================== 前端分页===================== start ===
+    const scrollTable = ref()
     const dataList = ref<Array<any>>([])
     const pager2 = reactive<Pagination>({
       pageNum: 1,
@@ -105,6 +107,7 @@ export default defineComponent({
       })
       pager2.total = dataList.value.length
       pager2.list = dataList.value.slice((pageNum - 1) * pageSize, pageNum * pageSize)
+      scrollTable.value.scrollTo(0, 0)
     }
     const queryDataList = () => {
       axios.post('/api/admin/getAllDataList', {})
@@ -126,6 +129,7 @@ export default defineComponent({
       pager,
       query,
 
+      scrollTable,
       pager2,
       query2
     }

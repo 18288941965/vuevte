@@ -26,6 +26,7 @@
   /*层级*/
   --z-index-a: 1;
   --z-index-b: 2;
+  --z-index-c: 10;
   --z-index-z: 9999;
 
   font-synthesis: none;
