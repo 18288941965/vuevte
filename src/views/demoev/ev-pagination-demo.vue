@@ -32,8 +32,8 @@
       <h2>前端加载数据分页</h2>
 
       <el-table
-        :data="pager2.list"
         ref="scrollTable"
+        :data="pager2.list"
         border
         style="width: 100%"
         height="500px"
@@ -54,6 +54,35 @@
         @query="query2"
       />
     </section>
+
+
+    <section style="margin-top: 20px">
+      <h2>数据无限加载</h2>
+
+      <el-table
+        :data="pager3.list"
+        border
+        style="width: 100%"
+      >
+        <el-table-column
+          prop="name"
+          label="name"
+          width="180"
+        />
+        <el-table-column
+          prop="date"
+          label="date"
+        />
+      </el-table>
+
+      <el-button
+        type="primary"
+        :disabled="pager3.list.length === pager3.total"
+        @click="query3(pager3.pageNum + 1)"
+      >
+        加载更多
+      </el-button>
+    </section>
   </div>
 </template>
 
@@ -69,6 +98,8 @@ export default defineComponent({
     EvPagination
   },
   setup () {
+    const dataList = ref<Array<any>>([])
+
     // ================== 后端分页===================== start ===
     const pager = reactive<Pagination>({
       pageNum: 1,
@@ -93,14 +124,13 @@ export default defineComponent({
 
     // ================== 前端分页===================== start ===
     const scrollTable = ref()
-    const dataList = ref<Array<any>>([])
     const pager2 = reactive<Pagination>({
       pageNum: 1,
       pageSize: 10,
       total: 0,
       list: []
     })
-    const query2 = (pageNum = pager.pageNum, pageSize = pager.pageSize) => {
+    const query2 = (pageNum = pager2.pageNum, pageSize = pager2.pageSize) => {
       Object.assign(pager2, {
         pageNum,
         pageSize
@@ -109,16 +139,40 @@ export default defineComponent({
       pager2.list = dataList.value.slice((pageNum - 1) * pageSize, pageNum * pageSize)
       scrollTable.value.scrollTo(0, 0)
     }
+    // ================== 前端分页===================== end ===
+
+    // ================== 无限加载 ===================== start ===
+    const pager3 = reactive<Pagination>({
+      pageNum: 1,
+      pageSize: 10,
+      total: 0,
+      list: []
+    })
+    const query3 = (pageNum = pager3.pageNum) => {
+      Object.assign(pager3, {
+        pageNum,
+        total: dataList.value.length
+      })
+      const temp = dataList.value.slice((pageNum - 1) * pager3.pageSize, pageNum * pager3.pageSize)
+      if (pageNum === 1) {
+        pager3.list = temp
+        return
+      }
+      pager3.list =  pager3.list.concat(temp)
+    }
+    // ================== 无限加载 ===================== end ===
+
+    // 加载测试数据
     const queryDataList = () => {
       axios.post('/api/admin/getAllDataList', {})
         .then((res: { data: AxiosResult }) => {
           if (res.data.code === 200) {
             dataList.value = res.data.data
             query2(1)
+            query3(1)
           }
         })
     }
-    // ================== 前端分页===================== end ===
 
     onMounted(() => {
       query(1)
@@ -131,7 +185,10 @@ export default defineComponent({
 
       scrollTable,
       pager2,
-      query2
+      query2,
+
+      pager3,
+      query3
     }
   }
 })
