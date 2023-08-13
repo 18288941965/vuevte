@@ -12,7 +12,7 @@ import './assets/scss/_animation.scss'
 
 // 模拟后端数据：在自己的项目中请删除此引用
 import './mocks/adminMock'
-import './mocks/evElMock'
+import './mocks/evMock'
 
 import * as menuIcon from './components/svicon/menuIcon'
 

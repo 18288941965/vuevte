@@ -51,12 +51,16 @@ export default defineComponent({
 
     // 切换每页显示多少条
     const handleSizeChange = (val: number) => {
-      emit('query', page.value, val)
+      if ((page.value - 1) * size.value  <= total.value ) {
+        emit('query', page.value, val)
+      }
     }
 
     // 翻页
     const handleCurrentChange = (val: number) => {
-      emit('query', val, size.value)
+      if ((page.value - 1) * size.value  <= total.value ) {
+        emit('query', val, size.value)
+      }
     }
 
     return {
