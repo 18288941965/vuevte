@@ -1,7 +1,7 @@
 <template>
   <div class="app-home">
     <header class="home-header">
-      <app-logo />
+      <DesktopLogo style="color: #FFFFFF" />
 
       <div class="header-menu">
         <div
@@ -117,7 +117,6 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import AppLogo from '../admin/logo/app-logo.vue';
 import AdminAvatar from '../../components/avatar/admin-avatar.vue';
 import {
   Expand,
@@ -126,16 +125,17 @@ import {
 } from '../../components/svicon/otherIcon';
 import AppAttached from './app-attached.vue'
 import showContext from '../../context/showContext';
+import DesktopLogo from '../admin/logo/desktop-logo.vue'
 
 export default defineComponent({
   name: 'AppHome',
   components: {
     Expand,
     GitHub,
-    AppLogo,
     AdminAvatar,
     OpenInNew,
-    AppAttached
+    AppAttached,
+    DesktopLogo
   },
   setup () {
     const {
