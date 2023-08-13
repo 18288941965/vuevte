@@ -103,12 +103,8 @@
 
     <main class="home-main">
       <section class="main-snapshot">
-        <img
-          :src="logo3d"
-          alt=" "
-        >
         <h1 class="snapshot-title">
-          前端 开源 框架
+          前端开源框架
         </h1>
         <h4 class="snapshot-base">
           基于 ↘
@@ -129,7 +125,6 @@ import {
   GitHub
 } from '../../components/svicon/otherIcon';
 import AppAttached from './app-attached.vue'
-import logo3d from '../../assets/logo.png'
 import showContext from '../../context/showContext';
 
 export default defineComponent({
@@ -154,7 +149,6 @@ export default defineComponent({
     } = showContext()
 
     return {
-      logo3d,
       adminPanelShow,
       adminSetPanelShow,
       desktopPanelShow,
@@ -165,8 +159,8 @@ export default defineComponent({
 </script>
 <style>
   body{
-    background: radial-gradient(50% 50% at 50% 50%, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, .8) 100%)
-    ,url("../../assets/image/bg/home-bg-black.png") no-repeat fixed top center;
+    background-color: #393939;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232d2d2d' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   }
 </style>
 <style scoped lang="scss">
