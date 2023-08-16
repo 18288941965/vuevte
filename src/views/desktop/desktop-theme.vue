@@ -31,44 +31,7 @@
 
     <section class="theme-banner">
       <div class="theme-mw">
-        <a
-          class="banner-tzgg al-hover"
-          href="/"
-        >
-          <span class="icon">
-            <Forum />
-          </span>
-          <span>
-            2023年7月26系统消息：页面初始创建
-          </span>
-          <ArrowLine :size="16" />
-        </a>
-
-        <div class="banner-count">
-          <div class="count-item">
-            <span>组件</span>
-            <span>200</span>
-            <small>人</small>
-          </div>
-
-          <div class="count-item">
-            <span>图标</span>
-            <span>721</span>
-            <small>天</small>
-          </div>
-
-          <div class="count-item">
-            <span>模板</span>
-            <span>16530</span>
-            <small>条</small>
-          </div>
-
-          <div class="count-item">
-            <span>使用人数</span>
-            <span>100</span>
-            <small>项</small>
-          </div>
-        </div>
+        &nbsp;
       </div>
     </section>
 
@@ -83,8 +46,18 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
-                <img :src="menuA1" alt=" ">
-                模板Ⅰ
+                <img
+                  :src="menuA1"
+                  alt=" "
+                >
+                <div>
+                  <div class="menu-title">
+                    模板Ⅰ
+                  </div>
+                  <div class="menu-describe">
+                    菜单样式为黑色背景
+                  </div>
+                </div>
                 <ArrowLine
                   :size="16"
                 />
@@ -96,8 +69,18 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
-                <img :src="menuA1" alt=" ">
-                模板Ⅱ
+                <img
+                  :src="menuA1"
+                  alt=" "
+                >
+                <div>
+                  <div class="menu-title">
+                    模板Ⅱ
+                  </div>
+                  <div class="menu-describe">
+                    菜单样式为白色背景
+                  </div>
+                </div>
                 <ArrowLine
                   :size="16"
                 />
@@ -115,8 +98,18 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
-                <img :src="menuD1" alt=" ">
-                模板Ⅰ
+                <img
+                  :src="menuD1"
+                  alt=" "
+                >
+                <div>
+                  <div class="menu-title">
+                    模板Ⅰ
+                  </div>
+                  <div class="menu-describe">
+                    白色背景首页
+                  </div>
+                </div>
                 <ArrowLine
                   :size="16"
                 />
@@ -128,8 +121,18 @@
                 target="_blank"
                 class="wrapper-menu-item al-hover"
               >
-                <img :src="menuD1" alt=" ">
-                模板Ⅱ
+                <img
+                  :src="menuD1"
+                  alt=" "
+                >
+                <div>
+                  <div class="menu-title">
+                    模板Ⅱ
+                  </div>
+                  <div class="menu-describe">
+                    黑色背景首页
+                  </div>
+                </div>
                 <ArrowLine
                   :size="16"
                 />
@@ -169,7 +172,6 @@
 import {defineComponent} from 'vue';
 import {
   ArrowLine,
-  Forum,
   Send,
   Notifications,
   Search,
@@ -187,7 +189,6 @@ export default defineComponent({
   components: {
     ArrowLine,
     DesktopLogo,
-    Forum,
     Send,
     Notifications,
     Search,

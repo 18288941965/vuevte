@@ -3,7 +3,6 @@
   margin: auto;
 }
 
-
 .theme-header{
   display: flex;
   align-items: center;
@@ -26,76 +25,14 @@
 
 
 .theme-banner{
-  height: 400px;
-  background-image: url("../../assets/image/bg/home-bg-scope.png");
-  background-position: top center;
 }
-.banner-tzgg{
-  border: 1px solid #76B9FD;
-  display: inline-grid;
-  grid-template-columns: 50px 1fr 40px;
-  border-radius: 30px;
-  grid-gap: 10px;
-  cursor: pointer;
-  align-items: center;
-  height: 60px;
-  margin: 66px 0;
-  font-weight: bolder;
-  padding: 4px 0 5px 5px;
-  color: #3a9afc;
-  text-decoration: none;
-  position: relative;
-  & .icon{
-    background-color: #76B9FD;
-    text-align: center;
-    height: 50px;
-    padding-top: 13px;
-    border-radius: 50%;
-    color: #FFFFFF;
-  }
-  &:hover{
-    background-color: #FFFFFF;
-  }
-}
-.banner-count{
-  display: grid;
-  grid-template-columns: repeat(4, 150px);
-  border-radius: 20px;
-  grid-gap: 20px;
-  align-content: center;
-  & .count-item{
-    height: 160px;
-    text-align: center;
-    background-color: rgba(255,255,255,0.3);
-    backdrop-filter: blur(5px);
-    line-height: 20px;
-    border-radius: 20px;
-    border: var(--color-border-1);
-    box-shadow: var(--color-shadow-medium);
-    &:hover{
-      background-color: #FFFFFF;
-      cursor: pointer;
-    }
-  }
-  & span:first-child{
-    line-height: 60px;
-    display: block;
-    font-size: 13px;
-  }
-  & span:nth-child(2){
-    line-height: 60px;
-    display: block;
-    font-size: 34px;
-  }
-}
-
 
 .theme-main{
   margin-top: 60px;
 }
 .main-wrapper{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   grid-gap: 40px;
 }
@@ -103,14 +40,13 @@
   display: grid;
   grid-template-columns: 40px 1fr 20px;
   align-items: center;
-  line-height: 56px;
   margin-bottom: 20px;
   border: var(--color-border-1);
-  padding: 0 20px;
+  padding: 10px 20px;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  border-radius: 12px;
+  border-radius: 6px;
   & img{
     width: 24px;
     height: 24px;
@@ -123,13 +59,22 @@
       color: inherit;
     }
   }
+  & .menu-title{
+    line-height: 32px;
+    font-size: 16px;
+  }
+  & .menu-describe{
+    color: #888888;
+    font-size: 13px;
+    line-height: 26px;
+  }
 }
 
 
 .theme-footer{
   height: 200px;
   margin-top: 60px;
-  border-top: 2px dotted #666666;
+  border-top: 1px dotted #666666;
 }
 .footer-section{
   display: grid;

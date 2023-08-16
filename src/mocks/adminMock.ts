@@ -18,7 +18,7 @@ Mock.mock('/api/admin/getMenus', {
                 { label: '图标', icon: 'Mood', url: '/admin/theme/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
                 {
                     label: '组件',
-                    icon: 'Cards',
+                    icon: 'Plugins',
                     url: null,
                     id: '03',
                     pid: '01',

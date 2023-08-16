@@ -1,5 +1,5 @@
 export { default as Dashboard } from './menu/sv-dashboard-icon.vue'
 export { default as Labeled } from './menu/sv-labeled-icon.vue'
 export { default as Dot } from './menu/sv-dot-icon.vue'
-export { default as Cards } from './menu/sv-cards-icon.vue'
+export { default as Plugins } from './menu/sv-plugins-icon.vue'
 export { default as Mood } from './menu/sv-mood-icon.vue'
