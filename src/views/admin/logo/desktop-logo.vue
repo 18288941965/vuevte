@@ -29,7 +29,6 @@ import logo from '../../../assets/logo.png'
       color: var(--menu-text-color);
       cursor: pointer;
       text-decoration: none;
-      font-weight: bolder;
     }
     & img{
       width: 28px;

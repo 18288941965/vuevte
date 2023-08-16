@@ -68,7 +68,11 @@
       </div>
     </div>
 
-    <admin-avatar class="mgl-auto" />
+    <admin-avatar
+      class="mgl-auto"
+      bg-color="#4385F4"
+      icon-color="#ffffff"
+    />
   </header>
 </template>
 

@@ -97,7 +97,7 @@
       </a>
 
       <admin-avatar
-        icon-color="#0A0A0A"
+        icon-color="#393939"
       />
     </header>
 

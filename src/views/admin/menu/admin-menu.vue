@@ -29,7 +29,7 @@
           <i class="menu-icon">
             <component
               :is="menu.icon"
-              :size="20"
+              :size="24"
             />
           </i>
 
@@ -47,7 +47,7 @@
             <i class="menu-icon">
               <component
                 :is="menu.icon"
-                :size="20"
+                :size="24"
               />
             </i>
             <span>{{ menu.label }}</span>

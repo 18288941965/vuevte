@@ -1,14 +1,14 @@
 <template>
   <div class="admin-avatar">
     <el-avatar
-      :size="32"
+      :size="24"
       style="cursor: pointer;"
       :style="{ 'background-color' : bgColor }"
       @click.stop="setPanelShow(undefined)"
     >
       <template #default>
         <PersonFill
-          :size="32"
+          :size="20"
           :color="iconColor"
         />
       </template>
@@ -90,8 +90,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
   .admin-avatar{
-    height: 32px;
-    width: 32px;
+    height: 24px;
+    width: 24px;
     position: relative;
   }
 
