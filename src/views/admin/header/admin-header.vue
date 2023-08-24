@@ -26,7 +26,7 @@
     >
       <button
         class="btn-dft btn-blue"
-        @click.stop="setPanelShow(undefined)"
+        @click="setPanelShow(undefined, $event)"
       >
         <span>{{ getMenuLabel }}</span>
         <ArrowDropDown />
