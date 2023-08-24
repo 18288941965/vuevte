@@ -3,13 +3,17 @@ import {ref, onMounted, onUnmounted} from 'vue';
 export default function () {
     type Show = undefined | boolean
     const panelShow = ref(false)
-
-    const setPanelShow = (show: Show) => {
-        show === undefined ? panelShow.value = !panelShow.value : panelShow.value = show
-    }
+    const self = ref(false)
 
     const windowClick = () => {
-        setPanelShow(false)
+        self.value ?  self.value = false : setPanelShow(false)
+    }
+
+    const setPanelShow = (show: Show, evt?: PointerEvent) => {
+        show === undefined ? panelShow.value = !panelShow.value : panelShow.value = show
+        if (evt) {
+            self.value = true
+        }
     }
 
     onMounted(() => {

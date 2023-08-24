@@ -4,7 +4,7 @@
       :size="24"
       style="cursor: pointer;"
       :style="{ 'background-color' : bgColor }"
-      @click.stop="setPanelShow(undefined)"
+      @click="setPanelShow(undefined, $event)"
     >
       <template #default>
         <PersonFill

@@ -6,7 +6,7 @@
       <div class="header-menu">
         <div
           class="menu-title"
-          @click.stop="adminSetPanelShow(undefined)"
+          @click="adminSetPanelShow(undefined, $event)"
         >
           <span>后台模板</span>
           <Expand
@@ -47,7 +47,7 @@
       <div class="header-menu">
         <div
           class="menu-title"
-          @click.stop="desktopSetPanelShow(undefined)"
+          @click="desktopSetPanelShow(undefined, $event)"
         >
           <span>桌面模板</span>
           <Expand
