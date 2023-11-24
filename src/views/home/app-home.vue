@@ -3,88 +3,6 @@
     <header class="home-header">
       <DesktopLogo style="color: #FFFFFF" />
 
-      <div class="header-menu">
-        <div
-          class="menu-title"
-          @click="adminSetPanelShow(undefined, $event)"
-        >
-          <span>后台模板</span>
-          <Expand
-            color="#BBBBBB"
-            :size="20"
-          />
-        </div>
-
-        <div
-          v-show="adminPanelShow"
-          class="menu-card"
-        >
-          <ul>
-            <li>
-              <router-link
-                to="/admin/theme"
-                target="_blank"
-                class="menu-item"
-              >
-                模板Ⅰ
-                <OpenInNew :size="20" />
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/admin/theme?id=2"
-                target="_blank"
-                class="menu-item"
-              >
-                模板Ⅱ
-                <OpenInNew :size="20" />
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="header-menu">
-        <div
-          class="menu-title"
-          @click="desktopSetPanelShow(undefined, $event)"
-        >
-          <span>桌面模板</span>
-          <Expand
-            color="#BBBBBB"
-            :size="20"
-          />
-        </div>
-
-        <div
-          v-show="desktopPanelShow"
-          class="menu-card"
-        >
-          <ul>
-            <li>
-              <router-link
-                to="/desktop/theme"
-                target="_blank"
-                class="menu-item"
-              >
-                模板Ⅰ
-                <OpenInNew :size="20" />
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/desktop/theme2"
-                target="_blank"
-                class="menu-item"
-              >
-                模板Ⅱ
-                <OpenInNew :size="20" />
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <a
         href="https://github.com/18288941965/vuevte"
         target="_blank"
@@ -102,15 +20,39 @@
     </header>
 
     <main class="home-main">
-      <section class="main-snapshot">
-        <h1 class="snapshot-title">
-          前端开源框架
-        </h1>
-        <h4 class="snapshot-base">
-          基于 ↘
-        </h4>
-        <AppAttached />
-      </section>
+      <router-link
+        to="/admin/theme"
+        target="_blank"
+        class="menu-item"
+      >
+        黑色菜单模板
+        <OpenInNew :size="20" />
+      </router-link>
+
+      <router-link
+        to="/admin/theme?id=2"
+        target="_blank"
+        class="menu-item"
+      >
+        白色菜单模板
+        <OpenInNew :size="20" />
+      </router-link>
+      <router-link
+        to="/desktop/theme"
+        target="_blank"
+        class="menu-item"
+      >
+        白色首页模板
+        <OpenInNew :size="20" />
+      </router-link>
+      <router-link
+        to="/desktop/theme2"
+        target="_blank"
+        class="menu-item"
+      >
+        黑色首页模板
+        <OpenInNew :size="20" />
+      </router-link>
     </main>
   </div>
 </template>
@@ -119,40 +61,22 @@
 import {defineComponent} from 'vue';
 import AdminAvatar from '../../components/avatar/admin-avatar.vue';
 import {
-  Expand,
   OpenInNew,
   GitHub
 } from '../../components/svicon/publicIcon';
-import AppAttached from './app-attached.vue'
-import showContext from '../../context/showContext';
 import DesktopLogo from '../admin/logo/desktop-logo.vue'
 
 export default defineComponent({
   name: 'AppHome',
   components: {
-    Expand,
     GitHub,
     AdminAvatar,
     OpenInNew,
-    AppAttached,
     DesktopLogo
   },
   setup () {
-    const {
-      panelShow: adminPanelShow,
-      setPanelShow: adminSetPanelShow
-    } = showContext()
-
-    const {
-      panelShow: desktopPanelShow,
-      setPanelShow: desktopSetPanelShow
-    } = showContext()
-
     return {
-      adminPanelShow,
-      adminSetPanelShow,
-      desktopPanelShow,
-      desktopSetPanelShow
+      //
     }
   }
 })
