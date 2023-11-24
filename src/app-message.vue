@@ -12,7 +12,7 @@
         <button
           @click="closeMessage"
         >
-          <Close />
+          <Sms />
         </button>
       </header>
 
@@ -32,14 +32,12 @@
 import { defineComponent, PropType } from 'vue'
 import {ChannelData} from './interface/publicInterface';
 import {
-  Close,
   Sms
-} from './components/svicon/otherIcon';
+} from './components/svicon/publicIcon';
 
 export default defineComponent({
   name: 'AppMessage',
   components: {
-    Close,
     Sms
   },
   props: {

@@ -31,9 +31,9 @@
 
     & .menu-item{
       display: grid;
-      grid-template-columns: 30px 1fr 10px;
-      height: 32px;
-      line-height: 32px;
+      grid-template-columns: 1fr 10px;
+      height: 40px;
+      line-height: 40px;
       align-items: center;
       margin-bottom: 6px;
       cursor: pointer;

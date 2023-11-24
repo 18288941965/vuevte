@@ -15,7 +15,7 @@ Mock.mock('/api/admin/getMenus', {
             name: null,
             children: [
                 { label: '首页', icon: 'Dashboard', url: '/admin/theme/menu/demo', id: '02', pid: '01', cache: true, name: 'MenuDemo' },
-                { label: '图标', icon: 'Mood', url: '/admin/theme/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
+                { label: '图标', icon: 'Flag', url: '/admin/theme/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
                 {
                     label: '组件',
                     icon: 'Plugins',

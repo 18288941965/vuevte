@@ -178,7 +178,7 @@ import {
   GitHub,
   Build,
   Question
-} from '../../components/svicon/otherIcon';
+} from '../../components/svicon/publicIcon';
 import DesktopLogo from '../admin/logo/desktop-logo.vue';
 import AdminAvatar from '../../components/avatar/admin-avatar.vue';
 import menuA1 from '../../assets/image/desktop/menu-a1.png'

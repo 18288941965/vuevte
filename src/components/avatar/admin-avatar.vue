@@ -39,7 +39,7 @@ import showContext from '../../context/showContext';
 import {doLogout, logoutContext} from '../../context/signContext';
 import {
   PersonFill
-} from '../svicon/otherIcon';
+} from '../svicon/publicIcon';
 import LocalStorage from '../../class/LocalStorage';
 
 export default defineComponent({

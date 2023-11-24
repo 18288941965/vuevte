@@ -27,7 +27,7 @@
           @keyup.enter="login"
         >
           <template #prefix>
-            <Person />
+            <GitHub />
           </template>
         </el-input>
 
@@ -40,7 +40,7 @@
           @keyup.enter="login"
         >
           <template #prefix>
-            <Lock />
+            <GitHub />
           </template>
         </el-input>
 
@@ -62,10 +62,8 @@ import {defineComponent, inject, reactive} from 'vue';
 import {useRouter} from 'vue-router';
 import logo from '../../assets/logo.png'
 import {
-  Person,
-  Lock,
   GitHub
-} from '../../components/svicon/otherIcon';
+} from '../../components/svicon/publicIcon';
 import {LoginBean} from '../../interface/publicInterface';
 import {doLogin} from '../../context/signContext';
 import {LoginSuccess} from '../../types/baseType';
@@ -76,8 +74,6 @@ import LocalStorage from '../../class/LocalStorage';
 export default defineComponent({
   name: 'AppLogin',
   components: {
-    Person,
-    Lock,
     GitHub
   },
   setup () {

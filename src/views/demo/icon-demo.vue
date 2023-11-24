@@ -18,7 +18,7 @@
     <h2>其他图标</h2>
     <div class="icon-demo">
       <div
-        v-for="(item, index) in otherIcons"
+        v-for="(item, index) in publicIcons"
         :key="'o-i-' + index"
         class="icon-demo-item"
       >
@@ -35,28 +35,28 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
 import * as menuIcon from '../../components/svicon/menuIcon'
-import * as otherIcon from '../../components/svicon/otherIcon'
+import * as publicIcon from '../../components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'IconDemo',
   components: {
     ...menuIcon,
-    ...otherIcon
+    ...publicIcon
   },
   setup () {
     const menuIcons = ref<Array<String>>([])
-    const otherIcons = ref<Array<String>>([])
+    const publicIcons = ref<Array<String>>([])
 
     for (const name in menuIcon) {
       menuIcons.value.push(name)
     }
     
-    for (const name in otherIcon) {
-      otherIcons.value.push(name)
+    for (const name in publicIcon) {
+      publicIcons.value.push(name)
     }
     return {
       menuIcons,
-      otherIcons
+      publicIcons
     }
   }
 })
@@ -68,7 +68,6 @@ export default defineComponent({
     flex-wrap: wrap;
   }
   .icon-demo-item{
-    background-color: #FFFFFF;
     margin: 10px;
     width: 108px;
     height: 108px;

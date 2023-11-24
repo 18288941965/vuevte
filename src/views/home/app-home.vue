@@ -122,7 +122,7 @@ import {
   Expand,
   OpenInNew,
   GitHub
-} from '../../components/svicon/otherIcon';
+} from '../../components/svicon/publicIcon';
 import AppAttached from './app-attached.vue'
 import showContext from '../../context/showContext';
 import DesktopLogo from '../admin/logo/desktop-logo.vue'

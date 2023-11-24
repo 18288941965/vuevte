@@ -45,13 +45,6 @@
               :class="{'menu-active': menu.id === activeMenus.menuId }"
               @click.stop="pushRouter(menu)"
             >
-              <i>
-                <component
-                  :is="menu.icon ? menu.icon : 'Labeled'"
-                  color="var(--header-text-color)"
-                  :size="20"
-                />
-              </i>
               <span>{{ menu.label }}</span>
               <span :class="{'menu-cache' : menu.cache}" />
             </li>
@@ -84,9 +77,8 @@ import {
   Adjust,
   ArrowDropDown,
   MenuOpen,
-  Search,
-  Close
-} from '../../../components/svicon/otherIcon';
+  Search
+} from '../../../components/svicon/publicIcon';
 import showContext from '../../../context/showContext';
 
 export default defineComponent({
@@ -96,7 +88,6 @@ export default defineComponent({
     ArrowDropDown,
     MenuOpen,
     Search,
-    Close,
     adminAvatar
   },
   props: {
