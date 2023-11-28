@@ -14,7 +14,7 @@
               class="wrapper-menu-item al-hover"
             >
               <img
-                :src="menuA1"
+                :src="zeplin"
                 alt=" "
               >
               <div>
@@ -37,7 +37,7 @@
               class="wrapper-menu-item al-hover"
             >
               <img
-                :src="menuA1"
+                :src="youtube"
                 alt=" "
               >
               <div>
@@ -65,8 +65,8 @@ import {
   ArrowLine
 } from '../../components/svicon/publicIcon';
 import DesktopLogo from '../admin/logo/desktop-logo.vue';
-import menuA1 from '../../assets/image/desktop/menu-a1.png'
-import menuD1 from '../../assets/image/desktop/menu-d1.png'
+import zeplin from '../../assets/image/desktop/zeplin.png'
+import youtube from '../../assets/image/desktop/youtube.png'
 
 export default defineComponent({
   name: 'DesktopTheme',
@@ -76,8 +76,8 @@ export default defineComponent({
   },
   setup () {
     return {
-      menuA1,
-      menuD1
+      zeplin,
+      youtube
     }
   }
 })
