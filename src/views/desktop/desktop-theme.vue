@@ -14,7 +14,7 @@
               class="wrapper-menu-item al-hover"
             >
               <img
-                :src="zeplin"
+                :src="getModuleLogoUrl('zeplin.png')"
                 alt=" "
               >
               <div>
@@ -37,7 +37,7 @@
               class="wrapper-menu-item al-hover"
             >
               <img
-                :src="youtube"
+                :src="getModuleLogoUrl('youtube.png')"
                 alt=" "
               >
               <div>
@@ -65,8 +65,7 @@ import {
   ArrowLine
 } from '../../components/svicon/publicIcon';
 import DesktopLogo from '../admin/logo/desktop-logo.vue';
-import zeplin from '../../assets/image/desktop/zeplin.png'
-import youtube from '../../assets/image/desktop/youtube.png'
+import {getModuleLogoUrl} from '../../util/baseUtil';
 
 export default defineComponent({
   name: 'DesktopTheme',
@@ -76,8 +75,7 @@ export default defineComponent({
   },
   setup () {
     return {
-      zeplin,
-      youtube
+      getModuleLogoUrl
     }
   }
 })

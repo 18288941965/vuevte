@@ -1,31 +1,37 @@
 <template>
   <header class="admin-header">
-    <button
-      class="btn-dft menu-collapse-icon"
-      @click="setMenuCollapse"
-    >
-      <MenuOpen
-        :class="{'icon-rotate' : menuCollapse }"
-      />
-    </button>
+    <el-tooltip :content="menuCollapse ? '展开菜单' : '折叠菜单' ">
+      <button
+        class="header-btn-dft menu-collapse-icon"
+        @click="setMenuCollapse"
+      >
+        <MenuOpen
+          :class="{'icon-rotate' : menuCollapse }"
+        />
+      </button>
+    </el-tooltip>
 
-    <button class="btn-dft">
-      <Search />
-    </button>
+    <el-tooltip content="搜索">
+      <button class="header-btn-dft">
+        <Search />
+      </button>
+    </el-tooltip>
 
-    <button
-      class="btn-dft"
-      @click="menuOpen"
-    >
-      <Adjust />
-    </button>
+    <el-tooltip content="定位菜单">
+      <button
+        class="header-btn-dft"
+        @click="menuOpen"
+      >
+        <Adjust />
+      </button>
+    </el-tooltip>
 
     <div
       v-show="activeMenus.menus.length > 0"
       class="header-menu-card"
     >
       <button
-        class="btn-dft btn-blue"
+        class="header-btn-dft header-btn-down"
         @click="setPanelShow(undefined, $event)"
       >
         <span>{{ getMenuLabel }}</span>
@@ -52,7 +58,7 @@
 
           <button
             v-if="activeMenus.menus.length > 1"
-            class="btn-dft btn-red"
+            class="header-menu-clean-btn"
             @click="cleanHistory"
           >
             清空历史

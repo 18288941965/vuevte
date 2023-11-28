@@ -1,21 +1,20 @@
 .admin-header{
   position: sticky;
   top: 0;
-  z-index: var(--z-index-c);
+  z-index: var(--z-index-z);
   display: flex;
   align-items: center;
   background-color: var(--header-bg-color);
   backdrop-filter: blur(5px);
   border-bottom: var(--color-border-1);
-  padding: 0 20px;
 }
 
 .header-menu-card{
   position: relative;
-  margin-left: 15px;
+  height: 100%;
   & .header-menu-panel{
     position: absolute;
-    top: 40px;
+    top: 50px;
     background-color: #ffffff;
     box-shadow: var(--color-shadow-large);
     width: 260px;
@@ -24,10 +23,12 @@
   }
   & .menu-panel-content{
     overflow: auto;
-    min-height: 200px;
-    max-height: 400px;
+    height: 400px;
     display: grid;
-    margin: 12px;
+    & ul{
+      margin: 12px;
+      height: 334px;
+    }
 
     & .menu-item{
       display: grid;
@@ -40,7 +41,7 @@
       padding: 0 10px;
       border-radius: 6px;
       &:hover{
-        background-color: var(--header-icon-bg-color);
+        background-color: var(--header-menu-hove-color);
       }
       & i{
         display: flex;
@@ -55,6 +56,7 @@
     }
 
     & .menu-active{
+      color: var(--header-menu-active-color);
       font-weight: bold;
     }
   }

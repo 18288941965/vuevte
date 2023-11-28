@@ -25,5 +25,5 @@
     background-color: var(--menu-active-bg-color);
 }
 .menu-active:hover{
-    background-color: var(--menu-active-bg-color);
+    background-color: var(--menu-active-bg-color) !important;
 }
