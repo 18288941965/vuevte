@@ -20,9 +20,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100% - 200px);
-  font-size: 20px;
+  min-height: calc(100vh - 120px);
   & a{
-    color: #FFFFFF !important;
+    color: #FFFFFF;
+    border-radius: inherit;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }
