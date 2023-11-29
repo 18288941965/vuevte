@@ -18,8 +18,8 @@
     background-color: #ffffff;
     box-shadow: var(--color-shadow-large);
     width: 260px;
-    border-radius: 12px;
     border: var(--color-border-1);
+    border-radius: var(--border-radius-full);
   }
   & .menu-panel-content{
     overflow: auto;
@@ -39,7 +39,6 @@
       margin-bottom: 6px;
       cursor: pointer;
       padding: 0 10px;
-      border-radius: 6px;
       &:hover{
         background-color: var(--header-menu-hove-color);
       }
@@ -48,14 +47,16 @@
         align-items: center;
       }
       & .menu-cache {
-        width: 6px;
-        height: 6px;
-        border-radius: 3px;
+        width: 8px;
+        height: 8px;
+        border-radius: var(--border-radius-small);
         background-color: #2BC385;
       }
     }
 
-    & .menu-active{
+    & .header-menu-active{
+      background-color: #CFE8FD;
+      border-left: 2px solid #0069C2;
       color: var(--header-menu-active-color);
       font-weight: bold;
     }

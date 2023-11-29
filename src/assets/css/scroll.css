@@ -3,7 +3,7 @@
 }
 .menu-scroll::-webkit-scrollbar-thumb {
     background-color: var(--menu-bg-color);
-    border-radius: 3px;
+    border-radius: var(--border-radius-3);
 }
 .menu-scroll::-webkit-scrollbar-track {
     background-color: var(--menu-bg-color);
@@ -18,7 +18,7 @@
 }
 .card-scroll::-webkit-scrollbar-thumb {
     background-color: #E3E3E3;
-    border-radius: 2px;
+    border-radius: var(--border-radius-2);
 }
 .card-scroll::-webkit-scrollbar-track {
     background-color: transparent;

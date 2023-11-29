@@ -102,7 +102,6 @@ export default defineComponent({
     height: 200px;
     box-shadow: var(--color-shadow-panel);
     background-color: #FFFFFF;
-    border-radius: 12px;
     padding: 10px 0;
     & .li-oper{
       line-height: 32px;

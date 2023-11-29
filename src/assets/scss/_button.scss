@@ -19,20 +19,14 @@
   height: 100%;
   padding: 0 15px;
   cursor: pointer;
-  border: 0;
+  border: 1px solid var(--header-btn-bg-color);
   color: var(--header-text-color);
   background-color: var(--header-btn-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
   &:hover{
-    background-image: radial-gradient(
-                    100px circle at center 70px,
-                    rgba(64, 158, 255, 0.4),
-                    transparent 40%
-    );
-    background-repeat: no-repeat;
-    box-shadow: 0 -15px 10px -10px #409eff inset;
+    background-color: var(--menu-bg-color);
   }
 }
 
@@ -55,8 +49,8 @@
   border-top: var(--color-border-1);
   background-color: transparent;
   cursor: pointer;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: var(--border-radius-full);
+  border-bottom-left-radius: var(--border-radius-full);
   &:hover{
     color: #ff0000;
   }

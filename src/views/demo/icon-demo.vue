@@ -74,6 +74,5 @@ export default defineComponent({
     display: grid;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
   }
 </style>

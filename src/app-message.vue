@@ -103,7 +103,6 @@ export default defineComponent({
       width: 36px;
       height: 36px;
       padding: 6px;
-      border-radius: 18px;
     }
     & span{
       display: inline-block;

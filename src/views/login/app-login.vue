@@ -141,7 +141,6 @@ export default defineComponent({
       display: grid;
       grid-gap: 40px;
       padding: 40px 20px;
-      border-radius: 6px;
     }
   }
 

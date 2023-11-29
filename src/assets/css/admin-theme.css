@@ -6,7 +6,9 @@
   /*菜单滚动条背景颜色*/
   --menu-scroll-bg-color: #575757;
   /*激活菜单的背景颜色*/
-  --menu-active-bg-color: #AA5991;
+  --menu-active-bg-color: #162F44;
+  /*激活菜单的边框颜色*/
+  --menu-active-bd-color: #8CB4FF;
   /*菜单hover颜色*/
   --menu-hover-color: rgba(255, 255, 255, 0.1);
   /*菜单的边框颜色*/
@@ -20,9 +22,7 @@
   /*头部按钮背景 */
   --header-btn-bg-color: transparent;
   /*头部菜单鼠标移上去 */
-  --header-menu-hove-color: #E8EAED;
-  /*头部菜单激活文字颜色 */
-  --header-menu-active-color: #FFFFFF;
+  --header-menu-hove-color: #FAFAFA;
   /*logo背景*/
   --logo-bg: var(--menu-bg-color);
   /*logo边框*/

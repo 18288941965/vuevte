@@ -22,6 +22,7 @@
     margin-right: 10px;
 }
 .menu-active{
+    border-left: 2px solid var(--menu-active-bd-color);
     background-color: var(--menu-active-bg-color);
 }
 .menu-active:hover{
