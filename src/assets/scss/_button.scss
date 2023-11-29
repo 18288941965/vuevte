@@ -48,8 +48,8 @@
   border-top: var(--color-border-1);
   background-color: transparent;
   cursor: pointer;
-  border-bottom-right-radius: var(--border-radius-full);
-  border-bottom-left-radius: var(--border-radius-full);
+  border-bottom-right-radius: var(--border-radius-extra-large);
+  border-bottom-left-radius: var(--border-radius-extra-large);
   &:hover{
     color: #ff0000;
   }
