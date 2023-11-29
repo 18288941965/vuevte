@@ -145,7 +145,6 @@ export default defineComponent({
   }
 
   .login-message{
-    font-size: 20px;
     line-height: 50px;
   }
 </style>

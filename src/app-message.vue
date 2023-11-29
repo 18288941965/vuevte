@@ -84,7 +84,6 @@ export default defineComponent({
       margin: 10px 20px 20px 60px;
     }
     & li{
-      font-size: 1.2rem;
       margin-bottom: 10px;
         height: 40px;
         display: grid;
@@ -107,7 +106,6 @@ export default defineComponent({
     & span{
       display: inline-block;
       margin: 16px 0 0 14px;
-      font-size: 16px;
       font-weight: bolder;
     }
     & button{

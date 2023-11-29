@@ -19,7 +19,6 @@ import logo from '../../../assets/logo.png'
 <style scoped lang="scss">
   .desktop-logo{
     height: 100%;
-    font-size: 20px;
     position: relative;
     display: flex;
     align-items: center;

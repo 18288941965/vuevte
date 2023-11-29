@@ -39,6 +39,7 @@
       margin-bottom: 6px;
       cursor: pointer;
       padding: 0 10px;
+      border-radius: var(--border-radius-small);
       &:hover{
         background-color: var(--header-menu-hove-color);
       }
@@ -56,9 +57,11 @@
 
     & .header-menu-active{
       background-color: #CFE8FD;
-      border-left: 2px solid #0069C2;
       color: var(--header-menu-active-color);
       font-weight: bold;
+      &:hover{
+        background-color: #CFE8FD;
+      }
     }
   }
 }

@@ -13,6 +13,7 @@
   --menu-hover-color: rgba(255, 255, 255, 0.1);
   /*菜单的边框颜色*/
   --menu-bd-color: #161B22;
+
   /*头部背景*/
   --header-bg-color: #343434;
   /*头部文字图标颜色*/
@@ -23,6 +24,7 @@
   --header-btn-bg-color: transparent;
   /*头部菜单鼠标移上去 */
   --header-menu-hove-color: #FAFAFA;
+
   /*logo背景*/
   --logo-bg: var(--menu-bg-color);
   /*logo边框*/

@@ -170,7 +170,7 @@ export default defineComponent({
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: var(--z-index-b);
     opacity: 0;
     transition: opacity 500ms;
   }
@@ -181,7 +181,7 @@ export default defineComponent({
       rgba(255,255,255,0.1),
       transparent 40%
     );
-    z-index: 3;
+    z-index: var(--z-index-c);
     user-select: none;
     pointer-events: none;
   }
@@ -192,7 +192,7 @@ export default defineComponent({
       rgba(255,255,255,0.3),
       transparent 40%
     );
-    z-index: 1;
+    z-index: var(--z-index-a);
   }
 
   .card > .card-context{
@@ -201,7 +201,7 @@ export default defineComponent({
     width: calc(100% - 2px);
     border-radius: inherit;
     margin: 1px ;
-    z-index: 2;
+    z-index: var(--z-index-b);
     position: relative;
   }
 </style>

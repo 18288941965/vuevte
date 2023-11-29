@@ -50,7 +50,6 @@ export default defineComponent({
   .admin-logo{
     width: 100%;
     z-index: var(--z-index-b);
-    font-size: 16px;
     position: relative;
     border-bottom: 1px solid var(--logo-border-color);
     background-color: var(--logo-bg);

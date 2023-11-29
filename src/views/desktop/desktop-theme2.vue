@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size: 40px;color: #FFFFFF;">
+  <div style="color: #FFFFFF;">
     黑色主题 | 首页
   </div>
 </template>
