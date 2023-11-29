@@ -9,7 +9,9 @@ export { default as Send } from './other-400-24/sv-send-icon.vue'
 export { default as Notifications } from './other-400-24/sv-notifications-icon.vue'
 export { default as Question } from './other-400-24/sv-question-icon.vue'
 export { default as Build } from './other-400-24/sv-build-icon.vue'
-
 export { default as Expand } from './other-400-24/sv-expand-icon.vue'
+export { default as Dark } from './other-400-24/sv-dark-icon.vue'
+export { default as Light } from './other-400-24/sv-light-icon.vue'
+
 export { default as GitHub } from './other/sv-github-icon.vue'
 export { default as ArrowLine } from './other/sv-arrow-line-icon.vue'

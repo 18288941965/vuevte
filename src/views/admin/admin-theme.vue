@@ -79,13 +79,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      // TODO 这里只是方便切换主题查看，实际应用中请在style中引入css
-      const id = router.currentRoute.value.query.id
-      if (id && id === '2') {
-        import('../../assets/css/admin-theme2.css')
-      } else {
-        import('../../assets/css/admin-theme.css')
-      }
+     //
     })
 
     return {
@@ -103,6 +97,10 @@ export default defineComponent({
 })
 </script>
 
+<style>
+  @import "../../assets/css/admin-dark.css";
+  @import "../../assets/css/admin-light.css";
+</style>
 <style scoped lang="scss">
   @import "../../assets/scss/admin-theme-public";
 </style>
