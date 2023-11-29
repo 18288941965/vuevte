@@ -51,7 +51,7 @@ export default defineComponent({
     width: 100%;
     z-index: var(--z-index-b);
     position: relative;
-    border-bottom: 1px solid var(--logo-border-color);
+    border-bottom: 1px solid var(--menu-bd-color);
     background-color: var(--logo-bg);
     display: flex;
     align-items: center;

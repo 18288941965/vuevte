@@ -1,25 +1,9 @@
-
-/*无背景边框*/
-.btn-tran{
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  border: 0;
-  margin-right: 20px;
-  background-color: transparent;
-  cursor: pointer;
-  &:hover{
-    color: #21A9FB;
-    background-color: #F7F7F8;
-  }
-}
-
-/*无背景有边框*/
+/*admin-header 按钮*/
 .header-btn-dft{
   height: 100%;
   padding: 0 15px;
   cursor: pointer;
-  border: 1px solid var(--header-btn-bg-color);
+  border: 0;
   color: var(--header-text-color);
   background-color: var(--header-btn-bg-color);
   display: flex;
@@ -30,18 +14,41 @@
   }
 }
 
+/*历史菜单按钮*/
 .header-btn-down{
-  width: initial;
+  height: 100%;
+  cursor: pointer;
+  margin-left: 15px;
+  border: 0;
+  color: var(--header-text-color);
+  background-color: var(--header-btn-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   & span{
     padding-left: 6px;
     font-weight: bolder;
   }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--menu-active-bd-color);
+    transition: width var(--duration-quick);
+  }
   &:hover{
-    background-image: none;
-    box-shadow: none;
+    color: var(--menu-active-bd-color);
+    &::before{
+      width: 100%;
+    }
   }
 }
 
+/*历史菜单清空按钮*/
 .header-menu-clean-btn{
   height: 40px;
   border: 0;
@@ -53,10 +60,4 @@
   &:hover{
     color: #ff0000;
   }
-}
-
-.btn-red{
-  width: 90px;
-  margin: auto auto 0 auto;
-  color: #CF222E;
 }

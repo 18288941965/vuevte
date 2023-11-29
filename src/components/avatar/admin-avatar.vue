@@ -1,18 +1,26 @@
 <template>
   <div class="admin-avatar">
-    <el-avatar
-      :size="24"
-      style="cursor: pointer;"
-      :style="{ 'background-color' : bgColor }"
+    <button
+      class="avatar-base"
       @click="setPanelShow(undefined, $event)"
     >
-      <template #default>
-        <PersonFill
-          :size="20"
-          :color="iconColor"
-        />
-      </template>
-    </el-avatar>
+      <el-avatar
+        :size="24"
+        :style="{ 'background-color' : bgColor }"
+      >
+        <template #default>
+          <PersonFill
+            :size="20"
+            :color="iconColor"
+          />
+        </template>
+      </el-avatar>
+      <Expand
+        class="avatar-expand"
+        color="var(--header-text-color)"
+      />
+    </button>
+
     <div
       v-show="panelShow"
       class="avatar-card"
@@ -38,14 +46,16 @@ import {defineComponent, ref, onMounted} from 'vue';
 import showContext from '../../context/showContext';
 import {doLogout, logoutContext} from '../../context/signContext';
 import {
-  PersonFill
+  PersonFill,
+  Expand
 } from '../svicon/publicIcon';
 import LocalStorage from '../../class/LocalStorage';
 
 export default defineComponent({
   name: 'AdminAvatar',
   components: {
-    PersonFill
+    PersonFill,
+    Expand
   },
   props: {
     bgColor: {
@@ -90,9 +100,24 @@ export default defineComponent({
 
 <style scoped lang="scss">
   .admin-avatar{
-    height: 24px;
-    width: 24px;
+    height: 100%;
+  }
+
+  .avatar-base{
+    height: 100%;
     position: relative;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    &:hover .avatar-expand{
+      transform: translateY(4px);
+    }
+  }
+
+  .avatar-expand{
+    transition: all var(--duration-quick);
   }
 
   .avatar-card{

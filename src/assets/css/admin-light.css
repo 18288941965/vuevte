@@ -6,7 +6,7 @@
   /*菜单滚动条背景颜色*/
   --menu-scroll-bg-color: #576986;
   /*激活菜单的背景颜色*/
-  --menu-active-bg-color: #E5F4FF;
+  --menu-active-bg-color: #CFE8FD;
   /*激活菜单的边框颜色*/
   --menu-active-bd-color: #0069C2;
   /*菜单hover颜色*/
@@ -27,8 +27,6 @@
 
   /*logo背景*/
   --logo-bg: var(--header-bg-color);
-  /*logo边框*/
-  --logo-border-color: var(--color-bd)
 }
 body,html,#app{
   overflow: hidden;

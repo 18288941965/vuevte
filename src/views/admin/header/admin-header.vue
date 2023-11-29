@@ -31,7 +31,7 @@
       class="header-menu-card"
     >
       <button
-        class="header-btn-dft header-btn-down"
+        class="header-btn-down"
         @click="setPanelShow(undefined, $event)"
       >
         <span>{{ getMenuLabel }}</span>
@@ -67,8 +67,9 @@
       </div>
     </div>
 
+    <app-theme class="mgl-auto" />
+
     <admin-avatar
-      class="mgl-auto"
       bg-color="#4385F4"
       icon-color="#ffffff"
     />
@@ -86,10 +87,12 @@ import {
   Search
 } from '../../../components/svicon/publicIcon';
 import showContext from '../../../context/showContext';
+import AppTheme from '../../../app-theme.vue';
 
 export default defineComponent({
   name: 'AdminHeader',
   components: {
+    AppTheme,
     Adjust,
     ArrowDropDown,
     MenuOpen,

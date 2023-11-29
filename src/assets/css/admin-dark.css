@@ -12,7 +12,7 @@
   /*菜单hover颜色*/
   --menu-hover-color: rgba(255, 255, 255, 0.1);
   /*菜单的边框颜色*/
-  --menu-bd-color: #161B22;
+  --menu-bd-color: #3B3A3A;
 
   /*头部背景*/
   --header-bg-color: #343434;
@@ -27,8 +27,6 @@
 
   /*logo背景*/
   --logo-bg: var(--menu-bg-color);
-  /*logo边框*/
-  --logo-border-color: var(--menu-bg-color);
 }
 body,html,#app{
   overflow: hidden;

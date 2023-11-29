@@ -18,6 +18,7 @@ import {isLogin} from './context/signContext';
 import {ReloadApp} from './types/baseType';
 import {BCEnum, RUEnum} from './enum/enum';
 import AppMessage from './app-message.vue';
+import {themeContext} from './AppTheme';
 
 export default defineComponent({
   components: {
@@ -86,6 +87,12 @@ export default defineComponent({
     provide('channel', channel)
     provide('reloadApp', reloadApp)
 
+    // 主题
+    const {
+      initThemeModel
+    } = themeContext()
+    
+
     function showColorImg() {
       this.style.display = 'none';
       this.nextSibling.style.display = 'inline';
@@ -97,6 +104,8 @@ export default defineComponent({
     }
     
     onMounted(() => {
+      initThemeModel()
+
       channel.addEventListener('message', onMessage)
 
      /*const can: any = document.createElement('canvas')
