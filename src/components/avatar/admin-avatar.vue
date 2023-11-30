@@ -26,14 +26,28 @@
       class="avatar-card"
     >
       <ul>
-        <li class="li-oper">
+        <li class="li-information">
           {{ userName }}
+        </li>
+        <li
+          class="li-btn"
+          @click="logout"
+        >
+          <Discover
+            color="var(--header-text-color)"
+            :size="20"
+          />
+          系统设置
         </li>
         <li class="li-divider" />
         <li
-          class="li-oper"
+          class="li-btn"
           @click="logout"
         >
+          <Logouts
+            color="var(--header-text-color)"
+            :size="20"
+          />
           退出登录
         </li>
       </ul>
@@ -47,7 +61,9 @@ import showContext from '../../context/showContext';
 import {doLogout, logoutContext} from '../../context/signContext';
 import {
   PersonFill,
-  Expand
+  Expand,
+  Discover,
+  Logouts
 } from '../svicon/publicIcon';
 import LocalStorage from '../../class/LocalStorage';
 
@@ -55,7 +71,9 @@ export default defineComponent({
   name: 'AdminAvatar',
   components: {
     PersonFill,
-    Expand
+    Expand,
+    Discover,
+    Logouts
   },
   props: {
     bgColor: {
@@ -122,20 +140,32 @@ export default defineComponent({
 
   .avatar-card{
     position: absolute;
-    right: 0;
-    width: 180px;
+    right: 10px;
+    top: 54px;
+    width: 220px;
     height: 200px;
     box-shadow: var(--color-shadow-panel);
     background-color: #FFFFFF;
     padding: 10px 0;
-    & .li-oper{
+    border-radius: var(--border-radius-large);
+    & .li-information{
+      color: var(--header-text-color);
+      text-align: center;
+      line-height: 60px;
+    }
+    & .li-btn{
       line-height: 32px;
       padding-left: 20px;
-      margin: 0 1px;
       cursor: pointer;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: center;
       &:hover{
         background-color: #2891ff;
         color: #FFFFFF;
+        & svg{
+          color: #FFFFFF;
+        }
       }
     }
     & .li-divider{
