@@ -143,13 +143,15 @@ export default defineComponent({
     right: 10px;
     top: 54px;
     width: 220px;
-    height: 200px;
+    height: 220px;
     box-shadow: var(--color-shadow-panel);
-    background-color: #FFFFFF;
+    background-color: var(--menu-bg-color);
     padding: 10px 0;
     border-radius: var(--border-radius-large);
+    & li{
+      color: var(--menu-text-color);
+    }
     & .li-information{
-      color: var(--header-text-color);
       text-align: center;
       line-height: 60px;
     }
@@ -171,7 +173,7 @@ export default defineComponent({
     & .li-divider{
       margin: 10px 0;
       height: 1px;
-      background-color: var(--color-bd);
+      background-color: var(--menu-bd-color);
     }
   }
 </style>

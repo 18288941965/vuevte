@@ -48,7 +48,7 @@
               v-for="(menu, index) in activeMenus.menus"
               :key="'header-menu-' + index"
               class="menu-item"
-              :class="{'header-menu-active': menu.id === activeMenus.menuId }"
+              :class="{'menu-active': menu.id === activeMenus.menuId }"
               @click.stop="pushRouter(menu)"
             >
               <span>{{ menu.label }}</span>

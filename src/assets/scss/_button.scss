@@ -50,9 +50,10 @@
 
 /*历史菜单清空按钮*/
 .header-menu-clean-btn{
+  color: var(--menu-text-color);
   height: 40px;
   border: 0;
-  border-top: var(--color-border-1);
+  border-top: 1px solid var(--menu-bd-color);
   background-color: transparent;
   cursor: pointer;
   border-bottom-right-radius: var(--border-radius-extra-large);
