@@ -1,0 +1,37 @@
+.app-login{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.login-header{
+  display: flex;
+  justify-content: flex-end;
+  height: 80px;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.login-main{
+  position: absolute;
+  width: 320px;
+  text-align: center;
+  left: 50%;
+  margin-left: -160px;
+  & img:first-child{
+    width: 48px;
+    height: 48px;
+  }
+  & section{
+    background-color: #F6F8FA;
+    border: 1px solid #DBDCDD;
+    display: grid;
+    grid-gap: 40px;
+    padding: 40px 20px;
+  }
+}
+
+.login-message{
+  line-height: 50px;
+}

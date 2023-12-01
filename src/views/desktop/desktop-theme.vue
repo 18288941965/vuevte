@@ -82,5 +82,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/scss/desktop-theme";
+  @use "../../assets/scssscoped/desktop/desktop-theme";
 </style>

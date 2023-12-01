@@ -142,5 +142,5 @@ export default defineComponent({
 })
 </script>
 <style>
-  @import "../../../assets/css/admin-menu.css";
+  @import "../../../assets/css/admin/admin-menu.css";
 </style>

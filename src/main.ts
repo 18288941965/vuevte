@@ -5,10 +5,10 @@ import router from './router'
 
 import 'element-plus/dist/index.css'
 import './style.css'
-import './assets/css/scroll.css'
-import './assets/css/nprogress.css'
-import './assets/scss/_button.scss'
-import './assets/scss/_animation.scss'
+import './assets/css/other/scroll.css'
+import './assets/css/other/nprogress.css'
+import './assets/scssscoped/other/_button.scss'
+import './assets/scssscoped/other/_animation.scss'
 
 // 模拟后端数据：在自己的项目中请删除此引用
 import './mocks/adminMock'

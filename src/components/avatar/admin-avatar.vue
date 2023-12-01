@@ -31,7 +31,6 @@
         </li>
         <li
           class="li-btn"
-          @click="logout"
         >
           <Discover
             color="var(--header-text-color)"
@@ -117,63 +116,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  .admin-avatar{
-    height: 100%;
-  }
-
-  .avatar-base{
-    height: 100%;
-    position: relative;
-    border: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    &:hover .avatar-expand{
-      transform: translateY(4px);
-    }
-  }
-
-  .avatar-expand{
-    transition: all var(--duration-quick);
-  }
-
-  .avatar-card{
-    position: absolute;
-    right: 10px;
-    top: 54px;
-    width: 220px;
-    height: 220px;
-    box-shadow: var(--color-shadow-panel);
-    background-color: var(--menu-bg-color);
-    padding: 10px 0;
-    border-radius: var(--border-radius-large);
-    & li{
-      color: var(--menu-text-color);
-    }
-    & .li-information{
-      text-align: center;
-      line-height: 60px;
-    }
-    & .li-btn{
-      line-height: 32px;
-      padding-left: 20px;
-      cursor: pointer;
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      align-items: center;
-      &:hover{
-        background-color: #2891ff;
-        color: #FFFFFF;
-        & svg{
-          color: #FFFFFF;
-        }
-      }
-    }
-    & .li-divider{
-      margin: 10px 0;
-      height: 1px;
-      background-color: var(--menu-bd-color);
-    }
-  }
+  @use "../../assets/scssscoped/admin/admin-avatar";
 </style>

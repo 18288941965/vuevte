@@ -47,43 +47,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  .admin-logo{
-    width: 100%;
-    z-index: var(--z-index-b);
-    position: relative;
-    border-bottom: 1px solid var(--menu-bd-color);
-    background-color: var(--logo-bg);
-    display: flex;
-    align-items: center;
-    & a{
-      display: inline-flex;
-      align-items: center;
-      color: var(--menu-text-color);
-      cursor: pointer;
-      text-decoration: none;
-      margin-left: 18px;
-    }
-    & img{
-      width: 24px;
-      margin-right: 12px;
-    }
-    & #admin-logo-text{
-      margin-right: 16px;
-      white-space: nowrap;
-      overflow: clip;
-      font-weight: bolder;
-    }
-  }
-
-  .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
-  }
-  .slide-fade-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-  .slide-fade-enter-from,
-  .slide-fade-leave-to {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
+  @use "../../../assets/scssscoped/admin/admin-logo";
 </style>

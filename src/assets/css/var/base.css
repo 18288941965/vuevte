@@ -1,0 +1,45 @@
+:root{
+    /*字体*/
+    --font-size-small: 14px;
+    --font-size-medium: 15px;
+    --font-size-large: 16px;
+
+    /*主题的顶部高度*/
+    --header-height: 60px;
+    /*覆盖element框架的样式*/
+    --el-menu-item-height: 46px;
+
+    --color-bd: #DBDCDD;
+    --color-border-1: 1px solid var(--color-bd);
+    --color-border-2: 2px solid var(--color-bd);
+
+    --color-shadow-small: 0 1px 0 rgba(31,35,40,0.04);
+    --color-shadow-medium: 0 3px 6px rgba(140,149,159,0.15);
+    --color-shadow-large: 0 8px 24px rgba(140,149,159,0.2);
+    --color-shadow-extra-large: 0 12px 28px rgba(140,149,159,0.3);
+    --color-shadow-panel: rgba(31, 35, 40, 0.12) 0 1px 3px, rgba(66, 74, 83, 0.12) 0 8px 24px;
+
+    /*层级*/
+    --z-index-a: 1;
+    --z-index-b: 2;
+    --z-index-c: 3;
+    --z-index-d: 10;
+    --z-index-e: 100;
+    --z-index-f: 500;
+    --z-index-g: 1000;
+    --z-index-h: 2000;
+    --z-index-i: 3000;
+    --z-index-z: 9999;
+
+    /*圆角*/
+    --border-radius-ultra-small: 2px;
+    --border-radius-small: 4px;
+    --border-radius-medium: 6px;
+    --border-radius-large: 8px;
+    --border-radius-extra-large : 12px;
+
+    /*动画周期*/
+    --duration-slow: 1.25s;
+    --duration-medium: 0.75s;
+    --duration-quick: 0.35s;
+}
