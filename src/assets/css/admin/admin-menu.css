@@ -15,11 +15,11 @@
 }
 
 .menu-icon{
-    vertical-align: middle;
-    text-align: center;
     display: flex;
     align-items: center;
     margin-right: 10px;
+    vertical-align: middle;
+    text-align: center;
 }
 .menu-active{
     border-left: 2px solid var(--menu-active-bd-color);

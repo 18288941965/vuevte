@@ -3,17 +3,17 @@
 }
 
 .home-header{
-  height: 60px;
   display: flex;
   align-items: center;
+  height: 60px;
   padding: 0 20px;
 }
 
 .header-github{
-  margin-right: 30px;
-  margin-left: auto;
   width: 24px;
   height: 24px;
+  margin-right: 30px;
+  margin-left: auto;
 }
 
 .home-main{
@@ -22,11 +22,11 @@
   justify-content: center;
   min-height: calc(100vh - 120px);
   & a{
-    color: #FFFFFF;
-    border-radius: inherit;
     display: flex;
-    height: 100%;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    border-radius: inherit;
+    color: #FFFFFF;
   }
 }

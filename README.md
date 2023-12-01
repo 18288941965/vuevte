@@ -1,18 +1,15 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## CSS属性定义顺序
+本项目所遵循的规范（子属性紧跟主属性）
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. content
+2. 布局属性（Box Model）：包括position、display、float、clear等。
+3. 盒模型属性：包括width、height、padding、border、margin等。
+4. 文字属性：包括color、font、text-align、text-decoration等。
+5. 背景属性：包括background-color、background-image、background-position等。
+6. 盒阴影属性：包括box-shadow、text-shadow等。
+7. 文本属性：包括text-indent、text-transform、text-overflow等。
+8. 表格布局属性：包括table-layout、border-collapse等。
+9. 动画属性：包括transition、animation等。
+10. 其他属性：包括opacity、cursor、z-index等。

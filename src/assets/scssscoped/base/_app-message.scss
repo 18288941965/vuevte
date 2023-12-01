@@ -4,9 +4,9 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: var(--z-index-z);
   background-color: transparent;
   overflow: auto;
+  z-index: var(--z-index-z);
 }
 
 .message-body{
@@ -19,24 +19,24 @@
     margin: 10px 20px 20px 60px;
   }
   & li{
-    margin-bottom: 10px;
-    height: 40px;
     display: grid;
     align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
   }
 }
 
 .message-header{
-  display: flex;
   position: sticky;
-  height: 50px;
   top: 0;
+  display: flex;
+  height: 50px;
   & div{
-    margin: 10px 0 0 10px;
-    background-color: #FFC12E;
     width: 36px;
     height: 36px;
     padding: 6px;
+    margin: 10px 0 0 10px;
+    background-color: #FFC12E;
   }
   & span{
     display: inline-block;
@@ -44,16 +44,16 @@
     font-weight: bolder;
   }
   & button{
-    margin-left: auto;
-    background-color: transparent;
-    border: 0;
     height: 32px;
     width: 56px;
-    cursor: pointer;
+    border: 0;
+    margin-left: auto;
+    background-color: transparent;
     transition: background-color 0.3s;
+    cursor: pointer;
     &:hover{
-      background-color: red;
       color: #FFFFFF;
+      background-color: red;
     }
   }
 }

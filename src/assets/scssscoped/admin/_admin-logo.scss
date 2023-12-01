@@ -1,18 +1,18 @@
 .admin-logo{
-  width: 100%;
-  z-index: var(--z-index-b);
   position: relative;
-  border-bottom: 1px solid var(--menu-bd-color);
-  background-color: var(--logo-bg);
   display: flex;
   align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--menu-bd-color);
+  background-color: var(--logo-bg);
+  z-index: var(--z-index-b);
   & a{
     display: inline-flex;
     align-items: center;
-    color: var(--menu-text-color);
-    cursor: pointer;
-    text-decoration: none;
     margin-left: 18px;
+    color: var(--menu-text-color);
+    text-decoration: none;
+    cursor: pointer;
   }
   & img{
     width: 24px;
@@ -21,8 +21,8 @@
   & #admin-logo-text{
     margin-right: 16px;
     white-space: nowrap;
-    overflow: clip;
     font-weight: bolder;
+    overflow: clip;
   }
 }
 

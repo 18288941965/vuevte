@@ -15,9 +15,9 @@
 }
 
 .left-wrapper{
-  background-color: var(--menu-bg-color);
   height: 100%;
   border-right: 1px solid var(--menu-bd-color);
+  background-color: var(--menu-bg-color);
   overflow-x: hidden;
   overflow-y: auto;
 }

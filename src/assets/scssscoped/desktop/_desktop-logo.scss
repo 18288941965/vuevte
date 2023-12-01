@@ -1,14 +1,14 @@
 .desktop-logo{
-  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
+  height: 100%;
   & a{
     display: inline-flex;
     align-items: center;
     color: var(--menu-text-color);
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
   }
   & img{
     width: 28px;

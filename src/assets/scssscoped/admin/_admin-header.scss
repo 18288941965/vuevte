@@ -1,12 +1,12 @@
 .admin-header{
   position: sticky;
   top: 0;
-  z-index: var(--z-index-z);
   display: flex;
   align-items: center;
+  border-bottom: var(--color-border-1);
   background-color: var(--header-bg-color);
   backdrop-filter: blur(5px);
-  border-bottom: var(--color-border-1);
+  z-index: var(--z-index-z);
 }
 
 .header-menu-card{
@@ -15,32 +15,32 @@
   & .header-menu-panel{
     position: absolute;
     top: 54px;
-    background-color: var(--menu-bg-color);
-    color: var(--menu-text-color);
-    box-shadow: var(--color-shadow-large);
     width: 260px;
     border: 1px solid var(--menu-bd-color);
     border-radius: var(--border-radius-extra-large);
+    color: var(--menu-text-color);
+    background-color: var(--menu-bg-color);
+    box-shadow: var(--color-shadow-large);
   }
   & .menu-panel-content{
-    overflow: auto;
-    height: 400px;
     display: grid;
+    height: 400px;
+    overflow: auto;
     & ul{
-      margin: 12px;
       height: 334px;
+      margin: 12px;
     }
 
     & .menu-item{
       display: grid;
       grid-template-columns: 1fr 10px;
+      align-items: center;
       height: 40px;
       line-height: 40px;
-      align-items: center;
-      margin-bottom: 6px;
-      cursor: pointer;
       padding: 0 10px;
       border-radius: var(--border-radius-small);
+      margin-bottom: 6px;
+      cursor: pointer;
       &:hover{
         background-color: var(--menu-hover-color);
       }
