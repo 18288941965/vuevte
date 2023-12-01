@@ -1,4 +1,4 @@
-@import "src/assets/css/var/base.css";
+@import "./assets/css/var/base.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
