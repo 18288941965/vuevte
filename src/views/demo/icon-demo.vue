@@ -62,17 +62,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-  .icon-demo{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .icon-demo-item{
-    margin: 10px;
-    width: 108px;
-    height: 108px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
+<style scoped lang="scss">
+  @use "../../assets/scssscoped/demo/icon-demo";
 </style>

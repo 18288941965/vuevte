@@ -39,7 +39,7 @@
               to="/desktop/theme"
               target="_blank"
             >
-              白色首页模板
+              首页模板1
             </router-link>
           </div>
         </div>
@@ -50,7 +50,7 @@
               to="/desktop/theme2"
               target="_blank"
             >
-              黑色首页模板
+              首页模板2
             </router-link>
           </div>
         </div>

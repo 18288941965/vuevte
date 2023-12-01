@@ -1,14 +1,22 @@
 <template>
-  <div style="color: #FFFFFF;">
-    黑色主题 | 首页
+  <div>
+    <header class="header-ht theme-header">
+      <DesktopLogo />
+    </header>
+
+    <h1>首页模板2</h1>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
+import DesktopLogo from '../admin/logo/desktop-logo.vue';
 
 export default defineComponent({
   name: 'DesktopTheme2',
+  components: {
+    DesktopLogo
+  },
   setup () {
     return {
 
@@ -16,16 +24,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style>
-:root{
-  --bg-color: rgb(20, 20, 20);
-  --card-color: rgb(23,23,23);
-}
-body{
-  background-color: var(--bg-color);
-}
-</style>
-<style scoped lang="scss">
-
-</style>

@@ -55,14 +55,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  .app-theme{
-    border: var(--color-border-1);
-    background-color: var(--menu-bg-color);
-    margin-right: 15px;
-    color: var(--header-text-color);
-    height: 32px;
-    padding: 3px 24px 0 10px;
-    border-radius: 16px;
-    cursor: pointer;
-  }
+  @use "./assets/scssscoped/other/app-theme";
 </style>

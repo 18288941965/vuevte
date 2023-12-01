@@ -4,6 +4,8 @@
       <DesktopLogo />
     </header>
 
+    <h1>首页模板1</h1>
+
     <main class="theme-mw theme-main">
       <div class="main-wrapper">
         <ul>
