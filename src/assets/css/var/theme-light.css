@@ -1,4 +1,5 @@
 .app-light {
+  color-scheme: light;
   /*菜单背景颜色*/
   --menu-bg-color: #FFFFFF;
   /*菜单文字颜色*/

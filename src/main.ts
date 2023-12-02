@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from './router'
 
 import 'element-plus/dist/index.css'
+import './assets/css/var/element-dark.css'
+
 import './style.css'
 import './assets/css/other/scroll.css'
 import './assets/css/other/nprogress.css'
