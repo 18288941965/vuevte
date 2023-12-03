@@ -10,11 +10,9 @@ function themeContext() {
     const setThemeModel = (model: string | null) => {
         model === null ? localStorage.removeItem(themeKey) : localStorage.setItem(themeKey, model)
 
-        const appElement = document.getElementById('app')
         const htmlElement = document.documentElement
-        if (appElement) {
-            appElement.setAttribute('class', `app-${model}`)
-            htmlElement.setAttribute('class', model ? model : '')
+        if (htmlElement) {
+            htmlElement.setAttribute('class', model ? `${model} app-${model}` : '')
         }
     }
 

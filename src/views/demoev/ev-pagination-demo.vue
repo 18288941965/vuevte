@@ -196,7 +196,6 @@ export default defineComponent({
 
 <style scoped>
   section{
-    background-color: #FFFFFF;
     padding: 20px;
     margin-top: 20px;
     border: var(--color-border-1);
