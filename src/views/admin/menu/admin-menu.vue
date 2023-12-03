@@ -11,9 +11,6 @@
       :collapse="collapse"
       :default-openeds="menuDefaultOpeneds"
       class="admin-el-menu"
-      background-color="var(--menu-bg-color)"
-      text-color="var(--menu-text-color)"
-      active-text-color="var(--menu-text-color)"
     >
       <template
         v-for="(menu, index) in menus[0].children"

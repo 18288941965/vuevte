@@ -3,7 +3,6 @@
     margin-top: 20px;
 }
 
-/*这里影响了全局*/
 .el-menu-item{
     margin-bottom: 6px;
 }
@@ -24,6 +23,7 @@
 .menu-active{
     border-left: 2px solid var(--menu-active-bd-color);
     background-color: var(--menu-active-bg-color);
+    color: var(--menu-active-color) !important;
 }
 .menu-active:hover{
     background-color: var(--menu-active-bg-color) !important;

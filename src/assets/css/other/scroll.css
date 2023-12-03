@@ -2,11 +2,11 @@
     width: 8px;
 }
 .menu-scroll::-webkit-scrollbar-thumb {
-    background-color: var(--menu-bg-color);
+    background-color: var(--el-menu-bg-color);
     border-radius: var(--border-radius-small);
 }
 .menu-scroll::-webkit-scrollbar-track {
-    background-color: var(--menu-bg-color);
+    background-color: var(--el-menu-bg-color);
 }
 .menu-scroll::-webkit-scrollbar-button {
     height: 0;

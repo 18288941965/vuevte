@@ -26,11 +26,11 @@
   width: 220px;
   height: 220px;
   padding: 10px 0;
+  border: 1px solid var(--menu-bd-color);
   border-radius: var(--border-radius-large);
-  background-color: var(--menu-bg-color);
-  box-shadow: var(--color-shadow-panel);
+  background-color: var(--el-bg-color);
+  box-shadow: var(--color-shadow-large);
   & li{
-    color: var(--menu-text-color);
   }
   & .li-information{
     line-height: 60px;

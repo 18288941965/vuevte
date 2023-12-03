@@ -44,6 +44,9 @@ export default defineComponent({
     ...publicIcon
   },
   setup () {
+    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    console.log(colorScheme);
+
     const menuIcons = ref<Array<String>>([])
     const publicIcons = ref<Array<String>>([])
 

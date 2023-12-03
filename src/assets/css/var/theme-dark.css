@@ -1,31 +1,17 @@
 .app-dark {
   color-scheme: dark;
-  /*菜单背景颜色*/
-  --menu-bg-color: #1B1B1B;
-  /*菜单文字颜色*/
-  --menu-text-color: #FFFFFF;
-  /*菜单滚动条背景颜色*/
   --menu-scroll-bg-color: #575757;
-  /*激活菜单的背景颜色*/
   --menu-active-bg-color: #162F44;
-  /*激活菜单的边框颜色*/
   --menu-active-bd-color: #8CB4FF;
-  /*菜单hover颜色*/
+  --menu-active-color: #FFFFFF;
   --menu-hover-color: rgba(255, 255, 255, 0.1);
-  /*菜单的边框颜色*/
   --menu-bd-color: #3B3A3A;
 
-  /*头部背景*/
   --header-bg-color: #343434;
-  /*头部文字图标颜色*/
   --header-text-color: #ffffff;
-  /*头部鼠标移上去背景*/
-  --header-icon-bg-color: var(--menu-bg-color);
-  /*头部按钮背景 */
+  --header-icon-bg-color: var(--el-menu-bg-color);
   --header-btn-bg-color: transparent;
-  /*头部菜单鼠标移上去 */
   --header-menu-hove-color: #FAFAFA;
 
-  /*logo背景*/
-  --logo-bg: var(--menu-bg-color);
+  --logo-bg: var(--el-menu-bg-color);
 }

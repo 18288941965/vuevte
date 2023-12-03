@@ -10,7 +10,7 @@
   background-color: var(--header-btn-bg-color);
   cursor: pointer;
   &:hover{
-    background-color: var(--menu-bg-color);
+    background-color: var(--el-menu-bg-color);
   }
 }
 
@@ -55,7 +55,6 @@
   border-top: 1px solid var(--menu-bd-color);
   border-bottom-right-radius: var(--border-radius-extra-large);
   border-bottom-left-radius: var(--border-radius-extra-large);
-  color: var(--menu-text-color);
   background-color: transparent;
   cursor: pointer;
   &:hover{

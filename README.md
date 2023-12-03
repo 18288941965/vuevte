@@ -1,7 +1,7 @@
 # Vue 3 + TypeScript + Vite
 
 ## CSS属性定义顺序
-本项目所遵循的规范（子属性紧跟主属性）
+本项目所遵循的规范==（子属性紧跟主属性）==:smile:
 
 1. content
 2. 布局属性（Box Model）：包括position、display、float、clear等。
@@ -13,3 +13,15 @@
 8. 表格布局属性：包括table-layout、border-collapse等。
 9. 动画属性：包括transition、animation等。
 10. 其他属性：包括opacity、cursor、z-index等。
+
+
+
+### 常见错误
+
+1、安装node包异常
+
+```
+Error: EPERM: operation not permitted, unlink 'E:\vuevte\node_modules\@esbuild\win32-x64\esbuild.exe'
+```
+
+解决方式：停止前端项目并清空缓存，重新安装即可。

@@ -6,7 +6,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #F9F9F9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,6 +33,10 @@ ul{
   padding: 0;
 }
 
+button{
+  border: 0;
+}
+
 .mg-20{
   margin: 20px;
 }
@@ -50,8 +53,8 @@ ul{
   height: var(--header-height);
 }
 
+/*这里是系统级别的主题（非当前项目的）*/
 @media (prefers-color-scheme: light) {
   :root {
-    color: #212121;
   }
 }
