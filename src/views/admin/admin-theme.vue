@@ -97,9 +97,9 @@ export default defineComponent({
 })
 </script>
 
-<style>
-  @import "../../assets/css/var/theme-dark.css";
-  @import "../../assets/css/var/theme-light.css";
+<style lang="scss">
+  @use "../../assets/scss/var/theme-dark";
+  @use "../../assets/scss/var/theme-light";
 </style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme-public";

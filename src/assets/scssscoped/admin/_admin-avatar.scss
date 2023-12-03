@@ -12,6 +12,7 @@
   cursor: pointer;
   &:hover .avatar-expand{
     transform: translateY(4px);
+    color: var(--header-text-hover-color);
   }
 }
 

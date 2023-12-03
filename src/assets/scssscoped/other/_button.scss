@@ -5,12 +5,10 @@
   justify-content: center;
   height: 100%;
   padding: 0 15px;
-  border: 0;
   color: var(--header-text-color);
-  background-color: var(--header-btn-bg-color);
-  cursor: pointer;
   &:hover{
-    background-color: var(--el-menu-bg-color);
+    color: var(--header-text-hover-color);
+    background-color: var(--el-bg-color);
   }
 }
 
@@ -21,11 +19,8 @@
   justify-content: center;
   position: relative;
   height: 100%;
-  border: 0;
   margin-left: 15px;
   color: var(--header-text-color);
-  background-color: var(--header-btn-bg-color);
-  cursor: pointer;
   & span{
     padding-left: 6px;
     font-weight: bolder;
@@ -41,7 +36,7 @@
     transition: width var(--duration-quick);
   }
   &:hover{
-    color: var(--menu-active-bd-color);
+    color: var(--header-text-hover-color);
     &::before{
       width: 100%;
     }
@@ -51,12 +46,9 @@
 /*历史菜单清空按钮*/
 .header-menu-clean-btn{
   height: 40px;
-  border: 0;
   border-top: 1px solid var(--menu-bd-color);
   border-bottom-right-radius: var(--border-radius-extra-large);
   border-bottom-left-radius: var(--border-radius-extra-large);
-  background-color: transparent;
-  cursor: pointer;
   &:hover{
     color: #ff0000;
   }
