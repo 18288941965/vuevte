@@ -1,15 +1,10 @@
 <template>
-  <div style="padding: 20px;">
-    <h2>◐◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◠◑</h2>
-    <h3>﹢﹢﹢﹢﹢﹢﹢在这里记录接下来要做的事﹢﹢﹢﹢﹢﹢﹢</h3>
-    <h2>◐◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◡◑</h2>
-  </div>
-
-  <hr>
+  <h2 style="border-bottom: 1px dotted;padding: 0 0 20px 20px">
+    任务栏
+  </h2>
 
   <ul style="padding: 20px;line-height: 40px;">
-    <li>1、整理css变量，分离第三方变量和本地变量</li>
-    <li>2、修改系统字体可定制</li>
+    <li>1、统一所有自定义弹窗的样式</li>
   </ul>
 </template>
 

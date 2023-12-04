@@ -5,14 +5,12 @@
   >
     <div class="message-body">
       <header class="message-header">
-        <div>
-          <Sms color="#FFFFFF" />
-        </div>
         <span>平台消息</span>
         <button
+          class="message-btn"
           @click="closeMessage"
         >
-          <Sms />
+          <Close :size="20" />
         </button>
       </header>
 
@@ -21,6 +19,7 @@
           v-for="(item, index) in systemMessageList"
           :key="'s-m-l-' + index"
         >
+          <Sms color="orange" />
           {{ item.msg }}
         </li>
       </ul>
@@ -32,13 +31,15 @@
 import { defineComponent, PropType } from 'vue'
 import {ChannelData} from './interface/publicInterface';
 import {
-  Sms
+  Sms,
+  Close
 } from './components/svicon/publicIcon';
 
 export default defineComponent({
   name: 'AppMessage',
   components: {
-    Sms
+    Sms,
+    Close
   },
   props: {
     systemMessageList: {

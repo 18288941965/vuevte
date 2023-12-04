@@ -8,7 +8,6 @@
   color: var(--header-text-color);
   &:hover{
     color: var(--header-text-hover-color);
-    background-color: var(--bg-color);
   }
 }
 
@@ -53,4 +52,15 @@
   &:hover{
     color: #ff0000;
   }
+}
+
+/*系统消息提示关闭按钮*/
+.message-btn{
+    height: 32px;
+    width: 46px;
+    margin-left: auto;
+    &:hover{
+      color: #FFFFFF;
+      background-color: #e30202;
+    }
 }

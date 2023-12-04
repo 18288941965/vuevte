@@ -10,6 +10,7 @@ export { default as Dark } from './other-400-24/sv-dark-icon.vue'
 export { default as Light } from './other-400-24/sv-light-icon.vue'
 export { default as Discover } from './other-400-24/sv-discover-icon.vue'
 export { default as Logouts } from './other-400-24/sv-logout-icon.vue'
+export { default as Close } from './other-400-24/sv-close-icon.vue'
 
 export { default as GitHub } from './other/sv-github-icon.vue'
 export { default as ArrowLine } from './other/sv-arrow-line-icon.vue'
