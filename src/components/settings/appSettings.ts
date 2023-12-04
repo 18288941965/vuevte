@@ -3,13 +3,15 @@ import {ref} from 'vue';
 function appSettingsContext() {
     const fontSize = ref()
     const fontKey = 'vv-font-size'
+    const fontType = ['small', 'medium', 'large']
 
     const setHtmlFont = (size = 'medium') => {
+        const temp = fontType.includes(size) ? size : 'medium'
         const htmlElement = document.documentElement
         if (htmlElement) {
-            htmlElement.style.fontSize = `var(--font-size-${size})`
-            localStorage.setItem(fontKey, size)
-            fontSize.value = size
+            htmlElement.style.fontSize = `var(--font-size-${temp})`
+            localStorage.setItem(fontKey, temp)
+            fontSize.value = temp
         }
     }
 

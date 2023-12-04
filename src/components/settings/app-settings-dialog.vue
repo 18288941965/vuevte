@@ -7,27 +7,30 @@
     :before-close="handleClose"
     @open="handleOpen"
   >
-    {{ fontSize }}
+    <el-card header="字体大小">
+      <el-button
+        :type="fontSize === 'small' ? 'primary' : ''"
+        @click="setHtmlFont('small')"
+      >
+        小 Small
+      </el-button>
+      <el-button
+        :type="fontSize === 'medium' ? 'primary' : ''"
+        @click="setHtmlFont('medium')"
+      >
+        中 Medium
+      </el-button>
+      <el-button
+        :type="fontSize === 'large' ? 'primary' : ''"
+        @click="setHtmlFont('large')"
+      >
+        大 Large
+      </el-button>
 
-
-    <el-button
-      style="font-size: 13px"
-      @click="setHtmlFont('small')"
-    >
-      小 Small
-    </el-button>
-    <el-button
-      style="font-size: 14px"
-      @click="setHtmlFont('medium')"
-    >
-      中 Medium
-    </el-button>
-    <el-button
-      style="font-size: 16px"
-      @click="setHtmlFont('large')"
-    >
-      大 Large
-    </el-button>
+      <p>
+        当前字号文本示例 Example of current font size text
+      </p>
+    </el-card>
   </el-dialog>
 </template>
 

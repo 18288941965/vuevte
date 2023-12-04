@@ -19,6 +19,7 @@ import {ReloadApp} from './types/baseType';
 import {BCEnum, RUEnum} from './enum/enum';
 import AppMessage from './app-message.vue';
 import {themeContext} from './AppTheme';
+import {appSettingsContext} from './components/settings/appSettings';
 
 export default defineComponent({
   components: {
@@ -92,6 +93,10 @@ export default defineComponent({
       initThemeModel
     } = themeContext()
     
+    const {
+      initFontSize
+    } = appSettingsContext()
+    
 
     function showColorImg() {
       this.style.display = 'none';
@@ -105,6 +110,7 @@ export default defineComponent({
     
     onMounted(() => {
       initThemeModel()
+      initFontSize()
 
       channel.addEventListener('message', onMessage)
 

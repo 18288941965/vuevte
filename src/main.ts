@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css'
 import './assets/css/var/element-dark.css'
 
 import './style.css'
+import './assets/scss/base/_cover-element.scss'
 import './assets/css/other/scroll.css'
 import './assets/css/other/nprogress.css'
 import './assets/scssscoped/other/_button.scss'
