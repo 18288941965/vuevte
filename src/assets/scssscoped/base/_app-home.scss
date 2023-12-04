@@ -1,5 +1,4 @@
 .app-home{
-  height: 100vh;
 }
 
 .home-header{
@@ -27,6 +26,6 @@
     justify-content: center;
     height: 100%;
     border-radius: inherit;
-    color: #FFFFFF;
+    color: var(--color-white);;
   }
 }
