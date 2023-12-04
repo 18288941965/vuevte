@@ -10,7 +10,7 @@
       ref="adminMenuRef"
       :collapse="collapse"
       :default-openeds="menuDefaultOpeneds"
-      class="admin-el-menu"
+      class="admin-el-menu menu-scroll"
     >
       <template
         v-for="(menu, index) in menus[0].children"

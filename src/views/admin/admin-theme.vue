@@ -4,7 +4,7 @@
     :class="{'menu-collapse' : menuCollapse}"
   >
     <div
-      class="left-wrapper menu-scroll"
+      class="left-wrapper"
     >
       <admin-menu
         ref="adminThemeMenuRef"

@@ -2,6 +2,12 @@ import {RouteRecordRaw} from 'vue-router'
 
 const menuDemoRouter: RouteRecordRaw[] = [
   {
+    path: '',
+    name: 'AdminDashboard',
+    component: () => import('../views/admin/admin-dashboard.vue'),
+    meta: { title: 'AdminDashboard' }
+  },
+  {
     path: 'icon/demo',
     name: 'IconDemo',
     component: () => import('../views/demo/icon-demo.vue'),

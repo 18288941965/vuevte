@@ -1,13 +1,21 @@
 .app-dark {
   color-scheme: dark;
-  --menu-scroll-bg-color: #575757;
+
+  --bg-color: var(--el-bg-color);
+
+  --scrollbar-thumb-bg-color: #686868;
+  --scrollbar-track-bg-color: transparent;
+
   --menu-active-bg-color: #162F44;
   --menu-active-bd-color: #8CB4FF;
-  --menu-active-color: #FFFFFF;
   --menu-hover-color: rgba(255, 255, 255, 0.1);
   --menu-bd-color: #3B3A3A;
 
   --header-bg-color: #161B22;
   --header-text-color: #B3BBC3;
   --header-text-hover-color: #FFFFFF;
+
+  --color-bd: #3B3A3A;
+  --color-border-1: 1px solid var(--color-bd);
+  --color-border-2: 2px solid var(--color-bd);
 }

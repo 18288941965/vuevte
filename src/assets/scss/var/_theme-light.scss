@@ -1,6 +1,11 @@
 .app-light {
   color-scheme: light;
-  --menu-scroll-bg-color: #576986;
+
+  --bg-color: var(--el-bg-color);
+
+  --scrollbar-thumb-bg-color: #E3E3E3;
+  --scrollbar-track-bg-color: transparent;
+
   --menu-active-bg-color: #CFE8FD;
   --menu-active-bd-color: #0069C2;
   --menu-hover-color: #F2F2F2;
@@ -9,4 +14,8 @@
   --header-bg-color: #F6F8FA;
   --header-text-color: #666666;
   --header-menu-hove-color: #FAFAFA;
+
+  --color-bd: #DBDCDD;
+  --color-border-1: 1px solid var(--color-bd);
+  --color-border-2: 2px solid var(--color-bd);
 }

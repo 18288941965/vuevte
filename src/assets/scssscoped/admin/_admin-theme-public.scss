@@ -10,16 +10,10 @@
   grid-template-columns: 76px 1fr;
 }
 
-.menu-scroll:hover::-webkit-scrollbar-thumb {
-  background-color: var(--menu-scroll-bg-color);
-}
-
 .left-wrapper{
   height: 100%;
   border-right: 1px solid var(--menu-bd-color);
-  background-color: var(--el-menu-bg-color);
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .right-wrapper{
