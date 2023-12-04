@@ -19,7 +19,7 @@
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
 import {ElRadioGroup, ElRadio} from 'element-plus/es'
-import {defaultProps, uniqueKey, getEvElContent, LabelValue} from './evEl';
+import {defaultProps, uniqueKey, getEvElContext, LabelValue} from './evEl';
 
 export default defineComponent({
   name: 'EvRadio',
@@ -45,7 +45,7 @@ export default defineComponent({
       getDataByDictType,
       getDataByReqUrl,
       getDataByDataList
-    } = getEvElContent()
+    } = getEvElContext()
 
     const updateSelectLabel = (val: string) => {
       if (!dictList.value || !props.labelUpdate) {

@@ -17,7 +17,7 @@
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
 import {ElSelect, ElOption} from 'element-plus/es'
-import {defaultProps, LabelValue, uniqueKey, getEvElContent} from './evEl';
+import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl';
 
 export default defineComponent({
   name: 'EvSelect',
@@ -40,7 +40,7 @@ export default defineComponent({
       getDataByDictType,
       getDataByReqUrl,
       getDataByDataList
-    } = getEvElContent()
+    } = getEvElContext()
 
     const updateSelectLabel = (val: Array<string> | string) => {
       if (!dictList.value || !props.labelUpdate) {

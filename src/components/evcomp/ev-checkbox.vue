@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import {defaultProps, LabelValue, uniqueKey, getEvElContent} from './evEl';
+import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl';
 import {ElCheckboxGroup, ElCheckbox} from 'element-plus';
 
 export default defineComponent({
@@ -45,7 +45,7 @@ export default defineComponent({
       getDataByDictType,
       getDataByReqUrl,
       getDataByDataList
-    } = getEvElContent()
+    } = getEvElContext()
 
     const updateSelectLabel = (val: Array<string>) => {
       if (!dictList.value || !props.labelUpdate) {

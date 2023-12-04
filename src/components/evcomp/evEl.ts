@@ -45,7 +45,7 @@ export const defaultProps = {
     }
 }
 
-export function getEvElContent () {
+export function getEvElContext () {
     const dictList = ref<LabelValue[]>([])
 
     /**

@@ -31,6 +31,7 @@
         </li>
         <li
           class="li-btn"
+          @click="dialogOpenSetting"
         >
           <Discover
             color="var(--header-text-color)"
@@ -51,6 +52,11 @@
         </li>
       </ul>
     </div>
+
+    <app-settings-dialog
+      v-bind="dialogSetting"
+      @close-dialog="dialogCloseSetting"
+    />
   </div>
 </template>
 
@@ -65,6 +71,8 @@ import {
   Logouts
 } from '../svicon/publicIcon';
 import LocalStorage from '../../class/LocalStorage';
+import {dialogEmptyContext} from '../../context/dialogContext';
+import AppSettingsDialog from '../settings/app-settings-dialog.vue';
 
 export default defineComponent({
   name: 'AdminAvatar',
@@ -72,7 +80,8 @@ export default defineComponent({
     PersonFill,
     Expand,
     Discover,
-    Logouts
+    Logouts,
+    AppSettingsDialog
   },
   props: {
     bgColor: {
@@ -89,6 +98,12 @@ export default defineComponent({
       panelShow,
       setPanelShow
     } = showContext()
+
+     const {
+        dialogEmpty: dialogSetting,
+       dialogEmptyOpen: dialogOpenSetting,
+       dialogEmptyClose: dialogCloseSetting
+     } = dialogEmptyContext()
      
      const userName = ref('')
 
@@ -109,7 +124,11 @@ export default defineComponent({
       panelShow,
       setPanelShow,
       logout,
-      userName
+      userName,
+
+      dialogSetting,
+      dialogOpenSetting,
+      dialogCloseSetting
     }
    }
 })

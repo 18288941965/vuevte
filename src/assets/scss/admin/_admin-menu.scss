@@ -25,6 +25,7 @@
 .menu-active{
     border-left: 2px solid var(--menu-active-bd-color);
     background-color: var(--menu-active-bg-color);
+    color: initial !important;
 }
 .menu-active:hover{
     background-color: var(--menu-active-bg-color) !important;
