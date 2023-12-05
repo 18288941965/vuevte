@@ -1,9 +1,11 @@
 <template>
   <div class="mg-20">
-    <p>基于 Element Plus → Radio 二次封装的选择器，对不同的数据选择做统一处理。</p>
+    <h3 style="text-align: center">
+      基于 Element Plus → Radio 二次封装的选择器，对不同的数据选择做统一处理。
+    </h3>
 
     <section>
-      <h2>根据字典类型获取数据</h2>
+      <p>根据字典类型获取数据</p>
       <div class="ev-comp-demo-grid2">
         <ev-radio
           v-model="evSelectValue.value"
@@ -14,7 +16,7 @@
     </section>
 
     <section>
-      <h2>根据URL获取数据</h2>
+      <p>根据URL获取数据</p>
       <div class="ev-comp-demo-grid2">
         <ev-radio
           v-model="evSelectValue.value2"
@@ -29,7 +31,7 @@
     </section>
 
     <section>
-      <h2>根据已有数据加载</h2>
+      <p>根据已有数据加载</p>
       <div class="ev-comp-demo-grid2">
         <ev-radio
           v-model="evSelectValue.value3"
@@ -79,9 +81,7 @@ export default defineComponent({
 
 <style scoped>
   section{
-    padding: 20px;
     margin-top: 20px;
-    border: var(--color-border-1);
   }
 
   .ev-comp-demo-grid2{

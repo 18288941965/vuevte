@@ -14,22 +14,10 @@ const menuDemoRouter: RouteRecordRaw[] = [
     meta: { title: 'IconDemo' }
   },
   {
-    path: 'ev/checkbox',
-    name: 'EvElCheckboxDemo',
-    component: () => import('../views/demoev/ev-checkbox-demo.vue'),
-    meta: { title: 'EvCheckboxDemo' }
-  },
-  {
-    path: 'ev/radio',
-    name: 'EvElRadioDemo',
-    component: () => import('../views/demoev/ev-radio-demo.vue'),
-    meta: { title: 'EvRadioDemo' }
-  },
-  {
-    path: 'ev/select',
-    name: 'EvElSelectDemo',
-    component: () => import('../views/demoev/ev-select-demo.vue'),
-    meta: { title: 'EvSelectDemo' }
+    path: 'ev/dic',
+    name: 'EvDicDemo',
+    component: () => import('../views/demoev/ev-dic-demo.vue'),
+    meta: { title: 'EvDicDemo' }
   },
   {
     path: 'ev/pagination',

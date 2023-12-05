@@ -3,7 +3,7 @@
     <p>基于 Element Plus → Pagination 二次封装的分页插件。</p>
 
     <section>
-      <h2>后端加载数据分页</h2>
+      <h3>后端加载数据分页</h3>
 
       <el-table
         :data="pager.list"
@@ -29,7 +29,7 @@
     </section>
 
     <section style="margin-top: 20px">
-      <h2>前端加载数据分页</h2>
+      <h3>前端加载数据分页</h3>
 
       <el-table
         ref="scrollTable"
@@ -57,7 +57,7 @@
 
 
     <section style="margin-top: 20px">
-      <h2>数据无限加载</h2>
+      <h3>数据无限加载</h3>
 
       <el-table
         :data="pager3.list"
@@ -196,8 +196,6 @@ export default defineComponent({
 
 <style scoped>
   section{
-    padding: 20px;
     margin-top: 20px;
-    border: var(--color-border-1);
   }
 </style>

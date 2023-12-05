@@ -4,7 +4,7 @@
   </h2>
 
   <ul style="padding: 20px;line-height: 40px;">
-    <li>1、统一所有自定义弹窗的样式</li>
+    <li>1、统一命名</li>
   </ul>
 </template>
 
