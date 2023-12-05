@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid var(--menu-bd-color);
+  border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
   z-index: var(--z-index-b);
   & a{

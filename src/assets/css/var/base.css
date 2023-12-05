@@ -47,6 +47,6 @@
     --duration-quick: 0.35s;
 
     --panel-bg-color: #FFFFFF;
-    --panel-bd-inner-color: #DFE1E5;
-    --panel-bd-outer-color: #C7CCD1;
+    --panel-border-inner-color: #DFE1E5;
+    --panel-border-outer-color: #C7CCD1;
 }

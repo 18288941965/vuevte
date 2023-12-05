@@ -3,7 +3,7 @@
   top: 0;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--menu-bd-color);
+  border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
   backdrop-filter: blur(5px);
   z-index: var(--z-index-f);
@@ -16,11 +16,11 @@
     position: absolute;
     top: 54px;
     width: 280px;
-    border: 1px solid var(--panel-bd-outer-color);
+    border: 1px solid var(--panel-border-outer-color);
     border-radius: var(--border-radius-large);
     color: var(--color-black-2);
     background-color: var(--panel-bg-color);
-    box-shadow: var(--color-shadow-large);
+    box-shadow: var(--box-shadow-large);
   }
   & .menu-panel-content{
     display: grid;
@@ -56,7 +56,7 @@
 
     & .header-menu-active{
       line-height: 50px;
-      border-bottom: 1px solid var(--panel-bd-inner-color);
+      border-bottom: 1px solid var(--panel-border-inner-color);
     }
   }
 }

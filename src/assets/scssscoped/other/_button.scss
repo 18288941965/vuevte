@@ -32,7 +32,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--menu-active-bd-color);
+    background-color: var(--menu-active-border-color);
     transition: width var(--duration-quick);
   }
   &:hover{
@@ -46,7 +46,7 @@
 /*历史菜单清空按钮*/
 .header-menu-clean-btn{
   height: 40px;
-  border-top: 1px solid var(--panel-bd-inner-color);
+  border-top: 1px solid var(--panel-border-inner-color);
   border-bottom-right-radius: var(--border-radius-large);
   border-bottom-left-radius: var(--border-radius-large);
   color: var(--color-black-2);

@@ -27,11 +27,11 @@
   width: 260px;
   height: 240px;
   padding: 20px;
-  border: 1px solid var(--panel-bd-outer-color);
+  border: 1px solid var(--panel-border-outer-color);
   border-radius: var(--border-radius-large);
   color: var(--color-black-2);
   background-color: var(--panel-bg-color);
-  box-shadow: var(--color-shadow-large);
+  box-shadow: var(--box-shadow-large);
   & .li-information{
     line-height: 60px;
     text-align: center;
@@ -49,6 +49,6 @@
   & .li-divider{
     height: 1px;
     margin: 15px 0;
-    background-color: var(--panel-bd-inner-color);
+    background-color: var(--panel-border-inner-color);
   }
 }
