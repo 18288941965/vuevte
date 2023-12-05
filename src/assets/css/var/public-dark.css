@@ -1,3 +1,16 @@
 .app-dark{
     --bg-color: #0D1117;
+
+    --scrollbar-thumb-bg-color: #686868;
+    --scrollbar-track-bg-color: transparent;
+
+    --color-bd: #3B3A3A;
+    --color-border-1: 1px solid var(--color-bd);
+    --color-border-2: 2px solid var(--color-bd);
+
+    --color-shadow-small: 0 1px 0 rgba(0,0,0, 1);
+    --color-shadow-medium: 0 3px 6px rgba(0,0,0, 1);
+    --color-shadow-large: 0 8px 24px rgba(0,0,0, 1);
+    --color-shadow-extra-large: 0 12px 28px rgba(0,0,0, 1);
+    --color-shadow-panel: rgba(0,0,0, 0.82) 0 1px 3px, rgba(0,0,0, 0.82) 0 8px 24px;
 }

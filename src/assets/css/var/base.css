@@ -5,6 +5,9 @@
     --font-size-large: 18px;
 
     --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-black-2: #1F2328;
+    --color-blue: #1F88FF;
 
     --h00-size: 3rem;
     --h0-size: 2.5rem;
@@ -42,4 +45,8 @@
     --duration-slow: 1.25s;
     --duration-medium: 0.75s;
     --duration-quick: 0.35s;
+
+    --panel-bg-color: #FFFFFF;
+    --panel-bd-inner-color: #DFE1E5;
+    --panel-bd-outer-color: #C7CCD1;
 }

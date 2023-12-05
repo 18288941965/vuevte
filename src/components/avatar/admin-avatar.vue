@@ -17,7 +17,6 @@
       </el-avatar>
       <Expand
         class="avatar-expand"
-        color="var(--header-text-color)"
       />
     </button>
 
@@ -34,7 +33,6 @@
           @click="dialogOpenSetting"
         >
           <Discover
-            color="var(--header-text-color)"
             :size="20"
           />
           系统设置
@@ -45,7 +43,6 @@
           @click="logout"
         >
           <Logouts
-            color="var(--header-text-color)"
             :size="20"
           />
           退出登录
