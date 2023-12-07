@@ -6,11 +6,18 @@
     <div
       class="left-wrapper"
     >
+      <admin-logo
+        class="header-ht"
+        :menu-collapse="menuCollapse"
+        :module-icon="rootMenu.icon"
+        :module-label="rootMenu.label"
+      />
       <admin-menu
         ref="adminThemeMenuRef"
         :collapse="menuCollapse"
         :menu-id="activeMenus.menuId"
         @push-router="pushRouter"
+        @set-parent-menu="setParentMenu"
       />
     </div>
     <div class="right-wrapper">
@@ -36,20 +43,27 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted} from 'vue';
+import {defineComponent, reactive, ref, onMounted} from 'vue';
 import AdminMenu from './menu/admin-menu.vue';
 import AdminHeader from './header/admin-header.vue';
 import {MenuStatusContext} from '../../context/menuContext';
 import {MenuBean} from '../../interface/menuInterface';
 import {useRouter} from 'vue-router';
+import AdminLogo from './logo/admin-logo.vue';
 
 export default defineComponent({
   name: 'AdminTheme',
   components: {
     AdminMenu,
-    AdminHeader
+    AdminHeader,
+    AdminLogo
   },
   setup () {
+    const rootMenu = reactive<{icon: String, label: String}>({
+      icon: '',
+      label: ''
+    })
+
     const router = useRouter()
     const adminThemeMenuRef = ref()
     const {
@@ -61,16 +75,25 @@ export default defineComponent({
       updateKeepAliveInclude
     } = MenuStatusContext()
 
+    const updateBrowserTitle = (menuLabel: string) => {
+      window.document.title = `${menuLabel} • ${rootMenu.label}`
+    }
+
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
       await router.push(menu.url as string)
       updateActiveMenus(menu)
+      updateBrowserTitle(menu.label as string)
     }
 
     const menuOpen = (index: string) => {
       adminThemeMenuRef.value?.menuOpen(index)
+    }
+
+    const setParentMenu = (icon: string, label: string) => {
+      Object.assign(rootMenu, { icon, label })
     }
 
     const cleanHistory = () => {
@@ -83,12 +106,14 @@ export default defineComponent({
     })
 
     return {
+      rootMenu,
       adminThemeMenuRef,
       activeMenus,
       menuCollapse,
       setMenuCollapse,
       keepAliveInclude,
 
+      setParentMenu,
       pushRouter,
       menuOpen,
       cleanHistory

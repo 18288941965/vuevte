@@ -1,4 +1,4 @@
-import {reactive, ref} from 'vue';
+import {reactive, ref, ObjectEmitsOptions} from 'vue';
 import {ActiveMenus, MenuBean} from '../interface/menuInterface';
 import axios from 'axios';
 import {AxiosResult} from '../interface/publicInterface';
@@ -62,7 +62,7 @@ export function MenuContext() {
     const menuDefaultOpeneds = ref<String[]>([])
 
     // 获取菜单并设置打开菜单样式
-    const getMenus = (pushRouter: PushRouter, routerPath: string ) => {
+    const getMenus = (pushRouter: PushRouter, routerPath: string, loadCallback: Function | undefined ) => {
         menuDefaultOpeneds.value = []
         axios.post('/api/admin/getMenus', { }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
@@ -70,6 +70,10 @@ export function MenuContext() {
                 if (data.length === 0) {
                     menus.value = []
                     return
+                }
+
+                if (loadCallback) {
+                    loadCallback(data[0].icon, data[0].label)
                 }
 
                 // 菜单的深度优先搜索

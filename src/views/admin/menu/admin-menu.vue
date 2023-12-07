@@ -1,15 +1,10 @@
 <template>
   <template v-if="menus.length > 0">
-    <admin-logo
-      class="header-ht"
-      :menu-collapse="collapse"
-      :module-icon="menus[0].icon"
-      :module-label="menus[0].label"
-    />
     <el-menu
       ref="adminMenuRef"
       :collapse="collapse"
       :default-openeds="menuDefaultOpeneds"
+      :default-active="menuId"
       class="admin-el-menu menu-scroll"
     >
       <template
@@ -67,13 +62,11 @@ import {MenuBean} from '../../../interface/menuInterface';
 import {MenuContext} from '../../../context/menuContext';
 import {useRouter} from 'vue-router';
 import {PushRouter} from '../../../types/baseType';
-import AdminLogo from '../logo/admin-logo.vue';
 import menuDfs from '../../../algo/menuDfs';
 
 export default defineComponent({
   name: 'AdminMenu',
   components: {
-    AdminLogo,
     AdminMenuChild
   },
   props: {
@@ -86,15 +79,15 @@ export default defineComponent({
       default: ''
     }
   },
-  emits: ['push-router'],
-  setup (props, { emit }) {
+  emits: ['push-router', 'set-parent-menu'],
+  setup (props, {emit}) {
     const router = useRouter()
     const adminMenuRef = ref()
 
     const {
       menus,
-      getMenus,
-      menuDefaultOpeneds
+      menuDefaultOpeneds,
+      getMenus
     } = MenuContext()
 
     // 2、滚动到当前的元素
@@ -122,10 +115,14 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
+    const loadCallback = (icon: string, label: string) => {
+      emit('set-parent-menu', icon, label)
+    }
+
     onMounted(() => {
       const routerPath =  router.currentRoute.value.path;
 
-      getMenus(pushRouter, routerPath)
+      getMenus(pushRouter, routerPath, loadCallback)
     })
 
     return {

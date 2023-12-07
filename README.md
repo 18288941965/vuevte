@@ -1,7 +1,7 @@
 # Vue 3 + TypeScript + Vite
 
 ## CSS属性定义顺序
-本项目所遵循的规范==（子属性紧跟主属性）==:smile:
+本项目所遵循的规范==（子属性紧跟主属性）==
 
 1. content
 2. 布局属性（Box Model）：包括position、display、float、clear等。
