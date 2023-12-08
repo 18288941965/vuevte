@@ -11,12 +11,6 @@
       </button>
     </el-tooltip>
 
-    <el-tooltip content="搜索">
-      <button class="header-btn-dft">
-        <Search />
-      </button>
-    </el-tooltip>
-
     <el-tooltip content="定位菜单">
       <button
         class="header-btn-dft"
@@ -67,6 +61,8 @@
       </div>
     </div>
 
+    <app-search></app-search>
+
     <app-theme class="mgl-auto" />
 
     <admin-avatar
@@ -88,6 +84,7 @@ import {
 } from '../../../components/svicon/publicIcon';
 import showContext from '../../../context/showContext';
 import AppTheme from '../../../app-theme.vue';
+import AppSearch from '../../app-search.vue';
 
 export default defineComponent({
   name: 'AdminHeader',
@@ -96,7 +93,7 @@ export default defineComponent({
     Adjust,
     ArrowDropDown,
     MenuOpen,
-    Search,
+    AppSearch,
     adminAvatar
   },
   props: {

@@ -94,6 +94,7 @@ export default defineComponent({
 
     const setParentMenu = (icon: string, label: string) => {
       Object.assign(rootMenu, { icon, label })
+      window.document.title = label
     }
 
     const cleanHistory = () => {
