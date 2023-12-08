@@ -71,3 +71,10 @@
   box-shadow: var(--box-shadow-medium);
   z-index: var(--z-index-b);
 }
+
+.app-search-content{
+  height: 100%;
+  overflow: auto;
+  background-color: red;
+  background-image: url("../../../assets/image/ad.png")
+}

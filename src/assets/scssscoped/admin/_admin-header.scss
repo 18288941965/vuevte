@@ -55,8 +55,7 @@
     }
 
     & .header-menu-active{
-      line-height: 50px;
-      border-bottom: 1px solid var(--panel-border-inner-color);
+      color: var(--color-blue);
     }
   }
 }

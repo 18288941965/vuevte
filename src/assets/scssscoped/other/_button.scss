@@ -25,21 +25,8 @@
     padding-left: 6px;
     font-weight: bolder;
   }
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--menu-active-border-color);
-    transition: width var(--duration-quick);
-  }
   &:hover{
     color: var(--header-text-hover-color);
-    &::before{
-      width: 100%;
-    }
   }
 }
 

@@ -9,7 +9,7 @@ export default function () {
         self.value ?  self.value = false : setPanelShow(false)
     }
 
-    const setPanelShow = (show: Show, evt?: PointerEvent) => {
+    const setPanelShow = (show: Show, evt?: MouseEvent) => {
         show === undefined ? panelShow.value = !panelShow.value : panelShow.value = show
         if (evt) {
             self.value = true

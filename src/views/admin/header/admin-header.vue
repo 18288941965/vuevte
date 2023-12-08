@@ -84,7 +84,7 @@ import {
 } from '../../../components/svicon/publicIcon';
 import showContext from '../../../context/showContext';
 import AppTheme from '../../../app-theme.vue';
-import AppSearch from '../../app-search.vue';
+import AppSearch from '../../../app-search.vue';
 
 export default defineComponent({
   name: 'AdminHeader',

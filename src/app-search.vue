@@ -30,8 +30,7 @@
       @click.stop="null"
     >
       <div
-        class="card-scroll"
-        style="height: 100%;overflow: auto;"
+        class="app-search-content card-scroll"
       >
         <ul>
           <li
@@ -51,8 +50,8 @@ import {defineComponent, reactive} from 'vue';
 import {
   Search,
   Expand
-} from '../components/svicon/publicIcon';
-import showContext from '../context/showContext';
+} from './components/svicon/publicIcon';
+import showContext from './context/showContext';
 
 export default defineComponent({
   name: 'AppSearch',
@@ -94,5 +93,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "../assets/scssscoped/other/app-search";
+  @use "assets/scssscoped/other/app-search";
 </style>

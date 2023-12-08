@@ -24,7 +24,6 @@
       >
         <component
           :is="item"
-          :size="48"
         />
         <span>{{ item }}</span>
       </div>
