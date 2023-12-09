@@ -8,8 +8,7 @@
         class="icon-demo-item"
       >
         <component
-          :is="item"
-          :size="48"
+          :is="item.toString()"
         />
         <span>{{ item }}</span>
       </div>
@@ -23,7 +22,7 @@
         class="icon-demo-item"
       >
         <component
-          :is="item"
+          :is="item.toString()"
         />
         <span>{{ item }}</span>
       </div>

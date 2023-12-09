@@ -20,8 +20,8 @@
         >
           <i class="menu-icon">
             <component
-              :is="menu.icon"
-              :size="24"
+              :is="menu.icon.toString()"
+              v-if="menu.icon"
             />
           </i>
 
@@ -38,8 +38,8 @@
           <template #title>
             <i class="menu-icon">
               <component
-                :is="menu.icon"
-                :size="24"
+                :is="menu.icon.toString()"
+                v-if="menu.icon"
               />
             </i>
             <span>{{ menu.label }}</span>
@@ -71,12 +71,11 @@ export default defineComponent({
   },
   props: {
     collapse: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     menuId: {
       type: String,
-      default: ''
+      required: true
     }
   },
   emits: ['push-router', 'set-parent-menu'],
