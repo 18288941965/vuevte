@@ -1,12 +1,15 @@
-// 菜单类型
-interface MenuBean{
-    label: string
-    icon: string | null
-    url: string | null
+interface MenuBeanBase{
     id: string
-    pid: string | null
+    label: string
+    icon: string | undefined
+}
+
+// 菜单类型
+interface MenuBean extends MenuBeanBase{
+    pid: string | undefined
+    url: string | undefined
     cache: boolean
-    name: string | null
+    name: string | undefined
     children?: Array<MenuBean>
 }
 
@@ -16,6 +19,7 @@ interface ActiveMenus {
 }
 
 export type {
+    MenuBeanBase,
     MenuBean,
     ActiveMenus
 }

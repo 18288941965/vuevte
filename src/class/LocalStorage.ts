@@ -15,6 +15,12 @@ export default class LocalStorage {
     }
     // 获取登录状态或用户名
     getLoginStatus (ls = true, un = false ) {
-        return ls ? localStorage.getItem(this.loginStatus) : localStorage.getItem(this.userName)
+        const loginStatus = localStorage.getItem(this.loginStatus) 
+        return loginStatus ? loginStatus : ''
+    }
+    
+    getUserName () {
+        const userName = localStorage.getItem(this.userName)
+        return userName ? userName : ''
     }
 }

@@ -20,6 +20,7 @@
 import {defineComponent, onMounted} from 'vue'
 import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl'
 import {ElCheckboxGroup, ElCheckbox} from 'element-plus'
+import {CheckboxValueType} from 'element-plus/es/components/checkbox/src/checkbox'
 
 export default defineComponent({
   name: 'EvCheckbox',
@@ -47,7 +48,7 @@ export default defineComponent({
       getDataByDataList
     } = getEvElContext()
 
-    const updateSelectLabel = (val: Array<string>) => {
+    const updateSelectLabel = (val: CheckboxValueType[]) => {
       if (!dictList.value || !props.labelUpdate) {
         return
       }

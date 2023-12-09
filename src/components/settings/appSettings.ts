@@ -17,7 +17,7 @@ function appSettingsContext() {
 
     const initFontSize = () => {
         const item = localStorage.getItem(fontKey)
-        setHtmlFont(item)
+        setHtmlFont(item ? item : undefined)
     }
 
     return {

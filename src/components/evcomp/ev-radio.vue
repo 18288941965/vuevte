@@ -47,7 +47,7 @@ export default defineComponent({
       getDataByDataList
     } = getEvElContext()
 
-    const updateSelectLabel = (val: string) => {
+    const updateSelectLabel = (val: string | number | boolean) => {
       if (!dictList.value || !props.labelUpdate) {
         return
       }

@@ -114,7 +114,7 @@ export default defineComponent({
 
      onMounted(() => {
        const local = new LocalStorage()
-       userName.value = local.getLoginStatus(false, true)
+       userName.value = local.getUserName()
      })
      
     return {

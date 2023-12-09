@@ -47,7 +47,7 @@ import {defineComponent, reactive, ref, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import AdminHeader from './header/admin-header.vue'
 import {MenuStatusContext} from '../../context/menuContext'
-import {MenuBean} from '../../interface/menuInterface'
+import {MenuBean, MenuBeanBase} from '../../interface/menuInterface'
 import {useRouter} from 'vue-router'
 import AdminLogo from './logo/admin-logo.vue'
 
@@ -59,7 +59,8 @@ export default defineComponent({
     AdminLogo
   },
   setup () {
-    const rootMenu = reactive<{icon: String, label: String}>({
+    const rootMenu = reactive<MenuBeanBase>({
+      id: '',
       icon: '',
       label: ''
     })
@@ -92,8 +93,8 @@ export default defineComponent({
       adminThemeMenuRef.value?.menuOpen(index)
     }
 
-    const setParentMenu = (icon: string, label: string) => {
-      Object.assign(rootMenu, { icon, label })
+    const setParentMenu = (id : string, label: string, icon = '') => {
+      Object.assign(rootMenu, { id, label, icon })
       window.document.title = label
     }
 

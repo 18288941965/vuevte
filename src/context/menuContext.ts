@@ -73,7 +73,7 @@ export function MenuContext() {
                 }
 
                 if (loadCallback) {
-                    loadCallback(data[0].icon, data[0].label)
+                    loadCallback(data[0].id, data[0].label, data[0].icon)
                 }
 
                 // 菜单的深度优先搜索

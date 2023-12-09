@@ -26,16 +26,15 @@ export default defineComponent({
   name: 'AdminLogo',
   props: {
     menuCollapse: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     moduleIcon: {
       type: String,
-      default: ''
+      default: undefined
     },
     moduleLabel: {
       type: String,
-      default: 'Vuevte'
+      default: undefined
     }
   },
   setup () {

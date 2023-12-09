@@ -115,8 +115,8 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
-    const loadCallback = (icon: string, label: string) => {
-      emit('set-parent-menu', icon, label)
+    const loadCallback = (id: string, label: string, icon = '') => {
+      emit('set-parent-menu', id, label, icon)
     }
 
     onMounted(() => {
