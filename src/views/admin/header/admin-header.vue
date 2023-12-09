@@ -79,8 +79,7 @@ import adminAvatar from '../../../components/avatar/admin-avatar.vue'
 import {
   Adjust,
   ArrowDropDown,
-  MenuOpen,
-  Search
+  MenuOpen
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
@@ -103,12 +102,7 @@ export default defineComponent({
     },
     activeMenus: {
       type: Object as PropType<ActiveMenus>,
-      default: () => {
-        return {
-          menuId: '',
-          menus: []
-        }
-      }
+      required: true
     }
   },
   emits: ['set-menu-collapse', 'push-router', 'menu-open', 'clean-history'],
@@ -123,10 +117,11 @@ export default defineComponent({
     }
 
     const getMenuLabel = computed(() => {
-      if (!props.activeMenus?.menuId) {
+      if (!props.activeMenus.menuId || !props.activeMenus.menus) {
         return ''
       }
-      return props.activeMenus?.menus.find(item => item.id === props.activeMenus?.menuId).label
+      const menuBean = props.activeMenus.menus.find(item => item.id === props.activeMenus.menuId)
+      return menuBean ? menuBean.label : ''
     })
 
     const pushRouter = (menu: MenuBean) => {

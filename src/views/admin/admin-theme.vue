@@ -99,7 +99,7 @@ export default defineComponent({
     }
 
     const cleanHistory = () => {
-      updateKeepAliveInclude(keepAliveInclude.value[0], true)
+      updateKeepAliveInclude(keepAliveInclude.value[0] as string, true)
       updateActiveMenus(activeMenus.menus[0], true)
     }
 
