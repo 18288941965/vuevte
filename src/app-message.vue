@@ -29,11 +29,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import {ChannelData} from './interface/publicInterface';
+import {ChannelData} from './interface/publicInterface'
 import {
   Sms,
   Close
-} from './components/svicon/publicIcon';
+} from './components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AppMessage',

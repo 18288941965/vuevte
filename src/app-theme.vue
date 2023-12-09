@@ -19,8 +19,8 @@ import { defineComponent, ref, onMounted } from 'vue'
 import {
   Dark,
   Light
-} from './components/svicon/publicIcon';
-import {themeContext} from './AppTheme';
+} from './components/svicon/publicIcon'
+import {themeContext} from './AppTheme'
 
 export default defineComponent({
   name: 'AppTheme',

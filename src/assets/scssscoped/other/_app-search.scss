@@ -68,6 +68,9 @@
   border-radius: var(--border-radius-large);
   color: var(--color-black-2);
   background-color: var(--panel-bg-color);
+  background-image: url("../../image/ad.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
   box-shadow: var(--box-shadow-medium);
   z-index: var(--z-index-b);
 }
@@ -75,6 +78,4 @@
 .app-search-content{
   height: 100%;
   overflow: auto;
-  background-color: red;
-  background-image: url("../../../assets/image/ad.png")
 }

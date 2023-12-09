@@ -34,10 +34,10 @@
       >
         <ul>
           <li
-            v-for="item in 10"
+            v-for="item in 20"
             :key="item"
           >
-            {{ item }}、
+            {{ item }}、搜索结果条目
           </li>
         </ul>
       </div>
@@ -46,12 +46,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
+import {defineComponent, reactive} from 'vue'
 import {
   Search,
   Expand
-} from './components/svicon/publicIcon';
-import showContext from './context/showContext';
+} from './components/svicon/publicIcon'
+import showContext from './context/showContext'
 
 export default defineComponent({
   name: 'AppSearch',

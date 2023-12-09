@@ -1,8 +1,8 @@
-import {ChannelData} from './interface/publicInterface';
-import {reactive, ref} from 'vue';
-import {ReloadApp} from './types/baseType';
-import {BCEnum, RUEnum} from './enum/enum';
-import {useRouter} from 'vue-router';
+import {ChannelData} from './interface/publicInterface'
+import {reactive, ref} from 'vue'
+import {ReloadApp} from './types/baseType'
+import {BCEnum, RUEnum} from './enum/enum'
+import {useRouter} from 'vue-router'
 
 export default function (BChannel: BroadcastChannel) {
     const router = useRouter()
