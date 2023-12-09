@@ -15,7 +15,7 @@
       <admin-menu
         ref="adminThemeMenuRef"
         :collapse="menuCollapse"
-        :menu-id="activeMenus.menuId"
+        :menu-id="activeMenus.menuId.toString()"
         @push-router="pushRouter"
         @set-parent-menu="setParentMenu"
       />

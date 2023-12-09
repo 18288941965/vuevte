@@ -6,7 +6,7 @@ import {PushRouter} from '../types/baseType'
 import menuDfs from '../algo/menuDfs'
 
 export function MenuStatusContext() {
-    const keepAliveInclude = ref<String[]>([])
+    const keepAliveInclude = ref<string[]>([])
     const activeMenus = reactive<ActiveMenus>({
         menuId: '',
         menus: []
