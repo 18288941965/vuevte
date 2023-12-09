@@ -58,18 +58,18 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, inject, reactive} from 'vue';
-import {useRouter} from 'vue-router';
+import {defineComponent, inject, reactive} from 'vue'
+import {useRouter} from 'vue-router'
 import logo from '../../assets/logo.png'
 import {
   GitHub
-} from '../../components/svicon/publicIcon';
-import {LoginBean} from '../../interface/publicInterface';
-import {doLogin} from '../../context/signContext';
-import {LoginSuccess} from '../../types/baseType';
-import BChannel from '../../BChannel';
-import {BCEnum} from '../../enum/enum';
-import LocalStorage from '../../class/LocalStorage';
+} from '../../components/svicon/publicIcon'
+import {LoginBean} from '../../interface/publicInterface'
+import {doLogin} from '../../context/signContext'
+import {LoginSuccess} from '../../types/baseType'
+import BChannel from '../../BChannel'
+import {BCEnum} from '../../enum/enum'
+import LocalStorage from '../../class/LocalStorage'
 
 export default defineComponent({
   name: 'AppLogin',

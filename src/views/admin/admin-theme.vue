@@ -43,13 +43,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, ref, onMounted} from 'vue';
-import AdminMenu from './menu/admin-menu.vue';
-import AdminHeader from './header/admin-header.vue';
-import {MenuStatusContext} from '../../context/menuContext';
-import {MenuBean} from '../../interface/menuInterface';
-import {useRouter} from 'vue-router';
-import AdminLogo from './logo/admin-logo.vue';
+import {defineComponent, reactive, ref, onMounted} from 'vue'
+import AdminMenu from './menu/admin-menu.vue'
+import AdminHeader from './header/admin-header.vue'
+import {MenuStatusContext} from '../../context/menuContext'
+import {MenuBean} from '../../interface/menuInterface'
+import {useRouter} from 'vue-router'
+import AdminLogo from './logo/admin-logo.vue'
 
 export default defineComponent({
   name: 'AdminTheme',

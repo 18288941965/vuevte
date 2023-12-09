@@ -62,12 +62,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent} from 'vue'
 import {
   ArrowLine
-} from '../../components/svicon/publicIcon';
-import DesktopLogo from '../admin/logo/desktop-logo.vue';
-import {getModuleLogoUrl} from '../../util/baseUtil';
+} from '../../components/svicon/publicIcon'
+import DesktopLogo from '../admin/logo/desktop-logo.vue'
+import {getModuleLogoUrl} from '../../util/baseUtil'
 
 export default defineComponent({
   name: 'DesktopTheme',

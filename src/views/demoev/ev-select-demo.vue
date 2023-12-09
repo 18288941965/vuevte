@@ -49,8 +49,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
-import EvSelect from '../../components/evcomp/ev-select.vue';
+import {defineComponent, reactive} from 'vue'
+import EvSelect from '../../components/evcomp/ev-select.vue'
 
 export default defineComponent({
   name: 'EvSelectDemo',

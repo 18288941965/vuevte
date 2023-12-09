@@ -1,5 +1,5 @@
 import {reactive, ref} from 'vue'
-import {DialogBase, DialogEmpty, DialogParam} from '../interface/publicInterface';
+import {DialogBase, DialogEmpty, DialogParam} from '../interface/publicInterface'
 
 // 无参对话框.
 export function dialogEmptyContext () {

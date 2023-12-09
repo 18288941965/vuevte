@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl';
-import {ElCheckboxGroup, ElCheckbox} from 'element-plus';
+import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl'
+import {ElCheckboxGroup, ElCheckbox} from 'element-plus'
 
 export default defineComponent({
   name: 'EvCheckbox',

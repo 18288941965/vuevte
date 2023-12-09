@@ -49,8 +49,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
-import EvRadio from '../../components/evcomp/ev-radio.vue';
+import {defineComponent, reactive} from 'vue'
+import EvRadio from '../../components/evcomp/ev-radio.vue'
 
 export default defineComponent({
   name: 'EvRadioDemo',

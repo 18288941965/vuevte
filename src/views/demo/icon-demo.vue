@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from 'vue';
+import {defineComponent, ref} from 'vue'
 import * as menuIcon from '../../components/svicon/menuIcon'
 import * as publicIcon from '../../components/svicon/publicIcon'
 

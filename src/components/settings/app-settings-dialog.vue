@@ -35,8 +35,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent,ref, watch} from 'vue';
-import {appSettingsContext} from './appSettings';
+import {defineComponent,ref, watch} from 'vue'
+import {appSettingsContext} from './appSettings'
 
 export default defineComponent({
   name: 'AppSettingsDialog',

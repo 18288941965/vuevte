@@ -56,13 +56,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref} from 'vue';
-import AdminMenuChild from './admin-menu-child.vue';
-import {MenuBean} from '../../../interface/menuInterface';
-import {MenuContext} from '../../../context/menuContext';
-import {useRouter} from 'vue-router';
-import {PushRouter} from '../../../types/baseType';
-import menuDfs from '../../../algo/menuDfs';
+import {defineComponent, onMounted, ref} from 'vue'
+import AdminMenuChild from './admin-menu-child.vue'
+import {MenuBean} from '../../../interface/menuInterface'
+import {MenuContext} from '../../../context/menuContext'
+import {useRouter} from 'vue-router'
+import {PushRouter} from '../../../types/baseType'
+import menuDfs from '../../../algo/menuDfs'
 
 export default defineComponent({
   name: 'AdminMenu',
@@ -92,7 +92,7 @@ export default defineComponent({
 
     // 2、滚动到当前的元素
     const scrollTarget = () => {
-      const targetElement = document.getElementsByClassName('menu-active');
+      const targetElement = document.getElementsByClassName('menu-active')
       if (targetElement.length > 0) {
         targetElement[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
       }
@@ -100,7 +100,7 @@ export default defineComponent({
 
     // 1、展开当前的菜单
     const menuOpen = (index: string) => {
-      const menuPrev = menuDfs(menus.value[0], index);
+      const menuPrev = menuDfs(menus.value[0], index)
       if (menuPrev.length > 1) {
         index = menuPrev[menuPrev.length - 2].id
       }
@@ -120,7 +120,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      const routerPath =  router.currentRoute.value.path;
+      const routerPath =  router.currentRoute.value.path
 
       getMenus(pushRouter, routerPath, loadCallback)
     })

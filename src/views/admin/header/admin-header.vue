@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <app-search></app-search>
+    <app-search />
 
     <app-theme class="mgl-auto" />
 
@@ -73,18 +73,18 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType, computed} from 'vue';
-import {ActiveMenus, MenuBean} from '../../../interface/menuInterface';
-import adminAvatar from '../../../components/avatar/admin-avatar.vue';
+import {defineComponent, PropType, computed} from 'vue'
+import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
+import adminAvatar from '../../../components/avatar/admin-avatar.vue'
 import {
   Adjust,
   ArrowDropDown,
   MenuOpen,
   Search
-} from '../../../components/svicon/publicIcon';
-import showContext from '../../../context/showContext';
-import AppTheme from '../../../app-theme.vue';
-import AppSearch from '../../../app-search.vue';
+} from '../../../components/svicon/publicIcon'
+import showContext from '../../../context/showContext'
+import AppTheme from '../../../app-theme.vue'
+import AppSearch from '../../../app-search.vue'
 
 export default defineComponent({
   name: 'AdminHeader',

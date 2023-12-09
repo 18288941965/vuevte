@@ -49,8 +49,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue';
-import EvCheckbox from '../../components/evcomp/ev-checkbox.vue';
+import {defineComponent, reactive} from 'vue'
+import EvCheckbox from '../../components/evcomp/ev-checkbox.vue'
 
 export default defineComponent({
   name: 'EvCheckboxDemo',

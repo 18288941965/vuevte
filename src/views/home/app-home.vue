@@ -60,11 +60,11 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue';
-import AdminAvatar from '../../components/avatar/admin-avatar.vue';
+import {defineComponent, onMounted} from 'vue'
+import AdminAvatar from '../../components/avatar/admin-avatar.vue'
 import {
   GitHub
-} from '../../components/svicon/publicIcon';
+} from '../../components/svicon/publicIcon'
 import DesktopLogo from '../admin/logo/desktop-logo.vue'
 
 export default defineComponent({

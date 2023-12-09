@@ -58,18 +58,18 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted} from 'vue';
-import showContext from '../../context/showContext';
-import {doLogout, logoutContext} from '../../context/signContext';
+import {defineComponent, ref, onMounted} from 'vue'
+import showContext from '../../context/showContext'
+import {doLogout, logoutContext} from '../../context/signContext'
 import {
   PersonFill,
   Expand,
   Discover,
   Logouts
-} from '../svicon/publicIcon';
-import LocalStorage from '../../class/LocalStorage';
-import {dialogEmptyContext} from '../../context/dialogContext';
-import AppSettingsDialog from '../settings/app-settings-dialog.vue';
+} from '../svicon/publicIcon'
+import LocalStorage from '../../class/LocalStorage'
+import {dialogEmptyContext} from '../../context/dialogContext'
+import AppSettingsDialog from '../settings/app-settings-dialog.vue'
 
 export default defineComponent({
   name: 'AdminAvatar',

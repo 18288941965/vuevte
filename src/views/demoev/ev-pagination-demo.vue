@@ -87,10 +87,10 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, reactive} from 'vue';
-import EvPagination from '../../components/evcomp/ev-pagination.vue';
-import {AxiosResult, Pagination} from '../../interface/publicInterface';
-import axios from 'axios';
+import {defineComponent, ref, onMounted, reactive} from 'vue'
+import EvPagination from '../../components/evcomp/ev-pagination.vue'
+import {AxiosResult, Pagination} from '../../interface/publicInterface'
+import axios from 'axios'
 
 export default defineComponent({
   name: 'EvPaginationDemo',

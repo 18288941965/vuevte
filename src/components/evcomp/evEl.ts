@@ -1,8 +1,8 @@
-import {PropType, ref} from 'vue';
-import axios from 'axios';
+import {PropType, ref} from 'vue'
+import axios from 'axios'
 
 export const uniqueKey = () : string => {
-    return Date.now().toString(36) + Math.random().toString(36).substring(2);
+    return Date.now().toString(36) + Math.random().toString(36).substring(2)
 }
 
 // 字典

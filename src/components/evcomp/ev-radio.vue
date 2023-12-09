@@ -19,7 +19,7 @@
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
 import {ElRadioGroup, ElRadio} from 'element-plus/es'
-import {defaultProps, uniqueKey, getEvElContext, LabelValue} from './evEl';
+import {defaultProps, uniqueKey, getEvElContext, LabelValue} from './evEl'
 
 export default defineComponent({
   name: 'EvRadio',

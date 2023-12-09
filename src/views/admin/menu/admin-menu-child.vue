@@ -40,8 +40,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue';
-import {MenuBean} from '../../../interface/menuInterface';
+import {defineComponent, PropType} from 'vue'
+import {MenuBean} from '../../../interface/menuInterface'
 
 export default defineComponent({
   name: 'AdminMenuChild',

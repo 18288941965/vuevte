@@ -17,7 +17,7 @@
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
 import {ElSelect, ElOption} from 'element-plus/es'
-import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl';
+import {defaultProps, LabelValue, uniqueKey, getEvElContext} from './evEl'
 
 export default defineComponent({
   name: 'EvSelect',

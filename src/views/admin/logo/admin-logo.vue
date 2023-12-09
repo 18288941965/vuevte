@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent } from 'vue';
-import {getModuleIconUrl} from '../../../util/baseUtil';
+import {defineComponent } from 'vue'
+import {getModuleIconUrl} from '../../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminLogo',

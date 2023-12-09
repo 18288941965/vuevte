@@ -1,4 +1,4 @@
-import {MenuBean} from '../interface/menuInterface';
+import {MenuBean} from '../interface/menuInterface'
 
 // 路由跳转
 export type PushRouter = (menu: MenuBean) => void

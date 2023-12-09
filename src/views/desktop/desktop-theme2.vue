@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
-import DesktopLogo from '../admin/logo/desktop-logo.vue';
+import {defineComponent} from 'vue'
+import DesktopLogo from '../admin/logo/desktop-logo.vue'
 
 export default defineComponent({
   name: 'DesktopTheme2',

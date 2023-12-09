@@ -1,12 +1,12 @@
-import axios from 'axios';
-import {AxiosResult, LoginBean} from '../interface/publicInterface';
-import {ElMessage} from 'element-plus';
-import {LoginSuccess, LogoutSuccess} from '../types/baseType';
-import {useRouter} from 'vue-router';
-import {inject} from 'vue';
-import BChannel from '../BChannel';
-import {BCEnum} from '../enum/enum';
-import LocalStorage from '../class/LocalStorage';
+import axios from 'axios'
+import {AxiosResult, LoginBean} from '../interface/publicInterface'
+import {ElMessage} from 'element-plus'
+import {LoginSuccess, LogoutSuccess} from '../types/baseType'
+import {useRouter} from 'vue-router'
+import {inject} from 'vue'
+import BChannel from '../BChannel'
+import {BCEnum} from '../enum/enum'
+import LocalStorage from '../class/LocalStorage'
 
 // 退出系统
 export const doLogout = (logoutSuccess: LogoutSuccess) => {
@@ -42,7 +42,7 @@ export const isLogin = () => {
 
 // 退出登录的回调函数内容
 export function logoutContext () {
-    const router = useRouter();
+    const router = useRouter()
     const channel = inject('channel') as BroadcastChannel
     const local = new LocalStorage()
     const {

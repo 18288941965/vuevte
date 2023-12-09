@@ -1,9 +1,9 @@
-import {reactive, ref, ObjectEmitsOptions} from 'vue';
-import {ActiveMenus, MenuBean} from '../interface/menuInterface';
-import axios from 'axios';
-import {AxiosResult} from '../interface/publicInterface';
-import {PushRouter} from '../types/baseType';
-import menuDfs from '../algo/menuDfs';
+import {reactive, ref} from 'vue'
+import {ActiveMenus, MenuBean} from '../interface/menuInterface'
+import axios from 'axios'
+import {AxiosResult} from '../interface/publicInterface'
+import {PushRouter} from '../types/baseType'
+import menuDfs from '../algo/menuDfs'
 
 export function MenuStatusContext() {
     const keepAliveInclude = ref<String[]>([])
