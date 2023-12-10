@@ -6,17 +6,23 @@
       @click.stop="null"
     >
       <Search :size="24" />
+
       <input
         v-model.trim="searchParams.searchValue"
         placeholder="搜索"
-        @focus="inputFocus"
+        @focus="setPanelShow(true)"
       >
-      <label for="app-search-input2">
+
+      <label for="app-search-type-input">
         范围
       </label>
-      <div class="app-search-select">
+      <div
+        class="app-search-type"
+        :class="{'app-search-type-open' : panelShowType }"
+        @click="setPanelShowType(true)"
+      >
         <input
-          id="app-search-input2"
+          id="app-search-type-input"
           v-model="searchParams.searchText"
           readonly
         >
@@ -25,9 +31,24 @@
     </div>
 
     <div
+      v-show="panelShowType"
+      class="app-search-panel-type"
+      @click.stop="null"
+    >
+      <ul>
+        <li
+          v-for="(item, index) in searchTypeList"
+          :key="'search-k-' + index"
+        >
+          {{ item.mc }}
+        </li>
+      </ul>
+    </div>
+
+    <div
       v-show="panelShow"
       class="app-search-panel"
-      @click.stop="null"
+      @click.stop="setPanelShowType(false)"
     >
       <div class="app-search-content card-scroll">
         <ul>
@@ -102,6 +123,11 @@ export default defineComponent({
       setPanelShow
     } = showContext()
 
+    const {
+      panelShow: panelShowType,
+      setPanelShow: setPanelShowType
+    } = showContext()
+
     const searchParams = reactive<{ searchValue: string, searchType: string, searchText: string}>({
       searchValue: '',
       searchType: '01',
@@ -113,17 +139,15 @@ export default defineComponent({
       { dm: '02', mc: '全部菜单' }
     ]
 
-    const inputFocus = () => {
-      setPanelShow(true)
-    }
-    
     return {
       panelShow,
       setPanelShow,
-      searchTypeList,
-      searchParams,
 
-      inputFocus
+      panelShowType,
+      setPanelShowType,
+      
+      searchTypeList,
+      searchParams
     }
   }
 })
