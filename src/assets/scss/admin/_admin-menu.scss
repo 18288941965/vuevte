@@ -1,7 +1,7 @@
-@use "../../../assets/scss/varscss" as *;
+@use "../../../assets/scss/varscss" as sc;
 
 .admin-el-menu{
-    height: calc(100% - $header-height);
+    height: calc(100% - #{sc.$header-height});
     border: 0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -17,7 +17,7 @@
 .menu-icon{
     display: flex;
     align-items: center;
-    margin-right: $mg-small;
+    margin-right: sc.$mg-small;
     vertical-align: middle;
     text-align: center;
 }

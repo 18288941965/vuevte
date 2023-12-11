@@ -1,54 +1,9 @@
-/*admin-header 按钮*/
-.header-btn-dft{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0 15px;
-  color: var(--header-text-color);
-  &:hover{
-    color: var(--header-text-hover-color);
-  }
-}
-
-/*历史菜单按钮*/
-.header-btn-down{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  margin-left: 15px;
-  color: var(--header-text-color);
-  font-size: var(--h4-size);
-  & span{
-    padding-left: 6px;
-    font-weight: bolder;
-  }
-  &:hover{
-    color: var(--header-text-hover-color);
-  }
-}
-
-/*历史菜单清空按钮*/
-.header-menu-clean-btn{
-  height: 40px;
-  border-top: 1px solid var(--panel-border-inner-color);
-  border-bottom-right-radius: var(--border-radius-large);
-  border-bottom-left-radius: var(--border-radius-large);
-  color: var(--color-black-2);
-  &:hover{
-    color: #ff0000;
-  }
-}
-
-/*系统消息提示关闭按钮*/
-.message-btn{
+.close-btn{
     height: 32px;
     width: 46px;
     margin-left: auto;
     &:hover{
       color: var(--color-white);;
-      background-color: #e30202;
+      background-color: var(--color-red2);
     }
 }

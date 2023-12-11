@@ -68,3 +68,48 @@
     transform: rotate(180deg);
   }
 }
+
+/*---------------操作按钮-----------------*/
+
+@mixin button-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-btn-dft{
+  @include button-flex;
+  height: 100%;
+  padding: 0 sc.$pd-medium;
+  color: var(--header-text-color);
+  &:hover{
+    color: var(--header-text-hover-color);
+  }
+}
+
+.header-btn-down{
+  @include button-flex;
+  position: relative;
+  height: 100%;
+  margin-left: sc.$mg-medium;
+  color: var(--header-text-color);
+  font-size: var(--h4-size);
+  & span{
+    padding-left: sc.$pd-small;
+    font-weight: bolder;
+  }
+  &:hover{
+    color: var(--header-text-hover-color);
+  }
+}
+
+.header-menu-clean-btn{
+  height: sc.$lh-medium;
+  border-top: 1px solid var(--panel-border-inner-color);
+  border-bottom-right-radius: var(--border-radius-large);
+  border-bottom-left-radius: var(--border-radius-large);
+  color: var(--color-black-2);
+  &:hover{
+    color: var(--color-red);
+  }
+}

@@ -124,9 +124,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-  @use "../../assets/scss/varscss/theme-dark";
-  @use "../../assets/scss/varscss/theme-light";
+<style>
+  @import "../../assets/css/var/theme-dark.css";
+  @import "../../assets/css/var/theme-light.css";
 </style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme-public";

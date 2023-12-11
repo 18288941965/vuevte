@@ -7,12 +7,12 @@ import 'element-plus/dist/index.css'
 import './assets/css/var/element-dark.css'
 
 import './style.css'
+import './assets/css/other/cover-element.css'
 import './assets/css/other/scroll.css'
 import './assets/css/other/nprogress.css'
+import './assets/css/other/animation.css'
 
-import './assets/scss/base/_cover-element.scss'
 import './assets/scss/base/_button.scss'
-import './assets/scss/base/_animation.scss'
 
 // 模拟后端数据：在自己的项目中请删除此引用
 import './mocks/adminMock'

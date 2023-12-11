@@ -7,7 +7,7 @@
       <header class="message-header">
         <span>平台消息</span>
         <button
-          class="message-btn"
+          class="close-btn"
           @click="closeMessage"
         >
           <Close :size="20" />
