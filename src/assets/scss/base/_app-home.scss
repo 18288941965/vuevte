@@ -65,6 +65,7 @@
   width: calc(100% - 2px);
   border-radius: inherit;
   margin: 1px ;
-  background-color: var(--border-color);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   z-index: var(--z-index-b);
 }

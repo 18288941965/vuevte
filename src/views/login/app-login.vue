@@ -12,37 +12,26 @@
     <main class="login-main">
       <img
         :src="logo"
+        class="logo"
         alt=" "
       >
-      <p class="login-message">
-        登录到 Vuevte
-      </p>
+      <h1>Vuevte</h1>
 
       <section>
-        <el-input
+        <input
           v-model.trim="loginBean.username"
-          size="large"
           placeholder="账号"
           autofocus
           @keyup.enter="login"
         >
-          <template #prefix>
-            <GitHub />
-          </template>
-        </el-input>
 
-        <el-input
+        <input
           v-model.trim="loginBean.password"
           placeholder="密码"
           size="large"
-          show-password
           type="password"
           @keyup.enter="login"
         >
-          <template #prefix>
-            <GitHub />
-          </template>
-        </el-input>
 
         <el-button
           color="#1F2328"
