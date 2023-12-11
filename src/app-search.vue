@@ -9,7 +9,7 @@
 
       <input
         v-model.trim="searchParams.searchValue"
-        placeholder="搜索"
+        placeholder="搜索或跳转到..."
         @focus="setPanelShow(true)"
       >
 
