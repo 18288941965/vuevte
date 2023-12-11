@@ -1,3 +1,5 @@
+@use "../../../assets/scss/varscss" as sc;
+
 .admin-header{
   position: sticky;
   top: 0;
@@ -14,8 +16,8 @@
   height: 100%;
   & .header-menu-panel{
     position: absolute;
-    top: 54px;
-    width: 280px;
+    top: sc.$panel-top;
+    width: sc.$panel-width-medium;
     border: 1px solid var(--panel-border-outer-color);
     border-radius: var(--border-radius-large);
     color: var(--color-black-2);
@@ -27,17 +29,15 @@
     height: 400px;
     overflow: auto;
     & ul{
-      height: 334px;
-      margin: 12px;
+      height: 328px;
+      margin: sc.$mg-medium;
     }
 
     & .menu-item{
       display: grid;
       grid-template-columns: 1fr 10px;
       align-items: center;
-      line-height: 40px;
-      padding: 0 10px;
-      margin-bottom: 6px;
+      line-height: sc.$lh-medium;
       cursor: pointer;
       &:hover{
         color: var(--color-blue);

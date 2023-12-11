@@ -1,9 +1,15 @@
+@use "src/assets/scss/varscss/header" as ah;
+
 .admin-theme{
   display: grid;
   grid-template-columns: 260px 1fr;
   width: 100vw;
   height: 100vh;
   transition: grid-template-columns 0.3s;
+}
+
+.admin-header-ht{
+  height: ah.$header-height;
 }
 
 .menu-collapse{

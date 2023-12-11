@@ -79,10 +79,6 @@ a{
   margin-left: auto;
 }
 
-.header-ht{
-  height: var(--header-height);
-}
-
 /*这里是系统级别的主题（非当前项目的）*/
 @media (prefers-color-scheme: light) {
   :root {

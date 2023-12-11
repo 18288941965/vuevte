@@ -21,9 +21,6 @@
     --h6-size: 0.75rem;
     --body-font-size: 0.875rem;
 
-    /*主题的顶部高度*/
-    --header-height: 60px;
-
     /*层级*/
     --z-index-a: 1;
     --z-index-b: 2;

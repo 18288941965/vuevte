@@ -7,7 +7,7 @@
       class="left-wrapper"
     >
       <admin-logo
-        class="header-ht"
+        class="admin-header-ht"
         :menu-collapse="menuCollapse"
         :module-icon="rootMenu.icon"
         :module-label="rootMenu.label"
@@ -22,7 +22,7 @@
     </div>
     <div class="right-wrapper">
       <admin-header
-        class="header-ht"
+        class="admin-header-ht"
         :menu-collapse="menuCollapse"
         :active-menus="activeMenus"
         @set-menu-collapse="setMenuCollapse"
@@ -125,8 +125,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-  @use "../../assets/scss/var/theme-dark";
-  @use "../../assets/scss/var/theme-light";
+  @use "../../assets/scss/varscss/theme-dark";
+  @use "../../assets/scss/varscss/theme-light";
 </style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme-public";

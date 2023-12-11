@@ -1,3 +1,5 @@
+@use "../../../assets/scss/varscss" as sc;
+
 .admin-logo{
   position: relative;
   display: flex;
@@ -9,16 +11,16 @@
   & a{
     display: inline-flex;
     align-items: center;
-    margin-left: 18px;
+    margin-left: sc.$mg-medium;
     text-decoration: none;
     cursor: pointer;
   }
   & img{
     width: 24px;
-    margin-right: 12px;
+    margin-right: sc.$mg-medium;
   }
   & #admin-logo-text{
-    margin-right: 16px;
+    margin-right: sc.$mg-medium;
     white-space: nowrap;
     font-weight: bolder;
     overflow: clip;

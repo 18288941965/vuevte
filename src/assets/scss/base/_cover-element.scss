@@ -1,7 +1,7 @@
-@use "../var/distance" as distance;
+@use "../../../assets/scss/varscss" as sc;
 
 :root{
-  --el-menu-item-height: 46px;
+  --el-menu-item-height: 40px;
   --el-font-size-base: var(--body-font-size);
   --el-pagination-font-size: var(--body-font-size);
 }
@@ -12,5 +12,5 @@
 
 .el-pagination{
   justify-content: center;
-  margin-top: distance.$mg-medium;
+  margin-top: sc.$mg-medium;
 }

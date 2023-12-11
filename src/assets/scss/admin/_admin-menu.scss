@@ -1,15 +1,12 @@
-@import "../../../assets/scss/var/distance";
+@use "../../../assets/scss/varscss" as *;
 
 .admin-el-menu{
-    height: calc(100% - var(--header-height));
+    height: calc(100% - $header-height);
     border: 0;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-.el-menu-item{
-    margin-bottom: $mg-ultra-small;
-}
 .el-popper.is-light{
     border-color: var(--menu-border-color);
 }
@@ -20,12 +17,12 @@
 .menu-icon{
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: $mg-small;
     vertical-align: middle;
     text-align: center;
 }
 .menu-active{
-    border-left: 2px solid var(--menu-active-border-color);
+    border-right: 2px solid var(--menu-active-border-color);
     background-color: var(--menu-active-bg-color);
     color: initial !important;
 }

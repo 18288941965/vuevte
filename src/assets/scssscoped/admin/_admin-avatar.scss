@@ -1,3 +1,5 @@
+@use "../../../assets/scss/varscss" as sc;
+
 .admin-avatar{
   height: 100%;
 }
@@ -22,25 +24,25 @@
 
 .avatar-card{
   position: absolute;
-  right: 10px;
-  top: 54px;
-  width: 260px;
+  right: sc.$mg-small;
+  top: sc.$panel-top;
+  width: sc.$panel-width-medium;
   height: 240px;
-  padding: 20px;
+  padding: sc.$pd-large;
   border: 1px solid var(--panel-border-outer-color);
   border-radius: var(--border-radius-large);
   color: var(--color-black-2);
   background-color: var(--panel-bg-color);
   box-shadow: var(--box-shadow-large);
   & .li-information{
-    line-height: 60px;
+    line-height: sc.$lh-large;
     text-align: center;
   }
   & .li-btn{
     display: grid;
     grid-template-columns: 40px 1fr;
     align-items: center;
-    line-height: 40px;
+    line-height: sc.$lh-medium;
     cursor: pointer;
     &:hover{
       color: var(--color-blue) !important ;
@@ -48,7 +50,7 @@
   }
   & .li-divider{
     height: 1px;
-    margin: 15px 0;
+    margin: sc.$mg-medium 0;
     background-color: var(--panel-border-inner-color);
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="header-ht theme-header">
+    <header class="theme-header">
       <DesktopLogo />
     </header>
 
