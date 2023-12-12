@@ -1,9 +1,10 @@
 .close-btn{
-    height: 32px;
-    width: 46px;
-    margin-left: auto;
+    height: 40px;
+    width: 40px;
+  color: var(--color-black-6);
+  border-radius: var(--border-radius-ultra-large);
     &:hover{
-      color: var(--color-white);;
-      background-color: var(--color-red2);
+      background-color: var(--panel-bg2-color);
+      color: var(--color-black);
     }
 }

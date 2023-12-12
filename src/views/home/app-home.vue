@@ -53,12 +53,24 @@
         >
         <span>首页模板2</span>
       </router-link>
+
+      <a
+        href="#"
+        class="main-link"
+        @click="sendMessage"
+      >
+        <img
+          :src="messageIcon"
+          alt=" "
+        >
+        <span>消息推送</span>
+      </a>
     </main>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue'
+import {defineComponent, inject} from 'vue'
 import AvatarCard from '../../components/avatar/avatar-card.vue'
 import {
   GitHub
@@ -66,6 +78,10 @@ import {
 import DesktopLogo from '../admin/logo/desktop-logo.vue'
 import adminIcon from '../../assets/image/home/admin-icon.png'
 import homeIcon from '../../assets/image/home/home-icon.png'
+import messageIcon from '../../assets/image/home/message-icon.png'
+import BChannel from '../../BChannel'
+import {BCEnum} from '../../enum/enum'
+import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({
   name: 'AppHome',
@@ -75,11 +91,21 @@ export default defineComponent({
     DesktopLogo
   },
   setup () {
-    onMounted(() => {
-    })
+    const channel = inject('channel') as BroadcastChannel
+    const {
+      postMessage
+    } = BChannel(channel)
+    
+    const sendMessage = () => {
+      postMessage({ code: BCEnum.OTHER, msg: '你收到一条消息，一条系统普通提示消息！' })
+      ElMessage.success('推送成功！请在其他窗口查阅')
+    }
+    
     return {
       adminIcon,
-      homeIcon
+      homeIcon,
+      messageIcon,
+      sendMessage
     }
   }
 })

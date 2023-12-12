@@ -11,37 +11,40 @@
 
 .message-body{
   max-width: 600px;
-  min-height: 300px;
+  min-height: 360px;
   border: var(--border-1);
   border-radius: var(--border-radius-small);
   margin: 80px auto 0 auto;
   box-shadow: var(--box-shadow-panel);
+  background-color: var(--panel-bg-color);
   & ul {
-    margin: 10px 0 20px 0;
-    border-top: var(--border-1);
+    margin: var(--mg-large);
   }
   & li{
     display: grid;
     grid-template-columns: 34px 1fr;
     align-items: center;
-    height: 40px;
-    padding-left: 14px;
-    border-bottom: var(--border-1);
-    margin-bottom: 10px;
+    padding: var(--pd-medium);
+    border: 1px solid var(--panel-border-inner-color);
+    border-radius: var(--border-radius-medium);
+    margin-bottom: var(--mg-small);
     font-size: var(--h4-size);
-    background-color: var(--header-bg-color);
+    color: var(--color-black);
   }
 }
 
 .message-header{
   position: sticky;
   top: 0;
-  display: flex;
-  height: 50px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 40px;
+  padding: 0 var(--pd-large);
+  line-height: var(--lh-large);
+  color: var(--color-black-2);
   & span{
     display: inline-block;
-    margin: 10px 0 0 14px;
-    font-size: var(--h5-size);
+    font-size: var(--h4-size);
     font-weight: bolder;
   }
 }
