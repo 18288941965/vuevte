@@ -1,9 +1,11 @@
 .app-theme{
-  height: 32px;
-  padding: 3px 24px 0 10px;
+  display: flex;
+  align-items: center;
+  height: var(--btn-height);
+  padding: 0 var(--pd-small);
   border: var(--border-1);
-  border-radius: 16px;
-  margin-right: 15px;
+  border-radius: var(--border-radius-medium);
+  margin-right: var(--mg-medium);
   color: var(--header-text-color);
   cursor: pointer;
   &:hover{

@@ -3,21 +3,15 @@
 }
 
 .avatar-base{
-  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
   border: 0;
+  margin-right: var(--mg-medium);
   background-color: transparent;
-  cursor: pointer;
-  &:hover .avatar-expand{
-    transform: translateY(4px);
-    color: var(--header-text-hover-color);
+  & .el-avatar{
+    cursor: pointer;
   }
-}
-
-.avatar-expand{
-  transition: all var(--duration-quick);
 }
 
 .avatar-card{

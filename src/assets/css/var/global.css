@@ -65,11 +65,11 @@
     --pd-large: 20px;
     --pd-ultra-large: 30px;
 
+    --btn-height: 32px;
+
     --lh-small: 32px;
     --lh-medium: 40px;
     --lh-large: 60px;
 
     --header-height: 60px;
-    --header-height-context: 50px;
-    --header-height-context2: 40px;
 }

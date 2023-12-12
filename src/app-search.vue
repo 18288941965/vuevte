@@ -1,55 +1,50 @@
 <template>
-  <div class="app-search">
-    <div
-      class="app-search-grid"
-      :class="{'app-search-open' : panelShow }"
-      @click.stop="null"
+  <div
+    class="app-search"
+  >
+    <button
+      class="app-search-button"
+      @click.stop="setPanelShow(undefined)"
     >
-      <Search :size="24" />
-
-      <input
-        v-model.trim="searchParams.searchValue"
-        placeholder="搜索或跳转到..."
-        @focus="setPanelShow(true)"
-      >
-
-      <label for="app-search-type-input">
-        范围
-      </label>
-      <div
-        class="app-search-type"
-        :class="{'app-search-type-open' : panelShowType }"
-        @click="setPanelShowType(true)"
-      >
-        <input
-          id="app-search-type-input"
-          v-model="searchParams.searchText"
-          readonly
-        >
-        <Expand :size="24" />
-      </div>
-    </div>
-
-    <div
-      v-show="panelShowType"
-      class="app-search-panel-type"
-      @click.stop="null"
-    >
-      <ul>
-        <li
-          v-for="(item, index) in searchTypeList"
-          :key="'search-k-' + index"
-        >
-          {{ item.mc }}
-        </li>
-      </ul>
-    </div>
+      <Search :size="20" />
+      <span>搜索</span>
+      <span>|</span>
+      <span>跳转</span>
+    </button>
 
     <div
       v-show="panelShow"
       class="app-search-panel"
       @click.stop="setPanelShowType(false)"
     >
+      <div
+        class="app-search-grid"
+        @click.stop="null"
+      >
+        <Search :size="24" />
+
+        <input
+          v-model.trim="searchParams.searchValue"
+          placeholder="搜索"
+          @focus="setPanelShow(true)"
+        >
+
+        <label for="app-search-type-input">
+          范围
+        </label>
+        <div
+          class="app-search-type"
+          @click="setPanelShowType(true)"
+        >
+          <input
+            id="app-search-type-input"
+            v-model="searchParams.searchText"
+            readonly
+          >
+          <Expand :size="24" />
+        </div>
+      </div>
+
       <div class="app-search-content card-scroll">
         <ul>
           <li
@@ -99,6 +94,21 @@
           </li>
         </ul>
       </footer>
+
+      <div
+        v-show="panelShowType"
+        class="app-search-panel-type"
+        @click.stop="null"
+      >
+        <ul>
+          <li
+            v-for="(item, index) in searchTypeList"
+            :key="'search-k-' + index"
+          >
+            {{ item.mc }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

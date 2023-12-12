@@ -1,24 +1,22 @@
 <template>
   <div class="admin-avatar">
-    <button
+    <div
       class="avatar-base"
-      @click="setPanelShow(undefined, $event)"
     >
       <el-avatar
-        :size="24"
+        :size="32"
         :style="{ 'background-color' : bgColor }"
+        class="avatar-btn"
+        @click="setPanelShow(undefined, $event)"
       >
         <template #default>
           <PersonFill
-            :size="20"
+            :size="24"
             :color="iconColor"
           />
         </template>
       </el-avatar>
-      <Expand
-        class="avatar-expand"
-      />
-    </button>
+    </div>
 
     <div
       v-show="panelShow"
@@ -63,7 +61,6 @@ import showContext from '../../context/showContext'
 import {doLogout, logoutContext} from '../../context/signContext'
 import {
   PersonFill,
-  Expand,
   Discover,
   Logouts
 } from '../svicon/publicIcon'
@@ -75,7 +72,6 @@ export default defineComponent({
   name: 'AvatarCard',
   components: {
     PersonFill,
-    Expand,
     Discover,
     Logouts,
     AppSettingsDialog
