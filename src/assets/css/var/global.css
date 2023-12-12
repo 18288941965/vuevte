@@ -50,4 +50,25 @@
     --panel-bg-color: #FFFFFF;
     --panel-border-inner-color: #DFE1E5;
     --panel-border-outer-color: #C7CCD1;
+    --panel-width-medium: 260px;
+
+    --mg-ultra-small: 5px;
+    --mg-small: 10px;
+    --mg-medium: 15px;
+    --mg-large: 20px;
+    --mg-ultra-large: 30px;
+
+    --pd-ultra-small: 5px;
+    --pd-small: 10px;
+    --pd-medium: 15px;
+    --pd-large: 20px;
+    --pd-ultra-large: 30px;
+
+    --lh-small: 32px;
+    --lh-medium: 40px;
+    --lh-large: 60px;
+
+    --header-height: 60px;
+    --header-height-context: 50px;
+    --header-height-context2: 40px;
 }

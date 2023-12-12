@@ -1,5 +1,3 @@
-@use "../../scss/var/distance" as dt;
-
 .admin-logo{
   position: relative;
   display: flex;
@@ -11,16 +9,16 @@
   & a{
     display: inline-flex;
     align-items: center;
-    margin-left: dt.$mg-medium;
+    margin-left: var(--mg-medium);
     text-decoration: none;
     cursor: pointer;
   }
   & img{
     width: 24px;
-    margin-right: dt.$mg-medium;
+    margin-right: var(--mg-medium);
   }
   & #admin-logo-text{
-    margin-right: dt.$mg-medium;
+    margin-right: var(--mg-medium);
     white-space: nowrap;
     font-weight: bolder;
     overflow: clip;
