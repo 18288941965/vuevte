@@ -154,5 +154,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "assets/scssscoped/other/app-search";
+  @use "assets/scssscoped/components/app-search";
 </style>

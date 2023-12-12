@@ -20,41 +20,39 @@
     </header>
 
     <main class="home-main">
-      <div id="cards">
-        <div class="card">
-          <div class="card-border" />
-          <div class="card-context">
-            <router-link
-              to="/admin/theme"
-              target="_blank"
-            >
-              后台管理模板
-            </router-link>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-border" />
-          <div class="card-context">
-            <router-link
-              to="/desktop/theme"
-              target="_blank"
-            >
-              首页模板1
-            </router-link>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-border" />
-          <div class="card-context">
-            <router-link
-              to="/desktop/theme2"
-              target="_blank"
-            >
-              首页模板2
-            </router-link>
-          </div>
-        </div>
-      </div>
+      <router-link
+        class="main-link"
+        to="/admin/theme"
+        target="_blank"
+      >
+        <img
+          :src="adminIcon"
+          alt=" "
+        >
+        <span>后台管理模板</span>
+      </router-link>
+      <router-link
+        class="main-link"
+        to="/desktop/theme"
+        target="_blank"
+      >
+        <img
+          :src="homeIcon"
+          alt=" "
+        >
+        <span>首页模板1</span>
+      </router-link>
+      <router-link
+        class="main-link"
+        to="/desktop/theme2"
+        target="_blank"
+      >
+        <img
+          :src="homeIcon"
+          alt=" "
+        >
+        <span>首页模板2</span>
+      </router-link>
     </main>
   </div>
 </template>
@@ -66,6 +64,8 @@ import {
   GitHub
 } from '../../components/svicon/publicIcon'
 import DesktopLogo from '../admin/logo/desktop-logo.vue'
+import adminIcon from '../../assets/image/home/admin-icon.png'
+import homeIcon from '../../assets/image/home/home-icon.png'
 
 export default defineComponent({
   name: 'AppHome',
@@ -76,25 +76,14 @@ export default defineComponent({
   },
   setup () {
     onMounted(() => {
-      /*document.getElementById('cards').onmousemove = (e) => {
-        for (const card of document.getElementsByClassName('card')) {
-          const rect = card.getBoundingClientRect()
-          const x = e.clientX - rect.left
-          const y = e.clientY - rect.top
-          card.style.setProperty('--mouse-x', `${x}px`)
-          card.style.setProperty('--mouse-y', `${y}px`)
-        }
-      }*/
     })
     return {
-      //
+      adminIcon,
+      homeIcon
     }
   }
 })
 </script>
-<style lang="scss">
-  @use "../../assets/scss/base/app-home";
-</style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/base/app-home";
 </style>

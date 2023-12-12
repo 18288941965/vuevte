@@ -55,5 +55,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "./assets/scssscoped/other/app-theme";
+  @use "assets/scssscoped/components/app-theme";
 </style>

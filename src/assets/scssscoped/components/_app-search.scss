@@ -1,4 +1,4 @@
-@use "src/assets/scss/varscss/header" as hd;
+@use "src/assets/scss/var/header" as hd;
 
 .app-search{
   position: relative;
@@ -44,7 +44,7 @@
   border-radius: var(--border-radius-large);
   color: var(--color-black-2);
   background-color: var(--panel-bg-color);
-  background-image: url("../../image/ad.png");
+  background-image: url("/public/image/search-bg.png");
   background-repeat: no-repeat;
   background-position: right bottom;
   box-shadow: var(--box-shadow-medium);
