@@ -1,4 +1,4 @@
-@use "../../../assets/scss/varscss" as sc;
+@use "../../scss/varscss/distance" as dt;
 
 .admin-avatar{
   height: 100%;
@@ -24,25 +24,24 @@
 
 .avatar-card{
   position: absolute;
-  right: sc.$mg-small;
-  top: sc.$panel-top;
-  width: sc.$panel-width-medium;
+  right: dt.$mg-small;
+  width: dt.$panel-width-medium;
   height: 240px;
-  padding: sc.$pd-large;
+  padding: dt.$pd-large;
   border: 1px solid var(--panel-border-outer-color);
   border-radius: var(--border-radius-large);
   color: var(--color-black-2);
   background-color: var(--panel-bg-color);
   box-shadow: var(--box-shadow-large);
   & .li-information{
-    line-height: sc.$lh-large;
+    line-height: dt.$lh-large;
     text-align: center;
   }
   & .li-btn{
     display: grid;
     grid-template-columns: 40px 1fr;
     align-items: center;
-    line-height: sc.$lh-medium;
+    line-height: dt.$lh-medium;
     cursor: pointer;
     &:hover{
       color: var(--color-blue) !important ;
@@ -50,7 +49,7 @@
   }
   & .li-divider{
     height: 1px;
-    margin: sc.$mg-medium 0;
+    margin: dt.$mg-medium 0;
     background-color: var(--panel-border-inner-color);
   }
 }

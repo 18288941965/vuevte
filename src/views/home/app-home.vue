@@ -14,7 +14,7 @@
         />
       </a>
 
-      <admin-avatar
+      <avatar-card
         icon-color="#393939"
       />
     </header>
@@ -61,7 +61,7 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import AdminAvatar from '../../components/avatar/admin-avatar.vue'
+import AvatarCard from '../../components/avatar/avatar-card.vue'
 import {
   GitHub
 } from '../../components/svicon/publicIcon'
@@ -71,7 +71,7 @@ export default defineComponent({
   name: 'AppHome',
   components: {
     GitHub,
-    AdminAvatar,
+    AvatarCard,
     DesktopLogo
   },
   setup () {

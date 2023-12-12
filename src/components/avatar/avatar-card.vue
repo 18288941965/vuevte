@@ -72,7 +72,7 @@ import {dialogEmptyContext} from '../../context/dialogContext'
 import AppSettingsDialog from '../settings/app-settings-dialog.vue'
 
 export default defineComponent({
-  name: 'AdminAvatar',
+  name: 'AvatarCard',
   components: {
     PersonFill,
     Expand,
@@ -132,5 +132,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "../../assets/scssscoped/admin/admin-avatar";
+  @use "../../assets/scssscoped/public/avatar-card";
 </style>

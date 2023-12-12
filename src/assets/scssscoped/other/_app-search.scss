@@ -1,4 +1,4 @@
-@use "src/assets/scss/varscss/header" as *;
+@use "src/assets/scss/varscss/header" as hd;
 
 .app-search{
   position: relative;
@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 32px 1fr 80px 220px;
   align-items: center;
-  height: $header-height-context2;
+  height: hd.$header-height-context2;
   padding-left: 15px;
   margin-top: 10px;
   border-radius: var(--border-radius-medium);
@@ -81,7 +81,7 @@
   }
 }
 .app-search-open{
-  height: $header-height-context;
+  height: hd.$header-height-context;
   background-color: var(--panel-bg-color);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;

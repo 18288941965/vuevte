@@ -1,4 +1,4 @@
-@use "../../../assets/scss/varscss" as sc;
+@use "../../scss/varscss/distance" as dt;
 
 .admin-header{
   position: sticky;
@@ -16,8 +16,7 @@
   height: 100%;
   & .header-menu-panel{
     position: absolute;
-    top: sc.$panel-top;
-    width: sc.$panel-width-medium;
+    width: dt.$panel-width-medium;
     border: 1px solid var(--panel-border-outer-color);
     border-radius: var(--border-radius-large);
     color: var(--color-black-2);
@@ -30,14 +29,14 @@
     overflow: auto;
     & ul{
       height: 328px;
-      margin: sc.$mg-medium;
+      margin: dt.$mg-medium;
     }
 
     & .menu-item{
       display: grid;
       grid-template-columns: 1fr 10px;
       align-items: center;
-      line-height: sc.$lh-medium;
+      line-height: dt.$lh-medium;
       cursor: pointer;
       &:hover{
         color: var(--color-blue);
@@ -80,7 +79,7 @@
 .header-btn-dft{
   @include button-flex;
   height: 100%;
-  padding: 0 sc.$pd-medium;
+  padding: 0 dt.$pd-medium;
   color: var(--header-text-color);
   &:hover{
     color: var(--header-text-hover-color);
@@ -91,11 +90,11 @@
   @include button-flex;
   position: relative;
   height: 100%;
-  margin-left: sc.$mg-medium;
+  margin-left: dt.$mg-medium;
   color: var(--header-text-color);
   font-size: var(--h4-size);
   & span{
-    padding-left: sc.$pd-small;
+    padding-left: dt.$pd-small;
     font-weight: bolder;
   }
   &:hover{
@@ -104,7 +103,7 @@
 }
 
 .header-menu-clean-btn{
-  height: sc.$lh-medium;
+  height: dt.$lh-medium;
   border-top: 1px solid var(--panel-border-inner-color);
   border-bottom-right-radius: var(--border-radius-large);
   border-bottom-left-radius: var(--border-radius-large);

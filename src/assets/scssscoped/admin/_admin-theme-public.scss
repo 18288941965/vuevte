@@ -1,4 +1,4 @@
-@use "src/assets/scss/varscss/header" as ah;
+@use "src/assets/scss/varscss/header" as hd;
 
 .admin-theme{
   display: grid;
@@ -9,7 +9,7 @@
 }
 
 .admin-header-ht{
-  height: ah.$header-height;
+  height: hd.$header-height;
 }
 
 .menu-collapse{

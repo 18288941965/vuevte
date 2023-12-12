@@ -1,4 +1,4 @@
-@use "../../../assets/scss/varscss" as sc;
+@use "../../scss/varscss/distance" as dt;
 
 .admin-logo{
   position: relative;
@@ -11,16 +11,16 @@
   & a{
     display: inline-flex;
     align-items: center;
-    margin-left: sc.$mg-medium;
+    margin-left: dt.$mg-medium;
     text-decoration: none;
     cursor: pointer;
   }
   & img{
     width: 24px;
-    margin-right: sc.$mg-medium;
+    margin-right: dt.$mg-medium;
   }
   & #admin-logo-text{
-    margin-right: sc.$mg-medium;
+    margin-right: dt.$mg-medium;
     white-space: nowrap;
     font-weight: bolder;
     overflow: clip;
