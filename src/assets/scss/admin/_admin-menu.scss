@@ -1,6 +1,7 @@
 .admin-el-menu{
     height: calc(100% - var(--header-height));
     border: 0;
+    margin: var(--mg-ultra-small);
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -8,8 +9,10 @@
 .el-popper.is-light{
     border-color: var(--menu-border-color);
 }
-.el-menu-item:hover{
-    background-color: var(--menu-hover-color);
+
+.el-menu-item, .el-sub-menu__title{
+    margin-bottom: var(--mg-small);
+    border-radius: var(--border-radius-small);
 }
 
 .menu-icon{
@@ -19,11 +22,7 @@
     vertical-align: middle;
     text-align: center;
 }
+
 .menu-active{
-    border-right: 2px solid var(--menu-active-border-color);
-    background-color: var(--menu-active-bg-color);
-    color: initial !important;
-}
-.menu-active:hover{
-    background-color: var(--menu-active-bg-color) !important;
+    font-weight: bolder;
 }

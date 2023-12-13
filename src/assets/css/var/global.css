@@ -5,13 +5,12 @@
     --font-size-large: 18px;
 
     --color-white: #FFFFFF;
-    --color-white-2: #dbdada;
     --color-black: #000000;
-    --color-black-2: #1F2328;
+    --color-black-1: #1F2328;
     --color-black-6: #656D76;
+    --color-black-9: #909399;
     --color-blue: #1F88FF;
     --color-red: #ff0000;
-    --color-red2: #e30202;
 
     --h00-size: 3rem;
     --h0-size: 2.5rem;
@@ -57,7 +56,7 @@
     --mg-small: 10px;
     --mg-medium: 15px;
     --mg-large: 20px;
-    --mg-ultra-large: 30px;
+    --mg-ultra-large: 25px;
 
     --pd-ultra-small: 5px;
     --pd-small: 10px;

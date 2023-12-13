@@ -1,15 +1,14 @@
 <template>
   <header class="admin-header">
-    <el-tooltip :content="menuCollapse ? '展开菜单' : '折叠菜单' ">
-      <button
-        class="header-btn-dft menu-collapse-icon"
-        @click="setMenuCollapse"
-      >
-        <MenuOpen
-          :class="{'icon-rotate' : menuCollapse }"
-        />
-      </button>
-    </el-tooltip>
+    <button
+      class="header-btn-dft menu-collapse-icon"
+      @click="setMenuCollapse"
+    >
+      <MenuOpen
+        :size="24"
+        :class="{'icon-rotate' : menuCollapse }"
+      />
+    </button>
 
     <el-tooltip content="定位菜单">
       <button

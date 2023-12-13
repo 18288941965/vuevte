@@ -17,7 +17,7 @@
     width: var(--panel-width-medium);
     border: 1px solid var(--panel-border-outer-color);
     border-radius: var(--border-radius-large);
-    color: var(--color-black-2);
+    color: var(--color-black-1);
     background-color: var(--panel-bg-color);
     box-shadow: var(--box-shadow-large);
   }
@@ -26,8 +26,8 @@
     height: 400px;
     overflow: auto;
     & ul{
-      height: 328px;
-      margin: var(--mg-medium);
+      height: 336px;
+      margin: var(--mg-small);
     }
 
     & .menu-item{
@@ -35,9 +35,12 @@
       grid-template-columns: 1fr 10px;
       align-items: center;
       line-height: var(--lh-medium);
+      padding: 0 var(--pd-medium);
+      border-radius: var(--border-radius-small);
+      margin-bottom: var(--mg-small);
       cursor: pointer;
       &:hover{
-        color: var(--color-blue);
+        background-color: #ECF5FF;
       }
       & i{
         display: flex;
@@ -53,6 +56,7 @@
 
     & .header-menu-active{
       color: var(--color-blue);
+      font-weight: bolder;
     }
   }
 }
@@ -76,8 +80,11 @@
 
 .header-btn-dft{
   @include button-flex;
-  height: 100%;
-  padding: 0 var(--pd-medium);
+  height: var(--btn-height);
+  width: var(--btn-height);
+  border: var(--border-1);
+  border-radius: var(--border-radius-medium);
+  margin-left: var(--mg-medium);
   color: var(--header-text-color);
   &:hover{
     color: var(--header-text-hover-color);
@@ -101,11 +108,11 @@
 }
 
 .header-menu-clean-btn{
-  height: var(--lh-medium);
+  line-height: var(--lh-medium);
   border-top: 1px solid var(--panel-border-inner-color);
   border-bottom-right-radius: var(--border-radius-large);
   border-bottom-left-radius: var(--border-radius-large);
-  color: var(--color-black-2);
+  color: var(--color-black-1);
   &:hover{
     color: var(--color-red);
   }

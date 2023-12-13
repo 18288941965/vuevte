@@ -15,7 +15,7 @@
     <div
       v-show="panelShow"
       class="app-search-panel"
-      @click.stop="setPanelShowType(false)"
+      @click.stop="null"
     >
       <div
         class="app-search-grid"
@@ -28,21 +28,6 @@
           placeholder="搜索"
           @focus="setPanelShow(true)"
         >
-
-        <label for="app-search-type-input">
-          范围
-        </label>
-        <div
-          class="app-search-type"
-          @click="setPanelShowType(true)"
-        >
-          <input
-            id="app-search-type-input"
-            v-model="searchParams.searchText"
-            readonly
-          >
-          <Expand :size="24" />
-        </div>
       </div>
 
       <div class="app-search-content card-scroll">
@@ -56,7 +41,7 @@
         </ul>
       </div>
 
-      <footer>
+      <footer class="app-search-footer">
         <ul>
           <li>
             <kbd class="commands-Key">
@@ -94,21 +79,6 @@
           </li>
         </ul>
       </footer>
-
-      <div
-        v-show="panelShowType"
-        class="app-search-panel-type"
-        @click.stop="null"
-      >
-        <ul>
-          <li
-            v-for="(item, index) in searchTypeList"
-            :key="'search-k-' + index"
-          >
-            {{ item.mc }}
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -116,16 +86,14 @@
 <script lang="ts">
 import {defineComponent, reactive} from 'vue'
 import {
-  Search,
-  Expand
+  Search
 } from './components/svicon/publicIcon'
 import showContext from './context/showContext'
 
 export default defineComponent({
   name: 'AppSearch',
   components: {
-    Search,
-    Expand
+    Search
   },
   setup () {
     const {
@@ -133,30 +101,14 @@ export default defineComponent({
       setPanelShow
     } = showContext()
 
-    const {
-      panelShow: panelShowType,
-      setPanelShow: setPanelShowType
-    } = showContext()
-
-    const searchParams = reactive<{ searchValue: string, searchType: string, searchText: string}>({
-      searchValue: '',
-      searchType: '01',
-      searchText: '当前菜单'
+    const searchParams = reactive<{ searchValue: string}>({
+      searchValue: ''
     })
-
-    const searchTypeList = [
-      { dm: '01', mc: '当前菜单' },
-      { dm: '02', mc: '全部菜单' }
-    ]
 
     return {
       panelShow,
       setPanelShow,
 
-      panelShowType,
-      setPanelShowType,
-      
-      searchTypeList,
       searchParams
     }
   }
