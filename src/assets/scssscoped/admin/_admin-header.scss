@@ -9,7 +9,7 @@
   z-index: var(--z-index-f);
 }
 
-.header-menu-card{
+.header-menu{
   position: relative;
   height: 100%;
   & .header-menu-panel{
@@ -21,42 +21,60 @@
     color: var(--color-black-1);
     background-color: var(--panel-bg-color);
     box-shadow: var(--box-shadow-large);
-  }
-  & .menu-panel-content{
-    display: grid;
-    height: 400px;
-    overflow: auto;
-    & ul{
-      height: 336px;
-      margin: var(--mg-small);
-    }
 
-    & .menu-item{
+    &__body{
       display: grid;
-      grid-template-columns: 1fr 10px;
-      align-items: center;
-      line-height: var(--lh-medium);
-      padding: 0 var(--pd-medium);
-      border-radius: var(--border-radius-small);
-      margin-bottom: var(--mg-small);
-      cursor: pointer;
-      &:hover{
-        background-color: #ECF5FF;
+      height: 400px;
+      overflow: auto;
+      & ul{
+        height: 336px;
+        margin: var(--mg-small);
       }
-      & i{
-        @include flex-base()
-      }
-      & .menu-cache {
-        width: 8px;
-        height: 8px;
+
+      & .header-menu-item{
+        display: grid;
+        grid-template-columns: 1fr 10px;
+        align-items: center;
+        line-height: var(--lh-medium);
+        padding: 0 var(--pd-medium);
         border-radius: var(--border-radius-small);
-        background-color: #2BC385;
+        margin-bottom: var(--mg-small);
+        cursor: pointer;
+        &:hover{
+          background-color: #ECF5FF;
+        }
+        & i{
+          @include flex-base()
+        }
+        & .header-menu-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: var(--border-radius-small);
+          background-color: #2BC385;
+        }
+      }
+
+      & .header-menu-active{
+        color: var(--color-blue);
+        font-weight: bolder;
       }
     }
 
-    & .header-menu-active{
-      color: var(--color-blue);
-      font-weight: bolder;
+    &__footer{
+      width: 100%;
+      & button{
+        width: 100%;
+        line-height: var(--lh-medium);
+        border: {
+          top: 1px solid var(--panel-border-inner-color);
+          bottom-right-radius: var(--border-radius-large);
+          bottom-left-radius: var(--border-radius-large);
+        };
+        color: var(--color-black-1);
+        &:hover{
+          color: var(--color-red);
+        }
+      }
     }
   }
 }
@@ -72,11 +90,11 @@
 
 /*---------------操作按钮-----------------*/
 
-.header-btn-dft{
+.header-btn{
   @include header-btn;
 }
 
-.header-btn-down{
+.header-menu-btn{
   @include flex-base(true);
   position: relative;
   height: 100%;
@@ -89,18 +107,5 @@
   }
   &:hover{
     color: var(--header-text-hover-color);
-  }
-}
-
-.header-menu-clean-btn{
-  line-height: var(--lh-medium);
-  border: {
-    top: 1px solid var(--panel-border-inner-color);
-    bottom-right-radius: var(--border-radius-large);
-    bottom-left-radius: var(--border-radius-large);
-  };
-  color: var(--color-black-1);
-  &:hover{
-    color: var(--color-red);
   }
 }

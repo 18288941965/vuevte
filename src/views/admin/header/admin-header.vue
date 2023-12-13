@@ -1,7 +1,7 @@
 <template>
   <header class="admin-header">
     <button
-      class="header-btn-dft menu-collapse-icon"
+      class="header-btn menu-collapse-icon"
       @click="setMenuCollapse"
     >
       <MenuOpen
@@ -12,7 +12,7 @@
 
     <el-tooltip content="找到当前菜单">
       <button
-        class="header-btn-dft"
+        class="header-btn"
         @click="menuOpen"
       >
         <Adjust />
@@ -21,10 +21,10 @@
 
     <div
       v-show="activeMenus.menus.length > 0"
-      class="header-menu-card"
+      class="header-menu"
     >
       <button
-        class="header-btn-down"
+        class="header-menu-btn"
         @click="setPanelShow(undefined, $event)"
       >
         <span>{{ getMenuLabel }}</span>
@@ -35,28 +35,29 @@
         v-show="panelShow"
         class="header-menu-panel"
       >
-        <div class="menu-panel-content card-scroll">
+        <div class="header-menu-panel__body card-scroll">
           <ul>
             <li
               v-for="(menu, index) in activeMenus.menus"
               :key="'header-menu-' + index"
-              class="menu-item"
+              class="header-menu-item"
               :class="{'header-menu-active': menu.id === activeMenus.menuId }"
               @click.stop="pushRouter(menu)"
             >
               <span>{{ menu.label }}</span>
-              <span :class="{'menu-cache' : menu.cache}" />
+              <span :class="{'header-menu-dot' : menu.cache}" />
             </li>
           </ul>
+        </div>
 
+        <footer class="header-menu-panel__footer">
           <button
             v-if="activeMenus.menus.length > 1"
-            class="header-menu-clean-btn"
             @click="cleanHistory"
           >
             清空历史
           </button>
-        </div>
+        </footer>
       </div>
     </div>
 
