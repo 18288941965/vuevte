@@ -1,15 +1,18 @@
+@use "../../scss/mixin/mixin" as *;
+
 .app-home{
   height: 100vh;
-  background-image: url("/public/image/home-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: {
+    image: url("/public/image/home-bg.jpg");
+    size: cover;
+    repeat: no-repeat;
+    attachment: fixed;
+  };
   overflow: auto;
 }
 
 .home-header{
-  display: flex;
-  align-items: center;
+  @include flex-base();
   height: var(--header-height);
 }
 
@@ -20,9 +23,7 @@
 }
 
 .home-main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-base(true);
   min-height: calc(100vh - 120px);
   & .main-link{
     width: 128px;
@@ -32,15 +33,14 @@
     color: var(--color-white);
     background-color: #3E3E3E;
     backdrop-filter: blur(5px);
-    text-align: center;
     text-decoration: none;
+    text-align: center;
     & img{
       width: 48px;
       margin-top: var(--mg-medium);
     }
     & span{
-      display: flex;
-      justify-content: center;
+      @include flex-base(trie);
       line-height: var(--lh-medium);
     }
     &:hover{

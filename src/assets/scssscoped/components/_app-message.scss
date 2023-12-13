@@ -12,8 +12,9 @@
 .message-body{
   max-width: 600px;
   min-height: 360px;
-  border: var(--border-1);
-  border-radius: var(--border-radius-small);
+  border: var(--border-1) {
+    radius: var(--border-radius-small);
+  };
   margin: 80px auto 0 auto;
   box-shadow: var(--box-shadow-panel);
   background-color: var(--panel-bg-color);
@@ -25,8 +26,9 @@
     grid-template-columns: 34px 1fr;
     align-items: center;
     padding: var(--pd-medium);
-    border: 1px solid var(--panel-border-inner-color);
-    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--panel-border-inner-color){
+      radius: var(--border-radius-medium)
+    };
     margin-bottom: var(--mg-small);
     font-size: var(--h4-size);
     color: var(--color-black);

@@ -1,0 +1,21 @@
+@mixin flex-base($jc: false){
+	display: flex;
+	align-items: center;
+	@if $jc {
+		justify-content: center;
+	}
+}
+
+@mixin header-btn{
+	@include flex-base(true);
+	height: var(--btn-height);
+	width: var(--btn-height);
+	border: var(--border-1) {
+		radius: var(--border-radius-medium);
+	};
+	color: var(--header-text-color);
+	margin-left: var(--mg-medium);
+	&:hover{
+		color: var(--header-text-hover-color);
+	}
+}

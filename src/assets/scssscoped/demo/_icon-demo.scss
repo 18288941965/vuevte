@@ -1,6 +1,7 @@
+@use "../../scss/mixin/mixin" as *;
+
 .icon-demo{
-  display: flex;
-  flex-wrap: wrap;
+  @include flex-base()
 }
 .icon-demo-item{
   display: grid;
@@ -8,5 +9,5 @@
   justify-content: center;
   width: 108px;
   height: 108px;
-  margin: 10px;
+  margin: var(--mg-medium);
 }

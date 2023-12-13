@@ -1,13 +1,14 @@
+@use "../../scss/mixin/mixin" as *;
+
 .admin-avatar{
   height: 100%;
 }
 
 .avatar-base{
-  display: flex;
-  align-items: center;
+  @include flex-base();
   height: 100%;
   border: 0;
-  margin-right: var(--mg-medium);
+  margin: 0 var(--mg-medium);
   background-color: transparent;
   & .el-avatar{
     cursor: pointer;
@@ -20,8 +21,9 @@
   width: var(--panel-width-medium);
   height: 240px;
   padding: var(--pd-large);
-  border: 1px solid var(--panel-border-outer-color);
-  border-radius: var(--border-radius-large);
+  border: 1px solid var(--panel-border-outer-color) {
+    radius: var(--border-radius-large)
+  };
   color: var(--color-black-1);
   background-color: var(--panel-bg-color);
   box-shadow: var(--box-shadow-large);

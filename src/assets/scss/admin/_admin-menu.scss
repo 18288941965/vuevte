@@ -3,8 +3,10 @@
     height: calc(100% - var(--header-height));
     border: 0;
     padding: var(--mg-ultra-small);
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: {
+        x: hidden;
+        y: auto;
+    };
 }
 
 .admin-el-menu .el-menu{
