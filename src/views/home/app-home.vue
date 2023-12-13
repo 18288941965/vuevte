@@ -6,11 +6,11 @@
       <a
         href="https://github.com/18288941965/vuevte"
         target="_blank"
-        class="header-github"
+        class="header-github mgl-auto"
       >
         <GitHub
           color="#FFFFFF"
-          :size="24"
+          :size="32"
         />
       </a>
 

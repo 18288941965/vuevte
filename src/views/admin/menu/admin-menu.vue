@@ -1,11 +1,13 @@
 <template>
-  <template v-if="menus.length > 0">
+  <div
+    v-if="menus.length > 0"
+    class="admin-el-menu menu-scroll"
+  >
     <el-menu
       ref="adminMenuRef"
       :collapse="collapse"
       :default-openeds="menuDefaultOpeneds"
       :default-active="menuId"
-      class="admin-el-menu menu-scroll"
     >
       <template
         v-for="(menu, index) in menus[0].children"
@@ -52,7 +54,7 @@
         </el-sub-menu>
       </template>
     </el-menu>
-  </template>
+  </div>
 </template>
 
 <script lang="ts">

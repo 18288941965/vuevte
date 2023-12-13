@@ -26,6 +26,11 @@ html.app-light{
   background-color: var(--bg-color);;
 }
 
+/*左侧菜单折叠后鼠标移上去会出滚动条*/
+html,body,#app{
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-size: var(--body-font-size);
@@ -65,6 +70,7 @@ button{
 
 a{
   color: inherit;
+  cursor: pointer;
 }
 
 .mg-20{

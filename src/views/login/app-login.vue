@@ -5,7 +5,10 @@
         href="https://github.com/18288941965/vuevte"
         target="_blank"
       >
-        <GitHub color="#6D6D72" />
+        <GitHub
+          :size="32"
+          color="#DDDDDD"
+        />
       </a>
     </header>
 
