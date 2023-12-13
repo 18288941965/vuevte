@@ -1,7 +1,7 @@
 import {ref} from 'vue'
 
 function appSettingsContext() {
-    const fontSize = ref()
+    const fontSize = ref('')
     const fontKey = 'vv-font-size'
     const fontType = ['small', 'medium', 'large']
 

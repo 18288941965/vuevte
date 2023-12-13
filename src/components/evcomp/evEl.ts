@@ -87,7 +87,7 @@ export function getEvElContext () {
         dictList.value = dataList.map((row: any) => {
             return {
                 label: row[defaultAttr.label],
-                value: row[defaultAttr.label]
+                value: row[defaultAttr.value]
             }
         })
     }

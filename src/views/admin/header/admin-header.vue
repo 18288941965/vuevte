@@ -10,7 +10,7 @@
       />
     </button>
 
-    <el-tooltip content="定位菜单">
+    <el-tooltip content="找到当前菜单">
       <button
         class="header-btn-dft"
         @click="menuOpen"
