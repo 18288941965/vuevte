@@ -6,16 +6,38 @@
 	}
 }
 
-@mixin header-btn{
-	@include flex-base(true);
+@mixin grid-base($gtc, $jc: false){
+	display: grid;
+	grid-template-columns: $gtc;
+	align-items: center;
+	@if $jc {
+		justify-content: center;
+	}
+}
+
+.button-base{
 	height: var(--btn-height);
 	width: var(--btn-height);
-	border: var(--border-1) {
-		radius: var(--border-radius-medium);
-	};
+	border-radius: var(--border-radius-medium);
+}
+
+@mixin header-btn{
+	@include flex-base(true);
+	@extend .button-base;
+	border: var(--border-1);
 	color: var(--header-text-color);
 	margin-left: var(--mg-medium);
 	&:hover{
 		color: var(--header-text-hover-color);
+	}
+}
+
+@mixin close-btn{
+	@include flex-base(true);
+	@extend .button-base;
+	color: var(--header-text-color);
+	&:hover{
+		background-color: var(--panel-bg2-color);
+		color: var(--color-black-1);
 	}
 }

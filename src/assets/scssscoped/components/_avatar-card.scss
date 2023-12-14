@@ -32,9 +32,7 @@
     text-align: center;
   }
   & .li-btn{
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    align-items: center;
+    @include grid-base(40px 1fr);
     line-height: var(--lh-medium);
     cursor: pointer;
     &:hover{

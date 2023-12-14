@@ -1,29 +1,29 @@
 <template>
   <div
     v-if="systemMessageList.length > 0"
-    class="app-message"
+    class="app-message-container"
   >
-    <div class="message-body">
-      <header class="message-header">
+    <main class="app-message">
+      <header class="app-message__header">
         <span>平台消息</span>
         <button
-          class="close-btn"
           @click="closeMessage"
         >
           <Close :size="20" />
         </button>
       </header>
-
-      <ul>
-        <li
-          v-for="(item, index) in systemMessageList"
-          :key="'s-m-l-' + index"
-        >
-          <Sms color="orange" />
-          {{ item.msg }}
-        </li>
-      </ul>
-    </div>
+      <div class="app-message__body">
+        <ul>
+          <li
+            v-for="(item, index) in systemMessageList"
+            :key="'s-m-l-' + index"
+          >
+            <Sms color="orange" />
+            {{ item.msg }}
+          </li>
+        </ul>
+      </div>
+    </main>
   </div>
 </template>
 

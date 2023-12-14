@@ -1,3 +1,5 @@
+@use "../mixin/mixin" as *;
+
 .admin-el-menu{
     width: 100%;
     height: calc(100% - var(--header-height));
@@ -7,25 +9,24 @@
         x: hidden;
         y: auto;
     };
-}
 
-.admin-el-menu .el-menu{
-    border: 0;
-}
+    .el-menu{
+        border: 0;
+    }
 
-.el-menu-item, .el-sub-menu__title{
-    margin-bottom: var(--mg-small);
-    border-radius: var(--border-radius-small);
-}
+    .el-menu-item, .el-sub-menu__title{
+        margin-bottom: var(--mg-small);
+        border-radius: var(--border-radius-small);
+    }
 
-.menu-icon{
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-    margin-right: var(--mg-small);
-    text-align: center;
-}
+    .menu-icon{
+        @include flex-base();
+        vertical-align: middle;
+        margin-right: var(--mg-small);
+        text-align: center;
+    }
 
-.menu-active{
-    font-weight: bolder;
+    .menu-active{
+        font-weight: bolder;
+    }
 }

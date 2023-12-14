@@ -1,4 +1,6 @@
-.app-message{
+@use "../../scss/mixin/mixin" as *;
+
+.app-message-container{
   position: fixed;
   top: 0;
   right: 0;
@@ -9,7 +11,7 @@
   z-index: var(--z-index-z);
 }
 
-.message-body{
+.app-message{
   max-width: 600px;
   min-height: 360px;
   border: var(--border-1) {
@@ -18,35 +20,36 @@
   margin: 80px auto 0 auto;
   box-shadow: var(--box-shadow-panel);
   background-color: var(--panel-bg-color);
-  & ul {
-    margin: var(--mg-large);
-  }
-  & li{
-    display: grid;
-    grid-template-columns: 34px 1fr;
-    align-items: center;
-    padding: var(--pd-medium);
-    border: 1px solid var(--panel-border-inner-color){
-      radius: var(--border-radius-medium)
-    };
-    margin-bottom: var(--mg-small);
-    font-size: var(--h4-size);
-    color: var(--color-black);
-  }
-}
 
-.message-header{
-  position: sticky;
-  top: 0;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 40px;
-  padding: 0 var(--pd-large);
-  line-height: var(--lh-large);
-  color: var(--color-black-1);
-  & span{
-    display: inline-block;
-    font-size: var(--h4-size);
-    font-weight: bolder;
+  &__header{
+    @include grid-base(1fr 32px);
+    position: sticky;
+    top: 0;
+    padding: 0 var(--pd-large);
+    line-height: var(--lh-large);
+    color: var(--color-black-1);
+    span{
+      display: inline-block;
+      font-size: var(--h3-size);
+    }
+    button{
+      @include close-btn
+    }
+  }
+
+  &__body{
+    & ul {
+      margin: var(--mg-large);
+    }
+    & li{
+      @include grid-base(34px 1fr);
+      padding: var(--pd-medium);
+      border: 1px solid var(--panel-border-inner-color){
+        radius: var(--border-radius-medium)
+      };
+      margin-bottom: var(--mg-small);
+      font-size: var(--h4-size);
+      color: var(--color-black);
+    }
   }
 }
