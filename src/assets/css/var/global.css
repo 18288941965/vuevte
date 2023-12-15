@@ -5,6 +5,7 @@
     --font-size-large: 18px;
 
     --color-white: #FFFFFF;
+    --color-white-hover: #f4f5f6;
     --color-black: #000000;
     --color-black-1: #1F2328;
     --color-black-6: #656D76;
@@ -40,6 +41,9 @@
     --border-radius-medium: 6px;
     --border-radius-large: 8px;
     --border-radius-ultra-large : 12px;
+
+    --border-radius-round-small: 16px;
+    --border-radius-round-medium: 20px;
 
     /*动画周期*/
     --duration-slow: 1.25s;

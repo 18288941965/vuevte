@@ -17,8 +17,8 @@
       class="app-search-panel"
       @click.stop="null"
     >
-      <div
-        class="app-search-grid"
+      <header
+        class="app-search-panel__header"
         @click.stop="null"
       >
         <Search :size="24" />
@@ -28,20 +28,58 @@
           placeholder="搜索"
           @focus="setPanelShow(true)"
         >
+      </header>
+
+      <div class="app-search-panel__body card-scroll">
+        <section class="search-history">
+          <h5>最近搜索</h5>
+          <ul>
+            <li>组件</li>
+            <li>图标</li>
+            <li>工作台</li>
+          </ul>
+        </section>
+
+        <section class="search-results">
+          <ul>
+            <li>
+              <a
+                href="http://127.0.0.1:5173/admin/theme/ev/dic"
+                class="al-hover"
+              >
+                <span>dic组件</span>
+                <ArrowLine
+                  :size="16"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://127.0.0.1:5173/admin/theme/ev/pagination"
+                class="al-hover"
+              >
+                <span>pagination组件</span>
+                <ArrowLine
+                  :size="16"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://127.0.0.1:5173/desktop/theme2"
+                class="al-hover"
+              >
+                <span>首页2</span>
+                <ArrowLine
+                  :size="16"
+                />
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
 
-      <div class="app-search-content card-scroll">
-        <ul>
-          <li
-            v-for="item in 20"
-            :key="item"
-          >
-            {{ item }}、搜索结果条目
-          </li>
-        </ul>
-      </div>
-
-      <footer class="app-search-footer">
+      <footer class="app-search-panel__footer">
         <ul>
           <li>
             <kbd class="commands-Key">
@@ -86,14 +124,16 @@
 <script lang="ts">
 import {defineComponent, reactive} from 'vue'
 import {
-  Search
+  Search,
+  ArrowLine
 } from './components/svicon/publicIcon'
 import showContext from './context/showContext'
 
 export default defineComponent({
   name: 'AppSearch',
   components: {
-    Search
+    Search,
+    ArrowLine
   },
   setup () {
     const {
@@ -117,4 +157,5 @@ export default defineComponent({
 
 <style scoped lang="scss">
   @use "assets/scssscoped/components/app-search";
+  @use "assets/scss/components/common";
 </style>

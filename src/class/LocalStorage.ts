@@ -3,7 +3,7 @@ export default class LocalStorage {
     readonly loginStatus: string =  'vuevte-login-status'
     readonly userName: string =  'vuevte-user-name'
 
-    // 设置登录状态和用户名
+    // Set the status and username
     setLoginStatus (set = true, username = '') {
         if (set) {
             localStorage.setItem(this.loginStatus, '1')
@@ -13,12 +13,14 @@ export default class LocalStorage {
             localStorage.removeItem(this.userName)
         }
     }
-    // 获取登录状态或用户名
-    getLoginStatus (ls = true, un = false ) {
+
+    // Get the status
+    getLoginStatus () {
         const loginStatus = localStorage.getItem(this.loginStatus) 
         return loginStatus ? loginStatus : ''
     }
-    
+
+    // Get username
     getUserName () {
         const userName = localStorage.getItem(this.userName)
         return userName ? userName : ''
