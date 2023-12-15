@@ -5,7 +5,7 @@
   >
     <main class="app-message">
       <header class="app-message__header">
-        <span>平台消息</span>
+        <h3>平台消息</h3>
         <button
           @click="closeMessage"
         >

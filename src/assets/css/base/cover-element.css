@@ -12,3 +12,26 @@
   justify-content: center;
   margin-top: var(--mg-medium);
 }
+
+/*-----重写dialog样式-----*/
+.el-dialog{
+  border-radius: var(--border-radius-ultra-large);
+}
+.el-dialog .el-dialog__header{
+  font-weight: bolder;
+  font-size: var(--h3-size);
+}
+.el-dialog .el-dialog__header .el-dialog__headerbtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-height);
+  width: var(--btn-height);
+  right: 10px;
+  top: 10px;
+  border-radius: 20px;
+  border: var(--border-1);
+}
+.el-dialog .el-dialog__header .el-dialog__close{
+  font-size: 20px;
+}

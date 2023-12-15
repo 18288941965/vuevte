@@ -1,12 +1,11 @@
 <template>
-  <div class="admin-avatar">
+  <div class="user-avatar">
     <div
-      class="avatar-base"
+      class="user-avatar-container"
     >
       <el-avatar
         :size="32"
         :style="{ 'background-color' : bgColor }"
-        class="avatar-btn"
         @click="setPanelShow(undefined, $event)"
       >
         <template #default>
@@ -20,14 +19,14 @@
 
     <div
       v-show="panelShow"
-      class="avatar-card"
+      class="user-avatar-panel"
     >
       <ul>
         <li class="li-information">
           {{ userName }}
         </li>
         <li
-          class="li-btn"
+          class="li-action-item"
           @click="dialogOpenSetting"
         >
           <Discover
@@ -37,7 +36,7 @@
         </li>
         <li class="li-divider" />
         <li
-          class="li-btn"
+          class="li-action-item"
           @click="logout"
         >
           <Logouts
@@ -69,7 +68,7 @@ import {dialogEmptyContext} from '../../context/dialogContext'
 import AppSettingsDialog from '../settings/app-settings-dialog.vue'
 
 export default defineComponent({
-  name: 'AvatarCard',
+  name: 'UserAvatar',
   components: {
     PersonFill,
     Discover,

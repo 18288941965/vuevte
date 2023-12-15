@@ -65,7 +65,7 @@
 
     <app-theme class="mgl-auto" />
 
-    <avatar-card
+    <user-avatar
       bg-color="#4385F4"
       icon-color="#ffffff"
     />
@@ -75,7 +75,7 @@
 <script lang="ts">
 import {defineComponent, PropType, computed} from 'vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
-import AvatarCard from '../../../components/avatar/avatar-card.vue'
+import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
   Adjust,
   ArrowDropDown,
@@ -93,7 +93,7 @@ export default defineComponent({
     ArrowDropDown,
     MenuOpen,
     AppSearch,
-    AvatarCard
+    UserAvatar
   },
   props: {
     menuCollapse: {

@@ -14,7 +14,7 @@
         />
       </a>
 
-      <avatar-card
+      <user-avatar
         icon-color="#393939"
       />
     </header>
@@ -71,7 +71,7 @@
 
 <script lang="ts">
 import {defineComponent, inject} from 'vue'
-import AvatarCard from '../../components/avatar/avatar-card.vue'
+import UserAvatar from '../../components/avatar/user-avatar.vue'
 import {
   GitHub
 } from '../../components/svicon/publicIcon'
@@ -87,7 +87,7 @@ export default defineComponent({
   name: 'AppHome',
   components: {
     GitHub,
-    AvatarCard,
+    UserAvatar,
     DesktopLogo
   },
   setup () {

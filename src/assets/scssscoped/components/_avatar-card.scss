@@ -1,47 +1,45 @@
 @use "../../scss/mixin/mixin" as *;
 
-.admin-avatar{
+.user-avatar{
   height: 100%;
-}
-
-.avatar-base{
-  @include flex-base();
-  height: 100%;
-  border: 0;
-  margin: 0 var(--mg-medium);
-  background-color: transparent;
-  & .el-avatar{
-    cursor: pointer;
-  }
-}
-
-.avatar-card{
-  position: absolute;
-  right: var(--mg-small);
-  width: var(--panel-width-medium);
-  height: 240px;
-  padding: var(--pd-large);
-  border: 1px solid var(--panel-border-outer-color) {
-    radius: var(--border-radius-large)
-  };
-  color: var(--color-black-1);
-  background-color: var(--panel-bg-color);
-  box-shadow: var(--box-shadow-large);
-  & .li-information{
-    line-height: var(--lh-large);
-    text-align: center;
-  }
-  & .li-btn{
-    @include grid-base(40px 1fr);
-    line-height: var(--lh-medium);
-    cursor: pointer;
-    &:hover{
-      color: var(--color-blue) !important ;
+  &-container{
+    @include flex-base();
+    height: 100%;
+    border: 0;
+    margin: 0 var(--mg-medium);
+    background-color: transparent;
+    & .el-avatar{
+      cursor: pointer;
     }
   }
-  & .li-divider{
-    height: 1px;
-    margin: var(--mg-medium) 0;
-    background-color: var(--panel-border-inner-color);
+  &-panel{
+    position: absolute;
+    right: var(--mg-small);
+    width: var(--panel-width-medium);
+    height: 240px;
+    padding: var(--pd-large);
+    border: 1px solid var(--panel-border-outer-color) {
+      radius: var(--border-radius-large)
+    };
+    color: var(--color-black-1);
+    background-color: var(--panel-bg-color);
+    box-shadow: var(--box-shadow-large);
+    & .li-information{
+      line-height: var(--lh-large);
+      text-align: center;
+    }
+    & .li-action-item{
+      @include grid-base(40px 1fr);
+      line-height: var(--lh-medium);
+      cursor: pointer;
+      &:hover{
+        color: var(--color-blue) !important ;
+      }
+    }
+    & .li-divider{
+      height: 1px;
+      margin: var(--mg-medium) 0;
+      background-color: var(--panel-border-inner-color);
+    }
   }
 }
