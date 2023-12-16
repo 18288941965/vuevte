@@ -1,0 +1,35 @@
+@use "../../scss/mixin/mixin" as *;
+
+.admin-header{
+  border-bottom: 1px solid var(--menu-border-color);
+  background-color: var(--header-bg-color);
+  z-index: var(--z-index-f);
+}
+
+.theme2-top{
+  @include flex-base();
+}
+.theme2-nav{
+  @extend .layout-base;
+  &__left{
+    @include flex-base(true);
+  }
+
+  &__right{
+    background-color: pink;
+    ul{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    & li{
+      position: relative;
+      flex-shrink: 0;
+      flex-basis: 200px;
+      line-height: var(--lh-small);
+      padding: 0 var(--pd-medium);
+      border: 1px solid;
+    }
+  }
+}

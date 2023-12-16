@@ -19,6 +19,24 @@
       </button>
     </el-tooltip>
 
+    <el-tooltip content="展开所有菜单">
+      <button
+        class="header-btn"
+        @click="menuOpen"
+      >
+        <ExpandAll />
+      </button>
+    </el-tooltip>
+
+    <el-tooltip content="折叠所有菜单">
+      <button
+        class="header-btn"
+        @click="menuOpen"
+      >
+        <CollapseAll />
+      </button>
+    </el-tooltip>
+
     <div
       v-show="activeMenus.menus.length > 0"
       class="header-menu"
@@ -44,8 +62,7 @@
               :class="{'header-menu-active': menu.id === activeMenus.menuId }"
               @click.stop="pushRouter(menu)"
             >
-              <span>{{ menu.label }}</span>
-              <span :class="{'header-menu-dot' : menu.cache}" />
+              <span :class="{'header-menu-dot' : menu.cache}">{{ menu.label }}</span>
             </li>
           </ul>
         </div>
@@ -79,7 +96,9 @@ import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
   Adjust,
   ArrowDropDown,
-  MenuOpen
+  MenuOpen,
+  ExpandAll,
+  CollapseAll
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
@@ -93,7 +112,9 @@ export default defineComponent({
     ArrowDropDown,
     MenuOpen,
     AppSearch,
-    UserAvatar
+    UserAvatar,
+    ExpandAll,
+    CollapseAll
   },
   props: {
     menuCollapse: {
@@ -158,5 +179,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+  @use "../../../assets/scssscoped/admin/admin-header-public";
   @use "../../../assets/scssscoped/admin/admin-header";
 </style>

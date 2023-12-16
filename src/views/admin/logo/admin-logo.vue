@@ -1,5 +1,8 @@
 <template>
-  <div class="admin-logo">
+  <div
+    class="admin-logo"
+    :class="{'logo-bb': bottomBorder}"
+  >
     <a href="/">
       <img
         v-if="moduleIcon"
@@ -35,6 +38,10 @@ export default defineComponent({
     moduleLabel: {
       type: String,
       default: undefined
+    },
+    bottomBorder: {
+      type: Boolean,
+      default: true
     }
   },
   setup () {

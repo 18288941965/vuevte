@@ -1,3 +1,24 @@
+.layout-base{
+	display: grid;
+	grid-template-columns: 260px 1fr;
+	transition: grid-template-columns 0.3s;
+}
+
+.layout-base-collapse{
+	grid-template-columns: 80px 1fr;
+}
+
+.bc-bf{
+	background-color: rgba(0,0,0, 0.48);
+	backdrop-filter: blur(5px);
+}
+
+.button-base{
+	height: var(--btn-height);
+	width: var(--btn-height);
+	border-radius: var(--border-radius-medium);
+}
+
 @mixin flex-base($jc: false){
 	display: flex;
 	align-items: center;
@@ -13,17 +34,6 @@
 	@if $jc {
 		justify-content: center;
 	}
-}
-
-.bc-bf{
-	background-color: rgba(0,0,0, 0.48);
-	backdrop-filter: blur(5px);
-}
-
-.button-base{
-	height: var(--btn-height);
-	width: var(--btn-height);
-	border-radius: var(--border-radius-medium);
 }
 
 @mixin header-btn{

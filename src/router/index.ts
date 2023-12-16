@@ -20,20 +20,27 @@ const router = createRouter({
       path: '/admin/theme',
       name: 'AdminTheme',
       component: () => import('../views/admin/admin-theme.vue'),
-      meta: { title: '后台管理模板Ⅰ'},
+      meta: { title: '后台管理模板'},
+      children: menuDemoRouter
+    },
+    {
+      path: '/admin/theme2',
+      name: 'AdminTheme2',
+      component: () => import('../views/admin/admin-theme2.vue'),
+      meta: { title: '后台管理模板2'},
       children: menuDemoRouter
     },
     {
       path: '/desktop/theme',
       name: 'DesktopTheme',
       component: () => import('../views/desktop/desktop-theme.vue'),
-      meta: { title: '桌面模板Ⅰ' }
+      meta: { title: '桌面模板' }
     },
     {
       path: '/desktop/theme2',
       name: 'DesktopTheme2',
       component: () => import('../views/desktop/desktop-theme2.vue'),
-      meta: { title: '桌面模板Ⅱ' }
+      meta: { title: '桌面模板2' }
     }
   ]
 })

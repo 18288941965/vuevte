@@ -1,25 +1,47 @@
+@use "../../scss/mixin/mixin" as *;
+
 .admin-theme{
-  display: grid;
-  grid-template-columns: 260px 1fr;
   width: 100vw;
   height: 100vh;
-  transition: grid-template-columns 0.3s;
+  overflow: auto;
 }
 
-.admin-header-ht{
+.layout-grid{
+  @extend .layout-base;
+}
+
+/*-------主题--default--布局-------*/
+.theme-grid{
+  @extend .layout-grid;
+}
+.theme-header-ht{
   height: var(--header-height);
 }
 
-.menu-collapse{
-  grid-template-columns: 80px 1fr;
+/*-------主题--2--布局-------*/
+.theme2-grid{
+  @extend .layout-grid;
+  height: calc(100vh - var(--header-height-large));
+}
+.theme2-header-ht{
+  height: var(--header-height-large);
+  &__top{
+    height: 56px;
+  }
+  &__nav{
+    height: 48px;
+  }
 }
 
-.left-wrapper{
+/*-------通用主题布局-------*/
+.menu-collapse{
+  @extend .layout-base-collapse;
+}
+.theme-left-wrapper{
   height: 100%;
   border-right: 1px solid var(--menu-border-color);
   overflow: hidden;
 }
-
-.right-wrapper{
+.theme-right-wrapper{
   overflow: auto;
 }

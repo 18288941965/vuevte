@@ -44,12 +44,6 @@
         & i{
           @include flex-base()
         }
-        & .header-menu-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: var(--border-radius-small);
-          background-color: #2BC385;
-        }
       }
 
       & .header-menu-active{
@@ -74,36 +68,5 @@
         }
       }
     }
-  }
-}
-
-.menu-collapse-icon {
-  & svg{
-    transition: transform 0.3s;
-  }
-  & .icon-rotate{
-    transform: rotate(180deg);
-  }
-}
-
-/*---------------操作按钮-----------------*/
-
-.header-btn{
-  @include header-btn;
-}
-
-.header-menu-btn{
-  @include flex-base(true);
-  position: relative;
-  height: 100%;
-  margin-left: var(--mg-medium);
-  color: var(--header-text-color);
-  font-size: var(--h4-size);
-  & span{
-    padding-left: var(--pd-small);
-    font-weight: bolder;
-  }
-  &:hover{
-    color: var(--header-text-hover-color);
   }
 }

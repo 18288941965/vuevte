@@ -14,8 +14,8 @@ Mock.mock('/api/admin/getMenus', {
             cache: false,
             name: null,
             children: [
-                { label: '首页', icon: 'Dashboard', url: '/admin/theme/dashboard', id: '02', pid: '01', cache: true, name: 'AdminDashboard' },
-                { label: '图标', icon: 'Flag', url: '/admin/theme/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
+                { label: '首页', icon: 'Dashboard', url: '/admin/theme2/dashboard', id: '02', pid: '01', cache: true, name: 'AdminDashboard' },
+                { label: '图标', icon: 'Flag', url: '/admin/theme2/icon/demo', id: '04', pid: '01', cache: true, name: 'IconDemo' },
                 {
                     label: '组件',
                     icon: 'Plugins',
@@ -28,7 +28,7 @@ Mock.mock('/api/admin/getMenus', {
                         {
                             label: 'dic组件',
                             icon: '',
-                            url: '/admin/theme/ev/dic',
+                            url: '/admin/theme2/ev/dic',
                             id: '03-01',
                             pid: '03',
                             cache: false,
@@ -37,7 +37,7 @@ Mock.mock('/api/admin/getMenus', {
                         {
                             label: 'pagination组件',
                             icon: '',
-                            url: '/admin/theme/ev/pagination',
+                            url: '/admin/theme2/ev/pagination',
                             id: '03-02',
                             pid: '03',
                             cache: true,

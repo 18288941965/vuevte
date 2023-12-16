@@ -1,62 +1,55 @@
 <template>
-  <div
-    class="admin-theme theme-grid"
-    :class="{'menu-collapse' : menuCollapse}"
-  >
-    <div
-      class="theme-left-wrapper"
+  <div class="admin-theme">
+    <admin-header2
+      class="theme2-header-ht"
+      :module-icon="rootMenu.icon"
+      :module-label="rootMenu.label"
+      :menu-collapse="menuCollapse"
+      :active-menus="activeMenus"
+      @set-menu-collapse="setMenuCollapse"
+      @push-router="pushRouter"
+      @menu-open="menuOpen"
+      @clean-history="cleanHistory"
+    />
+    
+    <main
+      class="theme2-grid"
+      :class="{'menu-collapse' : menuCollapse}"
     >
-      <admin-logo
-        class="theme-header-ht"
-        :menu-collapse="menuCollapse"
-        :module-icon="rootMenu.icon"
-        :module-label="rootMenu.label"
-      />
-      <admin-menu
-        ref="adminThemeMenuRef"
-        :collapse="menuCollapse"
-        :menu-id="activeMenus.menuId.toString()"
-        @push-router="pushRouter"
-        @set-parent-menu="setParentMenu"
-      />
-    </div>
-    <div class="theme-right-wrapper">
-      <admin-header
-        class="theme-header-ht"
-        :menu-collapse="menuCollapse"
-        :active-menus="activeMenus"
-        @set-menu-collapse="setMenuCollapse"
-        @push-router="pushRouter"
-        @menu-open="menuOpen"
-        @clean-history="cleanHistory"
-      />
+      <div class="theme-left-wrapper">
+        <admin-menu
+          ref="adminThemeMenuRef"
+          :collapse="menuCollapse"
+          :menu-id="activeMenus.menuId.toString()"
+          @push-router="pushRouter"
+          @set-parent-menu="setParentMenu"
+        />
+      </div>
 
-      <main>
+      <div>
         <router-view v-slot="{ Component }">
           <keep-alive :include="keepAliveInclude">
             <component :is="Component" />
           </keep-alive>
         </router-view>
-      </main>
-    </div>
+      </div>
+    </main>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, ref, onMounted} from 'vue'
+import {defineComponent, reactive, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import AdminHeader from './header/admin-header.vue'
-import {MenuStatusContext} from '../../context/menuContext'
 import {MenuBean, MenuBeanBase} from '../../interface/menuInterface'
 import {useRouter} from 'vue-router'
-import AdminLogo from './logo/admin-logo.vue'
+import {MenuStatusContext} from '../../context/menuContext'
+import AdminHeader2 from './header/admin-header2.vue'
 
 export default defineComponent({
-  name: 'AdminTheme',
+  name: 'AdminTheme2',
   components: {
     AdminMenu,
-    AdminHeader,
-    AdminLogo
+    AdminHeader2
   },
   setup () {
     const rootMenu = reactive<MenuBeanBase>({
@@ -103,10 +96,6 @@ export default defineComponent({
       updateActiveMenus(activeMenus.menus[0], true)
     }
 
-    onMounted(() => {
-     //
-    })
-
     return {
       rootMenu,
       adminThemeMenuRef,
@@ -125,9 +114,9 @@ export default defineComponent({
 </script>
 
 <style>
-  @import "../../assets/css/var/theme-dark.css";
-  @import "../../assets/css/var/theme-light.css";
+@import "../../assets/css/var/theme-dark.css";
+@import "../../assets/css/var/theme-light.css";
 </style>
-<style scoped lang="scss">
-  @use "../../assets/scssscoped/admin/admin-theme-public";
+<style lang="scss">
+@use "../../assets/scssscoped/admin/admin-theme-public";
 </style>

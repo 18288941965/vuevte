@@ -4,7 +4,6 @@
   @include flex-base();
   position: relative;
   width: 100%;
-  border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
   z-index: var(--z-index-b);
   & a{
@@ -24,6 +23,10 @@
     font-weight: bolder;
     overflow: clip;
   }
+}
+
+.logo-bb{
+  border-bottom: 1px solid var(--menu-border-color);
 }
 
 .slide-fade-enter-active {

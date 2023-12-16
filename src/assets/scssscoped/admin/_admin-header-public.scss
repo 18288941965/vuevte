@@ -1,0 +1,39 @@
+@use "../../scss/mixin/mixin" as *;
+
+.header-menu-dot::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  border-radius: var(--border-radius-small);
+  font-size: var(--h4-size);
+  color: #2BC385;
+}
+
+.menu-collapse-icon {
+  & svg{
+    transition: transform 0.3s;
+  }
+  & .icon-rotate{
+    transform: rotate(180deg);
+  }
+}
+
+.header-btn{
+  @include header-btn;
+}
+
+.header-menu-btn{
+  @include flex-base(true);
+  position: relative;
+  height: 100%;
+  margin-left: var(--mg-medium);
+  color: var(--header-text-color);
+  font-size: var(--h4-size);
+  & span{
+    padding-left: var(--pd-small);
+    font-weight: bolder;
+  }
+  &:hover{
+    color: var(--header-text-hover-color);
+  }
+}

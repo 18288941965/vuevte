@@ -4,7 +4,9 @@
        :height="size"
        :width="size"
        viewBox="0 -960 960 960">
-    <path  fill="currentColor" d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
+    <path
+      fill="currentColor"
+      d="M480-80 240-320l57-57 183 183 183-183 57 57L480-80ZM298-584l-58-56 240-240 240 240-58 56-182-182-182 182Z"/>
   </svg>
 </template>
 
