@@ -1,4 +1,5 @@
 import  * as Mock from 'mockjs'
+import {MenuBean} from '../interface/menuInterface'
 
 // 获取菜单列表：返回tree结构
 Mock.mock('/api/admin/getMenus', 'post',(res) => {
@@ -11,54 +12,57 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         themeNum = '3'
     }
 
-    return {
+    const obj = {
         code: 200,
         msg: null,
-        data: [
-            {
-                label: '后台管理模板',
-                icon: 'admin-theme.png',
-                url: null,
-                id: '01',
-                pid: null,
-                cache: false,
-                name: null,
-                children: [
-                    { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-                    { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', cache: true, name: `IconDemo${themeNum}` },
-                    {
-                        label: '组件',
-                        icon: 'Plugins',
-                        url: null,
-                        id: '03',
-                        pid: '01',
-                        cache: false,
-                        name: null,
-                        children:  [
-                            {
-                                label: 'dic组件',
-                                icon: '',
-                                url: `/admin/theme${themeNum}/ev/dic${themeNum}`,
-                                id: '03-01',
-                                pid: '03',
-                                cache: false,
-                                name: `EvDicDemo${themeNum}`
-                            },
-                            {
-                                label: 'pagination组件',
-                                icon: '',
-                                url: `/admin/theme${themeNum}/ev/pagination${themeNum}`,
-                                id: '03-02',
-                                pid: '03',
-                                cache: true,
-                                name: `EvPaginationDemo${themeNum}`
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        data: []
     }
+
+    const children = [
+        {
+            label: 'dic组件',
+            icon: '',
+            url: `/admin/theme${themeNum}/ev/dic${themeNum}`,
+            id: '03-01',
+            pid: '03',
+            cache: false,
+            name: `EvDicDemo${themeNum}`
+        },
+        {
+            label: 'pagination组件',
+            icon: '',
+            url: `/admin/theme${themeNum}/ev/pagination${themeNum}`,
+            id: '03-02',
+            pid: '03',
+            cache: true,
+            name: `EvPaginationDemo${themeNum}`
+        }
+    ]
+
+    const menus: MenuBean[] = []
+    menus.push({
+        label: '后台管理模板',
+        icon: 'admin-theme.png',
+        url: undefined,
+        id: '01',
+        pid: undefined,
+        cache: false,
+        name: undefined,
+        children: [
+            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
+            { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', cache: true, name: `IconDemo${themeNum}` }
+        ]
+    })
+
+    if (themeNum !== '3') {
+        menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', cache: false, name: undefined, children: children })
+    } else {
+        menus[0].children.push(...children)
+    }
+
+    obj.data = menus
+
+    return obj
 })
 
 // 登录

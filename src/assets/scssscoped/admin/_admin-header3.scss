@@ -1,0 +1,8 @@
+@use "../../scss/mixin/mixin" as *;
+
+.admin-header{
+  @include flex-base();
+  height: var(--header-height);
+  background-color: var(--header-bg-color);
+  z-index: var(--z-index-f);
+}

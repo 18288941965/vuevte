@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import menuDemoRouter from './menuDemoRouter'
 import menuDemoRouter2 from './menuDemoRouter2'
+import menuDemoRouter3 from './menuDemoRouter3'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -30,6 +31,13 @@ const router = createRouter({
       component: () => import('../views/admin/admin-theme2.vue'),
       meta: { title: '后台管理模板2'},
       children: menuDemoRouter2
+    },
+    {
+      path: '/admin/theme3',
+      name: 'AdminTheme3',
+      component: () => import('../views/admin/admin-theme3.vue'),
+      meta: { title: '后台管理模板3'},
+      children: menuDemoRouter3
     },
     {
       path: '/desktop/theme',

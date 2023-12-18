@@ -74,6 +74,8 @@
     --lh-medium: 40px;
     --lh-large: 60px;
 
+    --header-height-small: 56px;
     --header-height: 60px;
-    --header-height-large: 104px;
+    --header-nav-height: 104px;
+    --nav-height: 48px;
 }

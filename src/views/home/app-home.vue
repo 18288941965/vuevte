@@ -44,6 +44,18 @@
       </router-link>
       <router-link
         class="main-link"
+        to="/admin/theme3"
+        target="_blank"
+      >
+        <img
+          :src="adminIcon"
+          alt=" "
+        >
+        <span>后台管理模板3</span>
+      </router-link>
+
+      <router-link
+        class="main-link"
         to="/desktop/theme"
         target="_blank"
       >

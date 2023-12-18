@@ -21,15 +21,15 @@
 /*-------主题--2--布局-------*/
 .theme2-grid{
   @extend .layout-grid;
-  height: calc(100vh - var(--header-height-large));
+  height: calc(100vh - var(--header-nav-height));
 }
 .theme2-header-ht{
-  height: var(--header-height-large);
+  height: var(--header-nav-height);
   &__top{
-    height: 56px;
+    height: var(--header-height-small);
   }
   &__nav{
-    height: 48px;
+    height: var(--nav-height);
   }
 }
 
