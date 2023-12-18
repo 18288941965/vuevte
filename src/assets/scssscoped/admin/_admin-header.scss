@@ -24,7 +24,6 @@
 
     &__body{
       display: grid;
-      height: 400px;
       overflow: auto;
       & ul{
         height: 336px;
@@ -32,17 +31,25 @@
       }
 
       & .header-menu-item{
-        @include grid-base(1fr 10px);
+        @include grid-base(1fr 18px);
+        position: relative;
         line-height: var(--lh-medium);
-        padding: 0 var(--pd-medium);
+        padding: 0 var(--pd-small) 0 var(--pd-large);
         border-radius: var(--border-radius-small);
         margin-bottom: var(--mg-small);
         cursor: pointer;
         &:hover{
           background-color: #ECF5FF;
         }
-        & i{
-          @include flex-base()
+        button{
+          @include flex-base(true);
+          height: 18px;
+          padding: 0;
+          border-radius: 50%;
+          &:hover{
+            color: var(--color-white);
+            background-color: var(--color-red);
+          }
         }
       }
 

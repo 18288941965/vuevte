@@ -1,7 +1,8 @@
 @use "../../scss/mixin/mixin" as *;
 
 .icon-demo{
-  @include flex-base()
+  @include flex-base();
+  flex-wrap: wrap;
 }
 .icon-demo-item{
   display: grid;

@@ -11,7 +11,7 @@
 
       <app-search />
 
-      <app-theme class="mgl-auto" />
+      <app-theme class="mgl-medium" />
 
       <user-avatar
         bg-color="#4385F4"
@@ -22,6 +22,15 @@
       class="theme2-nav theme2-header-ht__nav"
     >
       <div class="theme2-nav__left">
+        <el-tooltip content="找到当前菜单">
+          <button
+            class="header-btn"
+            @click="menuOpen"
+          >
+            <Adjust />
+          </button>
+        </el-tooltip>
+
         <el-tooltip content="展开所有菜单">
           <button
             class="header-btn"
@@ -40,16 +49,6 @@
           </button>
         </el-tooltip>
 
-        <el-tooltip content="找到当前菜单">
-          <button
-            class="header-btn"
-            @click="menuOpen"
-          >
-            <Adjust />
-          </button>
-        </el-tooltip>
-
-
         <button
           class="header-btn menu-collapse-icon"
           @click="setMenuCollapse"
@@ -63,14 +62,20 @@
 
       <div class="theme2-nav__right">
         <ul>
+          <li class="nav-placeholder-prev" />
           <li
             v-for="(menu, index) in activeMenus.menus"
             :key="'header-menu-' + index"
+            class="menu-action-item"
             :class="{'header-menu-active': menu.id === activeMenus.menuId, 'header-menu-dot' : menu.cache }"
             @click.stop="pushRouter(menu)"
           >
             <span>{{ menu.label }}</span>
+            <button @click.stop="null">
+              <Close :size="14" />
+            </button>
           </li>
+          <li class="nav-placeholder-next" />
         </ul>
       </div>
     </div>
@@ -88,7 +93,8 @@ import {
   MenuOpen,
   Adjust,
   ExpandAll,
-  CollapseAll
+  CollapseAll,
+  Close
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 
@@ -102,7 +108,8 @@ export default defineComponent({
     MenuOpen,
     Adjust,
     ExpandAll,
-    CollapseAll
+    CollapseAll,
+    Close
   },
   props: {
     menuCollapse: {

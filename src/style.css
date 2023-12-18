@@ -85,6 +85,10 @@ a{
   margin-left: auto;
 }
 
+.mgl-medium{
+  margin-left: var(--mg-medium);
+}
+
 /*这里是系统级别的主题（非当前项目的）*/
 @media (prefers-color-scheme: light) {
   :root {

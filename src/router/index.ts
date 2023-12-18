@@ -27,8 +27,8 @@ const router = createRouter({
       path: '/admin/theme2',
       name: 'AdminTheme2',
       component: () => import('../views/admin/admin-theme2.vue'),
-      meta: { title: '后台管理模板2'},
-      children: menuDemoRouter
+      meta: { title: '后台管理模板2'}/*,
+      children: menuDemoRouter*/
     },
     {
       path: '/desktop/theme',

@@ -4,7 +4,8 @@
     --scrollbar-thumb-bg-color: #686868;
     --scrollbar-track-bg-color: transparent;
 
-    --border-color: #3B3A3A;
+    --border-color: #30363D;
+    --border-color2: #1f2731;
     --border-1: 1px solid var(--border-color);
 
     --search-bg-color: #2a2f36;

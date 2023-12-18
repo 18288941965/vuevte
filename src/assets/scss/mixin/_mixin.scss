@@ -41,7 +41,6 @@
 	@extend .button-base;
 	border: var(--border-1);
 	color: var(--header-text-color);
-	margin-left: var(--mg-medium);
 	&:hover{
 		color: var(--header-text-hover-color);
 	}

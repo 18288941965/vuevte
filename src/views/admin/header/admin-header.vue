@@ -1,27 +1,8 @@
 <template>
   <header class="admin-header">
-    <button
-      class="header-btn menu-collapse-icon"
-      @click="setMenuCollapse"
-    >
-      <MenuOpen
-        :size="24"
-        :class="{'icon-rotate' : menuCollapse }"
-      />
-    </button>
-
-    <el-tooltip content="找到当前菜单">
-      <button
-        class="header-btn"
-        @click="menuOpen"
-      >
-        <Adjust />
-      </button>
-    </el-tooltip>
-
     <el-tooltip content="展开所有菜单">
       <button
-        class="header-btn"
+        class="header-btn mgl-medium"
         @click="menuOpen"
       >
         <ExpandAll />
@@ -36,6 +17,25 @@
         <CollapseAll />
       </button>
     </el-tooltip>
+
+    <el-tooltip content="找到当前菜单">
+      <button
+        class="header-btn"
+        @click="menuOpen"
+      >
+        <Adjust />
+      </button>
+    </el-tooltip>
+
+    <button
+      class="header-btn menu-collapse-icon"
+      @click="setMenuCollapse"
+    >
+      <MenuOpen
+        :size="24"
+        :class="{'icon-rotate' : menuCollapse }"
+      />
+    </button>
 
     <div
       v-show="activeMenus.menus.length > 0"
@@ -59,10 +59,13 @@
               v-for="(menu, index) in activeMenus.menus"
               :key="'header-menu-' + index"
               class="header-menu-item"
-              :class="{'header-menu-active': menu.id === activeMenus.menuId }"
+              :class="{'header-menu-active': menu.id === activeMenus.menuId, 'header-menu-dot' : menu.cache }"
               @click.stop="pushRouter(menu)"
             >
-              <span :class="{'header-menu-dot' : menu.cache}">{{ menu.label }}</span>
+              <span>{{ menu.label }}</span>
+              <button @click.stop="null">
+                <Close :size="14" />
+              </button>
             </li>
           </ul>
         </div>
@@ -78,9 +81,11 @@
       </div>
     </div>
 
+    <div style="flex: 1" />
+
     <app-search />
 
-    <app-theme class="mgl-auto" />
+    <app-theme class="mgl-medium" />
 
     <user-avatar
       bg-color="#4385F4"
@@ -98,7 +103,8 @@ import {
   ArrowDropDown,
   MenuOpen,
   ExpandAll,
-  CollapseAll
+  CollapseAll,
+  Close
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
@@ -114,7 +120,8 @@ export default defineComponent({
     AppSearch,
     UserAvatar,
     ExpandAll,
-    CollapseAll
+    CollapseAll,
+    Close
   },
   props: {
     menuCollapse: {

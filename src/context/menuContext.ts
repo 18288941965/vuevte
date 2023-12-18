@@ -22,10 +22,9 @@ export function MenuStatusContext() {
             }
             return
         }
-        if (keepAliveInclude.value.includes(name)) {
-            keepAliveInclude.value.splice(keepAliveInclude.value.indexOf(name), 1)
+        if (!keepAliveInclude.value.includes(name)) {
+            keepAliveInclude.value.push(name)
         }
-        keepAliveInclude.value.unshift(name)
     }
 
     const updateActiveMenus = (menu: MenuBean, clean= false) => {
@@ -36,10 +35,9 @@ export function MenuStatusContext() {
         }
         activeMenus.menuId = menu.id
         const menuIds = activeMenus.menus.map(item => item.id)
-        if (menuIds.includes(menu.id)) {
-            activeMenus.menus.splice(menuIds.indexOf(menu.id), 1)
+        if (!menuIds.includes(menu.id)) {
+            activeMenus.menus.push(menu)
         }
-        activeMenus.menus.unshift(menu)
     }
 
     const menuCollapse = ref(false)

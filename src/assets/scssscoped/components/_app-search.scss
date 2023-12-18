@@ -1,19 +1,12 @@
 @use "../../scss/mixin/mixin" as *;
 
-.app-search{
-  position: relative;
-  height: 100%;
-  flex: 1;
-}
-
 .app-search-button{
   @include grid-base(24px 40px 4px 40px);
   float: right;
-  width: 260px;
+  width: 280px;
   height: var(--btn-height);
   border: var(--border-1);
   border-radius: var(--border-radius-medium);
-  margin-top: calc((var(--header-height) - var(--btn-height)) / 2);
   color: var(--header-text-color);
   box-shadow: var(--box-shadow-small) inset;
   font-size: var(--h6-size);
@@ -37,7 +30,7 @@
     position: right bottom;
   };
   box-shadow: var(--box-shadow-extra-large);
-  z-index: var(--z-index-b);
+  z-index: var(--z-index-f);
 
   &__header{
     @include grid-base(32px 1fr);

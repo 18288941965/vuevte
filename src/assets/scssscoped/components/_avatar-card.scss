@@ -2,6 +2,7 @@
 
 .user-avatar{
   height: 100%;
+  z-index: var(--z-index-d);
   &-container{
     @include flex-base();
     height: 100%;
@@ -14,7 +15,7 @@
   }
   &-panel{
     position: absolute;
-    right: var(--mg-small);
+    right: var(--mg-medium);
     width: var(--panel-width-medium);
     height: 240px;
     padding: var(--pd-large);
