@@ -21,9 +21,9 @@ const menuDemoRouter: RouteRecordRaw[] = [
   },
   {
     path: 'ev/pagination',
-    name: 'EvPagination',
+    name: 'EvPaginationDemo',
     component: () => import('../views/demoev/ev-pagination-demo.vue'),
-    meta: { title: 'EvPagination' }
+    meta: { title: 'EvPaginationDemo' }
   },
 ]
 

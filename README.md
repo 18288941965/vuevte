@@ -25,3 +25,10 @@ Error: EPERM: operation not permitted, unlink 'E:\vuevte\node_modules\@esbuild\w
 ```
 
 解决方式：停止前端项目并清空缓存，重新安装即可。
+
+2、页面缓存无效
+```
+<keep-alive :include="keepAliveInclude">
+<script setup lang="ts">
+```
+解决方式：不加include就能正常缓存，如果必须用include则只能采用原生的写法。

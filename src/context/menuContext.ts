@@ -4,6 +4,7 @@ import axios from 'axios'
 import {AxiosResult} from '../interface/publicInterface'
 import {PushRouter} from '../types/baseType'
 import menuDfs from '../algo/menuDfs'
+import {useRouter} from 'vue-router'
 
 export function MenuStatusContext() {
     const keepAliveInclude = ref<string[]>([])
@@ -58,11 +59,14 @@ export function MenuStatusContext() {
 export function MenuContext() {
     const menus = ref<MenuBean[]>([])
     const menuDefaultOpeneds = ref<String[]>([])
+    const router = useRouter()
 
     // 获取菜单并设置打开菜单样式
     const getMenus = (pushRouter: PushRouter, routerPath: string, loadCallback: Function | undefined ) => {
         menuDefaultOpeneds.value = []
-        axios.post('/api/admin/getMenus', { }).then((res: {data: AxiosResult}) => {
+        // TODO 这里是为了测试不同的模板加载不同的菜单
+        const fullPath = router.currentRoute.value.fullPath
+        axios.post('/api/admin/getMenus', { fullPath }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
                 const data = res.data.data
                 if (data.length === 0) {

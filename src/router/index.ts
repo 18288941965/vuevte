@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import menuDemoRouter from './menuDemoRouter'
+import menuDemoRouter2 from './menuDemoRouter2'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -27,8 +28,8 @@ const router = createRouter({
       path: '/admin/theme2',
       name: 'AdminTheme2',
       component: () => import('../views/admin/admin-theme2.vue'),
-      meta: { title: '后台管理模板2'}/*,
-      children: menuDemoRouter*/
+      meta: { title: '后台管理模板2'},
+      children: menuDemoRouter2
     },
     {
       path: '/desktop/theme',
