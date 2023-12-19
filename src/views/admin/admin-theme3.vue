@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-theme admin-theme3">
+  <div class="admin-theme">
     <admin-header3
       class="theme-header-ht"
       :module-icon="rootMenu.icon"
@@ -8,35 +8,33 @@
 
     <nav
       v-if="menus && menus.length > 0"
-      class="admin-theme3__nav"
+      class="admin-theme__nav"
     >
       <ul>
         <li
           v-for="(menu, index) in menus[0].children"
-          :key="'t-3-m-' + index"
-          :class="{'active-menu': menu.id === activeMenus.menuId }"
-          @click="pushRouter(menu)"
+          :key="'li-3-' + index"
         >
-          <a
-            href="#"
+          <router-link
+            class="nav-item"
+            :to="menu.url"
+            @click="pushRouter(menu)"
           >
             <component
               :is="menu.icon.toString()"
               v-if="menu.icon"
             />
             <span>{{ menu.label }}</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </nav>
 
-    <main>
-      <router-view v-slot="{ Component }">
-        <keep-alive :include="keepAliveInclude">
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
-    </main>
+    <router-view v-slot="{ Component }">
+      <keep-alive :include="keepAliveInclude">
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
   </div>
 </template>
 
@@ -68,9 +66,7 @@ export default defineComponent({
 
     const router = useRouter()
     const {
-      activeMenus,
       keepAliveInclude,
-      updateActiveMenus,
       updateKeepAliveInclude
     } = MenuStatusContext()
 
@@ -82,34 +78,23 @@ export default defineComponent({
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
-      await router.push(menu.url as string)
-      updateActiveMenus(menu)
       updateBrowserTitle(menu.label as string)
-    }
-
-    const setParentMenu = (id : string, label: string, icon = '') => {
-      Object.assign(rootMenu, { id, label, icon })
-      window.document.title = label
     }
 
     const loadCallback = (id: string, label: string, icon = '') => {
       Object.assign(rootMenu, { id, label, icon})
+      window.document.title = label
     }
 
     onMounted(() => {
       const routerPath =  router.currentRoute.value.path
-
       getMenus(pushRouter, routerPath, loadCallback)
     })
 
     return {
       rootMenu,
       keepAliveInclude,
-
-      setParentMenu,
       pushRouter,
-
-      activeMenus,
       menus
     }
   }
@@ -121,6 +106,5 @@ export default defineComponent({
 @import "../../assets/css/var/theme-light.css";
 </style>
 <style lang="scss">
-@use "../../assets/scssscoped/admin/admin-theme-public";
 @use "../../assets/scssscoped/admin/admin-theme3";
 </style>

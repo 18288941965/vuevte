@@ -1,0 +1,19 @@
+@use "../../scss/mixin/mixin" as *;
+@use "./admin-theme-public" as tp;
+
+.admin-theme{
+  .theme-header-ht{
+    height: var(--header-nav-height);
+    &__top{
+      height: var(--header-height-small);
+    }
+    &__nav{
+      height: var(--nav-height);
+    }
+  }
+
+  .main-grid{
+    @extend .layout-grid;
+    height: calc(100vh - var(--header-nav-height));
+  }
+}

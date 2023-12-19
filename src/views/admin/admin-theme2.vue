@@ -1,7 +1,7 @@
 <template>
   <div class="admin-theme">
     <admin-header2
-      class="theme2-header-ht"
+      class="theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
@@ -13,7 +13,7 @@
     />
     
     <main
-      class="theme2-grid"
+      class="main-grid"
       :class="{'menu-collapse' : menuCollapse}"
     >
       <div class="theme-left-wrapper">
@@ -118,5 +118,5 @@ export default defineComponent({
 @import "../../assets/css/var/theme-light.css";
 </style>
 <style lang="scss">
-@use "../../assets/scssscoped/admin/admin-theme-public";
+@use "../../assets/scssscoped/admin/admin-theme2";
 </style>

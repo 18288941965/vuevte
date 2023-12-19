@@ -1,53 +1,40 @@
 @use "../../scss/mixin/mixin" as *;
+@use "./admin-theme-public" as tp;
 
-.admin-theme3{
+.admin-theme{
   &__nav{
     z-index: var(--z-index-f);
    & ul{
-     @include flex-base();
+     @include flex-base(true);
      height: var(--nav-height);
      padding: 0 var(--pd-medium);
      border-bottom: var(--border-1);
      background-color: var(--header-bg-color);
-     & li{
-       height: 100%;
-       position: relative;
-       padding-top: calc((var(--nav-height) - var(--lh-small)) / 2);;
-       cursor: default;
-       & a{
-         @include flex-base();
-         height: var(--lh-small);
-         padding: 0 var(--pd-medium);
-         text-decoration: none;
-         border-radius: var(--border-radius-medium);
-       }
+
+     & .nav-item{
+       @include flex-base();
+       height: var(--lh-small);
+       padding: 0 var(--pd-medium);
+       text-decoration: none;
+       border-radius: var(--border-radius-medium);
+       font-size: var(--body-font-size);
        & svg{
          width: var(--h3-size);
          height: var(--h3-size);
          margin-right: var(--mg-ultra-small);
          color: var(--header-text-color);
        }
-       &:hover a{
+       &:hover{
          background-color: var(--menu-hover-color);
        }
      }
 
-     & .active-menu{
-       font: {
-         size: var(--h4-size);
-         weight: bolder;
-       };
-       & svg{
-         color: inherit;
-       }
-       &::after{
-         content: "";
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         right: 0;
-         height: 2px;
+     & a[aria-current='page']{
+       background-color: var(--color-blue);
+       color: var(--color-white);
+       &:hover{
          background-color: var(--color-blue);
+         color: var(--color-white);
        }
      }
    }

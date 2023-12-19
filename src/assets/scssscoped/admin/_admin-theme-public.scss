@@ -10,38 +10,24 @@
   @extend .layout-base;
 }
 
-/*-------主题--default--布局-------*/
 .theme-grid{
   @extend .layout-grid;
 }
+
 .theme-header-ht{
   height: var(--header-height);
 }
 
-/*-------主题--2--布局-------*/
-.theme2-grid{
-  @extend .layout-grid;
-  height: calc(100vh - var(--header-nav-height));
-}
-.theme2-header-ht{
-  height: var(--header-nav-height);
-  &__top{
-    height: var(--header-height-small);
-  }
-  &__nav{
-    height: var(--nav-height);
-  }
-}
-
-/*-------通用主题布局-------*/
 .menu-collapse{
   @extend .layout-base-collapse;
 }
+
 .theme-left-wrapper{
   height: 100%;
   border-right: 1px solid var(--menu-border-color);
   overflow: hidden;
 }
+
 .theme-right-wrapper{
   overflow: auto;
 }

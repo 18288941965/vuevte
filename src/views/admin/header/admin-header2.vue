@@ -1,8 +1,8 @@
 <template>
   <header class="admin-header">
-    <div class="theme2-top theme2-header-ht__top">
+    <div class="theme2-top theme-header-ht__top">
       <admin-logo
-        class="theme2-header-ht__top"
+        class="theme-header-ht__top"
         :bottom-border="false"
         :menu-collapse="false"
         :module-icon="moduleIcon"
@@ -19,7 +19,7 @@
       />
     </div>
     <div
-      class="theme2-nav theme2-header-ht__nav"
+      class="theme2-nav theme-header-ht__nav"
     >
       <div class="theme2-nav__left">
         <el-tooltip content="找到当前菜单">
@@ -60,24 +60,31 @@
         </button>
       </div>
 
-      <div class="theme2-nav__right">
+      <nav class="theme2-nav__right">
         <ul>
           <li class="nav-placeholder-prev" />
           <li
             v-for="(menu, index) in activeMenus.menus"
             :key="'header-menu-' + index"
-            class="menu-action-item"
-            :class="{'header-menu-active': menu.id === activeMenus.menuId, 'header-menu-dot' : menu.cache }"
+            class="nav-item-li"
+            :class="{'header-menu-active': menu.id === activeMenus.menuId }"
             @click.stop="pushRouter(menu)"
           >
-            <span>{{ menu.label }}</span>
-            <button @click.stop="null">
-              <Close :size="14" />
-            </button>
+            <router-link
+              class="nav-item"
+              :class="{'header-menu-dot' : menu.cache}"
+              :to="menu.url"
+              @click.stop="pushRouter(menu)"
+            >
+              <span>{{ menu.label }}</span>
+              <button @click.stop="null">
+                <Close :size="14" />
+              </button>
+            </router-link>
           </li>
           <li class="nav-placeholder-next" />
         </ul>
-      </div>
+      </nav>
     </div>
   </header>
 </template>

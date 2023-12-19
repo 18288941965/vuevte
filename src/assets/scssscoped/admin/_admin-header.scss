@@ -30,14 +30,14 @@
         margin: var(--mg-small);
       }
 
-      & .header-menu-item{
+      & .nav-item{
         @include grid-base(1fr 18px);
         position: relative;
         line-height: var(--lh-medium);
         padding: 0 var(--pd-small) 0 var(--pd-large);
         border-radius: var(--border-radius-small);
         margin-bottom: var(--mg-small);
-        cursor: pointer;
+        text-decoration: none;
         &:hover{
           background-color: #ECF5FF;
         }
@@ -53,9 +53,13 @@
         }
       }
 
-      & .header-menu-active{
-        color: var(--color-blue);
-        font-weight: bolder;
+      & a[aria-current='page']{
+        background-color: var(--color-blue);
+        color: var(--color-white);
+        &:hover{
+          background-color: var(--color-blue);
+          color: var(--color-white);
+        }
       }
     }
 

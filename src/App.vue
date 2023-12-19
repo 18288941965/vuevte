@@ -28,7 +28,7 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const reloadFlag = ref(true)
-    const channel = new BroadcastChannel('vuevte')
+    const channel: BroadcastChannel = new BroadcastChannel('vuevte')
 
     const {
       systemMessageList,
