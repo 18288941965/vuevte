@@ -23,7 +23,25 @@
     --h6-size: 0.75rem;
     --body-font-size: 0.875rem;
 
-    /*层级*/
+    /*
+    层级
+    [
+    element:
+    --el-index-normal: 1;
+    --el-index-top: 1000;
+    --el-index-popper: 2000; 用于对话框等，这里是动态的，2000是基础
+    ]
+    a:覆盖默认的层级
+    b:用于logo | ...
+    c:
+    d:用于自定义弹窗 avatar | ...
+    e:
+    f: 用于header | top nav |
+    g:
+    h:
+    i: 用于超越element弹出框，用于搜索面板等
+    z: 顶层用于message | 进度条等
+    */
     --z-index-a: 1;
     --z-index-b: 2;
     --z-index-c: 3;

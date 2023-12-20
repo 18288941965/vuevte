@@ -30,7 +30,7 @@
     position: right bottom;
   };
   box-shadow: var(--box-shadow-extra-large);
-  z-index: var(--z-index-f);
+  z-index: var(--z-index-i);
 
   &__header{
     @include grid-base(32px 1fr);
@@ -41,7 +41,6 @@
     margin: var(--mg-small);
     color: var(--color-black-6);
     text-align: center;
-    z-index: var(--z-index-d);
     input{
       height: 100%;
       border: 0 {

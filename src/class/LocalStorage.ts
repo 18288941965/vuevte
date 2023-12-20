@@ -1,7 +1,7 @@
 
 export default class LocalStorage {
-    readonly loginStatus: string =  'vuevte-login-status'
-    readonly userName: string =  'vuevte-user-name'
+    readonly loginStatus: string =  'vv-login-status'
+    readonly userName: string =  'vv-user-name'
     readonly fontType: string = 'vv-font-size'
     readonly themeModel: string = 'vv-theme-model'
 
