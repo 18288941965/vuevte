@@ -11,22 +11,26 @@
       class="admin-theme__nav"
     >
       <ul>
-        <li
+        <template
           v-for="(menu, index) in menus[0].children"
           :key="'li-3-' + index"
         >
-          <router-link
-            class="nav-item"
-            :to="menu.url"
-            @click="pushRouter(menu)"
+          <li
+            v-if="menu.url"
           >
-            <component
-              :is="menu.icon.toString()"
-              v-if="menu.icon"
-            />
-            <span>{{ menu.label }}</span>
-          </router-link>
-        </li>
+            <router-link
+              class="nav-item"
+              :to="menu.url"
+              @click="pushRouter(menu)"
+            >
+              <component
+                :is="menu.icon.toString()"
+                v-if="menu.icon"
+              />
+              <span>{{ menu.label }}</span>
+            </router-link>
+          </li>
+        </template>
       </ul>
     </nav>
 
@@ -39,12 +43,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, onMounted} from 'vue'
+import {defineComponent, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import {MenuBean, MenuBeanBase} from '../../interface/menuInterface'
-import {useRouter} from 'vue-router'
+import {MenuBean} from '../../interface/menuInterface'
 import {MenuContext, MenuStatusContext} from '../../context/menuContext'
 import AdminHeader3 from './header/admin-header3.vue'
+import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 
 export default defineComponent({
   name: 'AdminTheme3',
@@ -53,42 +57,32 @@ export default defineComponent({
     AdminHeader3
   },
   setup () {
-    const rootMenu = reactive<MenuBeanBase>({
-      id: '',
-      icon: '',
-      label: ''
-    })
+    const {
+      router,
+      rootMenu,
+      setParentMenu
+    } = themeBaseContext()
 
     const {
       menus,
       getMenus
     } = MenuContext()
 
-    const router = useRouter()
     const {
       keepAliveInclude,
       updateKeepAliveInclude
     } = MenuStatusContext()
 
-    const updateBrowserTitle = (menuLabel: string) => {
-      window.document.title = `${menuLabel} • ${rootMenu.label}`
-    }
-
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
-      updateBrowserTitle(menu.label as string)
-    }
-
-    const loadCallback = (id: string, label: string, icon = '') => {
-      Object.assign(rootMenu, { id, label, icon})
-      window.document.title = label
+      updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
     }
 
     onMounted(() => {
       const routerPath =  router.currentRoute.value.path
-      getMenus(pushRouter, routerPath, loadCallback)
+      getMenus(pushRouter, routerPath, setParentMenu)
     })
 
     return {

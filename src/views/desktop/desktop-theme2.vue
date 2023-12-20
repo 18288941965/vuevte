@@ -45,25 +45,32 @@ export default defineComponent({
 
     const scrollMenu = (direction: string) => {
       const container = document.querySelector('#flex-main')
-      // 根据滚动方向更新滚动位置
-      if (direction === 'right') {
-        container.scrollLeft += 200 // 每次滚动100像素
-      } else {
-        container.scrollLeft -= 200
+      if (container) {
+        // 根据滚动方向更新滚动位置
+        if (direction === 'right') {
+          container.scrollLeft += 200 // 每次滚动100像素
+        } else {
+          container.scrollLeft -= 200
+        }
       }
     }
 
     onMounted(() => {
       const container = document.querySelector('#flex-main')
-      container.addEventListener('wheel', function(event: WheelEvent) {
-        if (event.deltaY !== 0) {
-          // 阻止纵向滚动
-          event.preventDefault()
-          // 检查滚动方向
-          const scrollDirection = event.deltaY > 0 ? 'right' : 'left'
-          scrollMenu(scrollDirection)
-        }
-      })
+      if (container) {
+        container.addEventListener('wheel', (event) => {
+          event.stopPropagation()
+          if (event instanceof WheelEvent) {
+            if (event.deltaY !== 0) {
+              // 阻止纵向滚动
+              event.preventDefault()
+              // 检查滚动方向
+              const scrollDirection = event.deltaY > 0 ? 'right' : 'left'
+              scrollMenu(scrollDirection)
+            }
+          }
+        }, { passive: false })
+      }
     })
     
     return {

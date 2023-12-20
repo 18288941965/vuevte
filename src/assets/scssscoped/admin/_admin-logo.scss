@@ -24,8 +24,12 @@
   }
 }
 
-.logo-bb{
+.logo-border-bottom{
   border-bottom: 1px solid var(--menu-border-color);
+}
+
+.logo-background{
+  background-color: var(--header-bg-color);
 }
 
 .slide-fade-enter-active {

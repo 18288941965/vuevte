@@ -38,12 +38,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, ref} from 'vue'
+import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import {MenuBean, MenuBeanBase} from '../../interface/menuInterface'
-import {useRouter} from 'vue-router'
+import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
 import AdminHeader2 from './header/admin-header2.vue'
+import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 
 export default defineComponent({
   name: 'AdminTheme2',
@@ -52,13 +52,12 @@ export default defineComponent({
     AdminHeader2
   },
   setup () {
-    const rootMenu = reactive<MenuBeanBase>({
-      id: '',
-      icon: '',
-      label: ''
-    })
+    const {
+      router,
+      rootMenu,
+      setParentMenu
+    } = themeBaseContext()
 
-    const router = useRouter()
     const adminThemeMenuRef = ref()
     const {
       activeMenus,
@@ -69,26 +68,18 @@ export default defineComponent({
       updateKeepAliveInclude
     } = MenuStatusContext()
 
-    const updateBrowserTitle = (menuLabel: string) => {
-      window.document.title = `${menuLabel} • ${rootMenu.label}`
-    }
-
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
+      // 刷新页面相同路由页面执行此方法，这里没有做判断，因为同一地址框架默认不会再重复加载
       await router.push(menu.url as string)
       updateActiveMenus(menu)
-      updateBrowserTitle(menu.label as string)
+      updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
     }
 
     const menuOpen = (index: string) => {
       adminThemeMenuRef.value?.menuOpen(index)
-    }
-
-    const setParentMenu = (id : string, label: string, icon = '') => {
-      Object.assign(rootMenu, { id, label, icon })
-      window.document.title = label
     }
 
     const cleanHistory = () => {

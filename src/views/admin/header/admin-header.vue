@@ -55,22 +55,26 @@
       >
         <nav class="header-menu-panel__body card-scroll">
           <ul>
-            <li
+            <template
               v-for="(menu, index) in activeMenus.menus"
               :key="'li-0-' + index"
             >
-              <router-link
-                class="nav-item"
-                :class="{'header-menu-dot' : menu.cache}"
-                :to="menu.url"
-                @click.stop="pushRouter(menu)"
+              <li
+                v-if="menu.url"
               >
-                <span>{{ menu.label }}</span>
-                <button @click.stop="null">
-                  <Close :size="14" />
-                </button>
-              </router-link>
-            </li>
+                <router-link
+                  class="nav-item"
+                  :class="{'header-menu-dot' : menu.cache}"
+                  :to="menu.url"
+                  @click.stop="pushRouter(menu)"
+                >
+                  <span>{{ menu.label }}</span>
+                  <button @click.stop="null">
+                    <Close :size="14" />
+                  </button>
+                </router-link>
+              </li>
+            </template>
           </ul>
         </nav>
 

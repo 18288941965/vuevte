@@ -2,7 +2,7 @@
 interface AxiosResult {
     code: number
     msg: string
-    data: any | null
+    data: any | undefined | null
 }
 // 广播消息接口
 interface ChannelData {

@@ -1,5 +1,6 @@
 import  * as Mock from 'mockjs'
 import {MenuBean} from '../interface/menuInterface'
+import {AxiosResult} from '../interface/publicInterface'
 
 // 获取菜单列表：返回tree结构
 Mock.mock('/api/admin/getMenus', 'post',(res) => {
@@ -12,9 +13,9 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         themeNum = '3'
     }
 
-    const obj = {
+    const obj: AxiosResult = {
         code: 200,
-        msg: null,
+        msg: '操作成功',
         data: []
     }
 
@@ -39,7 +40,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         }
     ]
 
-    const menus: MenuBean[] = []
+    const menus: Array<MenuBean> = []
     menus.push({
         label: '后台管理模板',
         icon: 'admin-theme.png',
@@ -54,10 +55,12 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         ]
     })
 
-    if (themeNum !== '3') {
-        menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', cache: false, name: undefined, children: children })
-    } else {
-        menus[0].children.push(...children)
+    if (menus[0].children) {
+        if (themeNum !== '3') {
+            menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', cache: false, name: undefined, children: children })
+        } else {
+            menus[0].children.push(...children)
+        }
     }
 
     obj.data = menus
