@@ -1,15 +1,16 @@
+import LocalStorage from './class/LocalStorage'
+
 function themeContext() {
-    const themeKey = 'vv-theme-model'
+    const local = new LocalStorage()
 
     // 获取主题
     const getThemeModel = () => {
-      const model = localStorage.getItem(themeKey)
-        return model ? model : 'light'
+        let themeModel = local.getThemeModel()
+        return themeModel ? themeModel : 'light'
     }
 
     const setThemeModel = (model: string | null) => {
-        model === null ? localStorage.removeItem(themeKey) : localStorage.setItem(themeKey, model)
-
+        local.setThemeModel(model)
         const htmlElement = document.documentElement
         if (htmlElement) {
             htmlElement.setAttribute('class', model ? `${model} app-${model}` : '')
@@ -17,7 +18,7 @@ function themeContext() {
     }
 
     const initThemeModel = () => {
-        const themeModel = getThemeModel()
+       const themeModel = getThemeModel()
         setThemeModel(themeModel)
     }
 
