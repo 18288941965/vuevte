@@ -26,11 +26,6 @@ html.app-light{
   background-color: var(--bg-color);;
 }
 
-/*左侧菜单折叠后鼠标移上去会出滚动条*/
-html,body,#app{
-  overflow: hidden;
-}
-
 body {
   margin: 0;
   font-size: var(--body-font-size);
@@ -87,6 +82,11 @@ a{
 
 .mgl-medium{
   margin-left: var(--mg-medium);
+}
+
+.empty-flex{
+  flex: 1;
+  visibility: hidden;
 }
 
 /*这里是系统级别的主题（非当前项目的）*/

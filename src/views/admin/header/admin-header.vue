@@ -1,41 +1,14 @@
 <template>
   <header class="admin-header">
-    <el-tooltip content="展开所有菜单">
-      <button
-        class="header-btn mgl-medium"
-        @click="menuOpen"
-      >
-        <ExpandAll />
-      </button>
-    </el-tooltip>
-
-    <el-tooltip content="折叠所有菜单">
-      <button
-        class="header-btn"
-        @click="menuOpen"
-      >
-        <CollapseAll />
-      </button>
-    </el-tooltip>
-
-    <el-tooltip content="找到当前菜单">
-      <button
-        class="header-btn"
-        @click="menuOpen"
-      >
-        <Adjust />
-      </button>
-    </el-tooltip>
-
-    <button
-      class="header-btn menu-collapse-icon"
-      @click="setMenuCollapse"
-    >
-      <MenuOpen
-        :size="24"
-        :class="{'icon-rotate' : menuCollapse }"
+    <div style="min-width: var(--nav-width)">
+      <admin-logo
+        class="theme-header-ht"
+        :menu-collapse="menuCollapse"
+        :module-icon="moduleIcon"
+        :module-label="moduleLabel"
+        :bottom-border="false"
       />
-    </button>
+    </div>
 
     <div
       v-show="activeMenus.menus.length > 0"
@@ -89,7 +62,7 @@
       </div>
     </div>
 
-    <div style="flex: 1" />
+    <div class="empty-flex" />
 
     <app-search />
 
@@ -107,50 +80,48 @@ import {defineComponent, PropType, computed} from 'vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
-  Adjust,
   ArrowDropDown,
-  MenuOpen,
-  ExpandAll,
-  CollapseAll,
   Close
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
 import AppSearch from '../../../app-search.vue'
+import AdminLogo from '../logo/admin-logo.vue'
 
 export default defineComponent({
   name: 'AdminHeader',
   components: {
     AppTheme,
-    Adjust,
     ArrowDropDown,
-    MenuOpen,
     AppSearch,
     UserAvatar,
-    ExpandAll,
-    CollapseAll,
-    Close
+    Close,
+    AdminLogo
   },
   props: {
     menuCollapse: {
       type: Boolean,
       default: false
     },
+    moduleIcon: {
+      type: String,
+      default: undefined
+    },
+    moduleLabel: {
+      type: String,
+      default: undefined
+    },
     activeMenus: {
       type: Object as PropType<ActiveMenus>,
       required: true
     }
   },
-  emits: ['set-menu-collapse', 'push-router', 'menu-open', 'clean-history'],
+  emits: ['push-router', 'clean-history'],
   setup (props, {emit}) {
     const {
       panelShow,
       setPanelShow
     } = showContext()
-
-    const setMenuCollapse = () => {
-      emit('set-menu-collapse', !props.menuCollapse)
-    }
 
     const getMenuLabel = computed(() => {
       if (!props.activeMenus.menuId || !props.activeMenus.menus) {
@@ -168,12 +139,6 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
-    const menuOpen = () => {
-      if (props.activeMenus?.menuId) {
-        emit('menu-open', props.activeMenus.menuId)
-      }
-    }
-
     const cleanHistory = () => {
       emit('clean-history')
     }
@@ -184,10 +149,8 @@ export default defineComponent({
 
       cleanHistory,
       
-      setMenuCollapse,
       getMenuLabel,
-      pushRouter,
-      menuOpen
+      pushRouter
     }
   }
 })

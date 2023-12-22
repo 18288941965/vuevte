@@ -8,6 +8,8 @@
       :module-label="moduleLabel"
     />
 
+    <div class="empty-flex" />
+
     <app-search />
 
     <app-theme class="mgl-medium" />

@@ -3,17 +3,15 @@
 .admin-logo{
   @include flex-base();
   position: relative;
-  width: 100%;
   z-index: var(--z-index-b);
   & a{
     display: inline-flex;
     align-items: center;
-    margin-left: var(--mg-ultra-large);
+    margin-left: var(--mg-medium);
     text-decoration: none;
-    cursor: pointer;
   }
   & img{
-    width: 24px;
+    width: 32px;
     margin-right: var(--mg-medium);
   }
   & #admin-logo-text{

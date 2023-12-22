@@ -1,10 +1,12 @@
 @use "../mixin/mixin" as *;
 
 .admin-el-menu{
+    position: sticky;
+    top: 0;
     width: 100%;
-    height: calc(100% - var(--header-height));
+    height: 100%;
     border: 0;
-    padding: var(--mg-ultra-small);
+    padding: var(--mg-small);
     overflow: {
         x: hidden;
         y: auto;

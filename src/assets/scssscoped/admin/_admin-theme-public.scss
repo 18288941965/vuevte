@@ -1,9 +1,8 @@
 @use "../../scss/mixin/mixin" as *;
 
 .admin-theme{
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
+  width: 100%;
+  max-width: 100%;
 }
 
 .layout-grid{
@@ -23,11 +22,8 @@
 }
 
 .theme-left-wrapper{
-  height: 100%;
   border-right: 1px solid var(--menu-border-color);
-  overflow: hidden;
 }
 
 .theme-right-wrapper{
-  overflow: auto;
 }

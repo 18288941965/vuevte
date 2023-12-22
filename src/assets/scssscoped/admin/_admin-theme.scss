@@ -1,0 +1,28 @@
+@use "../../scss/mixin/mixin" as *;
+@use "./admin-theme-public" as tp;
+
+.admin-theme{
+    &__nav-btn{
+        @include flex-base();
+        justify-content: flex-end;
+        height: var(--nav-height);
+        border-bottom: var(--border-1);
+        padding-right: var(--pd-medium);
+        &__hidden {
+            button[data-hidden='true']{
+                visibility: hidden;
+            }
+            button[data-hidden='false']{
+                transform: translateX(-10px);
+            }
+        }
+    }
+
+    .nav-btn{
+        @include header-btn;
+        background-color: var(--header-bg-color);
+    }
+    .nav-btn + button{
+        margin-left: var(--mg-medium);
+    }
+}

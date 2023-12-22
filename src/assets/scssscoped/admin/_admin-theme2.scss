@@ -14,6 +14,6 @@
 
   .main-grid{
     @extend .layout-grid;
-    height: calc(100vh - var(--header-nav-height));
+    min-height: calc(100vh - var(--header-nav-height));
   }
 }

@@ -9,6 +9,8 @@
         :module-label="moduleLabel"
       />
 
+      <div class="empty-flex"></div>
+
       <app-search />
 
       <app-theme class="mgl-medium" />
@@ -20,10 +22,20 @@
     </div>
     <div
       class="theme2-nav theme-header-ht__nav"
+      :class="{'menu-collapse' : menuCollapse}"
     >
-      <div class="theme2-nav__left">
-        <el-tooltip content="找到当前菜单">
+      <div
+        class="theme2-nav__left"
+        :class="{'theme2-nav__left__hidden' : menuCollapse}"
+      >
+        <el-tooltip
+          content="选择打开的菜单"
+          placement="bottom-start"
+          :enterable="false"
+          :show-after="500"
+        >
           <button
+            data-hidden="true"
             class="header-btn"
             @click="menuOpen"
           >
@@ -31,25 +43,8 @@
           </button>
         </el-tooltip>
 
-        <el-tooltip content="展开所有菜单">
-          <button
-            class="header-btn"
-            @click="menuOpen"
-          >
-            <ExpandAll />
-          </button>
-        </el-tooltip>
-
-        <el-tooltip content="折叠所有菜单">
-          <button
-            class="header-btn"
-            @click="menuOpen"
-          >
-            <CollapseAll />
-          </button>
-        </el-tooltip>
-
         <button
+          data-hidden="false"
           class="header-btn menu-collapse-icon"
           @click="setMenuCollapse"
         >
@@ -104,8 +99,6 @@ import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
   MenuOpen,
   Adjust,
-  ExpandAll,
-  CollapseAll,
   Close
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
@@ -119,8 +112,6 @@ export default defineComponent({
     UserAvatar,
     MenuOpen,
     Adjust,
-    ExpandAll,
-    CollapseAll,
     Close
   },
   props: {
@@ -178,7 +169,7 @@ export default defineComponent({
     const cleanHistory = () => {
       emit('clean-history')
     }
-    
+
     return {
       panelShow,
       setPanelShow,
