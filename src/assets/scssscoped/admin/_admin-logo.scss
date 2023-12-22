@@ -4,6 +4,7 @@
   @include flex-base();
   position: relative;
   z-index: var(--z-index-b);
+  height: 100%;
   & a{
     display: inline-flex;
     align-items: center;

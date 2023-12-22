@@ -8,6 +8,7 @@ import {useRouter} from 'vue-router'
 
 export function MenuStatusContext() {
     const keepAliveInclude = ref<string[]>([])
+    const activeMenuPath = ref<MenuBean[]>([])
     const activeMenus = reactive<ActiveMenus>({
         menuId: '',
         menus: []
@@ -47,6 +48,7 @@ export function MenuStatusContext() {
     }
 
     return {
+        activeMenuPath,
         activeMenus,
         menuCollapse,
         setMenuCollapse,

@@ -11,6 +11,52 @@
       @push-router="pushRouter"
       @clean-history="cleanHistory"
     />
+
+    <div class="page-header">
+      <div
+        class="page-header__menu-btn"
+        :class="{'page-header__menu-btn-hidden': menuCollapse}"
+      >
+        <el-tooltip
+          content="找到当前菜单"
+          :show-after="500"
+          :enterable="false"
+        >
+          <button
+            data-hidden="true"
+            class="nav-btn"
+            @click="menuOpen"
+          >
+            <Adjust />
+          </button>
+        </el-tooltip>
+
+        <button
+          data-hidden="false"
+          class="nav-btn menu-collapse-icon"
+          @click="setMenuCollapse(!menuCollapse)"
+        >
+          <MenuOpen
+            :size="24"
+            :class="{'icon-rotate' : menuCollapse }"
+          />
+        </button>
+      </div>
+      <div class="page-header__menu">
+        <h3 v-if="activeMenuPath.length > 0">
+          {{ activeMenuPath[activeMenuPath.length - 1].label }}
+        </h3>
+        <div class="empty-flex" />
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item
+            v-for="(item, index) in activeMenuPath"
+            :key="'breadcrumb-' + index"
+          >
+            {{ item.label }}
+          </el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
+    </div>
     
     <div
       id="admin-theme-main"
@@ -22,35 +68,6 @@
         class="theme-left-wrapper"
         style="position: sticky; top: 0;height: var(--sticky-pane-height);"
       >
-        <div
-          class="admin-theme__nav-btn"
-          :class="{'admin-theme__nav-btn__hidden': menuCollapse}"
-        >
-          <el-tooltip
-            content="找到当前菜单"
-            :show-after="500"
-            :enterable="false"
-          >
-            <button
-              data-hidden="true"
-              class="nav-btn"
-              @click="menuOpen"
-            >
-              <Adjust />
-            </button>
-          </el-tooltip>
-
-          <button
-            data-hidden="false"
-            class="nav-btn menu-collapse-icon"
-            @click="setMenuCollapse(!menuCollapse)"
-          >
-            <MenuOpen
-              :size="24"
-              :class="{'icon-rotate' : menuCollapse }"
-            />
-          </button>
-        </div>
         <nav style="height: calc(100% - var(--nav-height));">
           <admin-menu
             ref="adminThemeMenuRef"
@@ -58,6 +75,7 @@
             :menu-id="activeMenus.menuId.toString()"
             @push-router="pushRouter"
             @set-parent-menu="setParentMenu"
+            @set-active-menu="setActiveMenu"
           />
         </nav>
       </div>
@@ -75,7 +93,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted} from 'vue'
+import {defineComponent, ref, onMounted, computed} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import AdminHeader from './header/admin-header.vue'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -104,6 +122,7 @@ export default defineComponent({
     const adminThemeMenuRef = ref()
 
     const {
+      activeMenuPath,
       activeMenus,
       menuCollapse,
       setMenuCollapse,
@@ -131,6 +150,10 @@ export default defineComponent({
       updateActiveMenus(activeMenus.menus[0], true)
     }
 
+    const setActiveMenu = (menu: MenuBean[]) => {
+      activeMenuPath.value = menu
+    }
+
     onMounted(() => {
       window.addEventListener('scroll', (event: Event) => {
         event.stopPropagation()
@@ -151,11 +174,13 @@ export default defineComponent({
     return {
       rootMenu,
       adminThemeMenuRef,
+      activeMenuPath,
       activeMenus,
       menuCollapse,
       setMenuCollapse,
       keepAliveInclude,
 
+      setActiveMenu,
       setParentMenu,
       pushRouter,
       menuOpen,

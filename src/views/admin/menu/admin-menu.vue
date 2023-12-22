@@ -80,7 +80,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['push-router', 'set-parent-menu'],
+  emits: ['push-router', 'set-parent-menu', 'set-active-menu'],
   setup (props, {emit}) {
     const router = useRouter()
     const adminMenuRef = ref()
@@ -114,6 +114,9 @@ export default defineComponent({
         return
       }
       emit('push-router', menu)
+
+      const menuPath = menuDfs(menus.value[0], menu.id, false)
+      emit('set-active-menu', menuPath)
     }
 
     const loadCallback = (id: string, label: string, icon = '') => {

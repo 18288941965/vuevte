@@ -1,4 +1,4 @@
-import {MenuBean} from '../interface/menuInterface';
+import {MenuBean} from '../interface/menuInterface'
 
 let found = false
 let nodeDepth = 0
@@ -22,7 +22,7 @@ const recurDfs = (menuNode: MenuBean, condition: string, visited: Map<String, bo
     visited.set(menuNode.id, true)
     if (menuNode.id === condition || menuNode.url === condition) {
         found = true
-        return;
+        return
     }
     if (!menuNode.children || found) {
         return
@@ -48,8 +48,16 @@ const menuDfs = (menus: MenuBean, condition: string, containRoot = false) => {
     found = false
     nodeDepth = 0
     const visited = new Map<String, boolean>()
-    const prev: MenuBean[] = []
+    let prev: MenuBean[] = []
     recurDfs(menus, condition, visited, prev, 0)
+    // 这里需要高版本的浏览器才支持，具体参照官网
+    // structuredClone(prev)
+    // 低版本请使用：prev = JSON.parse(JSON.stringify(prev))
+    prev = JSON.parse(JSON.stringify(prev))
+    // 删除子节点，避免传递了大量无用数据
+    prev.forEach(item => {
+        item.children = undefined
+    })
     return found? (containRoot ? prev.slice(0, nodeDepth + 1) : prev.slice(1, nodeDepth + 1)) : []
 }
 

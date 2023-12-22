@@ -2,7 +2,6 @@
 
 .admin-header{
   @include flex-base();
-  padding: var(--pd-medium);
   border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
   z-index: var(--z-index-f);
@@ -10,7 +9,23 @@
 
 .header-menu{
   position: relative;
-  height: 100%;
+  & .active-menu-history{
+    @include flex-base();
+    span{
+      font-weight: bolder;
+    }
+    button{
+      @include header-btn;
+      width: auto;
+      position: relative;
+      margin-right: var(--mg-medium);
+      padding-right: var(--pd-ultra-small);
+      & svg{
+        margin-left: var(--mg-ultra-small);
+      }
+    }
+  }
+
   & .header-menu-panel{
     position: absolute;
     width: var(--panel-width-medium);
@@ -77,6 +92,25 @@
           color: var(--color-red);
         }
       }
+    }
+  }
+}
+
+.button-group{
+  @include grid-base(32px 1px 32px);
+  grid-gap: 5px;
+  border: var(--border-1);
+  box-shadow: var(--box-shadow-small);
+  border-radius: var(--border-radius-medium);
+  & span{
+    background-color: var(--border-color);
+    height: 60%;
+  }
+  & button{
+    @extend .button-base;
+    color: var(--header-text-color);
+    &:hover{
+      color: var(--header-text-hover-color);
     }
   }
 }

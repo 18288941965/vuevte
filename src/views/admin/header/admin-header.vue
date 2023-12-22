@@ -1,6 +1,6 @@
 <template>
   <header class="admin-header">
-    <div style="min-width: var(--nav-width)">
+    <div style="width: var(--nav-width);border-right: var(--border-1);height: 100%;">
       <admin-logo
         class="theme-header-ht"
         :menu-collapse="menuCollapse"
@@ -14,13 +14,14 @@
       v-show="activeMenus.menus.length > 0"
       class="header-menu"
     >
-      <button
-        class="header-menu-btn"
-        @click="setPanelShow(undefined, $event)"
-      >
-        <span>{{ getMenuLabel }}</span>
-        <ArrowDropDown />
-      </button>
+      <div class="active-menu-history">
+        <button
+          @click="setPanelShow(undefined, $event)"
+        >
+          <Schedule />
+          <ArrowDropDown :size="20" />
+        </button>
+      </div>
 
       <div
         v-show="panelShow"
@@ -62,6 +63,16 @@
       </div>
     </div>
 
+    <div class="button-group">
+      <button>
+        <Star />
+      </button>
+      <span />
+      <button>
+        <ArrowDropDown :size="20" />
+      </button>
+    </div>
+
     <div class="empty-flex" />
 
     <app-search />
@@ -76,12 +87,15 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType, computed} from 'vue'
+import {defineComponent, PropType} from 'vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
+  Schedule,
   ArrowDropDown,
-  Close
+  Close,
+  Star,
+  StarFill
 } from '../../../components/svicon/publicIcon'
 import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
@@ -95,8 +109,11 @@ export default defineComponent({
     ArrowDropDown,
     AppSearch,
     UserAvatar,
+    Schedule,
     Close,
-    AdminLogo
+    AdminLogo,
+    Star,
+    StarFill
   },
   props: {
     menuCollapse: {
@@ -123,14 +140,6 @@ export default defineComponent({
       setPanelShow
     } = showContext()
 
-    const getMenuLabel = computed(() => {
-      if (!props.activeMenus.menuId || !props.activeMenus.menus) {
-        return ''
-      }
-      const menuBean = props.activeMenus.menus.find(item => item.id === props.activeMenus.menuId)
-      return menuBean ? menuBean.label : ''
-    })
-
     const pushRouter = (menu: MenuBean) => {
       setPanelShow(false)
       if (menu.id === props.activeMenus?.menuId) {
@@ -149,7 +158,6 @@ export default defineComponent({
 
       cleanHistory,
       
-      getMenuLabel,
       pushRouter
     }
   }

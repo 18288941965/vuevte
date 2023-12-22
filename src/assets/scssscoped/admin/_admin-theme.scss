@@ -2,21 +2,35 @@
 @use "./admin-theme-public" as tp;
 
 .admin-theme{
-    &__nav-btn{
-        @include flex-base();
-        justify-content: flex-end;
+    .page-header{
+        @extend .layout-base;
         height: var(--nav-height);
         border-bottom: var(--border-1);
-        padding-right: var(--pd-medium);
-        &__hidden {
-            button[data-hidden='true']{
-                visibility: hidden;
-            }
-            button[data-hidden='false']{
-                transform: translateX(-10px);
+        background: radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%),
+                    radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%);
+        &__menu-btn{
+            @include flex-base();
+            justify-content: flex-end;
+            height: var(--nav-height);
+            border-bottom: var(--border-1);
+            border-right: var(--border-1);
+            padding-right: var(--pd-medium);
+            &-hidden {
+                button[data-hidden='true']{
+                    visibility: hidden;
+                }
+                button[data-hidden='false']{
+                    transform: translateX(-10px);
+                }
             }
         }
+
+        &__menu{
+            @include flex-base();
+            padding: 0 var(--pd-large);
+        }
     }
+
 
     .nav-btn{
         @include header-btn;
@@ -26,3 +40,4 @@
         margin-left: var(--mg-medium);
     }
 }
+

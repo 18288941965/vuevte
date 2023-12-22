@@ -24,19 +24,3 @@
 .header-btn + button{
   margin-left: var(--mg-medium);
 }
-
-.header-menu-btn{
-  @include flex-base(true);
-  position: relative;
-  height: 100%;
-  margin-left: var(--mg-medium);
-  color: var(--header-text-color);
-  font-size: var(--h4-size);
-  & span{
-    padding-left: var(--pd-small);
-    font-weight: bolder;
-  }
-  &:hover{
-    color: var(--header-text-hover-color);
-  }
-}
