@@ -24,7 +24,7 @@
         >
           <button
             data-hidden="true"
-            class="nav-btn"
+            class="button-icon"
             @click="menuOpen"
           >
             <Adjust />
@@ -33,7 +33,7 @@
 
         <button
           data-hidden="false"
-          class="nav-btn menu-collapse-icon"
+          class="button-icon menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
@@ -68,16 +68,14 @@
         class="theme-left-wrapper"
         style="position: sticky; top: 0;height: var(--sticky-pane-height);"
       >
-        <nav style="height: calc(100% - var(--nav-height));">
-          <admin-menu
-            ref="adminThemeMenuRef"
-            :collapse="menuCollapse"
-            :menu-id="activeMenus.menuId.toString()"
-            @push-router="pushRouter"
-            @set-parent-menu="setParentMenu"
-            @set-active-menu="setActiveMenu"
-          />
-        </nav>
+        <admin-menu
+          ref="adminThemeMenuRef"
+          :collapse="menuCollapse"
+          :menu-id="activeMenus.menuId.toString()"
+          @push-router="pushRouter"
+          @set-parent-menu="setParentMenu"
+          @set-active-menu="setActiveMenu"
+        />
       </div>
       <div class="theme-right-wrapper">
         <main>
@@ -193,6 +191,9 @@ export default defineComponent({
 <style>
   @import "../../assets/css/var/theme-dark.css";
   @import "../../assets/css/var/theme-light.css";
+</style>
+<style lang="scss">
+  @use "../../assets/scss/components/theme-button";
 </style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme";

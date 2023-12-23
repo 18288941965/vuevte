@@ -1,6 +1,6 @@
 <template>
   <button
-    class="app-theme"
+    class="button-icon"
     @click="setTheme"
   >
     <Dark
@@ -55,5 +55,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "assets/scssscoped/components/app-theme";
+  @use "assets/scss/components/theme-button";
 </style>

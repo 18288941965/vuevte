@@ -6,8 +6,6 @@
         @extend .layout-base;
         height: var(--nav-height);
         border-bottom: var(--border-1);
-        background: radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%),
-                    radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%);
         &__menu-btn{
             @include flex-base();
             justify-content: flex-end;
@@ -32,12 +30,6 @@
     }
 
 
-    .nav-btn{
-        @include header-btn;
-        background-color: var(--header-bg-color);
-    }
-    .nav-btn + button{
-        margin-left: var(--mg-medium);
-    }
+
 }
 

@@ -1,19 +1,106 @@
 @use "../../scss/mixin/mixin" as *;
 @use "./admin-theme-public" as tp;
 
-.admin-theme{
-  .theme-header-ht{
-    height: var(--header-nav-height);
-    &__top{
-      height: var(--header-height-small);
-    }
-    &__nav{
-      height: var(--nav-height);
-    }
+/*---激活菜单的伪类基础信息----*/
+.nav-pseudo-classes{
+  position: relative;
+  z-index: var(--z-index-a);
+  background-color: var(--bg-color);
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, var(--header-bg-color) 98%, var(--border-color));
+    z-index: -1;
   }
+}
 
+.admin-theme{
   .main-grid{
     @extend .layout-grid;
     min-height: calc(100vh - var(--header-nav-height));
+  }
+
+  .theme2-nav{
+    @extend .layout-base;
+    position: relative;
+    height: var(--nav-height);
+    background-color: var(--header-bg-color);
+    background-image: linear-gradient(to bottom, var(--header-bg-color) 98%, var(--border-color));
+    &__left{
+      @include flex-base();
+      justify-content: flex-end;
+      border-right: var(--border-1);
+      padding-right: var(--pd-medium);
+      &__hidden {
+        button[data-hidden='true']{
+          visibility: hidden;
+        }
+        button[data-hidden='false']{
+          transform: translateX(-10px);
+        }
+      }
+    }
+
+    &__right{
+      ul{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      & .nav-item-li{
+        flex-shrink: 0;
+        flex-basis: 190px;
+        height: 100%;
+      }
+      & .nav-item{
+        @include grid-base(1fr 18px);
+        position: relative;
+        height: 100%;
+        padding: 0 var(--pd-small) 0 var(--pd-large);
+        text-decoration: none;
+      }
+      .header-menu-active{
+        font-weight: bolder;
+        color: var(--color-blue);
+        background-color: var(--bg-color);
+        border-top-right-radius: var(--border-radius-ultra-large);
+        border-top-left-radius: var(--border-radius-ultra-large);
+      }
+
+      li:has(+ .header-menu-active) {
+        @extend .nav-pseudo-classes;
+        &::after{
+          border-bottom-right-radius: var(--border-radius-ultra-large);
+        }
+      }
+
+      .header-menu-active + li {
+        @extend .nav-pseudo-classes;
+        &::after{
+          border-bottom-left-radius: var(--border-radius-ultra-large);
+        }
+      }
+
+      li[class^='nav-placeholder-']{
+        width: 15px;
+        height: 100%;
+      }
+
+      button{
+        @include flex-base(true);
+        height: 18px;
+        padding: 0;
+        border-radius: 50%;
+        &:hover{
+          color: var(--color-white);
+          background-color: var(--color-red);
+        }
+      }
+    }
   }
 }

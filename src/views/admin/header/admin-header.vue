@@ -1,88 +1,89 @@
 <template>
   <header class="admin-header">
-    <div style="width: var(--nav-width);border-right: var(--border-1);height: 100%;">
-      <admin-logo
-        class="theme-header-ht"
-        :menu-collapse="menuCollapse"
-        :module-icon="moduleIcon"
-        :module-label="moduleLabel"
-        :bottom-border="false"
-      />
-    </div>
+    <admin-logo
+      class="theme-header-ht bd-rt"
+      :menu-collapse="menuCollapse"
+      :module-icon="moduleIcon"
+      :module-label="moduleLabel"
+      :bottom-border="false"
+    />
 
-    <div
-      v-show="activeMenus.menus.length > 0"
-      class="header-menu"
-    >
-      <div class="active-menu-history">
-        <button
-          @click="setPanelShow(undefined, $event)"
+    <div class="header-action">
+      <div
+        v-show="activeMenus.menus.length > 0"
+        class="header-menu"
+      >
+        <div class="active-menu-history">
+          <button
+            class="button-history"
+            @click="setPanelShow(undefined, $event)"
+          >
+            <Schedule />
+            <ArrowDropDown :size="20" />
+          </button>
+        </div>
+
+        <div
+          v-show="panelShow"
+          class="header-menu-panel"
         >
-          <Schedule />
+          <nav class="header-menu-panel__body card-scroll">
+            <ul>
+              <template
+                v-for="(menu, index) in activeMenus.menus"
+                :key="'li-0-' + index"
+              >
+                <li
+                  v-if="menu.url"
+                >
+                  <router-link
+                    class="nav-item"
+                    :class="{'header-menu-dot' : menu.cache}"
+                    :to="menu.url"
+                    @click.stop="pushRouter(menu)"
+                  >
+                    <span>{{ menu.label }}</span>
+                    <button @click.stop="null">
+                      <Close :size="14" />
+                    </button>
+                  </router-link>
+                </li>
+              </template>
+            </ul>
+          </nav>
+
+          <footer class="header-menu-panel__footer">
+            <button
+              v-if="activeMenus.menus.length > 1"
+              @click="cleanHistory"
+            >
+              清空历史
+            </button>
+          </footer>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button>
+          <Star />
+        </button>
+        <span />
+        <button>
           <ArrowDropDown :size="20" />
         </button>
       </div>
 
-      <div
-        v-show="panelShow"
-        class="header-menu-panel"
-      >
-        <nav class="header-menu-panel__body card-scroll">
-          <ul>
-            <template
-              v-for="(menu, index) in activeMenus.menus"
-              :key="'li-0-' + index"
-            >
-              <li
-                v-if="menu.url"
-              >
-                <router-link
-                  class="nav-item"
-                  :class="{'header-menu-dot' : menu.cache}"
-                  :to="menu.url"
-                  @click.stop="pushRouter(menu)"
-                >
-                  <span>{{ menu.label }}</span>
-                  <button @click.stop="null">
-                    <Close :size="14" />
-                  </button>
-                </router-link>
-              </li>
-            </template>
-          </ul>
-        </nav>
+      <div class="empty-flex" />
 
-        <footer class="header-menu-panel__footer">
-          <button
-            v-if="activeMenus.menus.length > 1"
-            @click="cleanHistory"
-          >
-            清空历史
-          </button>
-        </footer>
-      </div>
+      <app-search />
+
+      <app-theme class="mgl-medium" />
+
+      <user-avatar
+        bg-color="#4385F4"
+        icon-color="#ffffff"
+      />
     </div>
-
-    <div class="button-group">
-      <button>
-        <Star />
-      </button>
-      <span />
-      <button>
-        <ArrowDropDown :size="20" />
-      </button>
-    </div>
-
-    <div class="empty-flex" />
-
-    <app-search />
-
-    <app-theme class="mgl-medium" />
-
-    <user-avatar
-      bg-color="#4385F4"
-      icon-color="#ffffff"
-    />
   </header>
 </template>
 

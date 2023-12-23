@@ -1,0 +1,39 @@
+@use "../../scss/mixin/mixin" as *;
+
+.button-group{
+	@include grid-base(32px 1px 32px);
+	grid-gap: 5px;
+	border: var(--border-1);
+	box-shadow: var(--box-shadow-small);
+	border-radius: var(--border-radius-medium);
+	& span{
+		background-color: var(--border-color);
+		height: 60%;
+	}
+	& button{
+		@extend .button-base;
+		color: var(--header-text-color);
+		&:hover{
+			color: var(--header-text-hover-color);
+		}
+	}
+}
+
+.button-icon{
+	@include button-custom;
+	background-color: var(--header-bg-color);
+}
+.button-icon + button{
+	margin-left: var(--mg-medium);
+}
+
+.button-history{
+	@include button-custom;
+	width: auto;
+	position: relative;
+	margin-right: var(--mg-medium);
+	padding-right: var(--pd-ultra-small);
+	& svg{
+		margin-left: var(--mg-ultra-small);
+	}
+}

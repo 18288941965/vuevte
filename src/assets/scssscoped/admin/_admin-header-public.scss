@@ -17,10 +17,3 @@
     transform: rotate(180deg);
   }
 }
-
-.header-btn{
-  @include header-btn;
-}
-.header-btn + button{
-  margin-left: var(--mg-medium);
-}

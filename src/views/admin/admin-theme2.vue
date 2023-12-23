@@ -11,6 +11,73 @@
       @menu-open="menuOpen"
       @clean-history="cleanHistory"
     />
+
+    <div
+      class="theme2-nav theme-header-ht__nav"
+      :class="{'menu-collapse' : menuCollapse}"
+    >
+      <div
+        class="theme2-nav__left"
+        :class="{'theme2-nav__left__hidden' : menuCollapse}"
+      >
+        <el-tooltip
+          content="选择打开的菜单"
+          placement="bottom-start"
+          :enterable="false"
+          :show-after="500"
+        >
+          <button
+            data-hidden="true"
+            class="button-icon"
+            @click="menuOpen"
+          >
+            <Adjust />
+          </button>
+        </el-tooltip>
+
+        <button
+          data-hidden="false"
+          class="button-icon menu-collapse-icon"
+          @click="setMenuCollapse"
+        >
+          <MenuOpen
+            :size="24"
+            :class="{'icon-rotate' : menuCollapse }"
+          />
+        </button>
+      </div>
+
+      <nav class="theme2-nav__right">
+        <ul>
+          <li class="nav-placeholder-prev" />
+          <template
+            v-for="(menu, index) in activeMenus.menus"
+            :key="'header-menu-' + index"
+          >
+            <li
+              v-if="menu.url"
+              class="nav-item-li"
+              :class="{'header-menu-active': menu.id === activeMenus.menuId }"
+              @click.stop="pushRouter(menu)"
+            >
+              <router-link
+                class="nav-item"
+                :class="{'header-menu-dot' : menu.cache}"
+                :to="menu.url"
+                @click.stop="pushRouter(menu)"
+              >
+                <span>{{ menu.label }}</span>
+                <button @click.stop="null">
+                  <Close :size="14" />
+                </button>
+              </router-link>
+            </li>
+          </template>
+
+          <li class="nav-placeholder-next" />
+        </ul>
+      </nav>
+    </div>
     
     <main
       id="admin-theme2-main"
@@ -49,12 +116,20 @@ import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
 import AdminHeader2 from './header/admin-header2.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
+import {
+  Adjust,
+  MenuOpen,
+  Close
+} from '../../components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AdminTheme2',
   components: {
     AdminMenu,
-    AdminHeader2
+    AdminHeader2,
+    Adjust,
+    MenuOpen,
+    Close
   },
   setup () {
     const {
@@ -129,6 +204,9 @@ export default defineComponent({
 <style>
 @import "../../assets/css/var/theme-dark.css";
 @import "../../assets/css/var/theme-light.css";
+</style>
+<style lang="scss">
+@use "../../assets/scss/components/theme-button";
 </style>
 <style lang="scss">
 @use "../../assets/scssscoped/admin/admin-theme2";
