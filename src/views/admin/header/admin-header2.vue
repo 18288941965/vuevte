@@ -74,17 +74,13 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['set-menu-collapse', 'push-router', 'menu-open', 'clean-history'],
+  emits: ['push-router'],
   setup (props, {emit}) {
 
     const {
       panelShow,
       setPanelShow
     } = showContext()
-
-    const setMenuCollapse = () => {
-      emit('set-menu-collapse', !props.menuCollapse)
-    }
 
     const getMenuLabel = computed(() => {
       if (!props.activeMenus.menuId || !props.activeMenus.menus) {
@@ -102,26 +98,11 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
-    const menuOpen = () => {
-      if (props.activeMenus?.menuId) {
-        emit('menu-open', props.activeMenus.menuId)
-      }
-    }
-
-    const cleanHistory = () => {
-      emit('clean-history')
-    }
-
     return {
       panelShow,
       setPanelShow,
-
-      cleanHistory,
-
-      setMenuCollapse,
       getMenuLabel,
-      pushRouter,
-      menuOpen
+      pushRouter
     }
   }
 })

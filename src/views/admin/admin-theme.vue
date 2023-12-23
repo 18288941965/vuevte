@@ -62,7 +62,7 @@
       id="admin-theme-main"
       class="theme-grid"
       :class="{'menu-collapse' : menuCollapse}"
-      style="--sticky-pane-height: calc(100vh - var(--header-height));"
+      style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
     >
       <div
         class="theme-left-wrapper"
@@ -158,7 +158,7 @@ export default defineComponent({
         const mainElement: HTMLElement | undefined = document.querySelector('#admin-theme-main')
         if (mainElement) {
           const styles = getComputedStyle(mainElement)
-          let data = styles.getPropertyValue('--header-height')
+          let data = styles.getPropertyValue('--header-nav-height')
           let top = 0
           if (data) {
             top =  parseInt(data.replace('px', '')) - window.scrollY

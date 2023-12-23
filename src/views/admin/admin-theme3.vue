@@ -1,9 +1,11 @@
 <template>
   <div class="admin-theme">
-    <admin-header3
+    <admin-header2
       class="theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
+      :active-menus="activeMenus"
+      @push-router="pushRouter"
     />
 
     <nav
@@ -47,14 +49,14 @@ import {defineComponent, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuContext, MenuStatusContext} from '../../context/menuContext'
-import AdminHeader3 from './header/admin-header3.vue'
+import AdminHeader2 from './header/admin-header2.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 
 export default defineComponent({
   name: 'AdminTheme3',
   components: {
     AdminMenu,
-    AdminHeader3
+    AdminHeader2
   },
   setup () {
     const {
@@ -69,6 +71,8 @@ export default defineComponent({
     } = MenuContext()
 
     const {
+      activeMenus,
+      updateActiveMenus,
       keepAliveInclude,
       updateKeepAliveInclude
     } = MenuStatusContext()
@@ -77,6 +81,7 @@ export default defineComponent({
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
+      updateActiveMenus(menu)
       updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
     }
 
@@ -89,7 +94,8 @@ export default defineComponent({
       rootMenu,
       keepAliveInclude,
       pushRouter,
-      menus
+      menus,
+      activeMenus
     }
   }
 })
@@ -98,6 +104,9 @@ export default defineComponent({
 <style>
 @import "../../assets/css/var/theme-dark.css";
 @import "../../assets/css/var/theme-light.css";
+</style>
+<style lang="scss">
+@use "../../assets/scss/components/theme-button";
 </style>
 <style lang="scss">
 @use "../../assets/scssscoped/admin/admin-theme3";

@@ -6,10 +6,7 @@
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
       :active-menus="activeMenus"
-      @set-menu-collapse="setMenuCollapse"
       @push-router="pushRouter"
-      @menu-open="menuOpen"
-      @clean-history="cleanHistory"
     />
 
     <div
