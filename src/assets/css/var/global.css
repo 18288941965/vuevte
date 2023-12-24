@@ -34,9 +34,9 @@
     a:覆盖默认的层级
     b:用于logo | ...
     c:
-    d:用于自定义弹窗 avatar | ...
-    e:
-    f: 用于header | top nav |
+    d:
+    e: 用于summary:before
+    f: 用于summary
     g:
     h:
     i: 用于超越element弹出框，用于搜索面板等

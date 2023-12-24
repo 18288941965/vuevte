@@ -1,51 +1,52 @@
 <template>
   <div class="user-avatar">
-    <div
+    <details
+      id="user-avatar-details"
       class="user-avatar-container"
     >
-      <el-avatar
-        :size="32"
-        :style="{ 'background-color' : bgColor }"
-        @click="setPanelShow(undefined, $event)"
-      >
-        <template #default>
-          <PersonFill
-            :size="24"
-            :color="iconColor"
-          />
-        </template>
-      </el-avatar>
-    </div>
+      <summary>
+        <el-avatar
+          :size="32"
+          :style="{ 'background-color' : bgColor }"
+        >
+          <template #default>
+            <PersonFill
+              :size="24"
+              :color="iconColor"
+            />
+          </template>
+        </el-avatar>
+      </summary>
 
-    <div
-      v-show="panelShow"
-      class="user-avatar-panel"
-    >
-      <ul>
-        <li class="li-information">
-          {{ userName }}
-        </li>
-        <li
-          class="li-action-item"
-          @click="dialogOpenSetting"
-        >
-          <Discover
-            :size="20"
-          />
-          系统设置
-        </li>
-        <li class="li-divider" />
-        <li
-          class="li-action-item"
-          @click="logout"
-        >
-          <Logouts
-            :size="20"
-          />
-          退出登录
-        </li>
-      </ul>
-    </div>
+      <div
+        class="user-avatar-panel"
+      >
+        <ul>
+          <li class="li-information">
+            {{ userName }}
+          </li>
+          <li
+            class="li-action-item"
+            @click="dialogOpenSetting"
+          >
+            <Discover
+              :size="20"
+            />
+            系统设置
+          </li>
+          <li class="li-divider" />
+          <li
+            class="li-action-item"
+            @click="logout"
+          >
+            <Logouts
+              :size="20"
+            />
+            退出登录
+          </li>
+        </ul>
+      </div>
+    </details>
 
     <app-settings-dialog
       v-bind="dialogSetting"
@@ -56,7 +57,6 @@
 
 <script lang="ts">
 import {defineComponent, ref, onMounted} from 'vue'
-import showContext from '../../context/showContext'
 import {doLogout, logoutContext} from '../../context/signContext'
 import {
   PersonFill,
@@ -86,11 +86,6 @@ export default defineComponent({
     }
   },
    setup () {
-    const {
-      panelShow,
-      setPanelShow
-    } = showContext()
-
      const {
         dialogEmpty: dialogSetting,
        dialogEmptyOpen: dialogOpenSetting,
@@ -113,8 +108,6 @@ export default defineComponent({
      })
      
     return {
-      panelShow,
-      setPanelShow,
       logout,
       userName,
 

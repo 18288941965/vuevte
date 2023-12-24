@@ -51,21 +51,6 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         name: undefined,
         children: [
             { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
             { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', cache: true, name: `IconDemo${themeNum}` }
         ]
     })

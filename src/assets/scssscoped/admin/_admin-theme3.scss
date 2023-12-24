@@ -3,14 +3,13 @@
 
 .admin-theme{
   &__nav{
-    z-index: var(--z-index-f);
    & ul{
      @include flex-base(true);
      height: var(--nav-height);
      padding: 0 var(--pd-medium);
      border-bottom: var(--border-1);
-     background-color: var(--header-bg-color);
-
+     background-color: #444445;
+     color: var(--color-white);
      & .nav-item{
        @include flex-base();
        height: var(--lh-small);

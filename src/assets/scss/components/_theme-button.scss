@@ -29,9 +29,8 @@
 
 .button-history{
 	@include button-custom;
-	width: auto;
+	width: 64px;
 	position: relative;
-	margin-right: var(--mg-medium);
 	padding-right: var(--pd-ultra-small);
 	& svg{
 		margin-left: var(--mg-ultra-small);

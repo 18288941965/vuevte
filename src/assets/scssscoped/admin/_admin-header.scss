@@ -4,8 +4,6 @@
   @extend .layout-base;
   border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
-  z-index: var(--z-index-f);
-
   .header-action{
     @include flex-base();
     padding: 0 var(--pd-large);
@@ -14,15 +12,9 @@
 
 .header-menu{
   position: relative;
-  & .active-menu-history{
-    @include flex-base();
-    span{
-      font-weight: bolder;
-    }
-  }
-
   & .header-menu-panel{
     position: absolute;
+    top: 40px;
     width: var(--panel-width-medium);
     border: 1px solid var(--panel-border-outer-color) {
       radius: var(--border-radius-large);
@@ -30,7 +22,7 @@
     color: var(--color-black-1);
     background-color: var(--panel-bg-color);
     box-shadow: var(--box-shadow-large);
-
+    z-index: var(--z-index-f);
     &__body{
       display: grid;
       overflow: auto;

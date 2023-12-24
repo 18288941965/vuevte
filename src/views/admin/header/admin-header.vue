@@ -9,22 +9,15 @@
     />
 
     <div class="header-action">
-      <div
-        v-show="activeMenus.menus.length > 0"
+      <details
+        id="admin-header-details"
         class="header-menu"
       >
-        <div class="active-menu-history">
-          <button
-            class="button-history"
-            @click="setPanelShow(undefined, $event)"
-          >
-            <Schedule />
-            <ArrowDropDown :size="20" />
-          </button>
-        </div>
-
+        <summary class="button-history">
+          <Schedule />
+          <ArrowDropDown :size="20" />
+        </summary>
         <div
-          v-show="panelShow"
           class="header-menu-panel"
         >
           <nav class="header-menu-panel__body card-scroll">
@@ -61,9 +54,9 @@
             </button>
           </footer>
         </div>
-      </div>
+      </details>
 
-      <div class="button-group">
+      <div class="button-group mgl-medium">
         <button>
           <Star />
         </button>
@@ -95,10 +88,8 @@ import {
   Schedule,
   ArrowDropDown,
   Close,
-  Star,
-  StarFill
+  Star
 } from '../../../components/svicon/publicIcon'
-import showContext from '../../../context/showContext'
 import AppTheme from '../../../app-theme.vue'
 import AppSearch from '../../../app-search.vue'
 import AdminLogo from '../logo/admin-logo.vue'
@@ -113,8 +104,7 @@ export default defineComponent({
     Schedule,
     Close,
     AdminLogo,
-    Star,
-    StarFill
+    Star
   },
   props: {
     menuCollapse: {
@@ -136,13 +126,8 @@ export default defineComponent({
   },
   emits: ['push-router', 'clean-history'],
   setup (props, {emit}) {
-    const {
-      panelShow,
-      setPanelShow
-    } = showContext()
-
+    
     const pushRouter = (menu: MenuBean) => {
-      setPanelShow(false)
       if (menu.id === props.activeMenus?.menuId) {
         return
       }
@@ -154,11 +139,7 @@ export default defineComponent({
     }
 
     return {
-      panelShow,
-      setPanelShow,
-
       cleanHistory,
-      
       pushRouter
     }
   }
