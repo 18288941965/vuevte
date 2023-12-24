@@ -66,7 +66,7 @@
     >
       <div
         class="theme-left-wrapper"
-        style="position: sticky; top: 0;height: var(--sticky-pane-height);"
+        style="height: var(--sticky-pane-height);"
       >
         <admin-menu
           ref="adminThemeMenuRef"
@@ -77,21 +77,18 @@
           @set-active-menu="setActiveMenu"
         />
       </div>
-      <div class="theme-right-wrapper">
-        <main>
-          <router-view v-slot="{ Component }">
-            <keep-alive :include="keepAliveInclude">
-              <component :is="Component" />
-            </keep-alive>
-          </router-view>
-        </main>
-      </div>
+
+      <router-view v-slot="{ Component }">
+        <keep-alive :include="keepAliveInclude">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, computed} from 'vue'
+import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import AdminHeader from './header/admin-header.vue'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -101,6 +98,7 @@ import {
   Adjust,
   MenuOpen
 } from '../../components/svicon/publicIcon'
+import {handleMenuScroll} from '../../context/stickyContext'
 
 export default defineComponent({
   name: 'AdminTheme',
@@ -153,22 +151,13 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      window.addEventListener('scroll', (event: Event) => {
-        event.stopPropagation()
-        const mainElement: HTMLElement | undefined = document.querySelector('#admin-theme-main')
-        if (mainElement) {
-          const styles = getComputedStyle(mainElement)
-          let data = styles.getPropertyValue('--header-nav-height')
-          let top = 0
-          if (data) {
-            top =  parseInt(data.replace('px', '')) - window.scrollY
-            top = top > 0 ? top : 0
-          }
-          mainElement.style.setProperty('--sticky-pane-height', `calc(100vh - ${top}px)`)
-        }
-      }, { passive: false })
+      window.addEventListener('scroll', handleMenuScroll)
     })
 
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleMenuScroll)
+    })
+    
     return {
       rootMenu,
       adminThemeMenuRef,
