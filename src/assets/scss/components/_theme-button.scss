@@ -17,6 +17,9 @@
 			color: var(--header-text-hover-color);
 		}
 	}
+	& button[disabled]{
+		@extend .disabled
+	}
 }
 
 .button-icon{
@@ -52,4 +55,8 @@
 		color: var(--color-white);
 		background-color: var(--color-red);
 	}
+}
+
+.button-black{
+	color: var(--color-black-1);
 }

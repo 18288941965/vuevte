@@ -13,12 +13,16 @@
         id="admin-header-details"
         class="header-menu"
       >
-        <summary class="button-history">
+        <summary
+          class="button-history"
+          :class="{'disabled': activeMenus.menus.length === 0 }"
+        >
           <Schedule />
           <ArrowDropDown :size="20" />
         </summary>
         <div
           class="header-menu-panel"
+          @click="closeDetails('admin-header-details')"
         >
           <nav class="header-menu-panel__body card-scroll">
             <ul>
@@ -33,14 +37,14 @@
                     class="nav-item"
                     :class="{'header-menu-dot' : menu.cache}"
                     :to="menu.url"
-                    @click.stop="pushRouter(menu)"
+                    @click="pushRouter(menu)"
                   >
                     <span>{{ menu.label }}</span>
                   </router-link>
 
                   <button
-                    class="button-menu-close"
-                    @click="cleanHistory(menu.id)"
+                    class="button-menu-close button-black"
+                    @click.stop="cleanHistory(menu.id)"
                   >
                     <Close :size="14" />
                   </button>
@@ -61,11 +65,11 @@
       </details>
 
       <div class="button-group mgl-medium">
-        <button>
+        <button :disabled="true">
           <Star />
         </button>
         <span />
-        <button>
+        <button :disabled="true">
           <ArrowDropDown :size="20" />
         </button>
       </div>
@@ -97,6 +101,7 @@ import {
 import AppTheme from '../../../app-theme.vue'
 import AppSearch from '../../../app-search.vue'
 import AdminLogo from '../logo/admin-logo.vue'
+import {closeDetails} from '../../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminHeader',
@@ -144,7 +149,8 @@ export default defineComponent({
 
     return {
       cleanHistory,
-      pushRouter
+      pushRouter,
+      closeDetails
     }
   }
 })

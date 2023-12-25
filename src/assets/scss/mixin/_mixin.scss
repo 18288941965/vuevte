@@ -23,6 +23,13 @@
 	border-radius: var(--border-radius-medium);
 }
 
+
+.disabled{
+	color: var(--disabled-text-color) !important;
+	cursor: not-allowed !important;
+	pointer-events: none;
+}
+
 @mixin flex-base($jc: false){
 	display: flex;
 	align-items: center;
