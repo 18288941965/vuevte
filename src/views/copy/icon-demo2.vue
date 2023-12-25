@@ -2,6 +2,15 @@
   <icon-demo />
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import {defineComponent} from 'vue'
 import IconDemo from '../demo/icon-demo.vue'
+
+export default defineComponent({
+  name: 'IconDemo2',
+  components: {
+    IconDemo
+  }
+})
+
 </script>

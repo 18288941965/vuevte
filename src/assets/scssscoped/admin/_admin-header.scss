@@ -31,26 +31,23 @@
         margin: var(--mg-small);
       }
 
-      & .nav-item{
-        @include grid-base(1fr 18px);
+      & li{
         position: relative;
-        line-height: var(--lh-medium);
-        padding: 0 var(--pd-small) 0 var(--pd-large);
-        border-radius: var(--border-radius-small);
         margin-bottom: var(--mg-small);
+      }
+
+      & .nav-item{
+        display: inline-block;
+        width: 100%;
+        line-height: var(--lh-medium);
+        padding: {
+          right: var(--pd-small);
+          left: var(--pd-large);
+        };
+        border-radius: var(--border-radius-small);
         text-decoration: none;
         &:hover{
           background-color: #ECF5FF;
-        }
-        button{
-          @include flex-base(true);
-          height: 18px;
-          padding: 0;
-          border-radius: 50%;
-          &:hover{
-            color: var(--color-white);
-            background-color: var(--color-red);
-          }
         }
       }
 

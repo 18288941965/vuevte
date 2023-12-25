@@ -3,7 +3,13 @@
 .header-menu-dot::before {
   content: "•";
   position: absolute;
+
   left: 5px;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: auto 0;
+
   border-radius: var(--border-radius-small);
   font-size: var(--h4-size);
   color: #2BC385;

@@ -35,7 +35,7 @@
         <button
           data-hidden="false"
           class="button-icon menu-collapse-icon"
-          @click="setMenuCollapse"
+          @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
             :size="24"
@@ -54,20 +54,22 @@
             <li
               v-if="menu.url"
               class="nav-item-li"
-              :class="{'header-menu-active': menu.id === activeMenus.menuId }"
-              @click.stop="pushRouter(menu)"
+              :class="{'header-menu-active': menu.id === activeMenus.menuId, 'header-menu-dot' : menu.cache }"
             >
               <router-link
                 class="nav-item"
-                :class="{'header-menu-dot' : menu.cache}"
                 :to="menu.url"
                 @click.stop="pushRouter(menu)"
               >
                 <span>{{ menu.label }}</span>
-                <button @click.stop="null">
-                  <Close :size="14" />
-                </button>
               </router-link>
+
+              <button
+                class="button-menu-close"
+                @click="cleanHistory(menu.id)"
+              >
+                <Close :size="14" />
+              </button>
             </li>
           </template>
 
@@ -95,11 +97,13 @@
         />
       </div>
 
-      <router-view v-slot="{ Component }">
-        <keep-alive :include="keepAliveInclude">
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
+      <div class="theme-content">
+        <router-view v-slot="{ Component }">
+          <keep-alive :include="keepAliveInclude">
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+      </div>
     </main>
   </div>
 </template>
@@ -140,7 +144,9 @@ export default defineComponent({
       menuCollapse,
       setMenuCollapse,
       updateActiveMenus,
+      cleanActiveMenus,
       keepAliveInclude,
+      cleanKeepAliveInclude,
       updateKeepAliveInclude
     } = MenuStatusContext()
 
@@ -158,9 +164,25 @@ export default defineComponent({
       adminThemeMenuRef.value?.menuOpen(index)
     }
 
-    const cleanHistory = () => {
-      updateKeepAliveInclude(keepAliveInclude.value[0] as string, true)
-      updateActiveMenus(activeMenus.menus[0], true)
+    const cleanHistory = (id: string | undefined) => {
+      const index = activeMenus.menus.findIndex(item => item.id === id)
+      cleanKeepAliveInclude(id)
+      cleanActiveMenus(id, index)
+      if (activeMenus.menus.length === 0) {
+        const rootPath = router.currentRoute.value.matched[0].path
+        router.push(rootPath)
+        return
+      }
+      // 关闭当前打开窗口后：先右后左的切换
+      if (!activeMenus.menuId) {
+        let temp: MenuBean | undefined
+        if (activeMenus.menus.length -1  >= index) {
+          temp = activeMenus.menus[index]
+        } else {
+          temp = activeMenus.menus[index - 1]
+        }
+        pushRouter(temp)
+      }
     }
 
     onMounted(() => {

@@ -36,11 +36,13 @@
       </ul>
     </nav>
 
-    <router-view v-slot="{ Component }">
-      <keep-alive :include="keepAliveInclude">
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
+    <div class="theme-content">
+      <router-view v-slot="{ Component }">
+        <keep-alive :include="keepAliveInclude">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+    </div>
   </div>
 </template>
 

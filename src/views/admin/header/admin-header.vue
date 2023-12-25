@@ -36,10 +36,14 @@
                     @click.stop="pushRouter(menu)"
                   >
                     <span>{{ menu.label }}</span>
-                    <button @click.stop="null">
-                      <Close :size="14" />
-                    </button>
                   </router-link>
+
+                  <button
+                    class="button-menu-close"
+                    @click="cleanHistory(menu.id)"
+                  >
+                    <Close :size="14" />
+                  </button>
                 </li>
               </template>
             </ul>
@@ -48,7 +52,7 @@
           <footer class="header-menu-panel__footer">
             <button
               v-if="activeMenus.menus.length > 1"
-              @click="cleanHistory"
+              @click="cleanHistory(undefined)"
             >
               清空历史
             </button>
@@ -134,8 +138,8 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
-    const cleanHistory = () => {
-      emit('clean-history')
+    const cleanHistory = (id: string | undefined) => {
+      emit('clean-history', id)
     }
 
     return {

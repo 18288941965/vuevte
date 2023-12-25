@@ -44,11 +44,11 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
     menus.push({
         label: '后台管理模板',
         icon: 'admin-theme.png',
-        url: undefined,
+        url: `/admin/theme${themeNum}`,
         id: '01',
         pid: undefined,
         cache: false,
-        name: undefined,
+        name: `AdminTheme${themeNum}`,
         children: [
             { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
             { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', cache: true, name: `IconDemo${themeNum}` }

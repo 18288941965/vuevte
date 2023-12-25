@@ -78,11 +78,13 @@
         />
       </div>
 
-      <router-view v-slot="{ Component }">
-        <keep-alive :include="keepAliveInclude">
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
+      <div class="theme-content">
+        <router-view v-slot="{ Component }">
+          <keep-alive :include="keepAliveInclude">
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -123,8 +125,11 @@ export default defineComponent({
       menuCollapse,
       setMenuCollapse,
       updateActiveMenus,
+      cleanActiveMenus,
       keepAliveInclude,
-      updateKeepAliveInclude
+      cleanKeepAliveInclude,
+      updateKeepAliveInclude,
+      cleanActiveMenuPath
     } = MenuStatusContext()
 
     const pushRouter = async (menu: MenuBean) => {
@@ -135,15 +140,33 @@ export default defineComponent({
       await router.push(menu.url as string)
       updateActiveMenus(menu)
       updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
+      adminThemeMenuRef.value?.setActivePath(menu.id)
     }
 
     const menuOpen = () => {
       adminThemeMenuRef.value?.menuOpen(activeMenus.menuId)
     }
 
-    const cleanHistory = () => {
-      updateKeepAliveInclude(keepAliveInclude.value[0] as string, true)
-      updateActiveMenus(activeMenus.menus[0], true)
+    const cleanHistory = (id: string | undefined) => {
+      const index = activeMenus.menus.findIndex(item => item.id === id)
+      cleanKeepAliveInclude(id)
+      cleanActiveMenus(id, index)
+      if (activeMenus.menus.length === 0) {
+        const rootPath = router.currentRoute.value.matched[0].path
+        router.push(rootPath)
+        cleanActiveMenuPath()
+        return
+      }
+      // 关闭当前打开窗口后：先右后左的切换
+      if (!activeMenus.menuId) {
+        let temp: MenuBean | undefined
+        if (activeMenus.menus.length -1  >= index) {
+          temp = activeMenus.menus[index]
+        } else {
+          temp = activeMenus.menus[index - 1]
+        }
+        pushRouter(temp)
+      }
     }
 
     const setActiveMenu = (menu: MenuBean[]) => {

@@ -1,5 +1,6 @@
 @use "../../scss/mixin/mixin" as *;
 @use "./admin-theme-public" as tp;
+@use "./admin-header-public";
 
 /*---激活菜单的伪类基础信息----*/
 .nav-pseudo-classes{
@@ -53,15 +54,19 @@
         overflow: hidden;
       }
       & .nav-item-li{
+        position: relative;
         flex-shrink: 0;
         flex-basis: 190px;
         height: 100%;
+        line-height: var(--nav-height);
       }
       & .nav-item{
-        @include grid-base(1fr 18px);
-        position: relative;
-        height: 100%;
-        padding: 0 var(--pd-small) 0 var(--pd-large);
+        display: inline-block;
+        width: 100%;
+        padding: {
+          right: var(--pd-small);
+          left: var(--pd-large);
+        };
         text-decoration: none;
       }
       .header-menu-active{
@@ -89,17 +94,6 @@
       li[class^='nav-placeholder-']{
         width: 15px;
         height: 100%;
-      }
-
-      button{
-        @include flex-base(true);
-        height: 18px;
-        padding: 0;
-        border-radius: 50%;
-        &:hover{
-          color: var(--color-white);
-          background-color: var(--color-red);
-        }
       }
     }
   }

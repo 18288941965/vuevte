@@ -14,31 +14,62 @@ export function MenuStatusContext() {
         menus: []
     })
 
-    const updateKeepAliveInclude = (name: string, clean = false) => {
-        // 清除历史
-        if (clean) {
-            if (!activeMenus.menus[0].cache) {
-                keepAliveInclude.value = []
-            } else {
-                keepAliveInclude.value.splice(1, keepAliveInclude.value.length - 1)
-            }
-            return
-        }
+    const cleanActiveMenuPath = () => {
+        activeMenuPath.value = []
+    }
+
+    const updateKeepAliveInclude = (name: string) => {
         if (!keepAliveInclude.value.includes(name)) {
             keepAliveInclude.value.push(name)
         }
     }
 
-    const updateActiveMenus = (menu: MenuBean, clean= false) => {
-        // 清除历史
-        if (clean) {
-            activeMenus.menus.splice(1, activeMenus.menus.length - 1)
+    const cleanKeepAliveInclude = (id: string | undefined) => {
+        // 关闭除打开页面外的所有窗口
+        if (!id) {
+            const openObj = activeMenus.menus.find(item => item.id === activeMenus.menuId)
+            keepAliveInclude.value =
+                openObj
+                && openObj.name
+                && keepAliveInclude.value.includes(openObj.name) ? [openObj.name] : []
             return
         }
+
+        // 关闭指定的窗口
+        const closeObj = activeMenus.menus.find(item => item.id === id)
+        if (closeObj && closeObj.name) {
+            const _index = keepAliveInclude.value.indexOf(closeObj.name)
+            if (_index != -1) {
+                keepAliveInclude.value.splice(_index, 1)
+            }
+        }
+    }
+
+    const updateActiveMenus = (menu: MenuBean) => {
         activeMenus.menuId = menu.id
         const menuIds = activeMenus.menus.map(item => item.id)
         if (!menuIds.includes(menu.id)) {
             activeMenus.menus.push(menu)
+        }
+    }
+
+    const cleanActiveMenus = (id: string | undefined, index: number) => {
+        // 关闭除打开页面外的所有窗口
+        if (!id) {
+            const openObj = activeMenus.menus.find(item => item.id === activeMenus.menuId)
+            if (openObj) {
+                activeMenus.menus = [openObj]
+            }
+            return
+        }
+
+        // 关闭指定的窗口
+        const findObj = activeMenus.menus.find(item => item.id === id)
+        if (findObj) {
+            if (activeMenus.menuId === findObj.id) {
+                activeMenus.menuId = ''
+            }
+            activeMenus.menus.splice(index, 1)
         }
     }
 
@@ -53,8 +84,11 @@ export function MenuStatusContext() {
         menuCollapse,
         setMenuCollapse,
         updateActiveMenus,
+        cleanActiveMenus,
         keepAliveInclude,
-        updateKeepAliveInclude
+        cleanKeepAliveInclude,
+        updateKeepAliveInclude,
+        cleanActiveMenuPath
     }
 }
 

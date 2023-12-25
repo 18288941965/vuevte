@@ -2,6 +2,15 @@
   <admin-dashboard />
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import {defineComponent} from 'vue'
 import AdminDashboard from '../admin/admin-dashboard.vue'
+
+export default defineComponent({
+  name: 'AdminDashboard2',
+  components: {
+    AdminDashboard
+  }
+})
+
 </script>

@@ -99,6 +99,11 @@ export default defineComponent({
       }
     }
 
+    const setActivePath = (menuId) => {
+      const menuPath = menuDfs(menus.value[0], menuId, false)
+      emit('set-active-menu', menuPath)
+    }
+
     // 1、展开当前的菜单
     const menuOpen = (index: string) => {
       const menuPrev = menuDfs(menus.value[0], index)
@@ -114,9 +119,7 @@ export default defineComponent({
         return
       }
       emit('push-router', menu)
-
-      const menuPath = menuDfs(menus.value[0], menu.id, false)
-      emit('set-active-menu', menuPath)
+      setActivePath(menu.id)
     }
 
     const loadCallback = (id: string, label: string, icon = '') => {
@@ -134,7 +137,8 @@ export default defineComponent({
       pushRouter,
       menuDefaultOpeneds,
       adminMenuRef,
-      menuOpen
+      menuOpen,
+      setActivePath
     }
   }
 })

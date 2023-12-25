@@ -36,3 +36,20 @@
 		margin-left: var(--mg-ultra-small);
 	}
 }
+
+.button-menu-close{
+	@include flex-base(true);
+	position: absolute;
+	top: 0;
+	right: 5px;
+	bottom: 0;
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	border-radius: 50%;
+	margin: auto 0;
+	&:hover{
+		color: var(--color-white);
+		background-color: var(--color-red);
+	}
+}
