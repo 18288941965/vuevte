@@ -144,6 +144,9 @@ export default defineComponent({
     }
 
     const cleanHistory = (id: string | undefined) => {
+      if (props.activeMenus && props.activeMenus.menus.length === 1) {
+        closeDetails('admin-header-details')
+      }
       emit('clean-history', id)
     }
 

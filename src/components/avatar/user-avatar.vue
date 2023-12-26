@@ -20,6 +20,7 @@
 
       <div
         class="user-avatar-panel"
+        @click="closeDetails('user-avatar-details')"
       >
         <ul>
           <li class="li-information">
@@ -66,6 +67,7 @@ import {
 import LocalStorage from '../../class/LocalStorage'
 import {dialogEmptyContext} from '../../context/dialogContext'
 import AppSettingsDialog from '../settings/app-settings-dialog.vue'
+import {closeDetails} from '../../util/baseUtil'
 
 export default defineComponent({
   name: 'UserAvatar',
@@ -110,7 +112,7 @@ export default defineComponent({
     return {
       logout,
       userName,
-
+      closeDetails,
       dialogSetting,
       dialogOpenSetting,
       dialogCloseSetting

@@ -3,7 +3,8 @@
     class="admin-theme "
   >
     <admin-header
-      class="theme-header-ht"
+      class="layout-base theme-header-ht"
+      :class="{'menu-collapse' : menuCollapse}"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
@@ -12,13 +13,17 @@
       @clean-history="cleanHistory"
     />
 
-    <div class="page-header">
+    <div
+      class="layout-base page-header"
+      :class="{'menu-collapse' : menuCollapse}"
+    >
       <div
         class="page-header__menu-btn"
         :class="{'page-header__menu-btn-hidden': menuCollapse}"
       >
         <el-tooltip
           content="找到当前菜单"
+          placement="bottom-start"
           :show-after="500"
           :enterable="false"
         >
@@ -60,7 +65,7 @@
     
     <div
       id="admin-theme-main"
-      class="theme-grid"
+      class="layout-base"
       :class="{'menu-collapse' : menuCollapse}"
       style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
     >

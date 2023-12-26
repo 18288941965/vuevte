@@ -5,14 +5,6 @@
   max-width: 100%;
 }
 
-.layout-grid{
-  @extend .layout-base;
-}
-
-.theme-grid{
-  @extend .layout-grid;
-}
-
 .theme-header-ht{
   height: var(--header-height);
 }

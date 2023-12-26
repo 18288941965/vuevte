@@ -3,7 +3,6 @@
 
 .admin-theme{
     .page-header{
-        @extend .layout-base;
         height: var(--nav-height);
         border-bottom: var(--border-1);
         &__menu-btn{

@@ -1,7 +1,6 @@
 @use "../../scss/mixin/mixin" as *;
 
 .admin-header{
-  @extend .layout-base;
   border-bottom: 1px solid var(--menu-border-color);
   background-color: var(--header-bg-color);
 

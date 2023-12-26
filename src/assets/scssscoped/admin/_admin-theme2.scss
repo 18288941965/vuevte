@@ -21,12 +21,10 @@
 
 .admin-theme{
   .main-grid{
-    @extend .layout-grid;
     min-height: calc(100vh - var(--header-nav-height));
   }
 
   .theme2-nav{
-    @extend .layout-base;
     position: relative;
     height: var(--nav-height);
     background-color: var(--header-bg-color);
