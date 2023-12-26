@@ -1,7 +1,7 @@
 <template>
   <div class="admin-theme">
     <admin-header2
-      class="theme-header-ht"
+      class="layout-base theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :active-menus="activeMenus"
@@ -25,10 +25,6 @@
               :to="menu.url"
               @click="pushRouter(menu)"
             >
-              <component
-                :is="menu.icon.toString()"
-                v-if="menu.icon"
-              />
               <span>{{ menu.label }}</span>
             </router-link>
           </li>

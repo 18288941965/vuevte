@@ -47,7 +47,6 @@
 
       <nav class="theme2-nav__right">
         <ul>
-          <li class="nav-placeholder-prev" />
           <template
             v-for="(menu, index) in activeMenus.menus"
             :key="'header-menu-' + index"
@@ -55,10 +54,10 @@
             <li
               v-if="menu.url"
               class="nav-item-li"
-              :class="{'header-menu-active': menu.id === activeMenus.menuId, 'header-menu-dot' : menu.cache }"
             >
               <router-link
                 class="nav-item"
+                :class="{'header-menu-dot' : menu.cache }"
                 :to="menu.url"
                 @click.stop="pushRouter(menu)"
               >
@@ -73,8 +72,6 @@
               </button>
             </li>
           </template>
-
-          <li class="nav-placeholder-next" />
         </ul>
       </nav>
     </div>

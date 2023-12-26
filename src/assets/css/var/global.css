@@ -55,10 +55,10 @@
 
     /*圆角*/
     --border-radius-ultra-small: 2px;
-    --border-radius-small: 4px;
-    --border-radius-medium: 6px;
-    --border-radius-large: 8px;
-    --border-radius-ultra-large : 12px;
+    --border-radius-small: 6px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 16px;
+    --border-radius-ultra-large : 20px;
 
     --border-radius-round-small: 16px;
     --border-radius-round-medium: 20px;

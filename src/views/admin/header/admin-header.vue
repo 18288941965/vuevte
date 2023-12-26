@@ -9,6 +9,8 @@
     />
 
     <div class="header-action">
+      <div class="empty-flex" />
+
       <details
         id="admin-header-details"
         class="header-menu"
@@ -73,8 +75,6 @@
           <ArrowDropDown :size="20" />
         </button>
       </div>
-
-      <div class="empty-flex" />
 
       <app-search />
 

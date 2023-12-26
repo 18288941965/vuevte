@@ -9,7 +9,6 @@
         :data="pager.list"
         border
         style="width: 100%"
-        height="500px"
       >
         <el-table-column
           prop="name"
@@ -36,7 +35,6 @@
         :data="pager2.list"
         border
         style="width: 100%"
-        height="500px"
       >
         <el-table-column
           prop="name"
@@ -75,13 +73,15 @@
         />
       </el-table>
 
-      <el-button
-        type="primary"
-        :disabled="pager3.list.length === pager3.total"
-        @click="query3(pager3.pageNum + 1)"
-      >
-        加载更多
-      </el-button>
+      <div class="load-more">
+        <el-button
+          type="primary"
+          :disabled="pager3.list.length === pager3.total"
+          @click="query3(pager3.pageNum + 1)"
+        >
+          加载更多...
+        </el-button>
+      </div>
     </section>
   </div>
 </template>
@@ -197,5 +197,9 @@ export default defineComponent({
 <style scoped>
   section{
     margin-top: 20px;
+  }
+  .load-more{
+    padding: var(--pd-large);
+    text-align: center;
   }
 </style>

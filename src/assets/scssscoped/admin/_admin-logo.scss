@@ -8,7 +8,7 @@
   & a{
     display: inline-flex;
     align-items: center;
-    margin-left: var(--mg-medium);
+    margin-left: var(--mg-ultra-large);
     text-decoration: none;
   }
   & img{
@@ -28,7 +28,6 @@
 }
 
 .logo-background{
-  background-color: var(--header-bg-color);
 }
 
 .slide-fade-enter-active {

@@ -5,8 +5,9 @@
     .page-header{
         height: var(--nav-height);
         border-bottom: var(--border-1);
+        align-items: start;
         &__menu-btn{
-            @include flex-base();
+            display: flex;
             justify-content: flex-end;
             height: var(--nav-height);
             border-bottom: var(--border-1);
@@ -27,8 +28,5 @@
             padding: 0 var(--pd-large);
         }
     }
-
-
-
 }
 

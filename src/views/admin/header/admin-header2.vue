@@ -9,6 +9,8 @@
     />
 
     <div class="header-action">
+      <div class="empty-flex" />
+
       <div class="button-group">
         <button>
           <Star />
@@ -18,8 +20,6 @@
           <ArrowDropDown :size="20" />
         </button>
       </div>
-
-      <div class="empty-flex" />
 
       <app-search />
 

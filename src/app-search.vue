@@ -1,6 +1,6 @@
 <template>
   <button
-    class="app-search-button"
+    class="app-search-button mgl-medium"
     @click.stop="setPanelShow(undefined)"
   >
     <Search :size="20" />

@@ -1,6 +1,6 @@
 <template>
   <div class="mg-20">
-    <h3 style="text-align: center">
+    <h3>
       基于 Element Plus → Radio 二次封装的选择器，对不同的数据选择做统一处理。
     </h3>
 

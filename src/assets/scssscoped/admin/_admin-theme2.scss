@@ -2,23 +2,6 @@
 @use "./admin-theme-public" as tp;
 @use "./admin-header-public";
 
-/*---激活菜单的伪类基础信息----*/
-.nav-pseudo-classes{
-  position: relative;
-  z-index: var(--z-index-a);
-  background-color: var(--bg-color);
-  &::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-image: linear-gradient(to bottom, var(--header-bg-color) 98%, var(--border-color));
-    z-index: -1;
-  }
-}
-
 .admin-theme{
   .main-grid{
     min-height: calc(100vh - var(--header-nav-height));
@@ -27,11 +10,12 @@
   .theme2-nav{
     position: relative;
     height: var(--nav-height);
-    background-color: var(--header-bg-color);
-    background-image: linear-gradient(to bottom, var(--header-bg-color) 98%, var(--border-color));
+    border-bottom: var(--border-1);
+    align-items: start;
     &__left{
-      @include flex-base();
+      display: flex;
       justify-content: flex-end;
+      height: 100%;
       border-right: var(--border-1);
       padding-right: var(--pd-medium);
       &__hidden {
@@ -46,52 +30,32 @@
 
     &__right{
       ul{
-        height: 100%;
-        display: flex;
-        align-items: center;
+        @include flex-base();
         overflow: hidden;
       }
       & .nav-item-li{
         position: relative;
         flex-shrink: 0;
         flex-basis: 190px;
-        height: 100%;
-        line-height: var(--nav-height);
+        margin-left: var(--mg-medium);
       }
       & .nav-item{
-        display: inline-block;
-        width: 100%;
+        display: block;
+        line-height: var(--lh-small);
+        border: var(--border-1);
+        border-radius: var(--border-radius-medium);
         padding: {
           right: var(--pd-small);
           left: var(--pd-large);
         };
         text-decoration: none;
       }
-      .header-menu-active{
+
+      & a[aria-current='page']{
         font-weight: bolder;
-        color: var(--color-blue);
-        background-color: var(--bg-color);
-        border-top-right-radius: var(--border-radius-ultra-large);
-        border-top-left-radius: var(--border-radius-ultra-large);
-      }
-
-      li:has(+ .header-menu-active) {
-        @extend .nav-pseudo-classes;
-        &::after{
-          border-bottom-right-radius: var(--border-radius-ultra-large);
-        }
-      }
-
-      .header-menu-active + li {
-        @extend .nav-pseudo-classes;
-        &::after{
-          border-bottom-left-radius: var(--border-radius-ultra-large);
-        }
-      }
-
-      li[class^='nav-placeholder-']{
-        width: 15px;
-        height: 100%;
+        color: var(--color-white);
+        background-image: linear-gradient(to right, var(--color-blue), #EAF4FF);
+        border: 0;
       }
     }
   }

@@ -24,7 +24,6 @@
 
 .button-icon{
 	@include button-custom;
-	background-color: var(--header-bg-color);
 }
 .button-icon + button{
 	margin-left: var(--mg-medium);
