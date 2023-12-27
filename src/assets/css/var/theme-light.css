@@ -1,12 +1,10 @@
 .app-light {
   color-scheme: light;
 
-  --menu-active-bg-color: #CFE8FD;
-  --menu-hover-color: #F2F2F2;
-  --menu-border-color: var(--border-color);
+  --button-text-color: #666666;
+  --button-hover-text-color: #000000;
 
-  --header-text-color: #666666;
-  --header-menu-hove-color: #FAFAFA;
-
-  --disabled-text-color: #999999;
+  --active-bg-color: #F0F2F5;
+  --disabled-text-color: #D3D3D6;
+  --placeholder-color: #A8ABB2;
 }

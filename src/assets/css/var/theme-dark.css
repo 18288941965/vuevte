@@ -1,12 +1,10 @@
 .app-dark {
   color-scheme: dark;
 
-  --menu-active-bg-color: #162F44;
-  --menu-hover-color: rgba(255, 255, 255, 0.1);
-  --menu-border-color: var(--border-color);
+  --button-text-color: #B3BBC3;
+  --button-hover-text-color: #FFFFFF;
 
-  --header-text-color: #B3BBC3;
-  --header-text-hover-color: #FFFFFF;
-
+  --active-bg-color: #303030;
   --disabled-text-color: #666666;
+  --placeholder-color: #81858A;
 }

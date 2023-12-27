@@ -1,22 +1,21 @@
 <template>
   <header class="admin-header">
     <admin-logo
-      class="theme-header-ht bd-rt"
+      class="theme-header-ht"
       :menu-collapse="menuCollapse"
       :module-icon="moduleIcon"
       :module-label="moduleLabel"
-      :bottom-border="false"
     />
 
     <div class="header-action">
       <div class="empty-flex" />
 
       <div class="button-group">
-        <button>
+        <button disabled>
           <Star />
         </button>
         <span />
-        <button>
+        <button disabled>
           <ArrowDropDown :size="20" />
         </button>
       </div>

@@ -14,10 +14,10 @@
       <details
         id="admin-header-details"
         class="header-menu"
+        :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
           class="button-history"
-          :class="{'disabled': activeMenus.menus.length === 0 }"
         >
           <Schedule />
           <ArrowDropDown :size="20" />

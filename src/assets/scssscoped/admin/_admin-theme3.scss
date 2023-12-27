@@ -3,14 +3,16 @@
 
 .admin-theme{
   .admin-logo{
-    border: 0;
   }
+
   &__nav{
     @include flex-base(true);
     height: var(--nav-height);
+
    & ul{
      @include flex-base;
      height: 100%;
+
      & .nav-item{
        @include flex-base();
        height: var(--lh-medium);
@@ -26,6 +28,7 @@
      & a[aria-current='page']{
        color: var(--color-blue);
        font-weight: bolder;
+       background-color: var(--active-bg-color);
      }
    }
   }

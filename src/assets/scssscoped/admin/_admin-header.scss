@@ -8,7 +8,23 @@
   padding: 0 var(--pd-large);
 
   details[open] > summary{
-    color: var(--header-text-hover-color);
+    color: var(--button-hover-text-color);
+  }
+
+  details[data-disabled='true']{
+    &>summary{
+      @extend .disabled
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--border-radius-medium);
+      cursor: not-allowed;
+    }
   }
 }
 

@@ -1,7 +1,6 @@
 <template>
   <div
     class="admin-logo"
-    :class="{'logo-border-bottom': bottomBorder, 'logo-background': headerBackground }"
   >
     <a href="/">
       <img
@@ -38,13 +37,6 @@ export default defineComponent({
     moduleLabel: {
       type: String,
       default: undefined
-    },
-    bottomBorder: {
-      type: Boolean,
-      default: true
-    },
-    headerBackground: {
-      type: Boolean,
     }
   },
   setup () {

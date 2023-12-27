@@ -7,11 +7,22 @@
   height: var(--btn-height);
   border: var(--border-1);
   border-radius: var(--border-radius-medium);
-  color: var(--header-text-color);
+  color: var(--button-text-color);
   box-shadow: var(--box-shadow-small);
   font-size: var(--h6-size);
+  &:hover{
+    color: var(--button-hover-text-color);
+  }
 }
 
+.app-search-overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-h);
+}
 .app-search-panel{
   position: fixed;
   width: 720px;
@@ -19,7 +30,7 @@
   margin-left: -360px;
   top: calc(var(--header-height) - 1px);
   height: 400px;
-  border: 1px solid var(--panel-border-outer-color) {
+  border: {
     radius: var(--border-radius-large)
   };
   color: var(--color-black-1);
@@ -36,8 +47,7 @@
     @include grid-base(32px 1fr);
     height: var(--lh-medium);
     padding-left: var(--pd-small);
-    border: 1px solid var(--panel-border-inner-color);
-    border-radius: var(--border-radius-medium);
+    border-bottom: 1px solid var(--panel-border-inner-color);
     margin: var(--mg-small);
     color: var(--color-black-6);
     text-align: center;
@@ -116,8 +126,8 @@
     height: var(--lh-medium);
     border: {
       top: 1px solid var(--panel-border-inner-color);
-      bottom-left-radius: var(--border-radius-medium);
-      bottom-right-radius: var(--border-radius-medium);
+      bottom-left-radius: var(--border-radius-large);
+      bottom-right-radius: var(--border-radius-large);
     };
     background-color: rgba(255,255,255, 0.3);
     backdrop-filter: blur(5px);

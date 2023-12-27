@@ -27,7 +27,6 @@
 .disabled{
 	color: var(--disabled-text-color) !important;
 	cursor: not-allowed !important;
-	pointer-events: none;
 }
 
 @mixin flex-base($jc: false){
@@ -51,10 +50,10 @@
 	@include flex-base(true);
 	@extend .button-base;
 	border: var(--border-1);
-	color: var(--header-text-color);
+	color: var(--button-text-color);
 	box-shadow: var(--box-shadow-small);
 	&:hover{
-		color: var(--header-text-hover-color);
+		color: var(--button-hover-text-color);
 	}
 }
 

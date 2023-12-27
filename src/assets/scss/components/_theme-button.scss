@@ -6,15 +6,17 @@
 	border: var(--border-1);
 	box-shadow: var(--box-shadow-small);
 	border-radius: var(--border-radius-medium);
+	height: var(--btn-height);
 	& span{
 		background-color: var(--border-color);
 		height: 60%;
 	}
 	& button{
-		@extend .button-base;
-		color: var(--header-text-color);
+		height: 100%;
+		width: var(--btn-height);
+		color: var(--button-text-color);
 		&:hover{
-			color: var(--header-text-hover-color);
+			color: var(--button-hover-text-color);
 		}
 	}
 	& button[disabled]{
