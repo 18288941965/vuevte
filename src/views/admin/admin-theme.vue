@@ -2,25 +2,32 @@
   <div
     class="admin-theme "
   >
-    <admin-header
-      class="layout-base theme-header-ht"
-      :class="{'menu-collapse' : menuCollapse}"
+    <admin-header2
+      class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
       :active-menus="activeMenus"
       @push-router="pushRouter"
-      @clean-history="cleanHistory"
     />
 
     <div
-      class="layout-base page-header"
-      :class="{'menu-collapse' : menuCollapse}"
+      class="layout-fixed page-header"
     >
       <div
         class="page-header__menu-btn"
-        :class="{'page-header__menu-btn-hidden': menuCollapse}"
       >
+        <button
+          data-hidden="false"
+          class="button-icon menu-collapse-icon"
+          @click="setMenuCollapse(!menuCollapse)"
+        >
+          <MenuOpen
+            :size="24"
+            :class="{'icon-rotate' : menuCollapse }"
+          />
+        </button>
+
         <el-tooltip
           content="找到当前菜单"
           placement="bottom-start"
@@ -36,22 +43,78 @@
           </button>
         </el-tooltip>
 
-        <button
-          data-hidden="false"
-          class="button-icon menu-collapse-icon"
-          @click="setMenuCollapse(!menuCollapse)"
+        <el-tooltip
+          content="找到当前菜单"
+          placement="bottom-start"
+          :show-after="500"
+          :enterable="false"
         >
-          <MenuOpen
-            :size="24"
-            :class="{'icon-rotate' : menuCollapse }"
-          />
-        </button>
+          <button
+            data-hidden="true"
+            class="button-icon"
+            @click="menuOpen"
+          >
+            <Search />
+          </button>
+        </el-tooltip>
+
+        <details
+          id="admin-header-details"
+          class="header-menu mgl-medium"
+          :data-disabled="activeMenus.menus.length === 0"
+        >
+          <summary
+            class="button-history"
+          >
+            <Schedule />
+            <ArrowDropDown :size="20" />
+          </summary>
+          <div
+            class="header-menu-panel"
+            @click="closeDetails('admin-header-details')"
+          >
+            <nav class="header-menu-panel__body card-scroll">
+              <ul>
+                <template
+                  v-for="(menu, index) in activeMenus.menus"
+                  :key="'li-0-' + index"
+                >
+                  <li
+                    v-if="menu.url"
+                  >
+                    <router-link
+                      class="nav-item"
+                      :class="{'header-menu-dot' : menu.cache}"
+                      :to="menu.url"
+                      @click="pushRouter(menu)"
+                    >
+                      <span>{{ menu.label }}</span>
+                    </router-link>
+
+                    <button
+                      class="button-menu-close button-black"
+                      @click.stop="cleanHistory(menu.id)"
+                    >
+                      <Close :size="14" />
+                    </button>
+                  </li>
+                </template>
+              </ul>
+            </nav>
+
+            <footer class="header-menu-panel__footer">
+              <button
+                v-if="activeMenus.menus.length > 1"
+                @click="cleanHistory(undefined)"
+              >
+                清空历史
+              </button>
+            </footer>
+          </div>
+        </details>
       </div>
+
       <div class="page-header__menu">
-        <h3 v-if="activeMenuPath.length > 0">
-          {{ activeMenuPath[activeMenuPath.length - 1].label }}
-        </h3>
-        <div class="empty-flex" />
         <el-breadcrumb separator="/">
           <el-breadcrumb-item
             v-for="(item, index) in activeMenuPath"
@@ -65,8 +128,8 @@
     
     <div
       id="admin-theme-main"
-      class="layout-base"
-      :class="{'menu-collapse' : menuCollapse}"
+      class="layout-dynamic"
+      :class="{'layout-dynamic-collapse' : menuCollapse}"
       style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
     >
       <div
@@ -97,13 +160,17 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import AdminHeader from './header/admin-header.vue'
+import AdminHeader2 from './header/admin-header2.vue'
 import {MenuStatusContext} from '../../context/menuContext'
 import {MenuBean} from '../../interface/menuInterface'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
   Adjust,
-  MenuOpen
+  MenuOpen,
+  Search,
+  Schedule,
+  ArrowDropDown,
+  Close
 } from '../../components/svicon/publicIcon'
 import {handleMenuScroll} from '../../context/stickyContext'
 
@@ -111,9 +178,13 @@ export default defineComponent({
   name: 'AdminTheme',
   components: {
     AdminMenu,
-    AdminHeader,
+    AdminHeader2,
     Adjust,
-    MenuOpen
+    MenuOpen,
+    Search,
+    Schedule,
+    ArrowDropDown,
+    Close
   },
   setup () {
     const {
@@ -212,6 +283,6 @@ export default defineComponent({
 <style lang="scss">
   @use "../../assets/scss/components/theme-button";
 </style>
-<style scoped lang="scss">
+<style lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme";
 </style>

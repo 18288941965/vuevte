@@ -75,6 +75,22 @@ export function MenuStatusContext() {
 
     const menuCollapse = ref(false)
     const setMenuCollapse = (collapse: boolean) => {
+        const documentElement = document.documentElement
+        if (documentElement) {
+            const styles = getComputedStyle(documentElement)
+            let data: string | number = styles.getPropertyValue('--nav-width')
+            const width = 260
+            if (data) {
+                data = data.replace('px', '')
+                if (data >= width) {
+                    data = '80px'
+                } else {
+                    data = `${width}px`
+                }
+                documentElement.style.setProperty('--nav-width', data)
+            }
+        }
+
         menuCollapse.value = collapse
     }
 

@@ -5,9 +5,11 @@
     --font-size-large: 18px;
 
     --color-white: #FFFFFF;
+    --color-white-b: #BBBBBB;
     --color-white-hover: #f4f5f6;
     --color-black: #000000;
     --color-black-1: #1F2328;
+    --color-black-4: #444444;
     --color-black-6: #656D76;
     --color-black-9: #909399;
     --color-blue: #409EFF;
@@ -74,11 +76,11 @@
     --panel-border-outer-color: #C7CCD1;
     --panel-width-medium: 260px;
 
-    --mg-ultra-small: 5px;
+    --mg-ultra-small: 6px;
     --mg-small: 10px;
-    --mg-medium: 15px;
+    --mg-medium: 16px;
     --mg-large: 20px;
-    --mg-ultra-large: 25px;
+    --mg-ultra-large: 26px;
 
     --pd-ultra-small: 5px;
     --pd-small: 10px;
@@ -92,9 +94,9 @@
     --lh-medium: 40px;
     --lh-large: 60px;
 
-    --header-height: 56px;
+    --header-height: 48px;
     --header-nav-height: 104px;
 
-    --nav-height: 48px;
+    --nav-height: 56px;
     --nav-width: 260px;
 }

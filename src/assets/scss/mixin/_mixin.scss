@@ -1,11 +1,17 @@
-.layout-base{
+$nav-width-fixed: 260px;
+.layout-fixed{
 	display: grid;
-	grid-template-columns: var(--nav-width) 1fr;
+	grid-template-columns: $nav-width-fixed 1fr;
+}
+
+.layout-dynamic{
+	display: grid;
+	grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
 	transition: grid-template-columns 0.3s;
 }
 
-.admin-theme .layout-base-collapse{
-	grid-template-columns: 85px 1fr;
+.admin-theme .layout-dynamic-collapse{
+	grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
 }
 
 .bc-bf{

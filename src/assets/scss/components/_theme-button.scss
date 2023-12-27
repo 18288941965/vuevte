@@ -1,26 +1,35 @@
 @use "../../scss/mixin/mixin" as *;
 
-.button-group{
-	@include grid-base(32px 1px 32px);
+.button-star{
+	@include grid-base(34px 1px 32px);
 	grid-gap: 5px;
-	border: var(--border-1);
 	box-shadow: var(--box-shadow-small);
 	border-radius: var(--border-radius-medium);
-	height: var(--btn-height);
+	background-color: var(--color-black-4);
 	& span{
-		background-color: var(--border-color);
+		background-color: var(--color-black-6);
 		height: 60%;
 	}
 	& button{
 		height: 100%;
 		width: var(--btn-height);
-		color: var(--button-text-color);
+		color: var(--color-white-b);
+		border-radius: var(--border-radius-medium);
 		&:hover{
-			color: var(--button-hover-text-color);
+			color: var(--color-white);
 		}
 	}
 	& button[disabled]{
 		@extend .disabled
+	}
+}
+
+.button-theme{
+	@include flex-base(true);
+	@extend .button-base;
+	color: var(--color-white);
+	&:hover{
+		background-color: var(--color-black);
 	}
 }
 

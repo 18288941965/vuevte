@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button-icon"
+    class="button-theme"
     @click="setTheme"
   >
     <Dark

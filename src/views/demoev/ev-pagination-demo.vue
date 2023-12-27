@@ -1,5 +1,5 @@
 <template>
-  <div class="mg-20">
+  <div>
     <p>基于 Element Plus → Pagination 二次封装的分页插件。</p>
 
     <section>
@@ -8,7 +8,6 @@
       <el-table
         :data="pager.list"
         border
-        style="width: 100%"
       >
         <el-table-column
           prop="name"
@@ -34,7 +33,6 @@
         ref="scrollTable"
         :data="pager2.list"
         border
-        style="width: 100%"
       >
         <el-table-column
           prop="name"
@@ -53,14 +51,12 @@
       />
     </section>
 
-
     <section style="margin-top: 20px">
       <h3>数据无限加载</h3>
 
       <el-table
         :data="pager3.list"
         border
-        style="width: 100%"
       >
         <el-table-column
           prop="name"

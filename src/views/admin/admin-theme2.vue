@@ -2,7 +2,7 @@
   <div class="admin-theme">
     <admin-header2
       class="layout-base theme-header-ht"
-      :class="{'menu-collapse' : menuCollapse}"
+      :class="{'layout-base-collapse' : menuCollapse}"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
@@ -12,7 +12,7 @@
 
     <div
       class="layout-base theme2-nav theme-header-ht__nav"
-      :class="{'menu-collapse' : menuCollapse}"
+      :class="{'layout-base-collapse' : menuCollapse}"
     >
       <div
         class="theme2-nav__left"
@@ -80,7 +80,7 @@
       id="admin-theme-main"
       class="layout-base main-grid"
       style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
-      :class="{'menu-collapse' : menuCollapse}"
+      :class="{'layout-base-collapse' : menuCollapse}"
     >
       <div
         class="theme-left-wrapper"

@@ -9,10 +9,6 @@
   height: var(--header-height);
 }
 
-.menu-collapse{
-  @extend .layout-base-collapse;
-}
-
 .theme-left-wrapper{
   position: sticky;
   top: 0;

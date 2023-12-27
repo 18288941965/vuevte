@@ -1,72 +1,16 @@
 <template>
   <header class="admin-header">
     <admin-logo
-      class="theme-header-ht bd-rt"
-      :menu-collapse="menuCollapse"
+      class="theme-header-ht"
+      :menu-collapse="false"
       :module-icon="moduleIcon"
       :module-label="moduleLabel"
-      :bottom-border="false"
     />
 
     <div class="header-action">
       <div class="empty-flex" />
 
-      <details
-        id="admin-header-details"
-        class="header-menu"
-        :data-disabled="activeMenus.menus.length === 0"
-      >
-        <summary
-          class="button-history"
-        >
-          <Schedule />
-          <ArrowDropDown :size="20" />
-        </summary>
-        <div
-          class="header-menu-panel"
-          @click="closeDetails('admin-header-details')"
-        >
-          <nav class="header-menu-panel__body card-scroll">
-            <ul>
-              <template
-                v-for="(menu, index) in activeMenus.menus"
-                :key="'li-0-' + index"
-              >
-                <li
-                  v-if="menu.url"
-                >
-                  <router-link
-                    class="nav-item"
-                    :class="{'header-menu-dot' : menu.cache}"
-                    :to="menu.url"
-                    @click="pushRouter(menu)"
-                  >
-                    <span>{{ menu.label }}</span>
-                  </router-link>
-
-                  <button
-                    class="button-menu-close button-black"
-                    @click.stop="cleanHistory(menu.id)"
-                  >
-                    <Close :size="14" />
-                  </button>
-                </li>
-              </template>
-            </ul>
-          </nav>
-
-          <footer class="header-menu-panel__footer">
-            <button
-              v-if="activeMenus.menus.length > 1"
-              @click="cleanHistory(undefined)"
-            >
-              清空历史
-            </button>
-          </footer>
-        </div>
-      </details>
-
-      <div class="button-group mgl-medium">
+      <div class="button-star mgl-medium">
         <button :disabled="true">
           <Star />
         </button>
@@ -93,9 +37,7 @@ import {defineComponent, PropType} from 'vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
-  Schedule,
   ArrowDropDown,
-  Close,
   Star
 } from '../../../components/svicon/publicIcon'
 import AppTheme from '../../../app-theme.vue'
@@ -110,8 +52,6 @@ export default defineComponent({
     ArrowDropDown,
     AppSearch,
     UserAvatar,
-    Schedule,
-    Close,
     AdminLogo,
     Star
   },

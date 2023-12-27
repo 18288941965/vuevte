@@ -10,12 +10,12 @@
     <div class="header-action">
       <div class="empty-flex" />
 
-      <div class="button-group">
-        <button disabled>
+      <div class="button-star">
+        <button>
           <Star />
         </button>
         <span />
-        <button disabled>
+        <button>
           <ArrowDropDown :size="20" />
         </button>
       </div>

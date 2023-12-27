@@ -1,7 +1,7 @@
 <template>
   <div class="admin-theme">
     <admin-header2
-      class="layout-base theme-header-ht"
+      class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :active-menus="activeMenus"
