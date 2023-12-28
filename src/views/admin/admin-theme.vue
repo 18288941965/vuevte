@@ -18,7 +18,6 @@
         class="page-header__menu-btn"
       >
         <button
-          data-hidden="false"
           class="button-icon menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
@@ -35,7 +34,6 @@
           :enterable="false"
         >
           <button
-            data-hidden="true"
             class="button-icon"
             @click="menuOpen"
           >
@@ -43,20 +41,11 @@
           </button>
         </el-tooltip>
 
-        <el-tooltip
-          content="找到当前菜单"
-          placement="bottom-start"
-          :show-after="500"
-          :enterable="false"
+        <button
+          class="button-icon"
         >
-          <button
-            data-hidden="true"
-            class="button-icon"
-            @click="menuOpen"
-          >
-            <Search />
-          </button>
-        </el-tooltip>
+          <Search />
+        </button>
 
         <details
           id="admin-header-details"

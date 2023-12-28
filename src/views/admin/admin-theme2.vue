@@ -15,6 +15,16 @@
       <div
         class="theme2-nav__left"
       >
+        <button
+          class="button-icon menu-collapse-icon"
+          @click="setMenuCollapse(!menuCollapse)"
+        >
+          <MenuOpen
+            :size="24"
+            :class="{'icon-rotate' : menuCollapse }"
+          />
+        </button>
+
         <el-tooltip
           content="选择打开的菜单"
           placement="bottom-start"
@@ -22,7 +32,6 @@
           :show-after="500"
         >
           <button
-            data-hidden="true"
             class="button-icon"
             @click="menuOpen"
           >
@@ -31,14 +40,9 @@
         </el-tooltip>
 
         <button
-          data-hidden="false"
-          class="button-icon menu-collapse-icon"
-          @click="setMenuCollapse(!menuCollapse)"
+          class="button-icon"
         >
-          <MenuOpen
-            :size="24"
-            :class="{'icon-rotate' : menuCollapse }"
-          />
+          <Search />
         </button>
       </div>
 
@@ -114,7 +118,8 @@ import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
   Adjust,
   MenuOpen,
-  Close
+  Close,
+  Search
 } from '../../components/svicon/publicIcon'
 import {handleMenuScroll} from '../../context/stickyContext'
 
@@ -125,7 +130,8 @@ export default defineComponent({
     AdminHeader,
     Adjust,
     MenuOpen,
-    Close
+    Close,
+    Search
   },
   setup () {
     const {

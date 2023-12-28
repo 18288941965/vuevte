@@ -11,11 +11,11 @@
       <div class="empty-flex" />
 
       <div class="button-star">
-        <button>
+        <button disabled>
           <Star />
         </button>
         <span />
-        <button>
+        <button disabled>
           <ArrowDropDown :size="20" />
         </button>
       </div>

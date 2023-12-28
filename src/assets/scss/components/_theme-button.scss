@@ -20,7 +20,8 @@
 		}
 	}
 	& button[disabled]{
-		@extend .disabled
+		color: #777777;
+		cursor: not-allowed !important;
 	}
 }
 
