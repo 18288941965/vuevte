@@ -1,5 +1,5 @@
 <template>
-  <div class="mg-20">
+  <div class="pd-m">
     <h2>菜单图标</h2>
     <div class="icon-demo">
       <div

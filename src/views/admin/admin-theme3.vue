@@ -1,6 +1,6 @@
 <template>
   <div class="admin-theme">
-    <admin-header2
+    <admin-header
       class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
@@ -48,14 +48,14 @@ import {defineComponent, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuContext, MenuStatusContext} from '../../context/menuContext'
-import AdminHeader2 from './header/admin-header2.vue'
+import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 
 export default defineComponent({
   name: 'AdminTheme3',
   components: {
     AdminMenu,
-    AdminHeader2
+    AdminHeader
   },
   setup () {
     const {
@@ -101,12 +101,12 @@ export default defineComponent({
 </script>
 
 <style>
-@import "../../assets/css/var/theme-dark.css";
-@import "../../assets/css/var/theme-light.css";
+  @import "../../assets/css/var/theme-dark.css";
+  @import "../../assets/css/var/theme-light.css";
 </style>
 <style lang="scss">
-@use "../../assets/scss/components/theme-button";
+  @use "../../assets/scss/components/theme-button";
 </style>
-<style lang="scss">
-@use "../../assets/scssscoped/admin/admin-theme3";
+<style scoped lang="scss">
+  @use "../../assets/scssscoped/admin/admin-theme3";
 </style>

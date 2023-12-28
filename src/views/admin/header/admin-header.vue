@@ -1,4 +1,3 @@
-<!--
 <template>
   <header class="admin-header">
     <admin-logo
@@ -11,12 +10,12 @@
     <div class="header-action">
       <div class="empty-flex" />
 
-      <div class="button-star mgl-medium">
-        <button :disabled="true">
+      <div class="button-star">
+        <button>
           <Star />
         </button>
         <span />
-        <button :disabled="true">
+        <button>
           <ArrowDropDown :size="20" />
         </button>
       </div>
@@ -34,27 +33,27 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue'
-import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
-import UserAvatar from '../../../components/avatar/user-avatar.vue'
-import {
-  ArrowDropDown,
-  Star
-} from '../../../components/svicon/publicIcon'
-import AppTheme from '../../../app-theme.vue'
-import AppSearch from '../../../app-search.vue'
+import {computed, defineComponent, PropType} from 'vue'
 import AdminLogo from '../logo/admin-logo.vue'
-import {closeDetails} from '../../../util/baseUtil'
+import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
+import AppSearch from '../../../app-search.vue'
+import AppTheme from '../../../app-theme.vue'
+import UserAvatar from '../../../components/avatar/user-avatar.vue'
+import showContext from '../../../context/showContext'
+import {
+  Star,
+  ArrowDropDown
+} from '../../../components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AdminHeader',
   components: {
-    AppTheme,
-    ArrowDropDown,
-    AppSearch,
-    UserAvatar,
     AdminLogo,
-    Star
+    AppSearch,
+    AppTheme,
+    UserAvatar,
+    Star,
+    ArrowDropDown
   },
   props: {
     menuCollapse: {
@@ -74,33 +73,40 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['push-router', 'clean-history'],
+  emits: ['push-router'],
   setup (props, {emit}) {
-    
+
+    const {
+      panelShow,
+      setPanelShow
+    } = showContext()
+
+    const getMenuLabel = computed(() => {
+      if (!props.activeMenus.menuId || !props.activeMenus.menus) {
+        return ''
+      }
+      const menuBean = props.activeMenus.menus.find(item => item.id === props.activeMenus.menuId)
+      return menuBean ? menuBean.label : ''
+    })
+
     const pushRouter = (menu: MenuBean) => {
+      setPanelShow(false)
       if (menu.id === props.activeMenus?.menuId) {
         return
       }
       emit('push-router', menu)
     }
 
-    const cleanHistory = (id: string | undefined) => {
-      if (props.activeMenus && props.activeMenus.menus.length === 1) {
-        closeDetails('admin-header-details')
-      }
-      emit('clean-history', id)
-    }
-
     return {
-      cleanHistory,
-      pushRouter,
-      closeDetails
+      panelShow,
+      setPanelShow,
+      getMenuLabel,
+      pushRouter
     }
   }
 })
 </script>
 
 <style scoped lang="scss">
-  @use "../../../assets/scssscoped/admin/admin-header-public";
-  @use "../../../assets/scssscoped/admin/admin-header";
-</style>-->
+@use "../../../assets/scssscoped/admin/admin-header";
+</style>

@@ -1,0 +1,50 @@
+
+.green-mark::before {
+    content: "•";
+    position: absolute;
+
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: auto 0;
+
+    border-radius: var(--border-radius-small);
+    font-size: var(--h4-size);
+    color: #2BC385;
+}
+
+.pd-m{
+    padding: var(--pd-medium);
+}
+
+.mgl-auto{
+    margin-left: auto;
+}
+
+.mgl-medium{
+    margin-left: var(--mg-medium);
+}
+
+.empty-flex{
+    flex: 1;
+    visibility: hidden;
+}
+
+details > summary{
+    list-style: none;
+    cursor: pointer;
+}
+
+details[open]>summary::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-index-e);
+    display: block;
+    cursor: default;
+    content: " ";
+    background: transparent;
+}

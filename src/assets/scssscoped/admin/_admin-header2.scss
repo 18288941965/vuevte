@@ -1,9 +1,0 @@
-@use "../../scss/mixin/mixin" as *;
-
-.admin-header{
-  background-color: #2C2C2C;
-  .header-action{
-    @include flex-base();
-    padding: 0 var(--pd-large);
-  }
-}

@@ -1,4 +1,5 @@
 @import "./assets/css/var/global.css";
+@import "./assets/css/base/base.css";
 @import "./assets/css/var/public-dark.css";
 @import "./assets/css/var/public-light.css";
 
@@ -68,45 +69,6 @@ button{
 a{
   color: inherit;
   cursor: pointer;
-}
-
-.mg-20{
-  margin: 20px;
-}
-
-.pd-20{
-  padding: 20px;
-}
-
-.mgl-auto{
-  margin-left: auto;
-}
-
-.mgl-medium{
-  margin-left: var(--mg-medium);
-}
-
-.empty-flex{
-  flex: 1;
-  visibility: hidden;
-}
-
-details > summary{
-  list-style: none;
-  cursor: pointer;
-}
-
-details[open]>summary::before {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: var(--z-index-e);
-  display: block;
-  cursor: default;
-  content: " ";
-  background: transparent;
 }
 
 /*这里是系统级别的主题（非当前项目的）*/

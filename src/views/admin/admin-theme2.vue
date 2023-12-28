@@ -1,6 +1,6 @@
 <template>
   <div class="admin-theme">
-    <admin-header2
+    <admin-header
       class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
@@ -54,7 +54,7 @@
             >
               <router-link
                 class="nav-item"
-                :class="{'header-menu-dot' : menu.cache }"
+                :class="{'green-mark' : menu.cache }"
                 :to="menu.url"
                 @click.stop="pushRouter(menu)"
               >
@@ -109,7 +109,7 @@ import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
-import AdminHeader2 from './header/admin-header2.vue'
+import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
   Adjust,
@@ -122,7 +122,7 @@ export default defineComponent({
   name: 'AdminTheme2',
   components: {
     AdminMenu,
-    AdminHeader2,
+    AdminHeader,
     Adjust,
     MenuOpen,
     Close
@@ -207,12 +207,12 @@ export default defineComponent({
 </script>
 
 <style>
-@import "../../assets/css/var/theme-dark.css";
-@import "../../assets/css/var/theme-light.css";
+  @import "../../assets/css/var/theme-dark.css";
+  @import "../../assets/css/var/theme-light.css";
 </style>
 <style lang="scss">
-@use "../../assets/scss/components/theme-button";
+  @use "../../assets/scss/components/theme-button";
 </style>
-<style lang="scss">
-@use "../../assets/scssscoped/admin/admin-theme2";
+<style scoped lang="scss">
+  @use "../../assets/scssscoped/admin/admin-theme2";
 </style>

@@ -2,7 +2,7 @@
   <div
     class="admin-theme "
   >
-    <admin-header2
+    <admin-header
       class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
@@ -84,7 +84,7 @@
                   >
                     <router-link
                       class="nav-item"
-                      :class="{'header-menu-dot' : menu.cache}"
+                      :class="{'green-mark' : menu.cache}"
                       :to="menu.url"
                       @click="pushRouter(menu)"
                     >
@@ -161,7 +161,7 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import AdminHeader2 from './header/admin-header2.vue'
+import AdminHeader from './header/admin-header.vue'
 import {MenuStatusContext} from '../../context/menuContext'
 import {MenuBean} from '../../interface/menuInterface'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
@@ -174,12 +174,13 @@ import {
   Close
 } from '../../components/svicon/publicIcon'
 import {handleMenuScroll} from '../../context/stickyContext'
+import {closeDetails} from '../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminTheme',
   components: {
     AdminMenu,
-    AdminHeader2,
+    AdminHeader,
     Adjust,
     MenuOpen,
     Search,
@@ -232,6 +233,7 @@ export default defineComponent({
         const rootPath = router.currentRoute.value.matched[0].path
         router.push(rootPath)
         cleanActiveMenuPath()
+        closeDetails('admin-header-details')
         return
       }
       // 关闭当前打开窗口后：先右后左的切换
@@ -271,7 +273,8 @@ export default defineComponent({
       setParentMenu,
       pushRouter,
       menuOpen,
-      cleanHistory
+      cleanHistory,
+      closeDetails
     }
   }
 })
@@ -284,6 +287,6 @@ export default defineComponent({
 <style lang="scss">
   @use "../../assets/scss/components/theme-button";
 </style>
-<style lang="scss">
+<style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme";
 </style>
