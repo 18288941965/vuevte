@@ -24,6 +24,10 @@
         }
     }
 
+    .theme-content{
+        margin: var(--mg-large);
+    }
+
     details[open] > summary{
         color: var(--button-hover-text-color);
     }

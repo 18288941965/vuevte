@@ -146,13 +146,14 @@
         />
       </div>
 
-      <div class="theme-content">
-        <router-view v-slot="{ Component }">
-          <keep-alive :include="keepAliveInclude">
-            <component :is="Component" />
-          </keep-alive>
-        </router-view>
-      </div>
+      <router-view
+        v-slot="{ Component }"
+        class="theme-content"
+      >
+        <keep-alive :include="keepAliveInclude">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </div>
   </div>
 </template>

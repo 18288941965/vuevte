@@ -1,20 +1,83 @@
 <template>
-  <h2 style="border-bottom: 1px dotted;padding: 0 0 20px 20px">
-    任务栏
-  </h2>
-
-  <ul style="padding: 20px;line-height: 40px;">
-    <li>1、统一命名</li>
-  </ul>
+  <div class="admin-dashboard">
+    <svg
+      class="svg-icon"
+      style="width: 10em;height: 10em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+      viewBox="0 0 1024 1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M781.76 888a1356.32 1356.32 0 0 0 18.24-224c0-456-176-640-288-640S224 208 224 664a1356.32 1356.32 0 0 0 18.24 224z"
+        fill="#C078FF"
+      />
+      <path
+        d="M512 24a118.4 118.4 0 0 0-32 4.64c110.56 31.04 256 220.8 256 635.36a1356.32 1356.32 0 0 1-18.24 224h64a1356.32 1356.32 0 0 0 18.24-224c0-456-176-640-288-640z"
+        fill="#9A45F4"
+      />
+      <path
+        d="M315.84 192C262.88 295.36 224 449.6 224 664a1356.32 1356.32 0 0 0 18.24 224h539.52a1356.32 1356.32 0 0 0 18.24-224c0-214.4-38.88-368-91.84-472z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M708.16 192h-80C681.12 295.36 720 449.6 720 664a1356.32 1356.32 0 0 1-18.24 224h80a1356.32 1356.32 0 0 0 18.24-224c0-214.4-38.88-368.64-91.84-472z"
+        fill="#EAEAF4"
+      />
+      <path
+        d="M761.6 896L960 976l-32-160-147.2-176-19.2 256z"
+        fill="#9A45F4"
+      />
+      <path
+        d="M264 896L65.6 976l32-160 147.2-176 19.2 256z"
+        fill="#C078FF"
+      />
+      <path
+        d="M129.6 832l118.88-142.24L244.8 640 97.6 816l-32 160 38.24-15.52L129.6 832z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M272 680c0-456 176-640 288-640a110.24 110.24 0 0 1 14.72 1.12A136.8 136.8 0 0 0 512 24c-112 0-288 184-288 640a1356.32 1356.32 0 0 0 18.24 224H288a1361.92 1361.92 0 0 1-16-208z"
+        fill="#FFFFFF"
+      />
+      <path
+        d="M976 972.8l-32-160a16 16 0 0 0-3.36-7.2l-132.48-158.4C803.84 172.96 629.6 0 512 0S220.16 172.96 216.16 647.36l-132.48 158.4a16 16 0 0 0-3.68 7.04l-32 160a16 16 0 0 0 21.6 17.92L265.6 912h492.8l195.52 78.88A16 16 0 0 0 976 972.8zM512 48c48 0 104.64 41.28 152 128h-304C407.36 89.28 464 48 512 48zM110.88 823.2l105.76-126.4a1367.04 1367.04 0 0 0 17.6 193.44l-148.8 60zM278.72 864a1344 1344 0 0 1-14.72-200c0-204.8 33.76-355.04 80-456h336c46.4 100.96 80 251.2 80 456a1344 1344 0 0 1-14.72 200z m511.2 26.08a1367.04 1367.04 0 0 0 17.6-193.44l105.76 126.4 25.44 126.88z"
+        fill="#3A394B"
+      />
+      <path
+        d="M512 576m-96 0a96 96 0 1 0 192 0 96 96 0 1 0-192 0Z"
+        fill="#3A394B"
+      />
+      <path
+        d="M512 928a16 16 0 0 0-16 16v64a16 16 0 0 0 32 0v-64a16 16 0 0 0-16-16zM400 928a16 16 0 0 0-16 16v48a16 16 0 0 0 32 0v-48a16 16 0 0 0-16-16zM288 928a16 16 0 0 0-16 16v48a16 16 0 0 0 32 0v-48a16 16 0 0 0-16-16zM624 928a16 16 0 0 0-16 16v48a16 16 0 0 0 32 0v-48a16 16 0 0 0-16-16zM736 928a16 16 0 0 0-16 16v48a16 16 0 0 0 32 0v-48a16 16 0 0 0-16-16z"
+        fill="#3A394B"
+      />
+    </svg>
+    <h3>这个页面演示了如何覆盖父路由的样式</h3>
+  </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+
 export default defineComponent({
-  name: 'AdminDashboard'
+  name: 'AdminDashboard',
+  setup() {
+    //
+  }
 })
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.admin-dashboard {
+  background-color: wheat;
+  margin: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  & h3{
+    background-color: #663dff;
+    background-image: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
 </style>
