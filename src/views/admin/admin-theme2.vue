@@ -1,8 +1,7 @@
 <template>
   <div class="admin-theme">
     <admin-header2
-      class="layout-base theme-header-ht"
-      :class="{'layout-base-collapse' : menuCollapse}"
+      class="layout-fixed theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"
@@ -11,12 +10,10 @@
     />
 
     <div
-      class="layout-base theme2-nav theme-header-ht__nav"
-      :class="{'layout-base-collapse' : menuCollapse}"
+      class="layout-fixed theme2-nav theme-header-ht__nav"
     >
       <div
         class="theme2-nav__left"
-        :class="{'theme2-nav__left__hidden' : menuCollapse}"
       >
         <el-tooltip
           content="选择打开的菜单"
@@ -78,9 +75,9 @@
     
     <main
       id="admin-theme-main"
-      class="layout-base main-grid"
+      class="layout-dynamic main-grid"
       style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
-      :class="{'layout-base-collapse' : menuCollapse}"
+      :class="{'layout-dynamic-collapse' : menuCollapse}"
     >
       <div
         class="theme-left-wrapper"
@@ -95,13 +92,14 @@
         />
       </div>
 
-      <div class="theme-content">
-        <router-view v-slot="{ Component }">
-          <keep-alive :include="keepAliveInclude">
-            <component :is="Component" />
-          </keep-alive>
-        </router-view>
-      </div>
+      <router-view
+        v-slot="{ Component }"
+        class="theme-content"
+      >
+        <keep-alive :include="keepAliveInclude">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </main>
   </div>
 </template>

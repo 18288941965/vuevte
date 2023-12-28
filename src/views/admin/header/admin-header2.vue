@@ -2,7 +2,7 @@
   <header class="admin-header">
     <admin-logo
       class="theme-header-ht"
-      :menu-collapse="menuCollapse"
+      :menu-collapse="false"
       :module-icon="moduleIcon"
       :module-label="moduleLabel"
     />

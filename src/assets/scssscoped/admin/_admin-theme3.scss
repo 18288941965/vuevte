@@ -2,13 +2,13 @@
 @use "./admin-theme-public" as tp;
 
 .admin-theme{
-  .admin-logo{
+  .theme-content{
+    margin: var(--mg-large);
   }
 
   &__nav{
     @include flex-base(true);
     height: var(--nav-height);
-
    & ul{
      @include flex-base;
      height: 100%;

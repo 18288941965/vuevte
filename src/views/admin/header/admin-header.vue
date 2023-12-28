@@ -1,3 +1,4 @@
+<!--
 <template>
   <header class="admin-header">
     <admin-logo
@@ -102,4 +103,4 @@ export default defineComponent({
 <style scoped lang="scss">
   @use "../../../assets/scssscoped/admin/admin-header-public";
   @use "../../../assets/scssscoped/admin/admin-header";
-</style>
+</style>-->

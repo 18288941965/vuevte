@@ -4,38 +4,28 @@
 
 .admin-theme{
 
-  .admin-logo{
-    @extend .bd-rt
-  }
-
   .main-grid{
     min-height: calc(100vh - var(--header-nav-height));
+  }
+
+  .theme-content{
+    margin: var(--mg-large);
   }
 
   .theme2-nav{
     position: relative;
     height: var(--nav-height);
     border-bottom: var(--border-1);
-    align-items: start;
     &__left{
-      display: flex;
-      justify-content: flex-end;
+      @include flex-base(true);
       height: 100%;
       border-right: var(--border-1);
-      padding-right: var(--pd-medium);
-      &__hidden {
-        button[data-hidden='true']{
-          visibility: hidden;
-        }
-        button[data-hidden='false']{
-          transform: translateX(-10px);
-        }
-      }
     }
 
     &__right{
       ul{
         @include flex-base();
+        height: 100%;
         overflow: hidden;
       }
       & .nav-item-li{
