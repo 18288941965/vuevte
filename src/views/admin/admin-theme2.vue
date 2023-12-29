@@ -162,8 +162,8 @@ export default defineComponent({
       updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
     }
 
-    const menuOpen = (index: string) => {
-      adminThemeMenuRef.value?.menuOpen(index)
+    const menuOpen = () => {
+      adminThemeMenuRef.value?.menuOpen(activeMenus.menuId)
     }
 
     const cleanHistory = (id: string | undefined) => {

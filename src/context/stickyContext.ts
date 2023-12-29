@@ -1,6 +1,6 @@
 export const handleMenuScroll = (event: Event) => {
     event.stopPropagation()
-    const mainElement: HTMLElement | undefined = document.querySelector('#admin-theme-main')
+    const mainElement: HTMLElement | null = document.querySelector('#admin-theme-main')
     if (mainElement) {
         const styles = getComputedStyle(mainElement)
         let data = styles.getPropertyValue('--header-nav-height')

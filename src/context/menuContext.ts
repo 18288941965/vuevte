@@ -78,11 +78,11 @@ export function MenuStatusContext() {
         const documentElement = document.documentElement
         if (documentElement) {
             const styles = getComputedStyle(documentElement)
-            let data: string | number = styles.getPropertyValue('--nav-width')
+            let data: string = styles.getPropertyValue('--nav-width')
             const width = 260
             if (data) {
                 data = data.replace('px', '')
-                if (data >= width) {
+                if (parseInt(data) >= width) {
                     data = '80px'
                 } else {
                     data = `${width}px`

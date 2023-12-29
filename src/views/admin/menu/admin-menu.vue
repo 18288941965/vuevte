@@ -99,7 +99,7 @@ export default defineComponent({
       }
     }
 
-    const setActivePath = (menuId) => {
+    const setActivePath = (menuId: string) => {
       const menuPath = menuDfs(menus.value[0], menuId, false)
       emit('set-active-menu', menuPath)
     }
