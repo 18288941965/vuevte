@@ -1,0 +1,30 @@
+@use "../mixin/mixin" as *;
+
+.admin-menu-top{
+    position: relative;
+}
+.menu-summary{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    & span{
+        padding-left: 4px;
+    }
+}
+
+.top-menu-panel{
+    position: absolute;
+    top: 54px;
+    left: 0;
+    right: var(--mg-medium);
+    width: 600px;
+    min-height: 240px;
+    padding: var(--pd-large);
+    border: 1px solid var(--color-white) {
+        radius: var(--border-radius-large)
+    };
+    color: var(--color-black-1);
+    background-color: var(--panel-bg-color);
+    box-shadow: var(--box-shadow-large);
+    z-index: var(--z-index-f);
+}

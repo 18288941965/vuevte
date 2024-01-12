@@ -56,6 +56,18 @@
 
       <router-link
         class="main-link"
+        to="/admin/theme4"
+        target="_blank"
+      >
+        <img
+          :src="adminIcon"
+          alt=" "
+        >
+        <span>后台管理模板4</span>
+      </router-link>
+
+      <router-link
+        class="main-link"
         to="/desktop/theme"
         target="_blank"
       >
@@ -98,7 +110,7 @@ import UserAvatar from '../../components/avatar/user-avatar.vue'
 import {
   GitHub
 } from '../../components/svicon/publicIcon'
-import DesktopLogo from '../admin/logo/desktop-logo.vue'
+import DesktopLogo from '../logo/desktop-logo.vue'
 import adminIcon from '../../assets/image/home/admin-icon.png'
 import homeIcon from '../../assets/image/home/home-icon.png'
 import messageIcon from '../../assets/image/home/message-icon.png'

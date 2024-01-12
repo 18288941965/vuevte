@@ -8,6 +8,7 @@
     />
 
     <div class="header-action">
+      <slot name="default" />
       <div class="empty-flex" />
 
       <div class="button-star">
@@ -34,7 +35,7 @@
 
 <script lang="ts">
 import {computed, defineComponent, PropType} from 'vue'
-import AdminLogo from '../logo/admin-logo.vue'
+import AdminLogo from '../../logo/admin-logo.vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import AppSearch from '../../../app-search.vue'
 import AppTheme from '../../../app-theme.vue'

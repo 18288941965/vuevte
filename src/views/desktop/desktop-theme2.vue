@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import DesktopLogo from '../admin/logo/desktop-logo.vue'
+import DesktopLogo from '../logo/desktop-logo.vue'
 
 export default defineComponent({
   name: 'DesktopTheme2',

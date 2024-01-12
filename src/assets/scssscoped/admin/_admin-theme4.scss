@@ -1,0 +1,8 @@
+@use "../../scss/mixin/mixin" as *;
+@use "./admin-theme-public" as tp;
+
+.admin-theme{
+  .theme-content{
+    margin: var(--mg-large);
+  }
+}

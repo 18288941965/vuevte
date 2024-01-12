@@ -2,9 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import menuDemoRouter from './menuDemoRouter'
 import menuDemoRouter2 from './menuDemoRouter2'
 import menuDemoRouter3 from './menuDemoRouter3'
+import menuDemoRouter4 from './menuDemoRouter4'
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior() {
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -38,6 +42,13 @@ const router = createRouter({
       component: () => import('../views/admin/admin-theme3.vue'),
       meta: { title: '后台管理模板3'},
       children: menuDemoRouter3
+    },
+    {
+      path: '/admin/theme4',
+      name: 'AdminTheme4',
+      component: () => import('../views/admin/admin-theme4.vue'),
+      meta: { title: '后台管理模板4'},
+      children: menuDemoRouter4
     },
     {
       path: '/desktop/theme',
