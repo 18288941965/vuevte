@@ -1,27 +1,67 @@
 <template>
   <div class="admin-menu-top">
-    <details>
+    <details id="admin-menu-top-details">
       <summary class="menu-summary">
         <Menus />
         <span>应用</span>
       </summary>
       <div class="top-menu-panel">
-        {{ menus }}
-        <ul>
-        </ul>
+        <nav class="top-menu-nav">
+          <ul class="top-menu-column">
+            <li
+              v-for="(menu, index) in getExcludeChildren"
+              :key="'e-t-m-' + index"
+            >
+              <router-link
+                class="nav-item"
+                :to="menu.url"
+                @click="pushRouter(menu)"
+              >
+                <span>{{ menu.label }}</span>
+              </router-link>
+            </li>
+          </ul>
+
+          <div
+            v-for="(item, index) in getIncludeChildren"
+            :key="'i-t-m-' + index"
+            class="top-menu-column"
+          >
+            <section>
+              <h4 class="menu-group-title">
+                {{ item.label }}
+              </h4>
+            </section>
+            <ul>
+              <li
+                v-for="(menu, idx) in item.children"
+                :key="index + '-i-t-m-c-' + idx"
+              >
+                <router-link
+                  class="nav-item"
+                  :to="menu.url"
+                  @click="pushRouter(menu)"
+                >
+                  <span>{{ menu.label }}</span>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </details>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref} from 'vue'
+import {defineComponent, onMounted, ref, computed} from 'vue'
 import {MenuBean} from '../../../interface/menuInterface'
 import {MenuContext} from '../../../context/menuContext'
 import {useRouter} from 'vue-router'
 import {PushRouter} from '../../../types/baseType'
 import menuDfs from '../../../algo/menuDfs'
 import {Menus} from '../../../components/svicon/publicIcon'
+import {closeDetails} from '../../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminMenuTop',
@@ -59,11 +99,28 @@ export default defineComponent({
       }
       emit('push-router', menu)
       setActivePath(menu.id)
+      closeDetails('admin-menu-top-details')
     }
 
     const loadCallback = (id: string, label: string, icon = '') => {
       emit('set-parent-menu', id, label, icon)
     }
+
+    // 获取有子菜单的菜单
+    const getIncludeChildren = computed(() => {
+      if (menus.value.length === 0 || !menus.value[0].children) {
+        return []
+      }
+      return (menus.value[0].children as Array<MenuBean>).filter(item => item.children && item.children.length > 0)
+    })
+
+    // 获取没有子菜单的菜单
+    const getExcludeChildren = computed(() => {
+      if (menus.value.length === 0 || !menus.value[0].children) {
+        return []
+      }
+      return (menus.value[0].children as Array<MenuBean>).filter(item => !item.children || item.children.length === 0)
+    })
 
     onMounted(() => {
       const routerPath =  router.currentRoute.value.path
@@ -76,7 +133,11 @@ export default defineComponent({
       pushRouter,
       menuDefaultOpeneds,
       adminMenuRef,
-      setActivePath
+      setActivePath,
+
+      closeDetails,
+      getIncludeChildren,
+      getExcludeChildren
     }
   }
 })

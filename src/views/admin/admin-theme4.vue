@@ -8,7 +8,11 @@
       @push-router="pushRouter"
     >
       <template #default>
-        <admin-menu-top menu-id=""></admin-menu-top>
+        <admin-menu-top
+          :menu-id="activeMenus.menuId.toString()"
+          @push-router="pushRouter"
+          @set-parent-menu="setParentMenu"
+        />
       </template>
     </admin-header>
 
@@ -47,11 +51,6 @@ export default defineComponent({
     } = themeBaseContext()
 
     const {
-      menus,
-      getMenus
-    } = MenuContext()
-
-    const {
       activeMenus,
       updateActiveMenus,
       keepAliveInclude,
@@ -67,16 +66,15 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      const routerPath =  router.currentRoute.value.path
-      getMenus(pushRouter, routerPath, setParentMenu)
     })
 
     return {
       rootMenu,
       keepAliveInclude,
       pushRouter,
-      menus,
-      activeMenus
+      activeMenus,
+
+      setParentMenu
     }
   }
 })

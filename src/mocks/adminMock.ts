@@ -11,6 +11,8 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         themeNum = '2'
     } else if (fullPath.startsWith('/admin/theme3')) {
         themeNum = '3'
+    } else if (fullPath.startsWith('/admin/theme4')) {
+        themeNum = '4'
     }
 
     const obj: AxiosResult = {
@@ -26,6 +28,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
             url: `/admin/theme${themeNum}/ev/dic${themeNum}`,
             id: '03-01',
             pid: '03',
+            sxh: 1,
             cache: false,
             name: `EvDicDemo${themeNum}`
         },
@@ -35,6 +38,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
             url: `/admin/theme${themeNum}/ev/pagination${themeNum}`,
             id: '03-02',
             pid: '03',
+            sxh: 2,
             cache: true,
             name: `EvPaginationDemo${themeNum}`
         }
@@ -47,17 +51,18 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         url: `/admin/theme${themeNum}`,
         id: '01',
         pid: undefined,
+        sxh: 1,
         cache: false,
         name: `AdminTheme${themeNum}`,
         children: [
-            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', cache: true, name: `IconDemo${themeNum}` }
+            { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', sxh: 1, cache: true, name: `AdminDashboard${themeNum}` },
+            { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', sxh: 2, cache: true, name: `IconDemo${themeNum}` }
         ]
     })
 
     if (menus[0].children) {
         if (themeNum !== '3') {
-            menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', cache: false, name: undefined, children: children })
+            menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', sxh: 3, cache: false, name: undefined, children: children })
         } else {
             menus[0].children.push(...children)
         }

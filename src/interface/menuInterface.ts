@@ -10,6 +10,7 @@ interface MenuBean extends MenuBeanBase{
     url: string | undefined
     cache: boolean
     name: string | undefined
+    sxh: number | undefined
     children?: Array<MenuBean>
 }
 

@@ -121,6 +121,7 @@ export function MenuContext() {
         axios.post('/api/admin/getMenus', { fullPath }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
                 const data = res.data.data
+
                 if (data.length === 0) {
                     menus.value = []
                     return
