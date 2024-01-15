@@ -16,6 +16,36 @@
       </template>
     </admin-header>
 
+    <nav class="history-menu">
+      <ul>
+        <template
+          v-for="(menu, index) in activeMenus.menus"
+          :key="'header-menu-' + index"
+        >
+          <li
+            v-if="menu.url"
+            class="nav-item-li"
+          >
+            <router-link
+              class="nav-item"
+              :class="{'green-mark' : menu.cache }"
+              :to="menu.url"
+              @click.stop="pushRouter(menu)"
+            >
+              <span>{{ menu.label }}</span>
+            </router-link>
+
+            <button
+              class="button-menu-close"
+              @click="cleanHistory(menu.id)"
+            >
+              <Close :size="14" />
+            </button>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
     <router-view
       v-slot="{ Component }"
       class="theme-content"
@@ -28,20 +58,22 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue'
+import {defineComponent} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
-import {MenuContext, MenuStatusContext} from '../../context/menuContext'
+import {MenuStatusContext} from '../../context/menuContext'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import adminMenuTop from './menu/admin-menu-top.vue'
+import {Close} from '../../components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AdminTheme4',
   components: {
     AdminMenu,
     AdminHeader,
-    adminMenuTop
+    adminMenuTop,
+    Close
   },
   setup () {
     const {
@@ -53,7 +85,9 @@ export default defineComponent({
     const {
       activeMenus,
       updateActiveMenus,
+      cleanActiveMenus,
       keepAliveInclude,
+      cleanKeepAliveInclude,
       updateKeepAliveInclude
     } = MenuStatusContext()
 
@@ -61,12 +95,32 @@ export default defineComponent({
       if (menu.cache && menu.name) {
         updateKeepAliveInclude(menu.name)
       }
+      // 刷新页面相同路由页面执行此方法，这里没有做判断，因为同一地址框架默认不会再重复加载
+      await router.push(menu.url as string)
       updateActiveMenus(menu)
       updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
     }
 
-    onMounted(() => {
-    })
+    const cleanHistory = (id: string | undefined) => {
+      const index = activeMenus.menus.findIndex(item => item.id === id)
+      cleanKeepAliveInclude(id)
+      cleanActiveMenus(id, index)
+      if (activeMenus.menus.length === 0) {
+        const rootPath = router.currentRoute.value.matched[0].path
+        router.push(rootPath)
+        return
+      }
+      // 关闭当前打开窗口后：先右后左的切换
+      if (!activeMenus.menuId) {
+        let temp: MenuBean | undefined
+        if (activeMenus.menus.length -1  >= index) {
+          temp = activeMenus.menus[index]
+        } else {
+          temp = activeMenus.menus[index - 1]
+        }
+        pushRouter(temp)
+      }
+    }
 
     return {
       rootMenu,
@@ -74,7 +128,8 @@ export default defineComponent({
       pushRouter,
       activeMenus,
 
-      setParentMenu
+      setParentMenu,
+      cleanHistory
     }
   }
 })

@@ -3,7 +3,6 @@
 .button-star{
 	@include grid-base(34px 1px 32px);
 	grid-gap: 5px;
-	box-shadow: var(--box-shadow-small);
 	border-radius: var(--border-radius-medium);
 	background-color: var(--color-black-4);
 	& span{
@@ -63,7 +62,7 @@
 	border-radius: 50%;
 	margin: auto 0;
 	&:hover{
-		color: var(--color-white);
+		color: var(--color-white) !important;
 		background-color: var(--color-red);
 	}
 }
