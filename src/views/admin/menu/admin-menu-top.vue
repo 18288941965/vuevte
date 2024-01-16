@@ -28,9 +28,9 @@
             class="top-menu-column"
           >
             <section>
-              <h4 class="menu-group-title">
+              <h5 class="menu-group-title">
                 {{ item.label }}
-              </h4>
+              </h5>
             </section>
             <ul>
               <li

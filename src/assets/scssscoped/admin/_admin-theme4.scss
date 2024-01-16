@@ -13,7 +13,7 @@
     background-color: var(--header-nav-bg-color);
     border-bottom: 1px solid var(--header-nav-bd-color);
     ul{
-      @include flex-base();
+      @include flex-base(true);
       height: 100%;
       overflow: hidden;
     }
