@@ -2,8 +2,7 @@
   <div class="admin-menu-top">
     <details id="admin-menu-top-details">
       <summary class="menu-summary">
-        <Menus />
-        <span>应用</span>
+        <Apps />
       </summary>
       <div class="top-menu-panel">
         <nav class="top-menu-nav">
@@ -60,13 +59,13 @@ import {MenuContext} from '../../../context/menuContext'
 import {useRouter} from 'vue-router'
 import {PushRouter} from '../../../types/baseType'
 import menuDfs from '../../../algo/menuDfs'
-import {Menus} from '../../../components/svicon/publicIcon'
+import {Apps} from '../../../components/svicon/publicIcon'
 import {closeDetails} from '../../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminMenuTop',
   components: {
-    Menus
+    Apps
   },
   props: {
     collapse: {

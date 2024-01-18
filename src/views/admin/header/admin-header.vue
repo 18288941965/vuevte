@@ -7,29 +7,28 @@
       :module-label="moduleLabel"
     />
 
-    <div class="header-action">
-      <slot name="default" />
-      <div class="empty-flex" />
+    <slot name="default" />
 
-      <div class="button-star">
-        <button disabled>
-          <Star />
-        </button>
-        <span />
-        <button disabled>
-          <ArrowDropDown :size="20" />
-        </button>
-      </div>
+    <div class="empty-flex" />
 
-      <app-search />
-
-      <app-theme class="mgl-medium" />
-
-      <user-avatar
-        bg-color="#4385F4"
-        icon-color="#ffffff"
-      />
+    <div class="button-star">
+      <button disabled>
+        <Star />
+      </button>
+      <span />
+      <button disabled>
+        <ArrowDropDown :size="20" />
+      </button>
     </div>
+
+    <app-search />
+
+    <app-theme class="mgl-medium" />
+
+    <user-avatar
+      bg-color="#4385F4"
+      icon-color="#ffffff"
+    />
   </header>
 </template>
 

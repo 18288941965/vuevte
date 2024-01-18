@@ -3,7 +3,7 @@
     class="admin-theme "
   >
     <admin-header
-      class="layout-fixed theme-header-ht"
+      class="theme-header-ht"
       :module-icon="rootMenu.icon"
       :module-label="rootMenu.label"
       :menu-collapse="menuCollapse"

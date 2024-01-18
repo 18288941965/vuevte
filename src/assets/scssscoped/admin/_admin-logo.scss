@@ -8,15 +8,13 @@
   & a{
     display: inline-flex;
     align-items: center;
+    height: var(--lh-medium);
     margin-left: var(--mg-ultra-large);
     text-decoration: none;
-    color: var(--color-white);
   }
-  & img{
-    width: 32px;
-    margin-right: var(--mg-medium);
-  }
+
   & #admin-logo-text{
+    color: var(--color-white);
     margin-right: var(--mg-medium);
     white-space: nowrap;
     font-weight: bolder;

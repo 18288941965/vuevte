@@ -2,15 +2,13 @@
 
 .admin-menu-top{
     position: relative;
+    margin-left: var(--mg-small);
 }
 .menu-summary{
     display: flex;
     align-items: center;
-    color: #FFFFFF;
-    padding: 0 var(--pd-ultra-small);
-    & span{
-        padding-left: 4px;
-    }
+    color: var(--color-white);
+    padding: 0 var(--pd-medium);
 }
 
 .top-menu-panel{

@@ -7,10 +7,10 @@
     --border-color: #30363D;
     --border-1: 1px solid var(--border-color);
 
-    --search-bg-color: #2a2f36;
+    --search-bg-color: #2A2F36;
     --header-bg-color: #2C2C2C;
-    --header-nav-bg-color: transparent;
-    --header-nav-bd-color: transparent;
+    --header-nav-bg-color: #2C2C2C;
+    --header-nav-bd-color: #1F1E1E;
     --header-nav-item-bg-color: #1F1E1E;
 
     --box-shadow-small: 0 1px 0 rgba(0,0,0, 1);
