@@ -15,7 +15,8 @@
       </a>
 
       <user-avatar
-        icon-color="#393939"
+        bg-color="#4385F4"
+        icon-color="#ffffff"
       />
     </header>
 

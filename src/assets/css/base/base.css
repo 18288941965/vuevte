@@ -32,8 +32,15 @@
 }
 
 details > summary{
+    display: flex;
+    align-items: center;
     list-style: none;
+    height: 100%;
     cursor: pointer;
+}
+details > summary > span{
+    padding: 0 var(--pd-ultra-small);
+    color: var(--color-white);
 }
 
 details[open]>summary::before {

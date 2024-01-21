@@ -13,6 +13,11 @@
     text-decoration: none;
   }
 
+  & img{
+    width: 24px;
+    margin-right: var(--mg-ultra-small);
+  }
+
   & #admin-logo-text{
     color: var(--color-white);
     margin-right: var(--mg-medium);

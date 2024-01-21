@@ -6,16 +6,17 @@
     >
       <summary>
         <el-avatar
-          :size="32"
+          :size="26"
           :style="{ 'background-color' : bgColor }"
         >
           <template #default>
             <PersonFill
-              :size="24"
               :color="iconColor"
             />
           </template>
         </el-avatar>
+        <span>{{ userName }}</span>
+        <ArrowDropDown :color="iconColor" />
       </summary>
 
       <div
@@ -62,7 +63,8 @@ import {doLogout, logoutContext} from '../../context/signContext'
 import {
   PersonFill,
   Discover,
-  Logouts
+  Logouts,
+  ArrowDropDown
 } from '../svicon/publicIcon'
 import LocalStorage from '../../class/LocalStorage'
 import {dialogEmptyContext} from '../../context/dialogContext'
@@ -75,6 +77,7 @@ export default defineComponent({
     PersonFill,
     Discover,
     Logouts,
+    ArrowDropDown,
     AppSettingsDialog
   },
   props: {

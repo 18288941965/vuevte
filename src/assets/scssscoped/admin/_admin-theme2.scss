@@ -47,12 +47,10 @@
 
       & a[aria-current='page']{
         font-weight: bolder;
-        background: linear-gradient(130deg, var(--color-blue) 10.8%, #936de5 50%);
-        color: var(--color-white);
-        border: 0;
+        color: var(--color-blue);
       }
       & a[aria-current='page'] + button{
-        color: var(--color-white);
+        color: var(--color-blue);
       }
     }
   }

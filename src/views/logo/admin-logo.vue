@@ -3,6 +3,11 @@
     class="admin-logo"
   >
     <a href="/public">
+      <img
+        v-if="moduleIcon"
+        :src="getModuleIconUrl(moduleIcon)"
+        alt=" "
+      >
       <Transition name="slide-fade">
         <span
           v-if="!menuCollapse"
@@ -17,6 +22,7 @@
 
 <script lang="ts">
 import {defineComponent } from 'vue'
+import {getModuleIconUrl} from '../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminLogo',
@@ -35,6 +41,7 @@ export default defineComponent({
   },
   setup () {
     return {
+      getModuleIconUrl
     }
   }
 })

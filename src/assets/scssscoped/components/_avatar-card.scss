@@ -4,9 +4,11 @@
   margin-left: var(--mg-medium);
   &-container{
     @include flex-base();
-    height: 100%;
+    height: var(--lh-small);
     border: 0;
-    background-color: transparent;
+    background-color: var(--color-black-4);
+    padding: 0 var(--pd-ultra-small);
+    border-radius: calc(var(--lh-small)/2);
     & .el-avatar{
       cursor: pointer;
     }

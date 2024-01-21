@@ -13,7 +13,8 @@
 
 .home-header{
   @include flex-base();
-  height: var(--header-height);
+  height: var(--nav-height);
+  padding-right: var(--pd-medium);
 }
 
 .header-github{
@@ -23,18 +24,19 @@
 }
 
 .home-main{
-  @include flex-base(true);
+  @include flex-base();
   min-height: calc(100vh - 120px);
+  margin-left: var(--mg-small);
   & .main-link{
     width: 128px;
     height: 128px;
     border: 1px solid transparent;
     margin: var(--mg-small);
-    color: var(--color-white);
-    background-color: #3E3E3E;
+    background-color: #292C2D;
     backdrop-filter: blur(5px);
     text-decoration: none;
     text-align: center;
+    color: var(--color-white);
     & img{
       width: 48px;
       margin-top: var(--mg-medium);
