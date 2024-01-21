@@ -7,20 +7,18 @@
       >
         <GitHub
           :size="32"
-          color="#DDDDDD"
+          color="#333333"
         />
       </a>
     </header>
 
     <main class="login-main">
-      <img
-        :src="logo"
-        class="logo"
-        alt=" "
-      >
-      <h1>Vuevte</h1>
+      <div class="title">
+        <h1>Vuevte</h1>
+      </div>
 
       <section>
+        <h3>欢迎回来</h3>
         <input
           v-model.trim="loginBean.username"
           placeholder="账号"

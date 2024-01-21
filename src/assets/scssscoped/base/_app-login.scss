@@ -5,7 +5,7 @@
   height: 100vh;
   min-height: 560px;
   background: {
-    image: url("/public/image/login-bg.jpg");
+    image: url("/public/image/login-bg.png");
     size: cover;
     repeat: no-repeat;
   };
@@ -14,22 +14,40 @@
 .login-header{
   @include flex-base();
   justify-content: flex-end;
-  padding-right: var(--pd-medium);
+  padding: var(--pd-medium);
 }
 
 .login-main{
-  position: absolute;
-  left: 50%;
-  width: 400px;
-  height: 480px;
-  transform: translateX(-200px);
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  max-width: 1400px;
+  height: 520px;
+  padding: 0 20px;
+  margin: auto;
+  & .title{
+    padding-top: 200px;
+    & h1{
+      font-size: 8rem;
+    }
+  }
+
+  & section{
+    padding: 50px 40px;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-medium);
+    margin-top: 50px;
+    & h3{
+      line-height: 100px;
+      text-align: center;
+    }
+  }
 }
 
 .login-main input{
   display: block;
   width: 100%;
-  height: 40px;
+  height: 46px;
   padding-left: 20px;
   border: 0 {
     radius: var(--border-radius-small);
