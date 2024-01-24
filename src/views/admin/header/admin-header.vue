@@ -21,19 +21,42 @@
       </button>
     </div>
 
-    <app-search />
+    <app-search>
+      <template #button>
+        <button
+          class="app-search-button mgl-medium"
+        >
+          <Search :size="20" />
+          <span>搜索</span>
+          <span>|</span>
+          <span>跳转</span>
+        </button>
+      </template>
+    </app-search>
 
     <app-theme class="mgl-medium" />
 
     <user-avatar
-      bg-color="#4385F4"
-      icon-color="#ffffff"
-    />
+      :user-name="userName"
+      class="admin-avatar"
+    >
+      <template #summary>
+        <el-avatar
+          :size="26"
+        >
+          <template #default>
+            <PersonFill />
+          </template>
+        </el-avatar>
+        <span />
+        <ArrowDropDown color="#ffffff" />
+      </template>
+    </user-avatar>
   </header>
 </template>
 
 <script lang="ts">
-import {computed, defineComponent, PropType} from 'vue'
+import {computed, defineComponent, onMounted, PropType, ref} from 'vue'
 import AdminLogo from '../../logo/admin-logo.vue'
 import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import AppSearch from '../../../app-search.vue'
@@ -42,8 +65,11 @@ import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import showContext from '../../../context/showContext'
 import {
   Star,
-  ArrowDropDown
+  Search,
+  ArrowDropDown,
+  PersonFill
 } from '../../../components/svicon/publicIcon'
+import LocalStorage from '../../../class/LocalStorage'
 
 export default defineComponent({
   name: 'AdminHeader',
@@ -53,7 +79,9 @@ export default defineComponent({
     AppTheme,
     UserAvatar,
     Star,
-    ArrowDropDown
+    Search,
+    ArrowDropDown,
+    PersonFill
   },
   props: {
     menuCollapse: {
@@ -75,7 +103,7 @@ export default defineComponent({
   },
   emits: ['push-router'],
   setup (props, {emit}) {
-
+    const userName = ref('')
     const {
       panelShow,
       setPanelShow
@@ -97,7 +125,13 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
+    onMounted(() => {
+      const local = new LocalStorage()
+      userName.value = local.getUserName()
+    })
+
     return {
+      userName,
       panelShow,
       setPanelShow,
       getMenuLabel,
@@ -107,6 +141,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "../../../assets/scssscoped/admin/admin-header";
 </style>

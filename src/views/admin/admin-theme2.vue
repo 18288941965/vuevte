@@ -39,11 +39,15 @@
           </button>
         </el-tooltip>
 
-        <button
-          class="button-icon"
-        >
-          <Search />
-        </button>
+        <app-search>
+          <template #button>
+            <button
+              class="button-icon mgl-medium"
+            >
+              <Search />
+            </button>
+          </template>
+        </app-search>
       </div>
 
       <nav class="theme2-nav__right">
@@ -122,10 +126,12 @@ import {
   Search
 } from '../../components/svicon/publicIcon'
 import {handleMenuScroll} from '../../context/stickyContext'
+import AppSearch from '../../app-search.vue'
 
 export default defineComponent({
   name: 'AdminTheme2',
   components: {
+    AppSearch,
     AdminMenu,
     AdminHeader,
     Adjust,

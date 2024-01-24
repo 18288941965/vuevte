@@ -2,21 +2,9 @@
   <div class="user-avatar">
     <details
       id="user-avatar-details"
-      class="user-avatar-container"
     >
       <summary>
-        <el-avatar
-          :size="26"
-          :style="{ 'background-color' : bgColor }"
-        >
-          <template #default>
-            <PersonFill
-              :color="iconColor"
-            />
-          </template>
-        </el-avatar>
-        <span>{{ userName }}</span>
-        <ArrowDropDown :color="iconColor" />
+        <slot name="summary" />
       </summary>
 
       <div
@@ -58,15 +46,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted} from 'vue'
+import {defineComponent} from 'vue'
 import {doLogout, logoutContext} from '../../context/signContext'
 import {
-  PersonFill,
   Discover,
-  Logouts,
-  ArrowDropDown
+  Logouts
 } from '../svicon/publicIcon'
-import LocalStorage from '../../class/LocalStorage'
 import {dialogEmptyContext} from '../../context/dialogContext'
 import AppSettingsDialog from '../settings/app-settings-dialog.vue'
 import {closeDetails} from '../../util/baseUtil'
@@ -74,20 +59,14 @@ import {closeDetails} from '../../util/baseUtil'
 export default defineComponent({
   name: 'UserAvatar',
   components: {
-    PersonFill,
     Discover,
     Logouts,
-    ArrowDropDown,
     AppSettingsDialog
   },
   props: {
-    bgColor: {
+    userName: {
       type: String,
-      default: '#FFFFFF'
-    },
-    iconColor: {
-      type: String,
-      default: '#333940'
+      default: ''
     }
   },
    setup () {
@@ -97,8 +76,6 @@ export default defineComponent({
        dialogEmptyClose: dialogCloseSetting
      } = dialogEmptyContext()
      
-     const userName = ref('')
-
      const {
        logoutSuccess
      } = logoutContext()
@@ -107,14 +84,8 @@ export default defineComponent({
       doLogout(logoutSuccess)
      }
 
-     onMounted(() => {
-       const local = new LocalStorage()
-       userName.value = local.getUserName()
-     })
-     
     return {
       logout,
-      userName,
       closeDetails,
       dialogSetting,
       dialogOpenSetting,

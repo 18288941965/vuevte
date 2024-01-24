@@ -1,13 +1,9 @@
 <template>
-  <button
-    class="app-search-button mgl-medium"
-    @click.stop="setPanelShow(undefined)"
-  >
-    <Search :size="20" />
-    <span>搜索</span>
-    <span>|</span>
-    <span>跳转</span>
-  </button>
+  <div @click.stop="setPanelShow(undefined)">
+    <slot
+      name="button"
+    />
+  </div>
 
   <div
     v-show="panelShow"
