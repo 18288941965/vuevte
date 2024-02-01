@@ -4,11 +4,18 @@
     position: relative;
     margin-left: var(--mg-small);
 }
+#admin-menu-top-details[open] > summary{
+    background-color: var(--color-black-4);
+}
 .menu-summary{
     display: flex;
     align-items: center;
     color: var(--color-white);
-    padding: 0 var(--pd-medium);
+    padding: var(--pd-ultra-small);
+    border-radius: var(--border-radius-medium);
+    &:hover{
+        background-color: var(--color-black-4);
+    }
 }
 
 .top-menu-panel{

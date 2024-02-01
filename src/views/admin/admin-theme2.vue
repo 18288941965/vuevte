@@ -51,7 +51,7 @@
       </div>
 
       <nav class="theme2-nav__right">
-        <ul>
+        <ul id="theme2-nav-ul-scroll">
           <template
             v-for="(menu, index) in activeMenus.menus"
             :key="'header-menu-' + index"
@@ -127,6 +127,7 @@ import {
 } from '../../components/svicon/publicIcon'
 import {handleMenuScroll} from '../../context/stickyContext'
 import AppSearch from '../../app-search.vue'
+import {ScrollContext} from '../../context/scrollContext'
 
 export default defineComponent({
   name: 'AdminTheme2',
@@ -192,13 +193,20 @@ export default defineComponent({
         pushRouter(temp)
       }
     }
+    
+    const {
+      listenerWheel,
+      removeListenerWheel
+    } = ScrollContext('theme2-nav-ul-scroll', 190)
 
     onMounted(() => {
       window.addEventListener('scroll', handleMenuScroll)
+      listenerWheel()
     })
 
     onUnmounted(() => {
       window.removeEventListener('scroll', handleMenuScroll)
+      removeListenerWheel()
     })
 
     return {

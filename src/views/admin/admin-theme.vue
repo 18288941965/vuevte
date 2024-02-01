@@ -41,12 +41,16 @@
           </button>
         </el-tooltip>
 
-        <button
-          class="button-icon"
-        >
-          <Search />
-        </button>
-
+        <app-search>
+          <template #button>
+            <button
+              class="button-icon mgl-medium"
+            >
+              <Search />
+            </button>
+          </template>
+        </app-search>
+        
         <details
           id="admin-header-details"
           class="header-menu mgl-medium"
@@ -162,6 +166,7 @@ import {
   ArrowDropDown,
   Close
 } from '../../components/svicon/publicIcon'
+import appSearch from '../../app-search.vue'
 import {handleMenuScroll} from '../../context/stickyContext'
 import {closeDetails} from '../../util/baseUtil'
 
@@ -175,7 +180,8 @@ export default defineComponent({
     Search,
     Schedule,
     ArrowDropDown,
-    Close
+    Close,
+    appSearch
   },
   setup () {
     const {
