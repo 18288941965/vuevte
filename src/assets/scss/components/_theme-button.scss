@@ -10,8 +10,7 @@
 		height: 60%;
 	}
 	& button{
-		height: 100%;
-		width: var(--btn-height);
+		height: var(--btn-height);
 		color: var(--color-white-b);
 		border-radius: var(--border-radius-medium);
 		&:hover{

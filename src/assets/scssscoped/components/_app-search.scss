@@ -1,20 +1,7 @@
 @use "../../scss/mixin/mixin" as *;
 
 .app-search-overlay{
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: var(--z-index-h);
-}
-.app-search-panel{
-  position: fixed;
   width: 720px;
-  left: 50%;
-  margin-left: -360px;
-  top: var(--nav-height);
-  height: 400px;
   border: 1px solid var(--color-white) {
     radius: var(--border-radius-large)
   };
@@ -27,15 +14,19 @@
   };
   box-shadow: var(--box-shadow-extra-large);
   z-index: var(--z-index-i);
+}
 
+.app-search-panel{
   &__header{
     @include grid-base(32px 1fr);
     height: var(--lh-medium);
     padding-left: var(--pd-small);
-    border-bottom: 1px solid var(--panel-border-inner-color);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-medium);
     margin: var(--mg-small);
     color: var(--color-black-6);
     text-align: center;
+    background-color: #ECEFF7;
     input{
       height: 100%;
       border: 0 {
@@ -48,14 +39,15 @@
       background-color: transparent;
     }
     &:focus-within{
+      background-color: var(--color-white);
       border-color: var(--color-blue);
     }
   }
 
   &__body{
-    height: calc(100% - 100px);
+    min-height: 300px;
     overflow: auto;
-
+    margin-bottom: var(--lh-medium);
     h5{
       margin: var(--mg-small) {
         top: var(--mg-ultra-small);
@@ -91,7 +83,7 @@
         @include grid-base(1fr 20px);
         line-height: var(--lh-medium);
         padding: 0 var(--pd-medium);
-        border-radius: var(--border-radius-round-medium);
+        border-radius: var(--border-radius-medium);
         text-decoration: none;
         &:hover{
           background-color: var(--color-white-hover);
@@ -106,21 +98,27 @@
     }
   }
 
-  &__footer ul{
-    @include flex-base(true);
-    height: var(--lh-medium);
+  &__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, 0.3);
+    backdrop-filter: blur(5px);
     border: {
       top: 1px solid var(--panel-border-inner-color);
       bottom-left-radius: var(--border-radius-large);
       bottom-right-radius: var(--border-radius-large);
     };
-    background-color: rgba(255,255,255, 0.3);
-    backdrop-filter: blur(5px);
-    & li{
-      @include flex-base();
-      margin-left: var(--mg-ultra-large);
-      color: var(--color-black-6);
-      font-size: var(--h6-size);
+    ul{
+      @include flex-base(true);
+      height: var(--lh-medium);
+      & li{
+        @include flex-base();
+        margin-left: var(--mg-ultra-large);
+        color: var(--color-black-6);
+        font-size: var(--h6-size);
+      }
     }
   }
 }

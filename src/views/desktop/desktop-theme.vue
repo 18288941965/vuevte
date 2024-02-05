@@ -194,13 +194,8 @@ export default defineComponent({
 @use "../../assets/scss/mixin/mixin" as *;
 
   .desktop-theme{
+    background-color: black;
     height: 100vh;
-    background: {
-      image: url("/public/image/home-bg.png");
-      size: cover;
-      repeat: no-repeat;
-      attachment: fixed;
-    };
     overflow: auto;
   }
 

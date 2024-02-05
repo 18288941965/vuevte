@@ -20,7 +20,7 @@
 
 .top-menu-panel{
     position: absolute;
-    top: 40px;
+    top: 42px;
     left: 0;
     right: var(--mg-medium);
     width: 600px;
@@ -54,8 +54,8 @@
             &::before{
                 content: "•";
                 position: absolute;
-                left: -3px;
-                font-size: var(--h4-size);
+                left: -2px;
+                font-size: var(--h5-size);
             }
         }
         & .nav-item{

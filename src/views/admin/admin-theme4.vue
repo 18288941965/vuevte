@@ -17,7 +17,7 @@
     </admin-header>
 
     <nav class="history-menu">
-      <ul>
+      <ul id="theme4-nav-ul-scroll">
         <template
           v-for="(menu, index) in activeMenus.menus"
           :key="'header-menu-' + index"
@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, onMounted, onUnmounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -66,6 +66,7 @@ import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import adminMenuTop from './menu/admin-menu-top.vue'
 import {Close} from '../../components/svicon/publicIcon'
+import {ScrollContext} from '../../context/scrollContext'
 
 export default defineComponent({
   name: 'AdminTheme4',
@@ -121,6 +122,19 @@ export default defineComponent({
         pushRouter(temp)
       }
     }
+    
+    const {
+      listenerWheel,
+      removeListenerWheel
+    } = ScrollContext('theme4-nav-ul-scroll', 190)
+    
+    onMounted(() => {
+      listenerWheel()
+    })
+    
+    onUnmounted(() => {
+      removeListenerWheel()
+    })
 
     return {
       rootMenu,

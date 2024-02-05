@@ -62,7 +62,6 @@ import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
 import AppSearch from '../../../app-search.vue'
 import AppTheme from '../../../app-theme.vue'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
-import showContext from '../../../context/showContext'
 import {
   Star,
   Search,
@@ -104,10 +103,6 @@ export default defineComponent({
   emits: ['push-router'],
   setup (props, {emit}) {
     const userName = ref('')
-    const {
-      panelShow,
-      setPanelShow
-    } = showContext()
 
     const getMenuLabel = computed(() => {
       if (!props.activeMenus.menuId || !props.activeMenus.menus) {
@@ -118,7 +113,6 @@ export default defineComponent({
     })
 
     const pushRouter = (menu: MenuBean) => {
-      setPanelShow(false)
       if (menu.id === props.activeMenus?.menuId) {
         return
       }
@@ -132,8 +126,6 @@ export default defineComponent({
 
     return {
       userName,
-      panelShow,
-      setPanelShow,
       getMenuLabel,
       pushRouter
     }

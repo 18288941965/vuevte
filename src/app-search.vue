@@ -1,14 +1,14 @@
 <template>
-  <div @click.stop="setPanelShow(undefined)">
+  <div @click.stop="handleOpen">
     <slot
       name="button"
     />
   </div>
 
-  <div
-    v-show="panelShow"
+  <dialog
+    ref="dialogRef"
     class="app-search-overlay"
-    @click="setPanelShow(false)"
+    @click="handleClose"
   >
     <div
       class="app-search-panel"
@@ -21,8 +21,7 @@
 
         <input
           v-model.trim="searchParams.searchValue"
-          placeholder="搜索"
-          @focus="setPanelShow(true)"
+          placeholder="请输入要搜索的内容..."
         >
       </header>
 
@@ -114,16 +113,15 @@
         </ul>
       </footer>
     </div>
-  </div>
+  </dialog>
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue'
+import {defineComponent, reactive, ref} from 'vue'
 import {
   Search,
   ArrowLine
 } from './components/svicon/publicIcon'
-import showContext from './context/showContext'
 
 export default defineComponent({
   name: 'AppSearch',
@@ -132,18 +130,23 @@ export default defineComponent({
     ArrowLine
   },
   setup () {
-    const {
-      panelShow,
-      setPanelShow
-    } = showContext()
-
+    const dialogRef = ref<HTMLDialogElement>()
     const searchParams = reactive<{ searchValue: string}>({
       searchValue: ''
     })
 
+    const handleOpen = () => {
+      dialogRef.value?.showModal()
+    }
+
+    const handleClose = () => {
+      dialogRef.value?.close()
+    }
+
     return {
-      panelShow,
-      setPanelShow,
+      handleOpen,
+      handleClose,
+      dialogRef,
       searchParams
     }
   }

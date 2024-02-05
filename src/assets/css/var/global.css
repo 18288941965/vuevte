@@ -6,13 +6,14 @@
 
     --color-white: #FFFFFF;
     --color-white-b: #BBBBBB;
-    --color-white-hover: #f4f5f6;
+    --color-white-hover: #ecf5ff;
     --color-black: #000000;
     --color-black-1: #1F2328;
     --color-black-4: #444444;
     --color-black-6: #656D76;
     --color-black-9: #909399;
     --color-blue: #409EFF;
+    --color-blue-bd: #2d8df1;
     --color-red: #ff0000;
 
     --h00-size: 3rem;
@@ -56,10 +57,10 @@
     --z-index-z: 9999;
 
     /*圆角*/
-    --border-radius-ultra-small: 2px;
-    --border-radius-small: 6px;
-    --border-radius-medium: 10px;
-    --border-radius-large: 16px;
+    --border-radius-ultra-small: 1px;
+    --border-radius-small: 2px;
+    --border-radius-medium: 4px;
+    --border-radius-large: 12px;
     --border-radius-ultra-large : 20px;
 
     --border-radius-round-small: 16px;

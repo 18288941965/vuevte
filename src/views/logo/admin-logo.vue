@@ -3,11 +3,6 @@
     class="admin-logo"
   >
     <a href="/public">
-      <img
-        v-if="moduleIcon"
-        :src="getModuleIconUrl(moduleIcon)"
-        alt=" "
-      >
       <Transition name="slide-fade">
         <span
           v-if="!menuCollapse"
