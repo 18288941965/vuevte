@@ -35,7 +35,7 @@
       text-decoration: none;
       border: 1px solid var(--header-nav-item-bd-color);
       &:hover{
-        background-color: transparent;
+        background-color: var(--header-nav-item-hv-bg-color);
       }
     }
 

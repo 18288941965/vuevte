@@ -7,19 +7,19 @@
   }
 
   &__nav{
-    @include flex-base(true);
+    @include flex-base();
     height: var(--nav-height);
+    background-color: var(--header-nav-bg-color);
+    padding: 0 var(--pd-large);
    & ul{
      @include flex-base;
      height: 100%;
-
      & .nav-item{
        @include flex-base();
-       height: var(--lh-medium);
+       height: var(--nav-height);
        padding: 0 var(--pd-large);
        text-decoration: none;
        font-size: var(--body-font-size);
-       border-radius: var(--border-radius-ultra-large);
        &:hover{
          color: var(--color-blue) !important;
        }
@@ -28,7 +28,8 @@
      & a[aria-current='page']{
        color: var(--color-blue);
        font-weight: bolder;
-       background-color: var(--active-bg-color);
+       border-top: 2px solid var(--color-blue);
+       background-color: var(--bg-color);
      }
    }
   }

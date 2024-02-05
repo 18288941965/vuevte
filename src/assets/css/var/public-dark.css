@@ -10,8 +10,10 @@
     --search-bg-color: #2A2F36;
     --header-bg-color: #2C2C2C;
     --header-nav-bg-color: #2C2C2C;
-    --header-nav-bd-color: #1F1E1E;
-    --header-nav-item-bg-color: #1F1E1E;
+
+    --header-nav-item-bg-color: #444444;
+    --header-nav-item-hv-bg-color: #414141;
+    --header-nav-item-bd-color: var(--border-color);
 
     --box-shadow-small: 0 1px 0 rgba(0,0,0, 1);
     --box-shadow-medium: 0 3px 6px rgba(0,0,0, 1);
