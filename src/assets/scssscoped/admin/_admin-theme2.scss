@@ -32,6 +32,9 @@
         flex-shrink: 0;
         flex-basis: 190px;
         margin-left: var(--mg-medium);
+        &:hover .nav-item{
+          color: var(--color-blue);
+        }
       }
       & .nav-item{
         display: block;

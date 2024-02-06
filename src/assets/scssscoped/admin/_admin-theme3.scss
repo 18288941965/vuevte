@@ -11,6 +11,7 @@
     height: var(--nav-height);
     background-color: var(--header-nav-bg-color);
     padding: 0 var(--pd-large);
+    border-bottom: var(--border-1);
    & ul{
      @include flex-base;
      height: 100%;
@@ -28,7 +29,8 @@
      & a[aria-current='page']{
        color: var(--color-blue);
        font-weight: bolder;
-       border-top: 2px solid var(--color-blue);
+       border-left: var(--border-1);
+       border-right: var(--border-1);
        background-color: var(--bg-color);
      }
    }

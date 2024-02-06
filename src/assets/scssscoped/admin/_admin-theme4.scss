@@ -10,7 +10,6 @@
     position: relative;
     height: var(--nav-height);
     padding: 0 var(--pd-small);
-    background-color: var(--header-nav-bg-color);
     border-bottom: var(--border-1);
     ul{
       @include flex-base();
@@ -22,6 +21,9 @@
       flex-shrink: 0;
       flex-basis: 190px;
       margin-left: var(--mg-small);
+      &:hover .nav-item{
+        color: var(--color-blue);
+      }
     }
     & .nav-item{
       display: block;
@@ -34,18 +36,14 @@
       };
       text-decoration: none;
       border: 1px solid var(--header-nav-item-bd-color);
-      &:hover{
-        background-color: var(--header-nav-item-hv-bg-color);
-      }
     }
 
     & a[aria-current='page']{
-      border-color: var(--color-blue-bd);
-      color: var(--color-white);
-      background-color: var(--color-blue) !important;
+      font-weight: bolder;
+      color: var(--color-blue);
     }
     & a[aria-current='page'] + button{
-      color: var(--color-white);
+      color: var(--color-blue);
     }
   }
 }
