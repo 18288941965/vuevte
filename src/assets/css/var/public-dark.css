@@ -8,11 +8,11 @@
     --border-1: 1px solid var(--border-color);
 
     --search-bg-color: #2A2F36;
-    --header-bg-color: #2C2C2C;
+    --header-bg-color: #1B1F23;
     --header-nav-bg-color: #2C2C2C;
 
-    --header-nav-item-bg-color: #444444;
-    --header-nav-item-bd-color: var(--border-color);
+    --header-nav-item-bg-color: #262A2D;
+    --header-nav-item-bd-color: #262A2D;
 
     --box-shadow-small: 0 1px 0 rgba(0,0,0, 1);
     --box-shadow-medium: 0 3px 6px rgba(0,0,0, 1);

@@ -4,9 +4,9 @@
 	@include grid-base(34px 1px 32px);
 	grid-gap: 5px;
 	border-radius: var(--border-radius-medium);
-	background-color: var(--color-black-4);
+	background-color: var(--color-header-btn);
 	& span{
-		background-color: var(--color-black-6);
+		background-color: var(--color-black-4);
 		height: 60%;
 	}
 	& button{
