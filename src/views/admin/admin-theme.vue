@@ -59,7 +59,7 @@
           <summary
             class="button-history"
           >
-            <Schedule />
+            <Schedule :size="20" />
             <ArrowDropDown :size="20" />
           </summary>
           <div

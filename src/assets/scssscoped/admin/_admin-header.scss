@@ -2,7 +2,7 @@
 
 .admin-header{
   @include flex-base();
-  padding-right: var(--pd-large);
+  padding: 0 var(--pd-large);
   background-color: var(--header-bg-color);
 }
 

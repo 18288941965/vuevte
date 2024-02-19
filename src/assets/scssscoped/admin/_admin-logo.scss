@@ -6,17 +6,12 @@
   z-index: var(--z-index-b);
   height: 100%;
   & a{
-    display: inline-flex;
+    display: inline-grid;
+    grid-template-columns: 30px 1fr;
     align-items: center;
     height: var(--lh-medium);
-    margin-left: var(--mg-ultra-large);
     text-decoration: none;
-  }
-
-  & i{
-    width: 24px;
-    margin-right: var(--mg-ultra-small);
-    color: var(--color-white);
+    font-family: 微软雅黑, 新宋体, sans-serif;
   }
 
   & #admin-logo-text{

@@ -6,7 +6,9 @@
         height: var(--nav-height);
         border-bottom: var(--border-1);
         &__menu-btn{
-            @include flex-base(true);
+            @include flex-base();
+            justify-content: end;
+            padding-right: var(--pd-medium);
             height: var(--nav-height);
             border-bottom: var(--border-1);
             border-right: var(--border-1);
