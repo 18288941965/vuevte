@@ -73,26 +73,33 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
     return obj
 })
 
-// 登录
-Mock.mock('/api/admin/doLogin', 'post', (res) => {
-    const bean = JSON.parse(res.body)
-    if (bean.username !== 'admin@163.com' || bean.password !== 'admin') {
-        return {
-            code: 500,
-            msg: '用户名或密码错误！',
-            data: null
-        }
-    }
+// 获取收藏的菜单: 这里都跳转到默认主题，在实际的开发种路由也是配置死的。
+Mock.mock('/api/admin/getStarMenu', 'get', () => {
+    const themeNum = ''
     return {
         code: 200,
-        msg: null,
-        data: null
+        msg: '操作成功',
+        data: [
+            {
+                label: 'dic组件',
+                icon: '',
+                url: `/admin/theme${themeNum}/ev/dic${themeNum}`,
+                id: '03-01',
+                pid: '03',
+                sxh: 1,
+                cache: false,
+                name: `EvDicDemo${themeNum}`
+            },
+            {
+                label: 'pagination组件',
+                icon: '',
+                url: `/admin/theme${themeNum}/ev/pagination${themeNum}`,
+                id: '03-02',
+                pid: '03',
+                sxh: 2,
+                cache: true,
+                name: `EvPaginationDemo${themeNum}`
+            }
+        ]
     }
-})
-
-// 退出登录
-Mock.mock('/api/admin/doLogout', 'get', {
-    code: 200,
-    msg: null,
-    data: null
 })

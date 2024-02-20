@@ -12,13 +12,50 @@
     <div class="empty-flex" />
 
     <div class="button-star">
-      <button disabled>
-        <Star />
+      <button>
+        <StarFill
+          v-if="isStar"
+          color="#F4D213"
+        />
+        <Star v-else />
       </button>
-      <span />
-      <button disabled>
-        <ArrowDropDown :size="20" />
-      </button>
+      <span class="split" />
+      <details
+        id="header-star-details"
+        class="header-star-menu"
+        :data-disabled="activeMenus.menus.length === 0"
+      >
+        <summary
+          class="button-star-arrow"
+        >
+          <ArrowDropDown :size="20" />
+        </summary>
+        <div
+          class="header-star-menu-panel"
+          @click="closeDetails('header-star-details')"
+        >
+          <nav class="header-star-menu-panel__body card-scroll">
+            <ul>
+              <template
+                v-for="(menu, index) in starMenus"
+                :key="'li-0-' + index"
+              >
+                <li
+                  v-if="menu.url"
+                >
+                  <router-link
+                    class="nav-item"
+                    :to="menu.url"
+                    @click="pushRouter(menu)"
+                  >
+                    <span>{{ menu.label }}</span>
+                  </router-link>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </details>
     </div>
 
     <app-search>
@@ -64,11 +101,15 @@ import AppTheme from '../../../app-theme.vue'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
 import {
   Star,
+  StarFill,
   Search,
   ArrowDropDown,
   PersonFill
 } from '../../../components/svicon/publicIcon'
 import LocalStorage from '../../../class/LocalStorage'
+import axios from 'axios'
+import {AxiosResult} from '../../../interface/publicInterface'
+import {closeDetails} from '../../../util/baseUtil'
 
 export default defineComponent({
   name: 'AdminHeader',
@@ -78,6 +119,7 @@ export default defineComponent({
     AppTheme,
     UserAvatar,
     Star,
+    StarFill,
     Search,
     ArrowDropDown,
     PersonFill
@@ -119,15 +161,34 @@ export default defineComponent({
       emit('push-router', menu)
     }
 
+    // 获取登录用户 + 登录单位下收藏的菜单
+    // 这里可考虑自动刷新其他标签页的收藏菜单，也可让用户自动刷新页面。
+    const starMenus = ref<MenuBean[]>([])
+    const getStarMenus = () => {
+      axios.get('/api/admin/getStarMenu').then((res: {data: AxiosResult}) => {
+        if (res.data.code === 200) {
+          starMenus.value = res.data.data
+        }
+      })
+    }
+    const isStar =  computed(() => {
+      return starMenus.value.map(item => item.id).includes(props.activeMenus.menuId)
+    })
+
     onMounted(() => {
       const local = new LocalStorage()
       userName.value = local.getUserName()
+
+      getStarMenus()
     })
 
     return {
       userName,
       getMenuLabel,
-      pushRouter
+      pushRouter,
+      isStar,
+      starMenus,
+      closeDetails
     }
   }
 })

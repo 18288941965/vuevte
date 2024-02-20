@@ -1,11 +1,12 @@
 @use "../../scss/mixin/mixin" as *;
 
 .button-star{
+	position: relative;
 	@include grid-base(34px 1px 32px);
 	grid-gap: 5px;
 	border-radius: var(--border-radius-medium);
 	background-color: var(--color-header-btn);
-	& span{
+	& .split{
 		background-color: var(--color-black-4);
 		height: 60%;
 	}
@@ -19,7 +20,17 @@
 	}
 	& button[disabled]{
 		color: #777777;
-		cursor: not-allowed !important;
+		cursor: not-allowed;
+	}
+}
+
+.button-star-arrow{
+	color: var(--color-white-b);
+	width: 100%;
+	height: var(--btn-height);
+	padding-left: var(--pd-ultra-small);
+	&:hover{
+		color: var(--color-white);
 	}
 }
 
