@@ -4,40 +4,34 @@
   width: 100%;
   height: 100vh;
   min-height: 560px;
-  background: {
-    image: url("/public/image/login-bg.png");
-    size: cover;
-    repeat: no-repeat;
-  };
+  background-color: var(--color-white);
 }
 
 .login-header{
   @include flex-base();
   justify-content: flex-end;
-  padding: var(--pd-medium);
+  height: var(--lh-large);
+  padding: 0 var(--pd-large);
 }
 
 .login-main{
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  max-width: 1400px;
-  height: 520px;
-  padding: 0 20px;
+  width: 460px;
+  padding: var(--pd-medium);
   margin: auto;
+  background-color: var(--header-bg-color);
+  border-radius: var(--border-radius-ultra-large);
+  color: var(--color-white);
   & .title{
-    padding-top: 200px;
-    & h1{
-      font-size: 8rem;
+    text-align: center;
+    & img{
+      height: 80px;
     }
   }
 
   & section{
-    padding: 50px 40px;
-    background-color: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+    padding: 10px 40px 100px 40px;
     border-radius: var(--border-radius-medium);
-    margin-top: 50px;
-    & h3{
+    & h3,h5{
       line-height: 100px;
       text-align: center;
     }
@@ -47,11 +41,12 @@
 .login-main input{
   display: block;
   width: 100%;
-  height: 46px;
+  height: 40px;
   padding-left: 20px;
-  border: 0 {
+  background-color: var(--color-white);
+  border: 2px solid #E1E3E1 {
     radius: var(--border-radius-small);
   };
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-size: var(--h5-size);
 }

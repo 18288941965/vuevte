@@ -30,6 +30,12 @@
       </user-avatar>
     </header>
 
+    <img
+      :src="logo"
+      class="app-home-logo"
+      alt=" "
+    >
+
     <main class="home-main">
       <router-link
         class="main-link"
@@ -99,6 +105,7 @@ import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
 import {ElMessage} from 'element-plus/es'
 import LocalStorage from '../../class/LocalStorage'
+import logo from '../../assets/logo.svg'
 
 export default defineComponent({
   name: 'AppHome',
@@ -126,6 +133,7 @@ export default defineComponent({
     })
     
     return {
+      logo,
       userName,
       sendMessage
     }
