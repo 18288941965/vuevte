@@ -2,7 +2,7 @@
 
 .app-home{
   height: 100vh;
-  background-color: #409eff;
+  background-color: #ffffff;
   overflow: auto;
 }
 
@@ -19,29 +19,21 @@
 }
 
 .home-main{
-  @include flex-base();
+  @include flex-base(true);
   min-height: calc(100vh - 120px);
   margin-left: var(--mg-small);
   & .main-link{
-    width: 128px;
-    height: 128px;
-    border: 1px solid transparent;
     margin: var(--mg-small);
+    padding: 0 var(--pd-medium);
     background-color: #292C2D;
     backdrop-filter: blur(5px);
+    font-size: var(--h4-size);
     text-decoration: none;
     text-align: center;
     color: var(--color-white);
-    & img{
-      width: 48px;
-      margin-top: var(--mg-medium);
-    }
     & span{
       @include flex-base(trie);
       line-height: var(--lh-medium);
-    }
-    &:hover{
-      border-color: #cccccc;
     }
   }
 }

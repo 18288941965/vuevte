@@ -1,15 +1,13 @@
 <template>
   <div class="app-home">
     <header class="home-header">
-      <DesktopLogo style="color: #FFFFFF" />
-
       <a
         href="https://github.com/18288941965/vuevte"
         target="_blank"
         class="header-github mgl-auto"
       >
         <GitHub
-          color="#FFFFFF"
+          color="#000000"
           :size="32"
         />
       </a>
@@ -38,33 +36,21 @@
         to="/admin/theme"
         target="_blank"
       >
-        <img
-          :src="adminIcon"
-          alt=" "
-        >
-        <span>后台管理模板</span>
+        <span>后台管理模板 Ⅰ</span>
       </router-link>
       <router-link
         class="main-link"
         to="/admin/theme2"
         target="_blank"
       >
-        <img
-          :src="adminIcon"
-          alt=" "
-        >
-        <span>后台管理模板2</span>
+        <span>后台管理模板 Ⅱ</span>
       </router-link>
       <router-link
         class="main-link"
         to="/admin/theme3"
         target="_blank"
       >
-        <img
-          :src="adminIcon"
-          alt=" "
-        >
-        <span>后台管理模板3</span>
+        <span>后台管理模板 Ⅲ</span>
       </router-link>
 
       <router-link
@@ -72,11 +58,7 @@
         to="/admin/theme4"
         target="_blank"
       >
-        <img
-          :src="adminIcon"
-          alt=" "
-        >
-        <span>后台管理模板4</span>
+        <span>后台管理模板 Ⅳ</span>
       </router-link>
 
       <router-link
@@ -84,22 +66,14 @@
         to="/desktop/theme"
         target="_blank"
       >
-        <img
-          :src="homeIcon"
-          alt=" "
-        >
-        <span>首页模板1</span>
+        <span>首页模板 ①</span>
       </router-link>
       <router-link
         class="main-link"
         to="/desktop/theme2"
         target="_blank"
       >
-        <img
-          :src="homeIcon"
-          alt=" "
-        >
-        <span>首页模板2</span>
+        <span>首页模板 ②</span>
       </router-link>
 
       <a
@@ -107,11 +81,7 @@
         class="main-link"
         @click="sendMessage"
       >
-        <img
-          :src="messageIcon"
-          alt=" "
-        >
-        <span>消息推送</span>
+        <span>同域名多标签消息推送 🔆</span>
       </a>
     </main>
   </div>
@@ -125,10 +95,6 @@ import {
   PersonFill,
   ArrowDropDown
 } from '../../components/svicon/publicIcon'
-import DesktopLogo from '../logo/desktop-logo.vue'
-import adminIcon from '../../assets/image/home/admin-icon.png'
-import homeIcon from '../../assets/image/home/home-icon.png'
-import messageIcon from '../../assets/image/home/message-icon.png'
 import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
 import {ElMessage} from 'element-plus/es'
@@ -140,8 +106,7 @@ export default defineComponent({
     GitHub,
     PersonFill,
     ArrowDropDown,
-    UserAvatar,
-    DesktopLogo
+    UserAvatar
   },
   setup () {
     const userName = ref('')
@@ -162,9 +127,6 @@ export default defineComponent({
     
     return {
       userName,
-      adminIcon,
-      homeIcon,
-      messageIcon,
       sendMessage
     }
   }
