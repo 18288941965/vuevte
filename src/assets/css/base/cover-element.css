@@ -14,12 +14,11 @@
 }
 
 /*-----重写dialog样式-----*/
-.el-dialog{
-  border-radius: var(--border-radius-ultra-large);
-}
+
 .el-dialog .el-dialog__header{
-  font-weight: bolder;
-  font-size: var(--h3-size);
+  background-color: var(--color-white-hover);
+  margin-right: 0;
+  border-bottom: 1px solid var(--panel-border-inner-color);
 }
 .el-dialog .el-dialog__header .el-dialog__headerbtn{
   display: flex;
@@ -29,9 +28,13 @@
   width: var(--btn-height);
   right: 10px;
   top: 10px;
-  border-radius: 20px;
-  border: var(--border-1);
+}
+.el-dialog .el-dialog__header .el-dialog__headerbtn:hover{
+  background-color: var(--color-red);
 }
 .el-dialog .el-dialog__header .el-dialog__close{
   font-size: 20px;
+}
+.el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close{
+  color: var(--color-white) !important;
 }

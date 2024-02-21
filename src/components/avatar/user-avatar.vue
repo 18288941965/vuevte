@@ -38,7 +38,7 @@
       </div>
     </details>
 
-    <app-settings-dialog
+    <app-settings-drawer
       v-bind="dialogSetting"
       @close-dialog="dialogCloseSetting"
     />
@@ -53,7 +53,7 @@ import {
   Logouts
 } from '../svicon/publicIcon'
 import {dialogEmptyContext} from '../../context/dialogContext'
-import AppSettingsDialog from '../settings/app-settings-dialog.vue'
+import AppSettingsDrawer from '../settings/app-settings-drawer.vue'
 import {closeDetails} from '../../util/baseUtil'
 
 export default defineComponent({
@@ -61,7 +61,7 @@ export default defineComponent({
   components: {
     Discover,
     Logouts,
-    AppSettingsDialog
+    AppSettingsDrawer
   },
   props: {
     userName: {

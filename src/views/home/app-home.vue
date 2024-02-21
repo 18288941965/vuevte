@@ -7,7 +7,7 @@
         class="header-github mgl-auto"
       >
         <GitHub
-          color="#000000"
+          color="#ffffff"
           :size="32"
         />
       </a>
@@ -123,7 +123,7 @@ export default defineComponent({
     } = BChannel(channel)
     
     const sendMessage = () => {
-      postMessage({ code: BCEnum.OTHER, msg: '你收到一条消息，一条系统普通提示消息！' })
+      postMessage({ code: BCEnum.OTHER, msg: `你收到一条消息，一条系统普通提示消息--${new Date().getTime()}` })
       ElMessage.success('推送成功！请在其他窗口查阅')
     }
 

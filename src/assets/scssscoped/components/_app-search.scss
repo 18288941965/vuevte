@@ -2,8 +2,9 @@
 
 .app-search-overlay{
   width: 720px;
+  top: 0;
   border: 1px solid var(--color-white) {
-    radius: var(--border-radius-large)
+    radius: var(--border-radius-medium)
   };
   color: var(--color-black-1);
   background: {
@@ -13,7 +14,7 @@
     position: right bottom;
   };
   box-shadow: var(--box-shadow-extra-large);
-  z-index: var(--z-index-i);
+  z-index: var(--z-index-g);
 }
 
 .app-search-panel{

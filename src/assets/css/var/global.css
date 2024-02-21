@@ -41,9 +41,9 @@
     d:
     e: 用于summary:before
     f: 用于summary
-    g:
+    g:用于搜索面板等，不能超于element弹出框
     h:
-    i: 用于超越element弹出框，用于搜索面板等
+    i:
     z: 顶层用于message | 进度条等
     */
     --z-index-a: 1;

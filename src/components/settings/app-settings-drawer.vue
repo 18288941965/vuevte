@@ -1,15 +1,15 @@
 <template>
-  <el-dialog
+  <el-drawer
     v-model="visible"
     title="系统设置"
-    width="50%"
-    append-to-body
+    direction="rtl"
     :before-close="handleClose"
+    :size="400"
     @open="handleOpen"
   >
     <main class="app-settings-main">
       <section>
-        <h4>系统字体</h4>
+        <h5>系统字体：</h5>
         <ev-radio
           v-model="fontSize"
           :data-list="fontSizeType"
@@ -17,7 +17,7 @@
         />
       </section>
     </main>
-  </el-dialog>
+  </el-drawer>
 </template>
 
 <script lang="ts">
@@ -26,7 +26,7 @@ import {appSettingsContext} from './appSettings'
 import EvRadio from '../evcomp/ev-radio.vue'
 
 export default defineComponent({
-  name: 'AppSettingsDialog',
+  name: 'AppSettingsDrawer',
   components: {EvRadio},
   props: {
     show: {
@@ -82,7 +82,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  .app-settings-main{
-    min-height: 220px;
+  .app-settings-main h5{
+    padding: var(--pd-small);
+    background-color: var(--color-white-hover);
+    margin-bottom: var(--mg-medium);
   }
 </style>

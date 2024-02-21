@@ -1,45 +1,38 @@
 <template>
-  <div
-    v-if="systemMessageList.length > 0"
-    class="app-message-container"
+  <el-dialog
+    v-model="visible"
+    title="系统消息"
+    width="720"
+    :before-close="closeMessage"
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
+    :destroy-on-close="true"
   >
-    <main class="app-message">
-      <header class="app-message__header">
-        <h3>平台消息</h3>
-        <button
-          @click="closeMessage"
+    <div class="app-message__body">
+      <ul>
+        <li
+          v-for="(item, index) in systemMessageList"
+          :key="'s-m-l-' + index"
         >
-          <Close :size="20" />
-        </button>
-      </header>
-      <div class="app-message__body">
-        <ul>
-          <li
-            v-for="(item, index) in systemMessageList"
-            :key="'s-m-l-' + index"
-          >
-            <Sms color="orange" />
-            {{ item.msg }}
-          </li>
-        </ul>
-      </div>
-    </main>
-  </div>
+          <Sms color="orange" />
+          {{ item.msg }}
+        </li>
+      </ul>
+    </div>
+  </el-dialog>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref, watchEffect } from 'vue'
 import {ChannelData} from './interface/publicInterface'
 import {
-  Sms,
-  Close
+  Sms
 } from './components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AppMessage',
   components: {
-    Sms,
-    Close
+    Sms
   },
   props: {
     systemMessageList: {
@@ -51,13 +44,26 @@ export default defineComponent({
   },
   emits: ['close-message'],
   setup (props, {emit}) {
+    const visible = ref(false)
 
     const closeMessage = () => {
       emit('close-message')
+      visible.value = false
     }
 
+    watchEffect(() => {
+      if (props.systemMessageList === undefined) {
+        visible.value = false
+      } else {
+        if (props.systemMessageList.length > 0) {
+          visible.value = true
+        }
+      }
+    })
+
     return {
-      closeMessage
+      closeMessage,
+      visible
     }
   }
 })

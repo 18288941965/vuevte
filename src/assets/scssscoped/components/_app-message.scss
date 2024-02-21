@@ -1,58 +1,15 @@
 @use "../../scss/mixin/mixin" as *;
 
-.app-message-container{
-  @extend .bc-bf;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  overflow: auto;
-  z-index: var(--z-index-z);
-}
-
-.app-message{
-  position: absolute;
-  width: 720px;
-  left: 50%;
-  margin-left: -360px;
-  top: calc(var(--header-height) - 1px);
-  height: 400px;
-  border: 0px solid var(--panel-border-outer-color) {
-    radius: var(--border-radius-ultra-large);
-  };
-  box-shadow: var(--box-shadow-extra-large);
-  background-color: var(--panel-bg-color);
-
-  &__header{
-    @include grid-base(1fr 32px);
-    position: sticky;
-    top: 0;
-    padding: 0 var(--pd-large);
-    line-height: var(--lh-large);
-    color: var(--color-black-1);
-    h3{
-      margin: 0;
-      padding: 0;
-    }
-    button{
-      @include close-btn;
-    }
-  }
-
-  &__body{
-    & ul {
-      margin: var(--mg-large);
-    }
-    & li{
-      @include grid-base(34px 1fr);
-      padding: var(--pd-medium);
-      border: 1px solid var(--panel-border-inner-color){
-        radius: var(--border-radius-medium)
-      };
-      margin-bottom: var(--mg-small);
-      font-size: var(--h4-size);
-      color: var(--color-black);
-    }
+.app-message__body{
+  min-height: 30vh;
+  & li{
+    @include grid-base(34px 1fr);
+    padding: var(--pd-medium);
+    border: 1px solid var(--panel-border-inner-color){
+      radius: var(--border-radius-medium)
+    };
+    margin-bottom: var(--mg-small);
+    font-size: var(--h4-size);
+    color: var(--color-black);
   }
 }
