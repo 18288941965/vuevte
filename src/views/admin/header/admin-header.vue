@@ -71,13 +71,13 @@
 
     <user-avatar
       :user-name="userName"
-      class="admin-avatar"
+      class="admin-avatar icon-down"
     >
       <template #summary>
-        <PersonFill color="#ffffff" />
+        <PersonFill />
         <Expand
           :size="20"
-          color="#ffffff"
+          class="expand-mg"
         />
       </template>
     </user-avatar>

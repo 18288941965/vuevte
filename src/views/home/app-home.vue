@@ -36,11 +36,14 @@
 
         <user-avatar
           :user-name="userName"
-          class="app-home-avatar"
+          class="app-home-avatar icon-down"
         >
           <template #summary>
-            <PersonFill color="#474747" />
-            <ArrowDropDown color="#474747" />
+            <PersonFill />
+            <Expand
+              :size="20"
+              class="expand-mg"
+            />
           </template>
         </user-avatar>
       </div>
@@ -110,7 +113,7 @@ import {
   Search,
   GitHub,
   PersonFill,
-  ArrowDropDown
+  Expand
 } from '../../components/svicon/publicIcon'
 import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
@@ -125,7 +128,7 @@ export default defineComponent({
     Search,
     GitHub,
     PersonFill,
-    ArrowDropDown,
+    Expand,
     UserAvatar,
     AppSearch
   },

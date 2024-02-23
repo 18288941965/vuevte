@@ -59,3 +59,7 @@ details[open]>summary::before {
     content: " ";
     background: transparent;
 }
+
+details[open] .expand-mg{
+    transform: translateY(4px);
+}

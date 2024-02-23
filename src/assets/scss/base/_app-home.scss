@@ -2,10 +2,12 @@
 
 .app-home-avatar{
   position: relative;
+  color: #474747;
 }
 .app-home-avatar details{
   @include flex-base();
   height: var(--btn-height);
+  background-color: var(--color-white-e);
 }
 
 .app-home-avatar details > summary > span{

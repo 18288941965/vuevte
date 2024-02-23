@@ -57,10 +57,13 @@
           :data-disabled="activeMenus.menus.length === 0"
         >
           <summary
-            class="button-history"
+            class="button-history icon-down"
           >
             <Schedule :size="20" />
-            <ArrowDropDown :size="20" />
+            <Expand
+              :size="20"
+              class="expand-mg"
+            />
           </summary>
           <div
             class="header-menu-panel"
@@ -163,7 +166,7 @@ import {
   MenuOpen,
   Search,
   Schedule,
-  ArrowDropDown,
+  Expand,
   Close
 } from '../../components/svicon/publicIcon'
 import appSearch from '../../app-search.vue'
@@ -179,7 +182,7 @@ export default defineComponent({
     MenuOpen,
     Search,
     Schedule,
-    ArrowDropDown,
+    Expand,
     Close,
     appSearch
   },
