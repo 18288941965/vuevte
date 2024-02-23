@@ -26,6 +26,10 @@
     margin-left: var(--mg-medium);
 }
 
+.mgr-medium{
+    margin-right: var(--mg-medium);
+}
+
 .empty-flex{
     flex: 1;
     visibility: hidden;

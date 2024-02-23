@@ -2,20 +2,28 @@
 
 .app-home{
   height: 100vh;
-  background-color: #000000;
+  background-color: #F9FAFA;
   overflow: auto;
 }
 
 .home-header{
-  @include flex-base();
-  height: var(--nav-height);
-  padding-right: var(--pd-medium);
+  background-color: var(--color-white);
+  border-bottom: 1px solid #E1E3E1;
+  box-shadow: 0 1px 0 rgba(31,35,40,0.04);
+  &--container{
+    @include flex-base();
+    max-width: 1344px;
+    height: var(--nav-height);
+    margin: auto;
+  }
 }
 
 .header-github{
-  width: var(--btn-height);
-  height: var(--btn-height);
-  margin-right: var(--mg-medium);
+  @extend .button-base;
+  @include flex-base(true);
+  &:hover{
+    background-color: var(--color-white-e);
+  }
 }
 
 .home-main{
@@ -24,22 +32,19 @@
   margin-left: var(--mg-small);
   & .main-link{
     margin: var(--mg-small);
-    padding: 0 var(--pd-medium);
-    background-color: #292C2D;
-    backdrop-filter: blur(5px);
     font-size: var(--h4-size);
     text-decoration: none;
     text-align: center;
-    color: var(--color-white);
     & span{
       @include flex-base(trie);
-      line-height: var(--lh-medium);
     }
+  }
+
+  & .main-link:hover{
+    text-decoration: underline;
   }
 }
 
 .app-home-logo{
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: var(--lh-small);
 }

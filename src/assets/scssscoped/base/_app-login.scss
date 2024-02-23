@@ -15,26 +15,24 @@
 }
 
 .login-main{
-  width: 460px;
+  width: 420px;
   padding: var(--pd-medium);
   margin: auto;
-  background-color: var(--header-bg-color);
   border-radius: var(--border-radius-ultra-large);
-  color: var(--color-white);
+  color: var(--color-black);
   & .title{
     text-align: center;
+    font-size: var(--h1-size);
     & img{
       height: 80px;
     }
   }
 
   & section{
-    padding: 10px 40px 100px 40px;
+    padding: 40px;
     border-radius: var(--border-radius-medium);
-    & h3,h5{
-      line-height: 100px;
-      text-align: center;
-    }
+    background-color: #F9FAFA;
+    border: 1px solid #E3E6E8;
   }
 }
 
@@ -44,8 +42,8 @@
   height: 40px;
   padding-left: 20px;
   background-color: var(--color-white);
-  border: 2px solid #E1E3E1 {
-    radius: var(--border-radius-small);
+  border: 1px solid #E1E3E1 {
+    radius: var(--border-radius-medium);
   };
   margin-bottom: 40px;
   font-size: var(--h5-size);

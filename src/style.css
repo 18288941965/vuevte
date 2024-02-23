@@ -66,6 +66,10 @@ button{
   cursor: pointer;
 }
 
+dialog{
+  margin: 15vh auto 0;
+}
+
 a{
   color: inherit;
   cursor: pointer;

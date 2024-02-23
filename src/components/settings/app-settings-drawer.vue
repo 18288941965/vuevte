@@ -9,7 +9,7 @@
   >
     <main class="app-settings-main">
       <section>
-        <h5>系统字体：</h5>
+        <h5>字 号 ：</h5>
         <ev-radio
           v-model="fontSize"
           :data-list="fontSizeType"

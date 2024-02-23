@@ -2,7 +2,6 @@
 
 .app-search-overlay{
   width: 720px;
-  top: 0;
   border: 1px solid var(--color-white) {
     radius: var(--border-radius-medium)
   };
@@ -14,7 +13,6 @@
     position: right bottom;
   };
   box-shadow: var(--box-shadow-extra-large);
-  z-index: var(--z-index-g);
 }
 
 .app-search-panel{

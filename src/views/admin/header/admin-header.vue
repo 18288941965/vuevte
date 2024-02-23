@@ -11,7 +11,7 @@
 
     <div class="empty-flex" />
 
-    <div class="button-star">
+    <div class="button-star mgr-medium">
       <button>
         <StarFill
           v-if="isStar"
@@ -61,7 +61,7 @@
     <app-search>
       <template #button>
         <button
-          class="app-search-button mgl-medium"
+          class="app-search-button mgr-medium"
         >
           <Search :size="20" />
           <span>搜索</span>
@@ -71,20 +71,14 @@
       </template>
     </app-search>
 
-    <app-theme class="mgl-medium" />
+    <app-theme class="mgr-medium" />
 
     <user-avatar
       :user-name="userName"
       class="admin-avatar"
     >
       <template #summary>
-        <el-avatar
-          :size="26"
-        >
-          <template #default>
-            <PersonFill />
-          </template>
-        </el-avatar>
+        <PersonFill color="#ffffff" />
         <span />
         <ArrowDropDown color="#ffffff" />
       </template>

@@ -1,12 +1,21 @@
 @use "../../scss/mixin/mixin" as *;
 
+.app-home-avatar{
+  position: relative;
+}
 .app-home-avatar details{
   @include flex-base();
-  height: var(--lh-medium);
-  border: 0;
-  background-color: var(--color-black);
-  padding: 0 var(--pd-ultra-small);
-  & .el-avatar{
-    cursor: pointer;
+  height: var(--btn-height);
+}
+
+.app-home-avatar details > summary > span{
+  color: var(--color-black);
+}
+
+.app-home-search-button{
+  @extend .button-base;
+  @include flex-base(true);
+  &:hover{
+    background-color: var(--color-white-e);
   }
 }

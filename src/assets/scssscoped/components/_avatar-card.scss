@@ -1,7 +1,6 @@
 @use "../../scss/mixin/mixin" as *;
 
 .user-avatar{
-  margin-left: var(--mg-medium);
   &-panel{
     position: absolute;
     top: 54px;

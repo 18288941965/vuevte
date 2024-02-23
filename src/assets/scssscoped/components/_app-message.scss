@@ -2,14 +2,16 @@
 
 .app-message__body{
   min-height: 30vh;
+  & ul{
+    list-style: '💬 ' inside;
+  }
   & li{
-    @include grid-base(34px 1fr);
-    padding: var(--pd-medium);
-    border: 1px solid var(--panel-border-inner-color){
-      radius: var(--border-radius-medium)
-    };
+    padding: var(--pd-small) var(--pd-medium);
     margin-bottom: var(--mg-small);
-    font-size: var(--h4-size);
-    color: var(--color-black);
+    border: var(--border-1) {
+      radius: var(--border-radius-medium);
+    };
+    background-color: #DDFFDD;
+    color: var(--color-black-1);
   }
 }

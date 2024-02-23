@@ -27,9 +27,6 @@
   background-color: var(--color-header-btn);
   padding: 0 var(--pd-ultra-small);
   border-radius: calc(var(--lh-small)/2);
-  & .el-avatar{
-    cursor: pointer;
-  }
 }
 
 .header-star-menu{

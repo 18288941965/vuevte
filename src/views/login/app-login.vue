@@ -6,8 +6,8 @@
         target="_blank"
       >
         <GitHub
-          :size="32"
-          color="#000000"
+          :size="24"
+          color="#474747"
         />
       </a>
     </header>
@@ -18,11 +18,10 @@
           :src="logo"
           alt=" "
         >
-        <h1>Vuevte</h1>
+        <p>Vuevte</p>
       </div>
 
       <section>
-        <h5>我们建议您使用PKI登录本系统</h5>
         <input
           v-model.trim="loginBean.username"
           placeholder="账号"
@@ -39,7 +38,7 @@
         >
 
         <el-button
-          color="#FFFFFF"
+          color="#1F883D"
           size="large"
           style="width: 100%"
           @click="login"
@@ -54,7 +53,7 @@
 <script lang="ts">
 import {defineComponent, inject, reactive} from 'vue'
 import {useRouter} from 'vue-router'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import {
   GitHub
 } from '../../components/svicon/publicIcon'

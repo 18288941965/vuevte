@@ -3,6 +3,7 @@
     v-model="visible"
     title="系统消息"
     width="720"
+    :modal="false"
     :before-close="closeMessage"
     :close-on-press-escape="false"
     :close-on-click-modal="false"
@@ -14,7 +15,6 @@
           v-for="(item, index) in systemMessageList"
           :key="'s-m-l-' + index"
         >
-          <Sms color="orange" />
           {{ item.msg }}
         </li>
       </ul>
@@ -25,15 +25,9 @@
 <script lang="ts">
 import { defineComponent, PropType, ref, watchEffect } from 'vue'
 import {ChannelData} from './interface/publicInterface'
-import {
-  Sms
-} from './components/svicon/publicIcon'
 
 export default defineComponent({
   name: 'AppMessage',
-  components: {
-    Sms
-  },
   props: {
     systemMessageList: {
       type: Array as PropType<Array<ChannelData>>,

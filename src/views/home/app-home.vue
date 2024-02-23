@@ -1,40 +1,50 @@
 <template>
   <div class="app-home">
     <header class="home-header">
-      <a
-        href="https://github.com/18288941965/vuevte"
-        target="_blank"
-        class="header-github mgl-auto"
-      >
-        <GitHub
-          color="#ffffff"
-          :size="32"
-        />
-      </a>
+      <div class="home-header--container">
+        <img
+          :src="logoText"
+          class="app-home-logo"
+          alt=" "
+        >
 
-      <user-avatar
-        :user-name="userName"
-        class="app-home-avatar"
-      >
-        <template #summary>
-          <el-avatar
-            :size="26"
-          >
-            <template #default>
-              <PersonFill />
-            </template>
-          </el-avatar>
-          <span>{{ userName }}</span>
-          <ArrowDropDown color="#ffffff" />
-        </template>
-      </user-avatar>
+        <div class="empty-flex" />
+
+        <app-search>
+          <template #button>
+            <button
+              class="app-home-search-button mgr-medium"
+            >
+              <Search
+                :size="24"
+                color="#474747"
+              />
+            </button>
+          </template>
+        </app-search>
+
+        <a
+          href="https://github.com/18288941965/vuevte"
+          target="_blank"
+          class="header-github mgr-medium"
+        >
+          <GitHub
+            color="#474747"
+            :size="20"
+          />
+        </a>
+
+        <user-avatar
+          :user-name="userName"
+          class="app-home-avatar"
+        >
+          <template #summary>
+            <PersonFill color="#474747" />
+            <ArrowDropDown color="#474747" />
+          </template>
+        </user-avatar>
+      </div>
     </header>
-
-    <img
-      :src="logo"
-      class="app-home-logo"
-      alt=" "
-    >
 
     <main class="home-main">
       <router-link
@@ -97,6 +107,7 @@
 import {defineComponent, ref, onMounted, inject} from 'vue'
 import UserAvatar from '../../components/avatar/user-avatar.vue'
 import {
+  Search,
   GitHub,
   PersonFill,
   ArrowDropDown
@@ -104,16 +115,19 @@ import {
 import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
 import {ElMessage} from 'element-plus/es'
+import AppSearch from '../../app-search.vue'
 import LocalStorage from '../../class/LocalStorage'
-import logo from '../../assets/logo.svg'
+import logoText from '../../assets/logo-text.png'
 
 export default defineComponent({
   name: 'AppHome',
   components: {
+    Search,
     GitHub,
     PersonFill,
     ArrowDropDown,
-    UserAvatar
+    UserAvatar,
+    AppSearch
   },
   setup () {
     const userName = ref('')
@@ -123,7 +137,7 @@ export default defineComponent({
     } = BChannel(channel)
     
     const sendMessage = () => {
-      postMessage({ code: BCEnum.OTHER, msg: `你收到一条消息，一条系统普通提示消息--${new Date().getTime()}` })
+      postMessage({ code: BCEnum.OTHER, msg: `系统提示消息他 — ${new Date().getTime()}` })
       ElMessage.success('推送成功！请在其他窗口查阅')
     }
 
@@ -133,7 +147,7 @@ export default defineComponent({
     })
     
     return {
-      logo,
+      logoText,
       userName,
       sendMessage
     }
