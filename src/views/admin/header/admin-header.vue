@@ -12,23 +12,22 @@
     <div class="empty-flex" />
 
     <div class="button-star mgr-medium">
-      <button>
+      <button class="header-icon-button mgr-medium">
         <StarFill
           v-if="isStar"
           color="#F4D213"
         />
         <Star v-else />
       </button>
-      <span class="split" />
       <details
         id="header-star-details"
         class="header-star-menu"
         :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
-          class="button-star-arrow"
+          class="header-icon-button"
         >
-          <ArrowDropDown :size="20" />
+          <Expand :size="20" />
         </summary>
         <div
           class="header-star-menu-panel"
@@ -61,12 +60,9 @@
     <app-search>
       <template #button>
         <button
-          class="app-search-button mgr-medium"
+          class="header-icon-button mgr-medium"
         >
-          <Search :size="20" />
-          <span>搜索</span>
-          <span>|</span>
-          <span>跳转</span>
+          <Search />
         </button>
       </template>
     </app-search>
@@ -79,8 +75,10 @@
     >
       <template #summary>
         <PersonFill color="#ffffff" />
-        <span />
-        <ArrowDropDown color="#ffffff" />
+        <Expand
+          :size="20"
+          color="#ffffff"
+        />
       </template>
     </user-avatar>
   </header>
@@ -97,7 +95,7 @@ import {
   Star,
   StarFill,
   Search,
-  ArrowDropDown,
+  Expand,
   PersonFill
 } from '../../../components/svicon/publicIcon'
 import LocalStorage from '../../../class/LocalStorage'
@@ -115,7 +113,7 @@ export default defineComponent({
     Star,
     StarFill,
     Search,
-    ArrowDropDown,
+    Expand,
     PersonFill
   },
   props: {

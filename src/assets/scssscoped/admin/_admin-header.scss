@@ -4,20 +4,7 @@
   @include flex-base();
   padding: 0 var(--pd-large);
   background-color: var(--header-bg-color);
-}
-
-.app-search-button{
-  @include grid-base(24px 40px 4px 40px);
-  float: right;
-  width: 280px;
-  height: var(--btn-height);
-  border-radius: var(--border-radius-medium);
-  color: var(--color-white-b);
-  font-size: var(--h6-size);
-  background-color: var(--color-header-btn);
-  &:hover{
-    color: var(--color-white);
-  }
+  border-bottom: 1px solid var(--border-color);
 }
 
 .admin-avatar details{

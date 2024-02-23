@@ -4,8 +4,7 @@
   >
     <a href="/public">
       <Home
-        :size="18"
-        style="color: var(--color-white);"
+        :size="20"
       />
       <Transition name="slide-fade">
         <span

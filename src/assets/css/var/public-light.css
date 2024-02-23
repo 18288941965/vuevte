@@ -1,5 +1,6 @@
 .app-light{
     --bg-color: #FFFFFF;
+    --bg-color-reverse: #000000;
 
     --scrollbar-thumb-bg-color: #E3E3E3;
     --scrollbar-track-bg-color: transparent;

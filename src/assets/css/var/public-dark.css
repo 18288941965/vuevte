@@ -1,5 +1,6 @@
 .app-dark{
     --bg-color: #000000;
+    --bg-color-reverse: #FFFFFF;
 
     --scrollbar-thumb-bg-color: #686868;
     --scrollbar-track-bg-color: transparent;
@@ -8,8 +9,8 @@
     --border-1: 1px solid var(--border-color);
 
     --search-bg-color: #2A2F36;
-    --header-bg-color: #1B1F23;
-    --header-nav-bg-color: #2C2C2C;
+    --header-bg-color: transparent;
+    --header-nav-bg-color: transparent;
 
     --header-nav-item-bg-color: #262A2D;
     --header-nav-item-bd-color: #262A2D;

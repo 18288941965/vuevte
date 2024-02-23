@@ -10,7 +10,6 @@
     @include flex-base();
     height: var(--nav-height);
     background-color: var(--header-nav-bg-color);
-    padding: 0 var(--pd-large);
     border-bottom: var(--border-1);
    & ul{
      @include flex-base;
@@ -27,11 +26,17 @@
      }
 
      & a[aria-current='page']{
-       color: var(--color-blue);
        font-weight: bolder;
-       border-left: var(--border-1);
-       border-right: var(--border-1);
-       background-color: var(--bg-color);
+       position: relative;
+       &::before{
+         content: "";
+         position: absolute;
+         left: calc(var(--pd-large) + 4px);
+         right: calc(var(--pd-large) + 4px);
+         bottom: 0;
+         height: 2px;
+         background-color: var(--bg-color-reverse);
+       }
      }
    }
   }

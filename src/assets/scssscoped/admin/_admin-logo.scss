@@ -4,21 +4,24 @@
   @include flex-base();
   position: relative;
   z-index: var(--z-index-b);
-  height: 100%;
   & a{
     display: inline-grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 24px 1fr;
     align-items: center;
-    height: var(--lh-medium);
     text-decoration: none;
-    font-family: 微软雅黑, 新宋体, sans-serif;
+    color: var(--color-white-e);
+    vertical-align: text-top;
+    &:hover{
+      color: var(--color-white);
+    }
   }
 
   & #admin-logo-text{
-    color: var(--color-white);
     margin-right: var(--mg-medium);
     white-space: nowrap;
+    padding-top: 4px;
     font-weight: bolder;
+    font-size: 0.95rem;
     overflow: clip;
   }
 }
