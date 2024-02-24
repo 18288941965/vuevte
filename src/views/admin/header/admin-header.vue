@@ -1,13 +1,13 @@
 <template>
   <header class="admin-header">
+    <slot name="default" />
+
     <admin-logo
       class="theme-header-ht"
       :menu-collapse="false"
       :module-icon="moduleIcon"
       :module-label="moduleLabel"
     />
-
-    <slot name="default" />
 
     <div class="empty-flex" />
 

@@ -1,7 +1,7 @@
 <template>
   <div class="admin-menu-top">
     <details id="admin-menu-top-details">
-      <summary class="menu-summary">
+      <summary class="header-icon-button hv-bg mgr-medium">
         <Apps />
       </summary>
       <div class="top-menu-panel">

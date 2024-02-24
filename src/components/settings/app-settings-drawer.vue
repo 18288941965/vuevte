@@ -10,11 +10,13 @@
     <main class="app-settings-main">
       <section>
         <h5>字 号 ：</h5>
-        <ev-radio
-          v-model="fontSize"
-          :data-list="fontSizeType"
-          @change="setHtmlFont(fontSize)"
-        />
+        <div class="settings-container">
+          <ev-radio
+            v-model="fontSize"
+            :data-list="fontSizeType"
+            @change="setHtmlFont(fontSize)"
+          />
+        </div>
       </section>
     </main>
   </el-drawer>
@@ -81,10 +83,24 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-  .app-settings-main h5{
-    padding: var(--pd-small);
-    background-color: var(--hover-bg-light);
-    margin-bottom: var(--mg-medium);
+<style scoped lang="scss">
+  .app-settings-main{
+    h5{
+      padding: var(--pd-small);
+      margin-bottom: var(--mg-medium);
+      background-color: var(--header-bg-color);
+      border: {
+        bottom: 1px solid var(--border-color);
+        top-left-radius: var(--border-radius-medium);
+        top-right-radius: var(--border-radius-medium);
+      }
+    }
+    & section{
+      border: var(--border-1);
+      border-radius: var(--border-radius-medium);
+    }
+    & .settings-container{
+      padding: var(--pd-medium);
+    }
   }
 </style>

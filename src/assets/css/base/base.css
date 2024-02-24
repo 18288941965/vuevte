@@ -58,7 +58,7 @@ details[open]>summary::before {
     background: transparent;
 }
 details[open]>summary.hv-bg{
-    background-color: var(--hover-bg);
+    background-color: var(--bg-color-hover);
 }
 details[open] .expand-mg{
     transform: translateY(4px);

@@ -23,7 +23,7 @@
       flex-basis: 190px;
       margin-left: var(--mg-small);
       &:hover .nav-item{
-        color: var(--color-blue);
+        background-color: var(--bg-color-hover);
       }
     }
     & .nav-item{
