@@ -2,15 +2,22 @@
     --bg-color: #FFFFFF;
     --bg-color-reverse: #000000;
 
+
     --scrollbar-thumb-bg-color: #E3E3E3;
     --scrollbar-track-bg-color: transparent;
 
     --border-color: #E6E6E6;
     --border-1: 1px solid var(--border-color);
 
+    --text-color-default: #1F2328;
+    --text-color-muted: #656d76;
+    --text-color-reverse: #FFFFFF;
+
+    --hover-bg: #E9E9E9;
+
     --search-bg-color: #E9E9E9;
-    --header-bg-color: #1B1F23;
-    --header-nav-bg-color: #F6F8FA;
+    --header-bg-color: #F9FAFA;
+    --header-nav-bg-color: #F9FAFA;
 
     --header-nav-item-bg-color: #FFFFFF;
     --header-nav-item-bd-color: #D6D8DB;

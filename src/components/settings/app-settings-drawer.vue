@@ -84,7 +84,7 @@ export default defineComponent({
 <style scoped>
   .app-settings-main h5{
     padding: var(--pd-small);
-    background-color: var(--color-white-hover);
+    background-color: var(--hover-bg-light);
     margin-bottom: var(--mg-medium);
   }
 </style>

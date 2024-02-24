@@ -25,7 +25,7 @@
         :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
-          class="header-icon-button"
+          class="header-icon-button hv-bg"
         >
           <Expand :size="20" />
         </summary>

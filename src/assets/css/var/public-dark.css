@@ -8,9 +8,15 @@
     --border-color: #30363D;
     --border-1: 1px solid var(--border-color);
 
+    --text-color-default: #FFFFFF;
+    --text-color-muted: #CCCCCC;
+    --text-color-reverse: #000000;
+
+    --hover-bg: #363636;
+
     --search-bg-color: #2A2F36;
     --header-bg-color: #232323;
-    --header-nav-bg-color: transparent;
+    --header-nav-bg-color: #232323;
 
     --header-nav-item-bg-color: #262A2D;
     --header-nav-item-bd-color: #262A2D;

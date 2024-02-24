@@ -1,35 +1,29 @@
 <template>
-  <div
+  <a
     class="admin-logo"
+    href="/app/home"
   >
-    <a href="/public">
-      <Home
-        :size="20"
-      />
-      <Transition name="slide-fade">
-        <span
-          v-if="!menuCollapse"
-          id="admin-logo-text"
-        >
-          {{ moduleLabel }}
-        </span>
-      </Transition>
-    </a>
-  </div>
+    <img
+      :src="logo"
+      alt=" "
+    >
+    <Transition name="slide-fade">
+      <span
+        v-if="!menuCollapse"
+        id="admin-logo-text"
+      >
+        {{ moduleLabel }}
+      </span>
+    </Transition>
+  </a>
 </template>
 
 <script lang="ts">
 import {defineComponent } from 'vue'
-import {getModuleIconUrl} from '../../util/baseUtil'
-import {
-  Home
-} from '../../components/svicon/publicIcon'
+import logo from '../../assets/logo.png'
 
 export default defineComponent({
   name: 'AdminLogo',
-  components: {
-    Home
-  },
   props: {
     menuCollapse: {
       type: Boolean
@@ -45,7 +39,7 @@ export default defineComponent({
   },
   setup () {
     return {
-      getModuleIconUrl
+      logo
     }
   }
 })

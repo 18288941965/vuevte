@@ -4,24 +4,17 @@
   @include flex-base();
   position: relative;
   z-index: var(--z-index-b);
-  & a{
-    display: inline-grid;
-    grid-template-columns: 24px 1fr;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-white-e);
-    vertical-align: text-top;
-    &:hover{
-      color: var(--color-white);
-    }
+  border-radius: var(--border-radius-medium);
+  height: var(--btn-height);
+  text-decoration: none;
+  & img{
+    width: 32px;
   }
-
   & #admin-logo-text{
-    margin-right: var(--mg-medium);
-    white-space: nowrap;
-    padding-top: 4px;
+    padding-left: var(--pd-small);
     font-weight: bolder;
-    font-size: 0.95rem;
+    white-space: nowrap;
+    font-size: var(--h4-size);
     overflow: clip;
   }
 }

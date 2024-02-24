@@ -2,13 +2,11 @@
 .green-mark::before {
     content: "•";
     position: absolute;
-
     left: 5px;
     top: 0;
     bottom: 0;
     padding: 0;
     margin: auto 0;
-
     border-radius: var(--border-radius-small);
     font-size: var(--h4-size);
     color: #2BC385;
@@ -23,11 +21,11 @@
 }
 
 .mgl-medium{
-    margin-left: var(--mg-medium);
+    margin-left: var(--mg-small);
 }
 
 .mgr-medium{
-    margin-right: var(--mg-medium);
+    margin-right: var(--mg-small);
 }
 
 .empty-flex{
@@ -35,6 +33,7 @@
     visibility: hidden;
 }
 
+/*弹窗窗口的样式集合*/
 details > summary{
     display: flex;
     align-items: center;
@@ -46,7 +45,6 @@ details > summary > span{
     padding: 0 var(--pd-ultra-small);
     color: var(--color-white);
 }
-
 details[open]>summary::before {
     position: fixed;
     top: 0;
@@ -59,7 +57,9 @@ details[open]>summary::before {
     content: " ";
     background: transparent;
 }
-
+details[open]>summary.hv-bg{
+    background-color: var(--hover-bg);
+}
 details[open] .expand-mg{
     transform: translateY(4px);
 }
