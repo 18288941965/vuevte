@@ -71,7 +71,7 @@
 
     <user-avatar
       :user-name="userName"
-      class="admin-avatar icon-down"
+      class="admin-avatar arrow-down"
     >
       <template #summary>
         <PersonFill />

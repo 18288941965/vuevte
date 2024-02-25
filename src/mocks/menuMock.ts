@@ -47,7 +47,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
     const menus: Array<MenuBean> = []
     menus.push({
         label: '后台管理模板',
-        icon: 'admin-theme.png',
+        icon: `admin-temp${themeNum}.png`,
         url: `/admin/theme${themeNum}`,
         id: '01',
         pid: undefined,

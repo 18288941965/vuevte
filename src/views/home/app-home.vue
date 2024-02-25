@@ -36,10 +36,11 @@
 
         <user-avatar
           :user-name="userName"
-          class="app-home-avatar icon-down"
+          class="app-home-avatar arrow-down"
         >
           <template #summary>
             <PersonFill />
+            <span>{{ userName }}</span>
             <Expand
               :size="20"
               class="expand-mg"

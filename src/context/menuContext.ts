@@ -83,7 +83,7 @@ export function MenuStatusContext() {
             if (data) {
                 data = data.replace('px', '')
                 if (parseInt(data) >= width) {
-                    data = '80px'
+                    data = '64px'
                 } else {
                     data = `${width}px`
                 }

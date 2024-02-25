@@ -67,7 +67,7 @@
           :data-disabled="activeMenus.menus.length === 0"
         >
           <summary
-            class="button-history icon-down hv-bg"
+            class="button-history arrow-down hv-bg"
           >
             <Schedule :size="20" />
             <Expand

@@ -2,16 +2,19 @@
 
 .app-home-avatar{
   position: relative;
-  color: #474747;
 }
 .app-home-avatar details{
   @include flex-base();
   height: var(--btn-height);
-  background-color: var(--color-white-e);
-}
-
-.app-home-avatar details > summary > span{
-  color: var(--color-black);
+  & summary{
+    padding: 0 var(--pd-ultra-small);
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-black-4);
+    color: var(--color-white);
+  }
+  & .user-avatar-panel{
+    right: 0;
+  }
 }
 
 .app-home-search-button{

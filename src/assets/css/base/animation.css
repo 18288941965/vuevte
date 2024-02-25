@@ -16,9 +16,9 @@
 }
 
 /*箭头向下动画*/
-.icon-down svg{
+.arrow-down svg{
     transition: all 0.3s;
 }
-.icon-down:hover .expand-mg{
+.arrow-down:hover .expand-mg{
    transform: translateY(4px);
 }
