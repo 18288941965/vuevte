@@ -16,7 +16,7 @@
         class="theme2-nav__left"
       >
         <button
-          class="button-icon menu-collapse-icon"
+          class="header-icon-button menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
@@ -32,22 +32,30 @@
           :show-after="500"
         >
           <button
-            class="button-icon"
+            class="header-icon-button mgr-medium"
             @click="menuOpen"
           >
             <Adjust />
           </button>
         </el-tooltip>
 
-        <app-search>
-          <template #button>
-            <button
-              class="button-icon mgl-medium"
-            >
-              <Search />
-            </button>
-          </template>
-        </app-search>
+        <div
+          class="mgr-medium"
+          style="flex: 1;"
+        >
+          <app-search>
+            <template #button>
+              <button
+                class="header-icon-button button-search"
+              >
+                <Search :size="18" />
+                <span>搜索</span>
+              </button>
+            </template>
+          </app-search>
+        </div>
+
+        <div class="left-split" />
       </div>
 
       <nav class="theme2-nav__right">

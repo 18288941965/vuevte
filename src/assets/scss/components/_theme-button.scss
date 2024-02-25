@@ -13,19 +13,23 @@
 		background-color: var(--bg-color-hover);
 	}
 }
-
-.button-icon{
-	@include button-custom;
+.header-icon-button + button{
+	margin-left: var(--mg-small);
 }
-.button-icon + button{
-	margin-left: var(--mg-medium);
+
+.button-search{
+	width: 100%;
+	justify-content: start;
+	box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
+	& span{
+		padding-left: var(--pd-small);
+	}
 }
 
 .button-history{
-	@include button-custom;
+	@extend .header-icon-button;
 	width: 64px;
 	position: relative;
-	padding-right: var(--pd-ultra-small);
 	& svg{
 		margin-left: var(--mg-ultra-small);
 	}

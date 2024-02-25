@@ -18,7 +18,7 @@
         class="page-header__menu-btn"
       >
         <button
-          class="button-icon menu-collapse-icon"
+          class="header-icon-button menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
@@ -34,30 +34,40 @@
           :enterable="false"
         >
           <button
-            class="button-icon"
+            class="header-icon-button mgr-medium"
             @click="menuOpen"
           >
             <Adjust />
           </button>
         </el-tooltip>
 
-        <app-search>
-          <template #button>
-            <button
-              class="button-icon mgl-medium"
-            >
-              <Search />
-            </button>
-          </template>
-        </app-search>
-        
+        <div
+          class="mgr-medium"
+          style="flex: 1;"
+        >
+          <app-search>
+            <template #button>
+              <button
+                class="header-icon-button button-search"
+              >
+                <Search :size="18" />
+                <span>搜索</span>
+              </button>
+            </template>
+          </app-search>
+        </div>
+
+        <div class="left-split" />
+      </div>
+
+      <div class="page-header__menu">
         <details
           id="admin-header-details"
-          class="header-menu mgl-medium"
+          class="header-menu mgr-medium"
           :data-disabled="activeMenus.menus.length === 0"
         >
           <summary
-            class="button-history icon-down"
+            class="button-history icon-down hv-bg"
           >
             <Schedule :size="20" />
             <Expand
@@ -108,9 +118,7 @@
             </footer>
           </div>
         </details>
-      </div>
 
-      <div class="page-header__menu">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item
             v-for="(item, index) in activeMenuPath"

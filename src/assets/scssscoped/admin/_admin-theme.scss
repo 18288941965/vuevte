@@ -4,24 +4,22 @@
 .admin-theme{
     .page-header{
         height: var(--nav-height);
-        border-bottom: var(--border-1);
+        box-shadow: inset 0 -1px var(--border-color);
+        background-color: var(--header-bg-color);
         &__menu-btn{
             @include flex-base();
-            justify-content: end;
-            padding-right: var(--pd-medium);
+            padding-left: var(--pd-large);
             height: var(--nav-height);
-            border-bottom: var(--border-1);
-            border-right: var(--border-1);
-            &-hidden {
-                button[data-hidden='true']{
-                    visibility: hidden;
-                }
+            & .left-split{
+                width: 1px;
+                height: calc(var(--btn-height) - 8px);
+                background-color: var(--border-color);
             }
         }
 
         &__menu{
             @include flex-base();
-            padding: 0 var(--pd-large);
+            padding: 0 var(--pd-small);
         }
     }
 
