@@ -17,7 +17,7 @@
       <header
         class="app-search-panel__header"
       >
-        <Search :size="20" />
+        <Search />
 
         <input
           v-model.trim="searchParams.searchValue"
@@ -44,7 +44,6 @@
               >
                 <span>dic组件</span>
                 <ArrowLine
-                  :size="16"
                 />
               </a>
             </li>
@@ -55,7 +54,6 @@
               >
                 <span>pagination组件</span>
                 <ArrowLine
-                  :size="16"
                 />
               </a>
             </li>
@@ -66,7 +64,6 @@
               >
                 <span>首页2</span>
                 <ArrowLine
-                  :size="16"
                 />
               </a>
             </li>

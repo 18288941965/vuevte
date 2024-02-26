@@ -24,7 +24,7 @@
         <i class="menu-icon">
           <component
             :is="menuGroupIcon"
-            :size="16"
+            :size="10"
           />
         </i>
 

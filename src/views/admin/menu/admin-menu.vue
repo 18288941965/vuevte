@@ -20,7 +20,9 @@
           :class="{'menu-active' : menu.id === menuId }"
           @click="pushRouter(menu)"
         >
-          <i class="menu-icon">
+          <i
+            class="menu-icon"
+          >
             <component
               :is="menu.icon.toString()"
               v-if="menu.icon"

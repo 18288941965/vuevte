@@ -8,12 +8,18 @@
 
 .admin-avatar details{
   @include flex-base();
-  height: var(--lh-small);
+  height: var(--btn-height);
   border: 0;
   background-color: var(--color-header-btn);
   padding: 0 var(--pd-ultra-small);
-  border-radius: calc(var(--lh-small)/2);
+  border-radius: var(--border-radius-round-medium);
   color: var(--color-white);
+  & summary{
+    width: max-content;
+  }
+  & summary svg:nth-child(2){
+    margin-left: var(--mg-small);
+  }
 }
 
 .header-star-menu{

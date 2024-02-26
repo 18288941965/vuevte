@@ -4,11 +4,12 @@
     :color="color"
     :height="size"
     :width="size"
-    viewBox="0 -960 960 960"
+    viewBox="0 0 16 16"
   >
     <path
       fill="currentColor"
-      d="m354-247 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-80l65-281L80-550l288-25 112-265 112 265 288 25-218 189 65 281-247-149L233-80Zm247-350Z"/>
+      d="M0 13.6667V11.8889H16V13.6667H0ZM0 9.22222V7.44444H16V9.22222H0ZM0 4.77778V3H16V4.77778H0Z"
+    />
   </svg>
 </template>
 
@@ -20,6 +21,6 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   color: '',
-  size: 24
+  size: 16
 })
 </script>

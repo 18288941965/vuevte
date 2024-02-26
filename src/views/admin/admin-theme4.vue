@@ -39,7 +39,7 @@
               class="button-menu-close"
               @click="cleanHistory(menu.id)"
             >
-              <Close :size="14" />
+              <Close :size="10" />
             </button>
           </li>
         </template>

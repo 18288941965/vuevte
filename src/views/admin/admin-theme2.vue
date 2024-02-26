@@ -20,7 +20,6 @@
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
-            :size="24"
             :class="{'icon-rotate' : menuCollapse }"
           />
         </button>
@@ -48,7 +47,7 @@
               <button
                 class="header-icon-button button-search"
               >
-                <Search :size="18" />
+                <Search />
                 <span>搜索</span>
               </button>
             </template>
@@ -81,7 +80,7 @@
                 class="button-menu-close"
                 @click="cleanHistory(menu.id)"
               >
-                <Close :size="14" />
+                <Close :size="10" />
               </button>
             </li>
           </template>

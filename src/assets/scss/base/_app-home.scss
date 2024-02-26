@@ -9,8 +9,13 @@
   & summary{
     padding: 0 var(--pd-ultra-small);
     border-radius: var(--border-radius-medium);
-    background-color: var(--color-black-4);
-    color: var(--color-white);
+    color: var(--color-black-4);
+    & svg:nth-child(2){
+      margin-left: var(--mg-small);
+    }
+    &:hover{
+      background-color: var(--color-white-e);
+    }
   }
   & .user-avatar-panel{
     right: 0;

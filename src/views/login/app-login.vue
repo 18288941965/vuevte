@@ -6,7 +6,6 @@
         target="_blank"
       >
         <GitHub
-          :size="24"
           color="#474747"
         />
       </a>

@@ -27,7 +27,7 @@
         <summary
           class="header-icon-button hv-bg"
         >
-          <Expand :size="20" />
+          <Expand />
         </summary>
         <div
           class="header-star-menu-panel"
@@ -76,7 +76,7 @@
       <template #summary>
         <PersonFill />
         <Expand
-          :size="20"
+          :size="10"
           class="expand-mg"
         />
       </template>

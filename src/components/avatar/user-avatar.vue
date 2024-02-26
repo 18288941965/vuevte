@@ -20,7 +20,6 @@
             @click="dialogOpenSetting"
           >
             <Discover
-              :size="20"
             />
             系统设置
           </li>
@@ -30,7 +29,6 @@
             @click="logout"
           >
             <Logouts
-              :size="20"
             />
             退出登录
           </li>

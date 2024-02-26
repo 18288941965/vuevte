@@ -30,8 +30,8 @@
 	@extend .header-icon-button;
 	width: 64px;
 	position: relative;
-	& svg{
-		margin-left: var(--mg-ultra-small);
+	& svg:nth-child(2){
+		margin-left: var(--mg-small);
 	}
 }
 

@@ -16,8 +16,7 @@
               class="app-home-search-button mgr-medium"
             >
               <Search
-                :size="24"
-                color="#474747"
+                color="var(--color-black-4)"
               />
             </button>
           </template>
@@ -29,8 +28,7 @@
           class="header-github mgr-medium"
         >
           <GitHub
-            color="#474747"
-            :size="20"
+            color="var(--color-black-4)"
           />
         </a>
 
@@ -40,9 +38,8 @@
         >
           <template #summary>
             <PersonFill />
-            <span>{{ userName }}</span>
             <Expand
-              :size="20"
+              :size="10"
               class="expand-mg"
             />
           </template>

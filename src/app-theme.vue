@@ -5,11 +5,9 @@
   >
     <Dark
       v-if="model === 'dark'"
-      :size="20"
     />
     <Light
       v-else
-      :size="20"
     />
   </button>
 </template>
