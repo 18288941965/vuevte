@@ -15,7 +15,7 @@ interface MenuBean extends MenuBeanBase{
 }
 
 interface ActiveMenus {
-    menuId: String
+    menuId: string
     menus: Array<MenuBean>
 }
 

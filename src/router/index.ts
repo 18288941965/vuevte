@@ -61,6 +61,12 @@ const router = createRouter({
       name: 'DesktopTheme2',
       component: () => import('../views/desktop/desktop-theme2.vue'),
       meta: { title: '桌面模板2' }
+    },
+    {
+      path: '/:pathMatch(.*)',
+      name: '404Error',
+      component: () => import('../views/error/404-error.vue'),
+      meta: { title: '404' }
     }
   ]
 })

@@ -14,8 +14,8 @@ export function ScrollContext(id: string, offset: number) {
             }
         }
     }
-    
-    const handleWheel = (event) => {
+
+    function handleWheel(event: Event) {
         event.stopPropagation()
         if (event instanceof WheelEvent) {
             if (event.deltaY !== 0) {

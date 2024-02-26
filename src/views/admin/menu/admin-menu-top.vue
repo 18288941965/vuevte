@@ -13,7 +13,7 @@
             >
               <router-link
                 class="nav-item"
-                :to="menu.url"
+                :to="menu.url ? menu.url : '/404/error'"
                 @click="pushRouter(menu)"
               >
                 <span>{{ menu.label }}</span>
@@ -38,7 +38,7 @@
               >
                 <router-link
                   class="nav-item"
-                  :to="menu.url"
+                  :to="menu.url ? menu.url : '/404/error'"
                   @click="pushRouter(menu)"
                 >
                   <span>{{ menu.label }}</span>

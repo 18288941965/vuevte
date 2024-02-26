@@ -121,7 +121,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
+import {defineComponent, ref, onMounted, onUnmounted, nextTick} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -209,7 +209,9 @@ export default defineComponent({
 
     onMounted(() => {
       window.addEventListener('scroll', handleMenuScroll)
-      listenerWheel()
+      nextTick(() => {
+        listenerWheel()
+      })
     })
 
     onUnmounted(() => {
