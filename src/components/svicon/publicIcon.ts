@@ -12,6 +12,7 @@ export { default as Schedule } from './other-16/sv-schedule-icon.vue'
 export { default as Star } from './other-16/sv-star-icon.vue'
 export { default as StarFill } from './other-16/sv-star-fill-icon.vue'
 export { default as Apps } from './other-16/sv-apps-icon.vue'
+export { default as Send } from './other-16/sv-send-icon.vue'
 
 export { default as GitHub } from './other/sv-github-icon.vue'
 export { default as ArrowLine } from './other/sv-arrow-line-icon.vue'

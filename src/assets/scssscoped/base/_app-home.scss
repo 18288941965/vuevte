@@ -28,22 +28,45 @@
 }
 
 .home-main{
-  @include flex-base(true);
-  min-height: calc(100vh - 120px);
-  margin-left: var(--mg-small);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: var(--pd-large);
+  padding: 0 var(--pd-large);
   & .main-link{
-    margin: var(--mg-small);
+    margin: var(--mg-small) 0;
     font-size: var(--h4-size);
     text-decoration: none;
-    text-align: center;
-    & span{
-      @include flex-base(trie);
+    border: var(--border-1) {
+      radius: var(--border-radius-large);
+    };
+    background-color: var(--color-white);
+    & h5{
+      line-height: var(--lh-medium);
+      padding: 0 var(--pd-medium);
     }
+    & .desc-info{
+      display: block;
+      margin: 0 var(--pd-small) var(--pd-small);
+      font-size: var(--h6-size);
+      color: var(--color-black-6);
+    }
+  }
+
+  & .m-bg{
+    width: 100%;
+    border-radius: var(--border-radius-large);
   }
 
   & .main-link:hover{
     text-decoration: underline;
   }
+}
+
+.test-module{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pd-large);
 }
 
 .app-home-logo{
