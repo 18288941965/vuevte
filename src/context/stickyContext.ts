@@ -1,3 +1,7 @@
+/**
+ * 页面布局左侧菜单顶部吸附处理.
+ * @param event 事件参数
+ */
 export const handleMenuScroll = (event: Event) => {
     event.stopPropagation()
     const mainElement: HTMLElement | null = document.querySelector('#admin-theme-main')

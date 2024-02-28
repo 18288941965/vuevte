@@ -19,8 +19,7 @@
             class="li-action-item"
             @click="dialogOpenSetting"
           >
-            <Discover
-            />
+            <Discover />
             系统设置
           </li>
           <li class="li-divider" />
@@ -28,8 +27,7 @@
             class="li-action-item"
             @click="logout"
           >
-            <Logouts
-            />
+            <Logouts />
             退出登录
           </li>
         </ul>

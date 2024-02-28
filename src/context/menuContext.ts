@@ -13,17 +13,26 @@ export function MenuStatusContext() {
         menuId: '',
         menus: []
     })
-
+    const menuCollapse = ref(false)
+    // 清理历史记录：所有数据
     const cleanActiveMenuPath = () => {
         activeMenuPath.value = []
     }
-
+    // 把路由加入缓存中
     const updateKeepAliveInclude = (name: string) => {
         if (!keepAliveInclude.value.includes(name)) {
             keepAliveInclude.value.push(name)
         }
     }
-
+    // 更新激活的菜单
+    const updateActiveMenus = (menu: MenuBean) => {
+        activeMenus.menuId = menu.id
+        const menuIds = activeMenus.menus.map(item => item.id)
+        if (!menuIds.includes(menu.id)) {
+            activeMenus.menus.push(menu)
+        }
+    }
+    // 清理历史记录: 清空缓存
     const cleanKeepAliveInclude = (id: string | undefined) => {
         // 关闭除打开页面外的所有窗口
         if (!id) {
@@ -44,15 +53,7 @@ export function MenuStatusContext() {
             }
         }
     }
-
-    const updateActiveMenus = (menu: MenuBean) => {
-        activeMenus.menuId = menu.id
-        const menuIds = activeMenus.menus.map(item => item.id)
-        if (!menuIds.includes(menu.id)) {
-            activeMenus.menus.push(menu)
-        }
-    }
-
+    // 清理历史记录：清空数据
     const cleanActiveMenus = (id: string | undefined, index: number) => {
         // 关闭除打开页面外的所有窗口
         if (!id) {
@@ -72,8 +73,7 @@ export function MenuStatusContext() {
             activeMenus.menus.splice(index, 1)
         }
     }
-
-    const menuCollapse = ref(false)
+    // 处理左侧菜单的展开和折叠
     const setMenuCollapse = (collapse: boolean) => {
         const documentElement = document.documentElement
         if (documentElement) {
@@ -93,7 +93,6 @@ export function MenuStatusContext() {
 
         menuCollapse.value = collapse
     }
-
     return {
         activeMenuPath,
         activeMenus,
@@ -108,6 +107,11 @@ export function MenuStatusContext() {
     }
 }
 
+/**
+ * 加载模块的菜单数据.
+ * 这里是框架为了适配多个主题做了区分，实际开发请按需求修改下列查询参数。
+ * @constructor
+ */
 export function MenuContext() {
     const menus = ref<MenuBean[]>([])
     const menuDefaultOpeneds = ref<String[]>([])

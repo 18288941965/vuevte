@@ -44,14 +44,14 @@ export function dialogBaseContext () {
 export function dialogParamsContext () {
   const dialogParam = reactive<DialogParam>({
     show: false,
-    params: undefined
+    params: {}
   })
   const dialogParamsOpen = (params: any) => {
     dialogParam.params = params
     dialogParam.show = true
   }
   const dialogParamsClose = () => {
-    dialogParam.params = undefined
+    dialogParam.params = {}
     dialogParam.show = false
   }
   return {
