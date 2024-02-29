@@ -27,7 +27,7 @@
         <summary
           class="header-icon-button hv-bg"
         >
-          <Expand />
+          <Expand :size="10" />
         </summary>
         <div
           class="header-star-menu-panel"
