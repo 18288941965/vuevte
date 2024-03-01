@@ -153,11 +153,11 @@ import {BCEnum} from '../../enum/enum'
 import {ElMessage} from 'element-plus/es'
 import AppSearch from '../../app-search.vue'
 import LocalStorage from '../../class/LocalStorage'
-import logoText from '../../assets/logo-text.png'
-import m1bg from '../../assets/image/apphome/m1-bg.png'
-import m2bg from '../../assets/image/apphome/m2-bg.png'
-import m3bg from '../../assets/image/apphome/m3-bg.png'
-import m4bg from '../../assets/image/apphome/m4-bg.png'
+import logoText from '@assets/logo-text.png'
+import m1bg from '@assets/image/apphome/m1-bg.png'
+import m2bg from '@assets/image/apphome/m2-bg.png'
+import m3bg from '@assets/image/apphome/m3-bg.png'
+import m4bg from '@assets/image/apphome/m4-bg.png'
 
 export default defineComponent({
   name: 'AppHome',

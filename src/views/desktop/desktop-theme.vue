@@ -5,7 +5,7 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue'
 import {getModuleLogoUrl} from '../../util/baseUtil'
-import logo from '../../assets/logo.png'
+import logo from '@assets/logo.png'
 import LocalStorage from '../../class/LocalStorage'
 
 export default defineComponent({

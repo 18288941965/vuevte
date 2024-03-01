@@ -1,8 +1,8 @@
-@import "./assets/css/var/global.css";
-@import "./assets/css/base/base.css";
-@import "./assets/css/base/details.css";
-@import "./assets/css/var/public-dark.css";
-@import "./assets/css/var/public-light.css";
+@import "@assets/css/var/global.css";
+@import "@assets/css/base/base.css";
+@import "@assets/css/base/details.css";
+@import "@assets/css/var/public-dark.css";
+@import "@assets/css/var/public-light.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

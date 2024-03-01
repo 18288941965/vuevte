@@ -52,7 +52,7 @@
 <script lang="ts">
 import {defineComponent, inject, reactive} from 'vue'
 import {useRouter} from 'vue-router'
-import logo from '../../assets/logo.png'
+import logo from '@assets/logo.png'
 import {
   GitHub
 } from '../../components/svicon/publicIcon'

@@ -11,7 +11,12 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+    }
   },
   "include": [
     "src/**/*.ts",
