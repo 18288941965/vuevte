@@ -20,7 +20,7 @@
 }
 
 .header-github{
-  @extend .button-base;
+  @extend .icon-btn;
   @include flex-base(true);
   &:hover{
     background-color: var(--color-white-e);

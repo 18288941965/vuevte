@@ -11,7 +11,7 @@
         <div class="empty-flex" />
 
         <button
-          class="header-icon-button mgr-medium"
+          class="icon-button mgr-medium"
           @click="sendMessage"
         >
           <Send

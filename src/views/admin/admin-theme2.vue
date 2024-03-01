@@ -16,7 +16,7 @@
         class="theme2-nav__left"
       >
         <button
-          class="header-icon-button menu-collapse-icon"
+          class="icon-button menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
@@ -31,7 +31,7 @@
           :show-after="500"
         >
           <button
-            class="header-icon-button mgr-medium"
+            class="icon-button mgr-medium"
             @click="menuOpen"
           >
             <Adjust />
@@ -45,7 +45,7 @@
           <app-search>
             <template #button>
               <button
-                class="header-icon-button button-search"
+                class="icon-button search-button"
               >
                 <Search />
                 <span>搜索</span>
@@ -77,7 +77,7 @@
               </router-link>
 
               <button
-                class="button-menu-close"
+                class="default-close-button"
                 @click="cleanHistory(menu.id)"
               >
                 <Close :size="10" />

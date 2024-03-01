@@ -1,33 +1,44 @@
 @use "../../scss/mixin/mixin" as *;
 
+// 圆角按钮
+.round-button{
+	@include flex-base(true);
+	border-radius: 50%;
+}
+
 .button-star{
 	@include flex-base();
 	position: relative;
 }
 
-.header-icon-button{
-	@include flex-base(true);
-	@extend .button-base;
+// 图标按钮（带主题）
+.icon-button{
+	@extend .icon-btn;
 	border: var(--border-1);
+	color: var(--text-color-regular);
 	&:hover{
 		background-color: var(--bg-color-hover);
 	}
 }
-.header-icon-button + button{
+.icon-button + button{
 	margin-left: var(--mg-small);
 }
 
-.button-search{
+// 搜索按钮
+.search-button{
+	@include grid-base(26px 1fr);
 	width: 100%;
-	justify-content: start;
+	height: var(--btn-height);
+	border: var(--border-1);
+	color: var(--text-color-regular);
+	border-radius: var(--border-radius-medium);
 	box-shadow: inset 0 1px 0 rgba(208,215,222,0.2);
-	& span{
-		padding-left: var(--pd-small);
-	}
+	text-align: left;
 }
 
-.button-history{
-	@extend .header-icon-button;
+// 下拉按钮
+.drop-down-button{
+	@extend .icon-button;
 	width: 64px;
 	position: relative;
 	& svg:nth-child(2){
@@ -35,8 +46,8 @@
 	}
 }
 
-.button-menu-close{
-	@include flex-base(true);
+// 默认关闭按钮
+.default-close-button{
 	position: absolute;
 	top: 0;
 	right: 5px;
@@ -44,15 +55,16 @@
 	width: 18px;
 	height: 18px;
 	padding: 0;
-	border-radius: 50%;
 	margin: auto 0;
 	transition: background-color 0.3s;
 	&:hover{
-		color: var(--color-white) !important;
-		background-color: var(--color-red);
+		background-color: var(--bg-color);
 	}
 }
 
-.button-black{
+// 面板关闭按钮
+.panel-close-button{
+	@extend .round-button;
+	@extend .default-close-button;
 	color: var(--color-black-1);
 }

@@ -18,7 +18,7 @@
         class="page-header__menu-btn"
       >
         <button
-          class="header-icon-button menu-collapse-icon"
+          class="icon-button menu-collapse-icon"
           @click="setMenuCollapse(!menuCollapse)"
         >
           <MenuOpen
@@ -33,7 +33,7 @@
           :enterable="false"
         >
           <button
-            class="header-icon-button mgr-medium"
+            class="icon-button mgr-medium"
             @click="menuOpen"
           >
             <Adjust />
@@ -47,7 +47,7 @@
           <app-search>
             <template #button>
               <button
-                class="header-icon-button button-search"
+                class="search-button"
               >
                 <Search />
                 <span>搜索</span>
@@ -66,7 +66,7 @@
           :data-disabled="activeMenus.menus.length === 0"
         >
           <summary
-            class="button-history arrow-down hv-bg"
+            class="drop-down-button arrow-down hv-bg"
           >
             <Schedule />
             <Expand
@@ -95,9 +95,9 @@
                     >
                       <span>{{ menu.label }}</span>
                     </router-link>
-
+                    <!-- button 不能放在router-link中，stop无法阻止路由事件-->
                     <button
-                      class="button-menu-close button-black"
+                      class="panel-close-button"
                       @click.stop="cleanHistory(menu.id)"
                     >
                       <Close :size="10" />
@@ -123,7 +123,9 @@
             v-for="(item, index) in activeMenuPath"
             :key="'breadcrumb-' + index"
           >
-            {{ item.label }}
+            <span :class="{'active-breadcrumb': activeMenuPath.length === index + 1 }">
+              {{ item.label }}
+            </span>
           </el-breadcrumb-item>
         </el-breadcrumb>
       </div>

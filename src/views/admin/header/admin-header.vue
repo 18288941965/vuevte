@@ -12,7 +12,7 @@
     <div class="empty-flex" />
 
     <div class="button-star mgr-medium">
-      <button class="header-icon-button mgr-medium">
+      <button class="icon-button mgr-medium">
         <StarFill
           v-if="isStar"
           color="#F4D213"
@@ -25,7 +25,7 @@
         :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
-          class="header-icon-button hv-bg"
+          class="icon-button hv-bg"
         >
           <Expand :size="10" />
         </summary>
@@ -60,7 +60,7 @@
     <app-search>
       <template #button>
         <button
-          class="header-icon-button mgr-medium"
+          class="icon-button mgr-medium"
         >
           <Search />
         </button>

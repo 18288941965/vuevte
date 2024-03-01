@@ -36,7 +36,7 @@
             </router-link>
 
             <button
-              class="button-menu-close"
+              class="default-close-button"
               @click="cleanHistory(menu.id)"
             >
               <Close :size="10" />

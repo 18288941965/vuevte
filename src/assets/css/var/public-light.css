@@ -13,6 +13,9 @@
     --text-color-muted: #656d76;
     --text-color-reverse: #FFFFFF;
 
+    /*从element获取的颜色*/
+    --text-color-regular: var(--el-text-color-regular);
+
     --header-bg-color: #F9FAFA;
     --header-nav-bg-color: #F9FAFA;
 
