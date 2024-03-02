@@ -97,10 +97,10 @@
                     </router-link>
                     <!-- button 不能放在router-link中，stop无法阻止路由事件-->
                     <button
-                      class="panel-close-button"
+                      class="menu-close-button-panel"
                       @click.stop="cleanHistory(menu.id)"
                     >
-                      <Close :size="10" />
+                      <Close :size="8" />
                     </button>
                   </li>
                 </template>

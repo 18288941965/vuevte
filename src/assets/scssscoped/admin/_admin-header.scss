@@ -4,6 +4,19 @@
   @include flex-base();
   padding: 0 var(--pd-large);
   background-color: var(--header-bg-color);
+
+  & .star-container{
+    @include grid-base(var(--btn-height) 1px var(--btn-height));
+    position: relative;
+    height: var(--btn-height);
+    border: var(--border-1);
+    border-radius: var(--border-radius-medium);
+    & .split{
+      display: block;
+      height: 68%;
+      background-color: var(--border-color);
+    }
+  }
 }
 
 .admin-avatar details{
@@ -23,7 +36,6 @@
 }
 
 .header-star-menu{
-  height: 100%;
   & .header-star-menu-panel{
     position: absolute;
     top: 40px;

@@ -56,8 +56,7 @@
       }
 
       & a[aria-current='page']{
-        font-weight: bolder;
-        background-color: var(--bg-color-hover);
+        @extend .active;
       }
       & a[aria-current='page'] + button{
       }

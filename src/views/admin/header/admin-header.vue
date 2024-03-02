@@ -11,21 +11,25 @@
 
     <div class="empty-flex" />
 
-    <div class="button-star mgr-medium">
-      <button class="icon-button mgr-medium">
+    <div class="star-container mgr-medium">
+      <button
+        class="icon-button-inner"
+        @click="handleStar"
+      >
         <StarFill
           v-if="isStar"
-          color="#F4D213"
+          color="#F14F21"
         />
         <Star v-else />
       </button>
+      <span class="split" />
       <details
         id="header-star-details"
         class="header-star-menu"
         :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
-          class="icon-button hv-bg"
+          class="icon-button-inner hv-bg"
         >
           <Expand :size="10" />
         </summary>
@@ -102,6 +106,7 @@ import LocalStorage from '../../../class/LocalStorage'
 import axios from 'axios'
 import {AxiosResult} from '../../../interface/publicInterface'
 import {closeDetails} from '../../../util/baseUtil'
+import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({
   name: 'AdminHeader',
@@ -167,6 +172,10 @@ export default defineComponent({
       return starMenus.value.map(item => item.id).includes(props.activeMenus.menuId)
     })
 
+    const handleStar = () => {
+       ElMessage.warning('模板未提供此事件！')
+    }
+
     onMounted(() => {
       const local = new LocalStorage()
       userName.value = local.getUserName()
@@ -180,7 +189,8 @@ export default defineComponent({
       pushRouter,
       isStar,
       starMenus,
-      closeDetails
+      closeDetails,
+      handleStar
     }
   }
 })

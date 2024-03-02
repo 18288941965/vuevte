@@ -6,11 +6,6 @@
 	border-radius: 50%;
 }
 
-.button-star{
-	@include flex-base();
-	position: relative;
-}
-
 // 图标按钮（带主题）
 .icon-button{
 	@extend .icon-btn;
@@ -22,6 +17,19 @@
 }
 .icon-button + button{
 	margin-left: var(--mg-small);
+}
+
+// 容器内部按钮
+.icon-button-inner{
+	@include flex-base(true);
+	color: var(--text-color-regular);
+	width: calc(var(--btn-height) - 6px);
+	height: calc(var(--btn-height) - 6px);
+	border-radius: var(--border-radius-medium);
+	margin-left: 3px;
+	&:hover{
+		background-color: var(--bg-color-hover);
+	}
 }
 
 // 搜索按钮
@@ -46,8 +54,9 @@
 	}
 }
 
-// 默认关闭按钮
-.default-close-button{
+// 菜单关闭按钮
+.menu-close-button{
+	@extend .round-button;
 	position: absolute;
 	top: 0;
 	right: 5px;
@@ -57,14 +66,21 @@
 	padding: 0;
 	margin: auto 0;
 	transition: background-color 0.3s;
+}
+
+// 默认菜单关闭按钮
+.menu-close-button-base{
+	@extend .menu-close-button;
 	&:hover{
 		background-color: var(--bg-color);
 	}
 }
 
-// 面板关闭按钮
-.panel-close-button{
-	@extend .round-button;
-	@extend .default-close-button;
+// 面板菜单关闭按钮
+.menu-close-button-panel {
+	@extend .menu-close-button;
 	color: var(--color-black-1);
+	&:hover{
+		background-color: var(--color-white);
+	}
 }

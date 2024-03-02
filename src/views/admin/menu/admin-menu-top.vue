@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-menu-top">
+  <div class="admin-menu-top mgr-medium">
     <details id="admin-menu-top-details">
       <summary class="icon-button hv-bg mgr-medium">
         <Apps />

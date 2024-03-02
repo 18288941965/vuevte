@@ -36,10 +36,10 @@
             </router-link>
 
             <button
-              class="default-close-button"
+              class="menu-close-button-base"
               @click="cleanHistory(menu.id)"
             >
-              <Close :size="10" />
+              <Close :size="8" />
             </button>
           </li>
         </template>
