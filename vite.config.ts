@@ -9,5 +9,20 @@ export default defineConfig({
     alias: {
       '@assets': path.resolve(__dirname, './src/assets')
     }
+  },
+  server: {
+    open: true
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // 分包
+        manualChunks: (id: string) => {
+          if (id.includes('node_modules')) {
+            return 'vendor'
+          }
+        }
+      }
+    }
   }
 })

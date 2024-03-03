@@ -28,7 +28,7 @@
     }
 
     details[open] > summary{
-        color: var(--button-hover-text-color);
+        color: var(--bg-color-hover);
     }
 
     details[data-disabled='true']{

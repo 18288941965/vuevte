@@ -12,7 +12,7 @@
     --text-color-default: #1F2328;
     --text-color-muted: #656d76;
     --text-color-reverse: #FFFFFF;
-
+    --text-color-disabled: #D3D3D6;
     /*从element获取的颜色*/
     --text-color-regular: var(--el-text-color-regular);
 

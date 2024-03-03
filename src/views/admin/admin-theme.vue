@@ -287,12 +287,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
-  @import "../../assets/css/var/theme-dark.css";
-  @import "../../assets/css/var/theme-light.css";
-</style>
 <style lang="scss">
-  @use "../../assets/scss/components/theme-button";
+  @use "../../assets/scss/components/base-button";
 </style>
 <style scoped lang="scss">
   @use "../../assets/scssscoped/admin/admin-theme";

@@ -18,7 +18,7 @@
       >
         <StarFill
           v-if="isStar"
-          color="#F14F21"
+          color="#409EFF"
         />
         <Star v-else />
       </button>

@@ -14,19 +14,15 @@
           class="icon-button mgr-medium"
           @click="sendMessage"
         >
-          <Send
-            color="var(--color-black-4)"
-          />
+          <Send />
         </button>
 
         <app-search>
           <template #button>
             <button
-              class="app-home-search-button mgr-medium"
+              class="icon-button mgr-medium"
             >
-              <Search
-                color="var(--color-black-4)"
-              />
+              <Search />
             </button>
           </template>
         </app-search>
@@ -34,13 +30,13 @@
         <a
           href="https://github.com/18288941965/vuevte"
           target="_blank"
-          class="header-github mgr-medium"
+          class="icon-button"
         >
-          <GitHub
-            color="var(--color-black-4)"
-          />
+          <GitHub />
         </a>
 
+        <app-theme class="mgr-medium" />
+        
         <user-avatar
           :user-name="userName"
           class="app-home-avatar arrow-down"
@@ -55,22 +51,6 @@
         </user-avatar>
       </div>
     </header>
-
-    <div class="test-module">
-      <router-link
-        class="mgr-medium"
-        to="/desktop/theme"
-        target="_blank"
-      >
-        <span>首页模板（dev）</span>
-      </router-link>
-      <router-link
-        to="/desktop/theme2"
-        target="_blank"
-      >
-        <span>首页模板（dev）</span>
-      </router-link>
-    </div>
 
     <main class="home-main">
       <router-link
@@ -153,6 +133,7 @@ import {BCEnum} from '../../enum/enum'
 import {ElMessage} from 'element-plus/es'
 import AppSearch from '../../app-search.vue'
 import LocalStorage from '../../class/LocalStorage'
+import AppTheme from '../../app-theme.vue'
 import logoText from '@assets/logo-text.png'
 import m1bg from '@assets/image/apphome/m1-bg.png'
 import m2bg from '@assets/image/apphome/m2-bg.png'
@@ -168,7 +149,8 @@ export default defineComponent({
     Expand,
     Send,
     UserAvatar,
-    AppSearch
+    AppSearch,
+    AppTheme
   },
   setup () {
     const userName = ref('')
@@ -200,8 +182,10 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-@use "../../assets/scss/base/app-home";
+@use "@assets/scss/base/app-home";
+@use "@assets/scss/components/base-button";
 </style>
+
 <style scoped lang="scss">
-  @use "../../assets/scssscoped/base/app-home";
+  @use "@assets/scssscoped/base/app-home";
 </style>

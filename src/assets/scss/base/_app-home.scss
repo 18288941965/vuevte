@@ -9,12 +9,12 @@
   & summary{
     padding: 0 var(--pd-ultra-small);
     border-radius: var(--border-radius-medium);
-    color: var(--color-black-4);
+    border: var(--border-1);
     & svg:nth-child(2){
       margin-left: var(--mg-small);
     }
     &:hover{
-      background-color: var(--color-white-e);
+      background-color: var(--bg-color-hover);
     }
   }
   & .user-avatar-panel{
@@ -22,10 +22,6 @@
   }
 }
 
-.app-home-search-button{
-  @extend .icon-btn;
-  @include flex-base(true);
-  &:hover{
-    background-color: var(--color-white-e);
-  }
+.app-home-avatar details[open] > summary {
+  background-color: var(--bg-color-hover);
 }
