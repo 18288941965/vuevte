@@ -22,51 +22,17 @@
         <input
           v-model.trim="searchParams.searchValue"
           placeholder="请输入要搜索的内容..."
+          @keyup.enter="executeSearch"
         >
       </header>
 
       <div class="app-search-panel__body card-scroll">
         <section class="search-history">
           <h5>最近搜索</h5>
-          <ul>
-            <li>组件</li>
-            <li>图标</li>
-            <li>工作台</li>
-          </ul>
         </section>
 
         <section class="search-results">
           <ul>
-            <li>
-              <a
-                href="http://127.0.0.1:5173/admin/theme/ev/dic"
-                class="al-hover"
-              >
-                <span>dic组件</span>
-                <ArrowLine
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://127.0.0.1:5173/admin/theme/ev/pagination"
-                class="al-hover"
-              >
-                <span>pagination组件</span>
-                <ArrowLine
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://127.0.0.1:5173/desktop/theme2"
-                class="al-hover"
-              >
-                <span>首页2</span>
-                <ArrowLine
-                />
-              </a>
-            </li>
           </ul>
         </section>
       </div>
@@ -116,15 +82,14 @@
 <script lang="ts">
 import {defineComponent, reactive, ref} from 'vue'
 import {
-  Search,
-  ArrowLine
+  Search
 } from './components/svicon/publicIcon'
+import {ElMessage} from "element-plus/es";
 
 export default defineComponent({
   name: 'AppSearch',
   components: {
-    Search,
-    ArrowLine
+    Search
   },
   setup () {
     const dialogRef = ref<HTMLDialogElement>()
@@ -140,11 +105,16 @@ export default defineComponent({
       dialogRef.value?.close()
     }
 
+    const executeSearch = () => {
+      ElMessage.warning('模板未提供此事件！')
+    }
+
     return {
       handleOpen,
       handleClose,
       dialogRef,
-      searchParams
+      searchParams,
+      executeSearch
     }
   }
 })
