@@ -19,7 +19,7 @@
 
 .home-main{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: var(--pd-large);
   max-width: 1344px;
   margin: var(--pd-large) auto 0 auto;
@@ -45,14 +45,17 @@
 
   & .m-bg{
     width: 100%;
-    border-radius: var(--border-radius-large);
+    border: {
+      top-left-radius: var(--border-radius-large);
+      top-right-radius: var(--border-radius-large);
+    };
   }
 
-  & .main-link:hover h5{
-    text-decoration: underline;
+  & .main-link:hover{
+    box-shadow: var(--box-shadow-medium);
   }
 }
 
 .app-home-logo{
-  height: var(--btn-height);
+  height: var(--h2-size);
 }

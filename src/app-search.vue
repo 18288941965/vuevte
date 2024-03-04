@@ -32,8 +32,7 @@
         </section>
 
         <section class="search-results">
-          <ul>
-          </ul>
+          <ul />
         </section>
       </div>
 
@@ -84,7 +83,7 @@ import {defineComponent, reactive, ref} from 'vue'
 import {
   Search
 } from './components/svicon/publicIcon'
-import {ElMessage} from "element-plus/es";
+import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({
   name: 'AppSearch',
