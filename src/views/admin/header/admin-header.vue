@@ -9,6 +9,14 @@
       :module-label="moduleLabel"
     />
 
+    <div
+      v-show="getMenuLabel"
+      class="active-menu-label"
+    >
+      <span>/</span>
+      <span>{{ getMenuLabel }}</span>
+    </div>
+
     <div class="empty-flex" />
 
     <div class="star-container mgr-medium">

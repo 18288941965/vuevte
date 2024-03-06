@@ -5,6 +5,15 @@
   padding: 0 var(--pd-large);
   background-color: var(--header-bg-color);
 
+  & .active-menu-label{
+    line-height: var(--btn-height);
+    color: var(--text-color-regular);
+    font-weight: bolder;
+    & span:first-child{
+      padding: 0 var(--pd-small);
+    }
+  }
+
   & .star-container{
     @include grid-base(var(--btn-height) 1px var(--btn-height));
     position: relative;

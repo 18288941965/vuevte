@@ -9,10 +9,11 @@
   text-decoration: none;
   & img{
     width: 32px;
+    margin-right: var(--mg-ultra-small);
   }
   & #admin-logo-text{
-    padding-left: var(--pd-small);
-    font-weight: bolder;
+    line-height: var(--btn-height);
+    font-weight: 600;
     white-space: nowrap;
     overflow: clip;
   }
