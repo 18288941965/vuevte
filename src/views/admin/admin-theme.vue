@@ -288,8 +288,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-  @use "../../assets/scss/components/base-button";
+  @use "@assets/scss/components/base-button";
 </style>
 <style scoped lang="scss">
-  @use "../../assets/scssscoped/admin/admin-theme";
+  @use "@assets/scssscoped/admin/admin-theme";
 </style>

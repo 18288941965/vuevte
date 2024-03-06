@@ -92,5 +92,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "../../assets/scssscoped/components/avatar-card";
+  @use "@assets/scssscoped/components/avatar-card";
 </style>

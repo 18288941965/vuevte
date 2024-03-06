@@ -120,6 +120,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "assets/scssscoped/components/app-search";
-  @use "assets/scss/components/common";
+  @use "@assets/scssscoped/components/app-search";
+  @use "@assets/scss/components/common";
 </style>

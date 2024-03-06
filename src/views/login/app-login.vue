@@ -102,5 +102,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "../../assets/scssscoped/base/app-login";
+  @use "@assets/scssscoped/base/app-login";
 </style>
