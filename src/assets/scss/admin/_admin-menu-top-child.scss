@@ -1,30 +1,15 @@
 @use "../mixin/mixin" as *;
 
 .admin-menu-top-child{
-	line-height: 40px;
-	font-weight: normal;
-	& .menu-label{
-		padding-left: calc(var(--menu-level) * var(--menu-base-level-padding));
-		color: var(--color-black-6);
-	}
 
-	& .menu-item{
-		padding-left: calc(var(--menu-level) * var(--menu-base-level-padding));
-	}
+    & .menu-label{
+        line-height: var(--lh-medium);
+        padding-left: calc(var(--menu-level) * var(--menu-base-level-padding));
+        color: var(--color-black-9);
+        font-weight: bolder;
+    }
 
-	& .nav-item{
-		@include flex-base();
-		padding: 0 var(--pd-small);
-		border-radius: var(--border-radius-medium);
-		text-decoration: none;
-		font-size: var(--body-font-size);
-		&:hover{
-			background-color: #ECF5FF;
-		}
-	}
-
-	& a[aria-current='page']{
-		font-weight: bolder;
-		color: var(--color-blue);
-	}
+    & .menu-item .nav-item{
+        padding-left: calc(var(--menu-level) * var(--menu-base-level-padding));
+    }
 }

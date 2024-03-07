@@ -4,9 +4,9 @@
       <summary class="icon-button hv-bg mgr-medium">
         <Apps />
       </summary>
-      <div class="top-menu-panel">
+      <div class="top-menu-panel menu-scroll">
         <nav class="top-menu-nav">
-          <ul class="top-menu-column">
+          <ul class="top-menu-column column-one-level">
             <li
               v-for="(menu, index) in getExcludeChildren"
               :key="'e-t-m-' + index"
@@ -26,25 +26,15 @@
             :key="'i-t-m-' + index"
             class="top-menu-column"
           >
-            <section>
-              <h5 class="menu-group-title">
-                {{ item.label }}
-              </h5>
-            </section>
-            <ul>
-              <li
-                v-for="(menu, idx) in item.children"
-                :key="index + '-i-t-m-c-' + idx"
-              >
-                <router-link
-                  class="nav-item"
-                  :to="menu.url ? menu.url : '/404/error'"
-                  @click="pushRouter(menu)"
-                >
-                  <span>{{ menu.label }}</span>
-                </router-link>
-              </li>
-            </ul>
+            <h5 class="menu-group-title">
+              {{ item.label }}
+            </h5>
+
+            <admin-menu-top-child
+              :menu-id="menuId"
+              :menus="item.children"
+              @push-router="pushRouter"
+            />
           </div>
         </nav>
       </div>
@@ -61,11 +51,13 @@ import {PushRouter} from '../../../types/baseType'
 import menuDfs from '../../../algo/menuDfs'
 import {Apps} from '../../../components/svicon/publicIcon'
 import {closeDetails} from '../../../util/baseUtil'
+import AdminMenuTopChild from './admin-menu-top-child.vue'
 
 export default defineComponent({
   name: 'AdminMenuTop',
   components: {
-    Apps
+    Apps,
+    AdminMenuTopChild
   },
   props: {
     collapse: {

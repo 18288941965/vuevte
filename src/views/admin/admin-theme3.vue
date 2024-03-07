@@ -38,7 +38,7 @@
                   class="menu-group-details-content menu-scroll"
                   @click="closeDetails('menu-detail-' + index)"
                 >
-                  <admin-menu-top-child
+                  <admin-menu-down
                     :menus="menu.children"
                     :menu-id="activeMenus.menuId"
                     @push-router="pushRouter"
@@ -82,7 +82,7 @@ import {MenuBean} from '../../interface/menuInterface'
 import {MenuContext, MenuStatusContext} from '../../context/menuContext'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
-import AdminMenuTopChild from './menu/admin-menu-top-child.vue'
+import AdminMenuDown from './menu/admin-menu-down.vue'
 import {
   Expand
 } from '../../components/svicon/publicIcon'
@@ -95,7 +95,7 @@ export default defineComponent({
     Expand,
     AdminMenu,
     AdminHeader,
-    AdminMenuTopChild
+    AdminMenuDown
   },
   setup () {
     const {

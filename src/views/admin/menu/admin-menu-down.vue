@@ -1,5 +1,5 @@
 <template>
-  <ul class="admin-menu-top-child">
+  <ul class="admin-menu-down">
     <template
       v-for="(menu, index) in menus"
       :key="'menu-' + index"
@@ -11,7 +11,7 @@
         >
           {{ menu.label }}
         </li>
-        <admin-menu-top-child
+        <admin-menu-down
           :menu-id="menuId"
           :menus="menu.children"
           :menu-level="menuLevel + 1"
@@ -41,7 +41,7 @@ import {defineComponent, PropType} from 'vue'
 import {MenuBean} from '../../../interface/menuInterface'
 
 export default defineComponent({
-  name: 'AdminMenuTopChild',
+  name: 'AdminMenuDown',
   props: {
     menus: {
       type: Array as PropType<MenuBean[]>,
@@ -55,11 +55,13 @@ export default defineComponent({
     },
     menuLevel: {
       type: Number,
-      default: 2
+      default: 0
     }
   },
   emits: ['push-router'],
-  setup (props, {emit}) {
+  setup (props, { emit }) {
+    const menuGroupIcon = 'Dot'
+
     const pushRouter = (menu: MenuBean) => {
       if (menu.id === props.menuId) {
         return
@@ -68,11 +70,13 @@ export default defineComponent({
     }
 
     return {
+      menuGroupIcon,
       pushRouter
     }
   }
 })
 </script>
+
 <style scoped lang="scss">
-@use "@assets/scss/admin/_admin-menu-top-child.scss";
+  @use "@assets/scss/admin/admin-menu-down.scss";
 </style>
