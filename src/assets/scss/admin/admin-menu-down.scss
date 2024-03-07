@@ -5,7 +5,9 @@
 	font-weight: normal;
 	& .menu-label{
 		padding-left: calc(var(--menu-level) * var(--menu-base-level-padding));
-		color: var(--color-black-6);
+		color: var(--color-black-9);
+		font-weight: bolder;
+		font-size: var(--h6-size);
 	}
 
 	& .menu-item{

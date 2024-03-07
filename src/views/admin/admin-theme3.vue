@@ -28,9 +28,15 @@
                 class="menu-group-details arrow-down"
               >
                 <summary>
+                  <i class="menu-icon">
+                    <component
+                      :is="menu.icon.toString()"
+                      v-if="menu.icon"
+                    />
+                  </i>
                   {{ menu.label }}
                   <Expand
-                    :size="10"
+                    :size="8"
                     class="expand-mg"
                   />
                 </summary>
@@ -56,6 +62,12 @@
                 :to="menu.url"
                 @click="pushRouter(menu)"
               >
+                <i class="menu-icon">
+                  <component
+                    :is="menu.icon.toString()"
+                    v-if="menu.icon"
+                  />
+                </i>
                 <span>{{ menu.label }}</span>
               </router-link>
             </li>

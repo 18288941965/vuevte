@@ -17,10 +17,18 @@
    & .menu-wrapper{
      @include flex-base;
      height: 100%;
+
+     & .menu-icon{
+       @include flex-base();
+       margin-right: var(--mg-ultra-small);
+       color: var(--text-color-regular);
+     }
+
      & .nav-item{
        @include flex-base();
-       height: var(--btn-height);
-       padding: 0 var(--pd-medium);
+       line-height: var(--btn-height);
+       padding: 0 var(--pd-small);
+       margin-right: var(--mg-small);
        border-radius: var(--border-radius-medium);
        text-decoration: none;
        font-size: var(--body-font-size);
@@ -41,7 +49,7 @@
          right: 0;
          bottom: -12px;
          height: 2px;
-         background-color: var(--color-blue);
+         background-color: var(--bg-color-reverse);
        }
      }
    }
@@ -50,19 +58,19 @@
 
 .theme-menu-group{
   position: relative;
-
+  margin-right: var(--mg-small);
   & details[open] > summary{
     background-color: var(--bg-color-hover);
   }
 
   & .menu-group-details summary{
     @include flex-base();
-    height: var(--btn-height);
-    padding: 0 var(--pd-medium);
+    line-height: var(--btn-height);
+    padding: 0 var(--pd-small);
     border-radius: var(--border-radius-medium);
     text-decoration: none;
     font-size: var(--body-font-size);
-    & svg{
+    & .expand-mg{
       margin-left: var(--mg-ultra-small);
     }
     &:hover{

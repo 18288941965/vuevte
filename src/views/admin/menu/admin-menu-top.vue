@@ -26,9 +26,9 @@
             :key="'i-t-m-' + index"
             class="top-menu-column"
           >
-            <h5 class="menu-group-title">
+            <h6 class="menu-group-title">
               {{ item.label }}
-            </h5>
+            </h6>
 
             <admin-menu-top-child
               :menu-id="menuId"
