@@ -56,17 +56,24 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
         name: `AdminTheme${themeNum}`,
         children: [
             { label: '首页', icon: 'Dashboard', url: `/admin/theme${themeNum}/dashboard${themeNum}`, id: '02', pid: '01', sxh: 1, cache: true, name: `AdminDashboard${themeNum}` },
-            { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', sxh: 2, cache: true, name: `IconDemo${themeNum}` }
+            { label: '图标', icon: 'Flag', url: `/admin/theme${themeNum}/icon/demo${themeNum}`, id: '04', pid: '01', sxh: 2, cache: true, name: `IconDemo${themeNum}` },
+            { label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', sxh: 3, cache: false, name: undefined, children: children },
+
+            { label: '测试菜单', icon: 'Bug', url: undefined, id: '04', pid: '01', sxh: 4, cache: false, name: undefined, children: [
+                    { label: '菜单分组', icon: '', url: undefined, id: '04-1', pid: '04', sxh: 1, cache: false, name: undefined, children: [
+                            { label: '测试菜单2层级三', icon: '', url: '/error/404', id: '04-1-1', pid: '04-1', sxh: 1, cache: false, name: 'TestMenu' },
+                            { label: '测试菜单2层级三', icon: '', url: '/error/404', id: '04-1-2', pid: '04-1', sxh: 2, cache: false, name: 'TestMenu' },
+                            { label: '测试菜单2层级三', icon: '', url: '/error/404', id: '04-1-3', pid: '04-1', sxh: 3, cache: false, name: 'TestMenu' },
+
+                        ] },
+                    { label: '菜单分组2', icon: '', url: undefined, id: '04-2', pid: '04', sxh: 2, cache: false, name: undefined, children: [
+                            { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-1', pid: '04-2', sxh: 1, cache: false, name: 'TestMenu' },
+                            { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-2', pid: '04-2', sxh: 2, cache: false, name: 'TestMenu' },
+                            { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-3', pid: '04-2', sxh: 3, cache: false, name: 'TestMenu' },
+                        ] }
+                ] }
         ]
     })
-
-    if (menus[0].children) {
-        if (themeNum !== '3') {
-            menus[0].children.push({ label: '组件', icon: 'Plugins', url: undefined, id: '03', pid: '01', sxh: 3, cache: false, name: undefined, children: children })
-        } else {
-            menus[0].children.push(...children)
-        }
-    }
 
     obj.data = menus
 
