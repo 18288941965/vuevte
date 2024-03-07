@@ -8,9 +8,11 @@
   & .active-menu-label{
     line-height: var(--btn-height);
     color: var(--text-color-regular);
-    font-weight: bolder;
     & span:first-child{
       padding: 0 var(--pd-small);
+    }
+    & span:last-child{
+      font-weight: bolder;
     }
   }
 

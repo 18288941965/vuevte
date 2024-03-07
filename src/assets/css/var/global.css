@@ -103,4 +103,6 @@
 
     --nav-height: 56px;
     --nav-width: 260px;
+
+    --menu-base-level-padding: var(--el-menu-base-level-padding);
 }
