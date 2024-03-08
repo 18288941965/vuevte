@@ -82,7 +82,7 @@
 
     <user-avatar
       :user-name="userName"
-      class="admin-avatar arrow-down"
+      class="user-avatar-container arrow-down"
     >
       <template #summary>
         <PersonFill />

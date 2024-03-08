@@ -1,15 +1,15 @@
 <template>
   <div class="user-avatar">
     <details
-      id="user-avatar-details"
+      id="user-avatar-container"
     >
       <summary>
         <slot name="summary" />
       </summary>
 
       <div
-        class="user-avatar-panel"
-        @click="closeDetails('user-avatar-details')"
+        class="user-avatar-overlay"
+        @click="closeDetails('user-avatar-container')"
       >
         <ul>
           <li class="li-information">
@@ -92,5 +92,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "@assets/scssscoped/components/avatar-card";
+  @use "@assets/scssscoped/components/user-avatar";
 </style>

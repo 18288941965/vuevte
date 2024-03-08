@@ -1,7 +1,7 @@
 @use "../../scss/mixin/mixin" as *;
 
 .user-avatar{
-  &-panel{
+  & .user-avatar-overlay{
     position: absolute;
     top: 54px;
     right: var(--mg-medium);
