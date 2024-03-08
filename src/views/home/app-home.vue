@@ -95,7 +95,7 @@
         >
         <h5>后台管理模板（主题3）</h5>
         <span class="desc-info">
-          上下布局：顶部列表展示菜单，此主题只支持一级菜单并且数量有限
+          上下布局：顶部列表展示菜单，内容区有更多空间展示
         </span>
       </router-link>
 
@@ -111,7 +111,7 @@
         >
         <h5>后台管理模板（主题4）</h5>
         <span class="desc-info">
-          上下布局：顶部下拉切换菜单，历史记录以列表展示，超出容器后通过鼠标滚动切换
+          上下布局：顶部下拉展示所有菜单，历史记录以列表展示，超出容器后通过鼠标滚动切换
         </span>
       </router-link>
     </main>
@@ -183,7 +183,6 @@ export default defineComponent({
 </script>
 <style lang="scss">
 @use "@assets/scss/base/app-home";
-@use "@assets/scss/components/base-button";
 </style>
 
 <style scoped lang="scss">

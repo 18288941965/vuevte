@@ -32,8 +32,7 @@
       </button>
       <span class="split" />
       <details
-        id="header-star-details"
-        class="header-star-menu"
+        id="star-menu-container"
         :data-disabled="activeMenus.menus.length === 0"
       >
         <summary
@@ -42,10 +41,10 @@
           <Expand :size="10" />
         </summary>
         <div
-          class="header-star-menu-panel"
-          @click="closeDetails('header-star-details')"
+          class="star-menu-overlay"
+          @click="closeDetails('star-menu-container')"
         >
-          <nav class="header-star-menu-panel__body card-scroll">
+          <nav class="star-menu-overlay__body card-scroll">
             <ul>
               <template
                 v-for="(menu, index) in starMenus"
@@ -55,7 +54,7 @@
                   v-if="menu.url"
                 >
                   <router-link
-                    class="nav-item"
+                    class="global-menu-item"
                     :to="menu.url"
                     @click="pushRouter(menu)"
                   >

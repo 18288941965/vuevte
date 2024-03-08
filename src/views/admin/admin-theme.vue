@@ -12,10 +12,10 @@
     />
 
     <div
-      class="layout-fixed page-header"
+      class="layout-fixed banner-container"
     >
       <div
-        class="page-header__menu-btn"
+        class="banner-layout-left"
       >
         <button
           class="icon-button menu-collapse-icon"
@@ -59,10 +59,10 @@
         <div class="left-split" />
       </div>
 
-      <div class="page-header__menu">
+      <div class="banner-layout-right">
         <details
-          id="admin-header-details"
-          class="header-menu mgr-medium"
+          id="history-menu-container"
+          class="mgr-medium"
           :data-disabled="activeMenus.menus.length === 0"
         >
           <summary
@@ -75,10 +75,10 @@
             />
           </summary>
           <div
-            class="header-menu-panel"
-            @click="closeDetails('admin-header-details')"
+            class="history-menu-overlay"
+            @click="closeDetails('history-menu-container')"
           >
-            <nav class="header-menu-panel__body card-scroll">
+            <nav class="history-menu-overlay__body card-scroll">
               <ul>
                 <template
                   v-for="(menu, index) in activeMenus.menus"
@@ -86,16 +86,17 @@
                 >
                   <li
                     v-if="menu.url"
+                    class="global-menu-item-wrapper"
                   >
                     <router-link
-                      class="nav-item"
+                      class="global-menu-item"
                       :class="{'green-mark' : menu.cache}"
                       :to="menu.url"
                       @click="pushRouter(menu)"
                     >
                       <span>{{ menu.label }}</span>
                     </router-link>
-                    <!-- button 不能放在router-link中，stop无法阻止路由事件-->
+
                     <button
                       class="menu-close-button-panel"
                       @click.stop="cleanHistory(menu.id)"
@@ -107,7 +108,7 @@
               </ul>
             </nav>
 
-            <footer class="header-menu-panel__footer">
+            <footer class="history-menu-overlay__footer">
               <button
                 v-if="activeMenus.menus.length > 1"
                 @click="cleanHistory(undefined)"
@@ -240,7 +241,7 @@ export default defineComponent({
         const rootPath = router.currentRoute.value.matched[0].path
         router.push(rootPath)
         cleanActiveMenuPath()
-        closeDetails('admin-header-details')
+        closeDetails('history-menu-container')
         return
       }
       // 关闭当前打开窗口后：先右后左的切换
@@ -287,9 +288,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-  @use "@assets/scss/components/base-button";
-</style>
 <style scoped lang="scss">
   @use "@assets/scssscoped/admin/admin-theme";
 </style>

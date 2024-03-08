@@ -51,7 +51,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped lang="scss">
-  @use "@assets/scss/components/base-button";
-</style>

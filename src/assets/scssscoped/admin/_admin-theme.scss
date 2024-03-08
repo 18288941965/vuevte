@@ -2,11 +2,12 @@
 @use "./admin-theme-public";
 
 .admin-theme{
-    .page-header{
+    .banner-container{
         height: var(--banner-height);
         box-shadow: inset 0 -1px var(--border-color);
         background-color: var(--bg-color-header);
-        &__menu-btn{
+
+        & .banner-layout-left{
             @include flex-base();
             padding-left: var(--pd-large);
             height: var(--banner-height);
@@ -17,104 +18,78 @@
             }
         }
 
-        &__menu{
+        & .banner-layout-right{
             @include flex-base();
             padding: 0 var(--pd-small);
+
+            & details[data-disabled='true']{
+                &>summary{
+                    @extend .disabled
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: var(--border-radius-medium);
+                    cursor: not-allowed;
+                }
+            }
+
+            & #history-menu-container{
+                position: relative;
+                & .history-menu-overlay{
+                    position: absolute;
+                    top: 40px;
+                    width: var(--panel-width-medium);
+                    border: 1px solid var(--color-white) {
+                        radius: var(--border-radius-large);
+                    };
+                    color: var(--color-black-primary);
+                    background-color: var(--panel-bg-color);
+                    box-shadow: var(--box-shadow-large);
+                    z-index: var(--z-index-f);
+
+                    &__body{
+                        overflow: auto;
+                        & ul{
+                            height: 336px;
+                            margin: var(--mg-small);
+                        }
+
+                        & a[aria-current='page']{
+                            @extend .active;
+                        }
+                    }
+
+                    &__footer{
+                        width: 100%;
+                        & button{
+                            width: 100%;
+                            line-height: var(--size-medium);
+                            border: {
+                                top: 1px solid var(--panel-border-inner-color);
+                                bottom-right-radius: var(--border-radius-large);
+                                bottom-left-radius: var(--border-radius-large);
+                            };
+                            color: var(--color-black-primary);
+                            &:hover{
+                                color: var(--color-red);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .active-breadcrumb{
+                @extend .active;
+            }
         }
     }
 
     .theme-content{
         margin: var(--mg-large);
-    }
-
-    details[open] > summary{
-        color: var(--bg-color-hover);
-    }
-
-    details[data-disabled='true']{
-        &>summary{
-            @extend .disabled
-        }
-        &::after{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            right: 0;
-            bottom: 0;
-            border-radius: var(--border-radius-medium);
-            cursor: not-allowed;
-        }
-    }
-
-    .header-menu{
-        position: relative;
-        & .header-menu-panel{
-            position: absolute;
-            top: 40px;
-            width: var(--panel-width-medium);
-            border: 1px solid var(--color-white) {
-                radius: var(--border-radius-large);
-            };
-            color: var(--color-black-primary);
-            background-color: var(--panel-bg-color);
-            box-shadow: var(--box-shadow-large);
-            z-index: var(--z-index-f);
-
-            &__body{
-                display: grid;
-                overflow: auto;
-                & ul{
-                    height: 336px;
-                    margin: var(--mg-small);
-                }
-
-                & li{
-                    position: relative;
-                    margin-bottom: var(--mg-small);
-                    border-radius: var(--border-radius-small);
-                    &:hover{
-                        background-color: var(--hover-color-light-blue);
-                    }
-                }
-
-                & .nav-item{
-                    display: inline-block;
-                    width: 100%;
-                    line-height: var(--size-medium);
-                    padding: {
-                        right: var(--pd-small);
-                        left: var(--pd-large);
-                    };
-                    border-radius: inherit;
-                    text-decoration: none;
-                }
-
-                & a[aria-current='page']{
-                    @extend .active;
-                }
-            }
-
-            &__footer{
-                width: 100%;
-                & button{
-                    width: 100%;
-                    line-height: var(--size-medium);
-                    border: {
-                        top: 1px solid var(--panel-border-inner-color);
-                        bottom-right-radius: var(--border-radius-large);
-                        bottom-left-radius: var(--border-radius-large);
-                    };
-                    color: var(--color-black-primary);
-                    &:hover{
-                        color: var(--color-red);
-                    }
-                }
-            }
-        }
-    }
-
-    .active-breadcrumb{
-        @extend .active;
     }
 }

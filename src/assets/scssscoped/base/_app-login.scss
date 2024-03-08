@@ -19,7 +19,7 @@
   padding: var(--pd-medium);
   margin: auto;
   border-radius: var(--border-radius-ultra-large);
-  color: var(--color-black);
+  color: var(--color-black-primary);
   & .title{
     text-align: center;
     font-size: var(--h1-size);
@@ -47,5 +47,5 @@
   };
   margin-bottom: 40px;
   font-size: var(--h5-size);
-  color: var(--color-black);
+  color: var(--color-black-primary);
 }

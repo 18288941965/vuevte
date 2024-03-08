@@ -34,7 +34,7 @@
   @include flex-base();
   height: var(--size-default);
   border: 0;
-  background-color: var(--color-black-primary);
+  background-color: var(--color-blue);
   padding: 0 var(--pd-ultra-small);
   border-radius: var(--border-radius-round-medium);
   color: var(--color-white);
@@ -46,8 +46,8 @@
   }
 }
 
-.header-star-menu{
-  & .header-star-menu-panel{
+#star-menu-container{
+  & .star-menu-overlay{
     position: absolute;
     top: 40px;
     right: 0;
@@ -74,18 +74,6 @@
         &:hover{
           background-color: var(--hover-color-light-blue);
         }
-      }
-
-      & .nav-item{
-        display: inline-block;
-        width: 100%;
-        line-height: var(--size-medium);
-        padding: {
-          right: var(--pd-small);
-          left: var(--pd-large);
-        };
-        border-radius: inherit;
-        text-decoration: none;
       }
 
       & a[aria-current='page']{
