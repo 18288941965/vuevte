@@ -91,7 +91,7 @@
     <main
       id="admin-theme-main"
       class="layout-dynamic main-grid"
-      style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
+      style="--sticky-pane-height: calc(100vh - var(--header-banner-height));"
       :class="{'layout-dynamic-collapse' : menuCollapse}"
     >
       <div

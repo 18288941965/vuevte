@@ -10,7 +10,7 @@
 .login-header{
   @include flex-base();
   justify-content: flex-end;
-  height: var(--lh-large);
+  height: var(--size-large);
   padding: 0 var(--pd-large);
 }
 

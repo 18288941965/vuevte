@@ -8,9 +8,9 @@
 
   .history-menu{
     position: relative;
-    height: var(--nav-height);
+    height: var(--banner-height);
     padding: 0 var(--pd-small);
-    background-color: var(--header-nav-bg-color);
+    background-color: var(--bg-color-banner);
     box-shadow: inset 0 -1px var(--border-color);
     ul{
       @include flex-base();
@@ -28,7 +28,7 @@
     }
     & .nav-item{
       display: block;
-      line-height: var(--lh-small);
+      line-height: var(--size-default);
       border-radius: var(--border-radius-medium);
       padding: {
         right: var(--pd-small);

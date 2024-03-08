@@ -23,8 +23,8 @@
 .icon-button-inner{
 	@include flex-base(true);
 	color: var(--text-color-regular);
-	width: calc(var(--btn-height) - 6px);
-	height: calc(var(--btn-height) - 6px);
+	width: calc(var(--size-default) - 6px);
+	height: calc(var(--size-default) - 6px);
 	border-radius: var(--border-radius-medium);
 	margin-left: 3px;
 	&:hover{
@@ -36,7 +36,7 @@
 .search-button{
 	@include grid-base(26px 1fr);
 	width: 100%;
-	height: var(--btn-height);
+	height: var(--size-default);
 	border: var(--border-1);
 	color: var(--text-color-regular);
 	border-radius: var(--border-radius-medium);
@@ -79,7 +79,7 @@
 // 面板菜单关闭按钮
 .menu-close-button-panel {
 	@extend .menu-close-button;
-	color: var(--color-black-1);
+	color: var(--color-black-primary);
 	&:hover{
 		background-color: var(--color-white);
 	}

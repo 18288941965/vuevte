@@ -78,7 +78,7 @@ export function MenuStatusContext() {
         const documentElement = document.documentElement
         if (documentElement) {
             const styles = getComputedStyle(documentElement)
-            let data: string = styles.getPropertyValue('--nav-width')
+            let data: string = styles.getPropertyValue('--sidebar-width')
             const width = 260
             if (data) {
                 data = data.replace('px', '')
@@ -87,7 +87,7 @@ export function MenuStatusContext() {
                 } else {
                     data = `${width}px`
                 }
-                documentElement.style.setProperty('--nav-width', data)
+                documentElement.style.setProperty('--sidebar-width', data)
             }
         }
 

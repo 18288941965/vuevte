@@ -6,13 +6,13 @@
 }
 
 .home-header{
-  background-color: var(--header-bg-color);
+  background-color: var(--bg-color-header);
   box-shadow: var(--box-shadow-small);
   border-bottom: var(--border-1);
   &--container{
     @include flex-base();
     max-width: 1344px;
-    height: var(--nav-height);
+    height: var(--banner-height);
     margin: auto;
   }
 }
@@ -32,14 +32,14 @@
     background-color: var(--color-white);
     color: var(--color-black);
     & h5{
-      line-height: var(--lh-medium);
+      line-height: var(--size-medium);
       padding: 0 var(--pd-medium);
     }
     & .desc-info{
       display: block;
       margin: 0 var(--pd-small) var(--pd-small);
       font-size: var(--h6-size);
-      color: var(--color-black-6);
+      color: var(--color-black-regular);
     }
   }
 

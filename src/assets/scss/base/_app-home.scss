@@ -5,7 +5,7 @@
 }
 .app-home-avatar details{
   @include flex-base();
-  height: var(--btn-height);
+  height: var(--size-default);
   & summary{
     padding: 0 var(--pd-ultra-small);
     border-radius: var(--border-radius-medium);

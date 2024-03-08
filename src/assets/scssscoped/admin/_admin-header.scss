@@ -3,10 +3,10 @@
 .admin-header{
   @include flex-base();
   padding: 0 var(--pd-large);
-  background-color: var(--header-bg-color);
+  background-color: var(--bg-color-header);
 
   & .active-menu-label{
-    line-height: var(--btn-height);
+    line-height: var(--size-default);
     color: var(--text-color-regular);
     & span:first-child{
       padding: 0 var(--pd-small);
@@ -17,9 +17,9 @@
   }
 
   & .star-container{
-    @include grid-base(var(--btn-height) 1px var(--btn-height));
+    @include grid-base(var(--size-default) 1px var(--size-default));
     position: relative;
-    height: var(--btn-height);
+    height: var(--size-default);
     border: var(--border-1);
     border-radius: var(--border-radius-medium);
     & .split{
@@ -32,9 +32,9 @@
 
 .admin-avatar details{
   @include flex-base();
-  height: var(--btn-height);
+  height: var(--size-default);
   border: 0;
-  background-color: var(--color-header-btn);
+  background-color: var(--color-black-primary);
   padding: 0 var(--pd-ultra-small);
   border-radius: var(--border-radius-round-medium);
   color: var(--color-white);
@@ -55,7 +55,7 @@
     border: 1px solid var(--color-white) {
       radius: var(--border-radius-large);
     };
-    color: var(--color-black-1);
+    color: var(--color-black-primary);
     background-color: var(--panel-bg-color);
     box-shadow: var(--box-shadow-large);
     z-index: var(--z-index-f);
@@ -72,14 +72,14 @@
         margin-bottom: var(--mg-small);
         border-radius: var(--border-radius-small);
         &:hover{
-          background-color: #ECF5FF;
+          background-color: var(--hover-color-light-blue);
         }
       }
 
       & .nav-item{
         display: inline-block;
         width: 100%;
-        line-height: var(--lh-medium);
+        line-height: var(--size-medium);
         padding: {
           right: var(--pd-small);
           left: var(--pd-large);

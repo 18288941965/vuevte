@@ -7,7 +7,7 @@ export const handleMenuScroll = (event: Event) => {
     const mainElement: HTMLElement | null = document.querySelector('#admin-theme-main')
     if (mainElement) {
         const styles = getComputedStyle(mainElement)
-        let data = styles.getPropertyValue('--header-nav-height')
+        let data = styles.getPropertyValue('--header-banner-height')
         let top = 0
         if (data) {
             top =  parseInt(data.replace('px', '')) - window.scrollY

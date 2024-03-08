@@ -135,7 +135,7 @@
       id="admin-theme-main"
       class="layout-dynamic"
       :class="{'layout-dynamic-collapse' : menuCollapse}"
-      style="--sticky-pane-height: calc(100vh - var(--header-nav-height));"
+      style="--sticky-pane-height: calc(100vh - var(--header-banner-height));"
     >
       <div
         class="theme-left-wrapper"

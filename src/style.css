@@ -22,10 +22,12 @@
 
 html.app-dark{
   background-color: var(--bg-color);
+  color: var(--text-color-primary);
 }
 
 html.app-light{
-  background-color: var(--bg-color);;
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
 }
 
 body, ul, ol, h1, h2, h3, h4, h5, h6{
@@ -81,3 +83,4 @@ a{
   :root {
   }
 }
+

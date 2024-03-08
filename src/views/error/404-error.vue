@@ -39,7 +39,7 @@
 
   .to-app-home{
     display: inline-block;
-    line-height: var(--btn-height);
+    line-height: var(--size-default);
     padding: 0 var(--pd-small);
     border-radius: var(--border-radius-medium);
     margin-top: var(--mg-medium);

@@ -1,26 +1,19 @@
 .app-dark{
+    color-scheme: dark;
     --bg-color: #000000;
+    --bg-color-header: #232323;
+    --bg-color-banner: #232323;
     --bg-color-hover: #363636;
     --bg-color-reverse: #FFFFFF;
-
-    --scrollbar-thumb-bg-color: #686868;
-    --scrollbar-track-bg-color: transparent;
+    --bg-color-scrollbar-thumb: #686868;
+    --bg-color-scrollbar-track: transparent;
 
     --border-color: #4C4D4F;
     --border-1: 1px solid var(--border-color);
 
-    --text-color-default: #FFFFFF;
-    --text-color-muted: #CCCCCC;
-    --text-color-reverse: #000000;
-    --text-color-disabled: #666666;
-    /*从element获取的颜色*/
-    --text-color-regular: var(--el-text-color-regular);
-
-    --header-bg-color: #232323;
-    --header-nav-bg-color: #232323;
-
-    --header-nav-item-bg-color: #262A2D;
-    --header-nav-item-bd-color: #262A2D;
+    --text-color-primary: #FFFFFF;
+    --text-color-regular: #CFD3DC;
+    --text-color-disabled: #6C6E72;
 
     --box-shadow-small: 0 1px 0 rgba(0,0,0, 1);
     --box-shadow-medium: 0 3px 6px rgba(0,0,0, 1);

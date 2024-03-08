@@ -88,7 +88,7 @@ export default defineComponent({
     h5{
       padding: var(--pd-small);
       margin-bottom: var(--mg-medium);
-      background-color: var(--header-bg-color);
+      background-color: var(--bg-color-header);
       border: {
         bottom: 1px solid var(--border-color);
         top-left-radius: var(--border-radius-medium);

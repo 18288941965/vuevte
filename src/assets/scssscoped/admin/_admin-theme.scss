@@ -3,16 +3,16 @@
 
 .admin-theme{
     .page-header{
-        height: var(--nav-height);
+        height: var(--banner-height);
         box-shadow: inset 0 -1px var(--border-color);
-        background-color: var(--header-bg-color);
+        background-color: var(--bg-color-header);
         &__menu-btn{
             @include flex-base();
             padding-left: var(--pd-large);
-            height: var(--nav-height);
+            height: var(--banner-height);
             & .left-split{
                 width: 1px;
-                height: calc(var(--btn-height) - 8px);
+                height: calc(var(--size-default) - 8px);
                 background-color: var(--border-color);
             }
         }
@@ -56,7 +56,7 @@
             border: 1px solid var(--color-white) {
                 radius: var(--border-radius-large);
             };
-            color: var(--color-black-1);
+            color: var(--color-black-primary);
             background-color: var(--panel-bg-color);
             box-shadow: var(--box-shadow-large);
             z-index: var(--z-index-f);
@@ -74,14 +74,14 @@
                     margin-bottom: var(--mg-small);
                     border-radius: var(--border-radius-small);
                     &:hover{
-                        background-color: #ECF5FF;
+                        background-color: var(--hover-color-light-blue);
                     }
                 }
 
                 & .nav-item{
                     display: inline-block;
                     width: 100%;
-                    line-height: var(--lh-medium);
+                    line-height: var(--size-medium);
                     padding: {
                         right: var(--pd-small);
                         left: var(--pd-large);
@@ -99,13 +99,13 @@
                 width: 100%;
                 & button{
                     width: 100%;
-                    line-height: var(--lh-medium);
+                    line-height: var(--size-medium);
                     border: {
                         top: 1px solid var(--panel-border-inner-color);
                         bottom-right-radius: var(--border-radius-large);
                         bottom-left-radius: var(--border-radius-large);
                     };
-                    color: var(--color-black-1);
+                    color: var(--color-black-primary);
                     &:hover{
                         color: var(--color-red);
                     }

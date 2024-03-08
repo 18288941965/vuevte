@@ -28,20 +28,20 @@ $nav-width-fixed: 260px;
 // 左右布局基本信息
 .layout-dynamic{
 	display: grid;
-	grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
+	grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
 	transition: grid-template-columns 0.3s;
 }
 
 // 左右布局折叠/展开
 .admin-theme .layout-dynamic-collapse{
-	grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
+	grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
 }
 
 // 图标按钮的基本信息
 .icon-btn{
 	@include flex-base(true);
-	height: var(--btn-height);
-	width: var(--btn-height);
+	height: var(--size-default);
+	width: var(--size-default);
 	border-radius: var(--border-radius-medium);
 }
 

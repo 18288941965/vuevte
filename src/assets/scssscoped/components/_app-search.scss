@@ -5,7 +5,7 @@
   border: 1px solid var(--color-white) {
     radius: var(--border-radius-medium)
   };
-  color: var(--color-black-1);
+  color: var(--color-black-primary);
   background: {
     color: var(--panel-bg-color);
     image: linear-gradient(-30deg, #bf398910, #096bde10, #ffffff 50%);
@@ -18,12 +18,12 @@
 .app-search-panel{
   &__header{
     @include grid-base(32px 1fr);
-    height: var(--lh-medium);
+    height: var(--size-medium);
     padding-left: var(--pd-small);
     border: 2px solid transparent;
     border-radius: var(--border-radius-medium);
     margin: var(--mg-small);
-    color: var(--color-black-6);
+    color: var(--color-black-regular);
     text-align: center;
     background-color: #ECEFF7;
     input{
@@ -46,12 +46,12 @@
   &__body{
     min-height: 300px;
     overflow: auto;
-    margin-bottom: var(--lh-medium);
+    margin-bottom: calc(var(--mg-large) * 2);
     h5{
       margin: var(--mg-small) {
         top: var(--mg-ultra-small);
       };
-      color: var(--color-black-9);
+      color: var(--color-black-secondary);
     }
 
     .search-history{
@@ -63,7 +63,7 @@
         flex-wrap: wrap;
       }
       li {
-        line-height: var(--lh-small);
+        line-height: var(--size-default);
         padding: 0 var(--pd-medium);
         border: 1px solid var(--panel-border-inner-color) {
           radius: var(--border-radius-round-small);
@@ -80,12 +80,12 @@
       margin: var(--mg-small);
       & a{
         @include grid-base(1fr 20px);
-        line-height: var(--lh-medium);
+        line-height: var(--size-medium);
         padding: 0 var(--pd-medium);
         border-radius: var(--border-radius-medium);
         text-decoration: none;
         &:hover{
-          background-color: var(--hover-bg-light);
+          background-color: var(--hover-color-light-blue);
           svg{
             color: inherit;
           }
@@ -111,11 +111,11 @@
     };
     ul{
       @include flex-base(true);
-      height: var(--lh-medium);
+      height: var(--size-medium);
       & li{
         @include flex-base();
         margin-left: var(--mg-ultra-large);
-        color: var(--color-black-6);
+        color: var(--color-black-regular);
         font-size: var(--h6-size);
       }
     }

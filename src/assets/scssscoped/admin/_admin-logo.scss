@@ -5,14 +5,14 @@
   position: relative;
   z-index: var(--z-index-b);
   border-radius: var(--border-radius-medium);
-  height: var(--btn-height);
+  height: var(--size-default);
   text-decoration: none;
   & img{
     width: 24px;
     margin-right: var(--mg-ultra-small);
   }
   & #admin-logo-text{
-    line-height: var(--btn-height);
+    line-height: var(--size-default);
     font-weight: 600;
     white-space: nowrap;
     overflow: clip;

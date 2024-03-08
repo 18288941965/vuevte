@@ -4,7 +4,7 @@
 .admin-theme{
 
   .main-grid{
-    min-height: calc(100vh - var(--header-nav-height));
+    min-height: calc(100vh - var(--header-banner-height));
   }
 
   .theme-content{
@@ -13,9 +13,9 @@
 
   .theme2-nav{
     position: relative;
-    height: var(--nav-height);
+    height: var(--banner-height);
     box-shadow: inset 0 -1px var(--border-color);
-    background-color: var(--header-bg-color);
+    background-color: var(--bg-color-header);
     &__left{
       @include flex-base();
       height: 100%;
@@ -23,7 +23,7 @@
 
       & .left-split{
         width: 1px;
-        height: calc(var(--btn-height) - 8px);
+        height: calc(var(--size-default) - 8px);
         background-color: var(--border-color);
       }
     }
@@ -45,7 +45,7 @@
       }
       & .nav-item{
         display: block;
-        line-height: var(--lh-small);
+        line-height: var(--size-default);
         border: var(--border-1);
         border-radius: var(--border-radius-medium);
         padding: {
