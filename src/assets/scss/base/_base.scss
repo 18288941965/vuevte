@@ -1,6 +1,7 @@
+@use "../../scss/mixin/mixin" as *;
+
 .global-menu-item-wrapper{
 	position: relative;
-	margin-bottom: var(--mg-small);
 	border-radius: var(--border-radius-small);
 	&:hover{
 		background-color: var(--hover-color-light-blue);
@@ -13,5 +14,13 @@
 	line-height: var(--size-medium);
 	border-radius: inherit;
 	text-decoration: none;
-	padding: 0 var(--pd-large);
+	padding: 0 var(--pd-medium);
+}
+
+.global-active a[aria-current='page']{
+	@extend .active
+}
+
+.global-overlay-base{
+	min-height: var(--panel-width-medium);
 }

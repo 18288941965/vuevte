@@ -11,7 +11,7 @@
         class="user-avatar-overlay"
         @click="closeDetails('user-avatar-container')"
       >
-        <ul>
+        <ul class="global-overlay-base">
           <li class="li-information">
             {{ userName }}
           </li>

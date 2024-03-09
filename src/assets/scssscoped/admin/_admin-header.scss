@@ -46,40 +46,8 @@
   }
 }
 
-#star-menu-container{
-  & .star-menu-overlay{
-    position: absolute;
+#star-menu-container .star-menu-overlay{
+    @extend .overlay;
     top: 40px;
     right: 0;
-    width: var(--panel-width-medium);
-    border: 1px solid var(--color-white) {
-      radius: var(--border-radius-large);
-    };
-    color: var(--color-black-primary);
-    background-color: var(--panel-bg-color);
-    box-shadow: var(--box-shadow-large);
-    z-index: var(--z-index-f);
-
-    &__body{
-      display: grid;
-      overflow: auto;
-      & ul{
-        height: 366px;
-        margin: var(--mg-small);
-      }
-
-      & li{
-        margin-bottom: var(--mg-small);
-        border-radius: var(--border-radius-small);
-        &:hover{
-          background-color: var(--hover-color-light-blue);
-        }
-      }
-
-      & a[aria-current='page']{
-        color: var(--color-blue);
-        font-weight: bolder;
-      }
-    }
-  }
 }

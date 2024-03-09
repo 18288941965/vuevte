@@ -25,7 +25,7 @@
             >
               <details
                 :id="'menu-detail-' + index"
-                class="menu-group-details arrow-down"
+                class="menu-group-container arrow-down"
               >
                 <summary>
                   <i class="menu-icon">
@@ -41,7 +41,7 @@
                   />
                 </summary>
                 <div
-                  class="menu-group-details-content menu-scroll"
+                  class="global-overlay-base menu-group-overlay menu-scroll"
                   @click="closeDetails('menu-detail-' + index)"
                 >
                   <admin-menu-down

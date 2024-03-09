@@ -1,8 +1,6 @@
 @use "../../scss/mixin/mixin" as *;
 @use "./admin-theme-public" as tp;
 
-
-
 .admin-theme{
   .theme-content{
     margin: var(--mg-large);
@@ -37,7 +35,7 @@
        }
      }
 
-     & .active-menu-group,
+     & .active-menu-group details,
      a[aria-current='page']
      {
        font-weight: bolder;
@@ -52,6 +50,10 @@
          background-color: var(--bg-color-reverse);
        }
      }
+
+     & .active-menu-group details[open]::before{
+       background-color: transparent;
+     }
    }
   }
 }
@@ -59,41 +61,33 @@
 .theme-menu-group{
   position: relative;
   margin-right: var(--mg-small);
+
   & details[open] > summary{
     background-color: var(--bg-color-hover);
   }
 
-  & .menu-group-details summary{
+  & .menu-group-container summary{
     @include flex-base();
     line-height: var(--size-default);
     padding: 0 var(--pd-small);
     border-radius: var(--border-radius-medium);
     text-decoration: none;
     font-size: var(--body-font-size);
+
     & .expand-mg{
       margin-left: var(--mg-ultra-small);
     }
+
     &:hover{
       background-color: var(--bg-color-hover);
     }
   }
 
-  & .menu-group-details-content{
-    position: absolute;
-    width: 300px;
+  & .menu-group-overlay{
+    @extend .overlay;
     left: 0;
-    top: 44px;
-    min-height: 260px;
+    top: calc(var(--banner-height) - var(--size-default) / 2);
     max-height: calc(100vh - var(--header-banner-height) - var(--mg-large));
-    padding: var(--pd-large);
-    border: 1px solid var(--color-white) {
-      radius: var(--border-radius-large)
-    };
-    color: var(--color-black-primary);
-    background-color: var(--panel-bg-color);
-    box-shadow: var(--box-shadow-large);
-    overflow: auto;
-    z-index: var(--z-index-f);
   }
 }
 

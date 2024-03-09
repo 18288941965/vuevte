@@ -21,11 +21,11 @@
 
       <li
         v-else
-        class="menu-item"
+        class="global-menu-item-wrapper"
         :style="{'--menu-level': menuLevel}"
       >
         <router-link
-          class="nav-item"
+          class="global-menu-item menu-item"
           :to="menu.url"
           @click="pushRouter(menu)"
         >

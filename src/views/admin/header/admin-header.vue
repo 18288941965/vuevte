@@ -44,14 +44,15 @@
           class="star-menu-overlay"
           @click="closeDetails('star-menu-container')"
         >
-          <nav class="star-menu-overlay__body card-scroll">
-            <ul>
+          <nav class="global-active card-scroll">
+            <ul class="global-overlay-base">
               <template
                 v-for="(menu, index) in starMenus"
                 :key="'li-0-' + index"
               >
                 <li
                   v-if="menu.url"
+                  class="global-menu-item-wrapper"
                 >
                   <router-link
                     class="global-menu-item"

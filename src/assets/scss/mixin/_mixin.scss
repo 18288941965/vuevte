@@ -56,3 +56,16 @@ $nav-width-fixed: 260px;
 	font-weight: bolder;
 	color: var(--color-blue);
 }
+
+.overlay{
+	position: absolute;
+	min-width: var(--panel-width-medium);
+	max-width: var(--panel-width-large);
+	padding: var(--pd-small);
+	border-radius: var(--border-radius-large);
+	color: var(--color-black-primary);
+	background-color: var(--panel-bg-color);
+	box-shadow: var(--box-shadow-large);
+	z-index: var(--z-index-f);
+	overflow: auto;
+}
