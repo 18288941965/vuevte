@@ -48,11 +48,13 @@
          bottom: -12px;
          height: 2px;
          background-color: var(--bg-color-reverse);
+         transition: all 0.3s;
        }
      }
 
      & .active-menu-group details[open]::before{
-       background-color: transparent;
+       left: calc(100% / 2);
+       right: calc(100% / 2);
      }
    }
   }

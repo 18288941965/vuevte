@@ -1,18 +1,21 @@
 <template>
   <div class="admin-menu-top mgr-medium">
-    <details id="admin-menu-top-details">
+    <details id="admin-menu-top-container">
       <summary class="icon-button hv-bg mgr-medium">
         <Apps />
       </summary>
-      <div class="top-menu-panel menu-scroll">
-        <nav class="top-menu-nav">
+      <div
+        class="top-menu-overlay global-active menu-scroll"
+        @click="closeDetails('admin-menu-top-container')"
+      >
+        <nav class="top-menu-overlay__body">
           <ul class="top-menu-column column-one-level">
             <li
               v-for="(menu, index) in getExcludeChildren"
               :key="'e-t-m-' + index"
             >
               <router-link
-                class="nav-item"
+                class="global-menu-item menu-item"
                 :to="menu.url ? menu.url : '/404/error'"
                 @click="pushRouter(menu)"
               >
@@ -90,7 +93,6 @@ export default defineComponent({
       }
       emit('push-router', menu)
       setActivePath(menu.id)
-      closeDetails('admin-menu-top-details')
     }
 
     const loadCallback = (id: string, label: string, icon = '') => {

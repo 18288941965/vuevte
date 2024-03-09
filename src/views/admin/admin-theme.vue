@@ -78,8 +78,8 @@
             class="history-menu-overlay"
             @click="closeDetails('history-menu-container')"
           >
-            <nav class="history-menu-overlay__body card-scroll">
-              <ul>
+            <nav class="global-active card-scroll">
+              <ul class="global-overlay-base">
                 <template
                   v-for="(menu, index) in activeMenus.menus"
                   :key="'li-0-' + index"

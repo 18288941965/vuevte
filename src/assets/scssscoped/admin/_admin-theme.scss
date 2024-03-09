@@ -41,28 +41,8 @@
             & #history-menu-container{
                 position: relative;
                 & .history-menu-overlay{
-                    position: absolute;
+                    @extend .overlay;
                     top: 40px;
-                    width: var(--panel-width-medium);
-                    border: 1px solid var(--color-white) {
-                        radius: var(--border-radius-large);
-                    };
-                    color: var(--color-black-primary);
-                    background-color: var(--panel-bg-color);
-                    box-shadow: var(--box-shadow-large);
-                    z-index: var(--z-index-f);
-
-                    &__body{
-                        overflow: auto;
-                        & ul{
-                            height: 336px;
-                            margin: var(--mg-small);
-                        }
-
-                        & a[aria-current='page']{
-                            @extend .active;
-                        }
-                    }
 
                     &__footer{
                         width: 100%;
