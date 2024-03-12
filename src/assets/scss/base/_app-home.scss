@@ -1,27 +1,28 @@
 @use "../../scss/mixin/mixin" as *;
 
-.app-home-avatar{
+.user-avatar-container{
   position: relative;
-}
-.app-home-avatar details{
-  @include flex-base();
-  height: var(--size-default);
-  & summary{
-    padding: 0 var(--pd-ultra-small);
-    border-radius: var(--border-radius-medium);
-    border: var(--border-1);
-    & svg:nth-child(2){
-      margin-left: var(--mg-small);
+  details{
+    @include flex-base();
+    height: var(--size-default);
+    & summary{
+      padding: 0 var(--pd-ultra-small);
+      border-radius: var(--border-radius-medium);
+      border: var(--border-1);
+      & svg:nth-child(2){
+        margin-left: var(--mg-small);
+      }
+      &:hover{
+        background-color: var(--bg-color-hover);
+      }
     }
-    &:hover{
-      background-color: var(--bg-color-hover);
+    & .user-avatar-overlay{
+      top: calc(var(--header-height) - 3px);
+      right: 0;
     }
-  }
-  & .user-avatar-panel{
-    right: 0;
   }
 }
 
-.app-home-avatar details[open] > summary {
+.user-avatar-container details[open] > summary {
   background-color: var(--bg-color-hover);
 }

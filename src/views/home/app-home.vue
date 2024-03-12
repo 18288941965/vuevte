@@ -39,7 +39,7 @@
         
         <user-avatar
           :user-name="userName"
-          class="app-home-avatar arrow-down"
+          class="user-avatar-container arrow-down"
         >
           <template #summary>
             <PersonFill />
