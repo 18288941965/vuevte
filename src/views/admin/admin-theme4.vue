@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, onUnmounted} from 'vue'
+import {defineComponent} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -66,7 +66,7 @@ import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import adminMenuTop from './menu/admin-menu-top.vue'
 import {Close} from '../../components/svicon/publicIcon'
-import {ScrollContext} from '../../context/scrollContext'
+import {useScrollHorizontalMenu} from '../../util/event'
 
 export default defineComponent({
   name: 'AdminTheme4',
@@ -122,19 +122,8 @@ export default defineComponent({
         pushRouter(temp)
       }
     }
-    
-    const {
-      listenerWheel,
-      removeListenerWheel
-    } = ScrollContext('theme4-nav-ul-scroll', 190)
-    
-    onMounted(() => {
-      listenerWheel()
-    })
-    
-    onUnmounted(() => {
-      removeListenerWheel()
-    })
+
+    useScrollHorizontalMenu('#theme4-nav-ul-scroll', 190)
 
     return {
       rootMenu,

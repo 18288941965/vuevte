@@ -165,7 +165,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, onUnmounted} from 'vue'
+import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import AdminHeader from './header/admin-header.vue'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -180,8 +180,8 @@ import {
   Close
 } from '../../components/svicon/publicIcon'
 import appSearch from '../../app-search.vue'
-import {handleMenuScroll} from '../../context/stickyContext'
 import {closeDetails} from '../../util/baseUtil'
+import {useScrollSticky} from '../../util/event'
 
 export default defineComponent({
   name: 'AdminTheme',
@@ -260,14 +260,8 @@ export default defineComponent({
       activeMenuPath.value = menu
     }
 
-    onMounted(() => {
-      window.addEventListener('scroll', handleMenuScroll)
-    })
+    useScrollSticky('#admin-theme-main')
 
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleMenuScroll)
-    })
-    
     return {
       rootMenu,
       adminThemeMenuRef,

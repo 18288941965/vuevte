@@ -120,7 +120,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, onUnmounted, nextTick} from 'vue'
+import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from '../../interface/menuInterface'
 import {MenuStatusContext} from '../../context/menuContext'
@@ -132,9 +132,8 @@ import {
   Close,
   Search
 } from '../../components/svicon/publicIcon'
-import {handleMenuScroll} from '../../context/stickyContext'
 import AppSearch from '../../app-search.vue'
-import {ScrollContext} from '../../context/scrollContext'
+import {useScrollSticky, useScrollHorizontalMenu} from '../../util/event'
 
 export default defineComponent({
   name: 'AdminTheme2',
@@ -200,23 +199,9 @@ export default defineComponent({
         pushRouter(temp)
       }
     }
-    
-    const {
-      listenerWheel,
-      removeListenerWheel
-    } = ScrollContext('theme2-nav-ul-scroll', 190)
 
-    onMounted(() => {
-      window.addEventListener('scroll', handleMenuScroll)
-      nextTick(() => {
-        listenerWheel()
-      })
-    })
-
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleMenuScroll)
-      removeListenerWheel()
-    })
+    useScrollSticky('#admin-theme-main')
+    useScrollHorizontalMenu('#theme2-nav-ul-scroll', 190)
 
     return {
       rootMenu,
