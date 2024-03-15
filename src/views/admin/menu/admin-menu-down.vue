@@ -47,16 +47,16 @@ export default defineComponent({
       type: Array as PropType<MenuBean[]>,
       default: () => {
         return []
-      }
+      },
     },
     menuId: {
       type: String,
-      default: ''
+      default: '',
     },
     menuLevel: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   emits: ['push-router'],
   setup (props, { emit }) {
@@ -71,9 +71,9 @@ export default defineComponent({
 
     return {
       menuGroupIcon,
-      pushRouter
+      pushRouter,
     }
-  }
+  },
 })
 </script>
 

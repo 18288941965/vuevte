@@ -21,9 +21,9 @@ export default defineComponent({
     return {
       userName,
       logo,
-      getModuleLogoUrl
+      getModuleLogoUrl,
     }
-  }
+  },
 })
 </script>
 

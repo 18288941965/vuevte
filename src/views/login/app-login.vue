@@ -49,12 +49,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent, inject, reactive} from 'vue'
+<script lang="ts" setup>
+import {inject, reactive} from 'vue'
 import {useRouter} from 'vue-router'
 import logo from '@assets/logo.png'
 import {
-  GitHub
+  GitHub,
 } from '../../components/svicon/publicIcon'
 import {LoginBean} from '../../interface/publicInterface'
 import {doLogin} from '../../context/signContext'
@@ -63,42 +63,28 @@ import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
 import LocalStorage from '../../class/LocalStorage'
 
-export default defineComponent({
-  name: 'AppLogin',
-  components: {
-    GitHub
-  },
-  setup () {
-    const router = useRouter()
-    const channel = inject('channel') as BroadcastChannel
-    const {
-      postMessage
-    } = BChannel(channel)
+const router = useRouter()
+const channel = inject('channel') as BroadcastChannel
+const {
+  postMessage,
+} = BChannel(channel)
 
-    const loginBean = reactive<LoginBean>({
-      username: 'admin@163.com',
-      password: 'admin'
-    })
-
-    const local = new LocalStorage()
-
-    const loginSuccess: LoginSuccess = () => {
-      local.setLoginStatus(true, loginBean.username)
-      postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })
-      router.replace('/app/home')
-    }
-
-    const login = () => {
-      doLogin(loginBean, loginSuccess)
-    }
-    
-    return {
-      logo,
-      loginBean,
-      login
-    }
-  }
+const loginBean = reactive<LoginBean>({
+  username: 'admin@163.com',
+  password: 'admin',
 })
+
+const local = new LocalStorage()
+
+const loginSuccess: LoginSuccess = () => {
+  local.setLoginStatus(true, loginBean.username)
+  postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })
+  router.replace('/app/home')
+}
+
+const login = () => {
+  doLogin(loginBean, loginSuccess)
+}
 </script>
 
 <style scoped lang="scss">

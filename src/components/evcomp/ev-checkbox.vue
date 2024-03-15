@@ -26,18 +26,18 @@ export default defineComponent({
   name: 'EvCheckbox',
   components: {
     ElCheckboxGroup,
-    ElCheckbox
+    ElCheckbox,
   },
   props: {
     ...defaultProps,
     selectLabel: {
       type: Array,
-      default: undefined
+      default: undefined,
     },
     border: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
@@ -45,7 +45,7 @@ export default defineComponent({
       dictList,
       getDataByDictType,
       getDataByReqUrl,
-      getDataByDataList
+      getDataByDataList,
     } = getEvElContext()
 
     const updateSelectLabel = (val: CheckboxValueType[]) => {
@@ -79,8 +79,8 @@ export default defineComponent({
       attrs,
       uniqueKey,
       updateSelectLabel,
-      dictList
+      dictList,
     }
-  }
+  },
 })
 </script>

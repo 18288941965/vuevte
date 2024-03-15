@@ -9,8 +9,8 @@ import EvPaginationDemo from '../demoev/ev-pagination-demo.vue'
 export default defineComponent({
   name: 'EvPaginationDemo3',
   components: {
-    EvPaginationDemo
-  }
+    EvPaginationDemo,
+  },
 })
 
 </script>

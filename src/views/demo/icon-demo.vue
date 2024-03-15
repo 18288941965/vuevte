@@ -39,7 +39,7 @@ export default defineComponent({
   name: 'IconDemo',
   components: {
     ...menuIcon,
-    ...publicIcon
+    ...publicIcon,
   },
   setup () {
     const menuIcons = ref<Array<String>>([])
@@ -54,9 +54,9 @@ export default defineComponent({
     }
     return {
       menuIcons,
-      publicIcons
+      publicIcons,
     }
-  }
+  },
 })
 </script>
 

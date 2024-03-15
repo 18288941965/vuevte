@@ -46,7 +46,7 @@ export function logoutContext () {
     const channel = inject('channel') as BroadcastChannel
     const local = new LocalStorage()
     const {
-        postMessage
+        postMessage,
     } = BChannel(channel)
 
     const logoutSuccess: LogoutSuccess = () => {
@@ -55,6 +55,6 @@ export function logoutContext () {
         router.replace('/')
     }
     return {
-        logoutSuccess
+        logoutSuccess,
     }
 }

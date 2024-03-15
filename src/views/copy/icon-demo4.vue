@@ -9,8 +9,8 @@ import IconDemo from '../demo/icon-demo.vue'
 export default defineComponent({
   name: 'IconDemo4',
   components: {
-    IconDemo
-  }
+    IconDemo,
+  },
 })
 
 </script>

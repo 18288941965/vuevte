@@ -6,27 +6,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from 'vue'
+<script lang="ts" setup>
 import EvCheckboxDemo from './ev-checkbox-demo.vue'
 import EvRadioDemo from './ev-radio-demo.vue'
 import EvSelectDemo from './ev-select-demo.vue'
-
-export default defineComponent({
-  name: 'EvDicDemo',
-  components: {
-    EvCheckboxDemo,
-    EvRadioDemo,
-    EvSelectDemo
-  },
-  setup () {
-    return {
-
-    }
-  }
-})
 </script>
-
-<style scoped>
-
-</style>

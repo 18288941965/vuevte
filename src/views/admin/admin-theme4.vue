@@ -74,13 +74,13 @@ export default defineComponent({
     AdminMenu,
     AdminHeader,
     adminMenuTop,
-    Close
+    Close,
   },
   setup () {
     const {
       router,
       rootMenu,
-      setParentMenu
+      setParentMenu,
     } = themeBaseContext()
 
     const {
@@ -89,7 +89,7 @@ export default defineComponent({
       cleanActiveMenus,
       keepAliveInclude,
       cleanKeepAliveInclude,
-      updateKeepAliveInclude
+      updateKeepAliveInclude,
     } = MenuStatusContext()
 
     const pushRouter = async (menu: MenuBean) => {
@@ -132,9 +132,9 @@ export default defineComponent({
       activeMenus,
 
       setParentMenu,
-      cleanHistory
+      cleanHistory,
     }
-  }
+  },
 })
 </script>
 <style scoped lang="scss">

@@ -11,7 +11,7 @@ export function MenuStatusContext() {
     const activeMenuPath = ref<MenuBean[]>([])
     const activeMenus = reactive<ActiveMenus>({
         menuId: '',
-        menus: []
+        menus: [],
     })
     const menuCollapse = ref(false)
     // 清理历史记录：所有数据
@@ -103,7 +103,7 @@ export function MenuStatusContext() {
         keepAliveInclude,
         cleanKeepAliveInclude,
         updateKeepAliveInclude,
-        cleanActiveMenuPath
+        cleanActiveMenuPath,
     }
 }
 
@@ -155,6 +155,6 @@ export function MenuContext() {
     return {
         menus,
         menuDefaultOpeneds,
-        getMenus
+        getMenus,
     }
 }

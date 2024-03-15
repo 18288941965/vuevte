@@ -34,8 +34,8 @@ export default defineComponent({
     show: {
       type: Boolean,
       default: false,
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ['close-dialog'],
   setup (props, {emit}) {
@@ -44,20 +44,20 @@ export default defineComponent({
     const fontSizeType = [
       { label: '小', value: 'small' },
       { label: '中', value: 'medium' },
-      { label: '大', value: 'large' }
+      { label: '大', value: 'large' },
     ]
 
     watch(
       () => props.show,
       () => {
         visible.value = props.show
-      }
+      },
     )
     
     const {
       fontSize,
       initFontSize,
-      setHtmlFont
+      setHtmlFont,
     } = appSettingsContext()
 
     const handleOpen = () => {
@@ -77,9 +77,9 @@ export default defineComponent({
 
       fontSizeType,
       fontSize,
-      setHtmlFont
+      setHtmlFont,
     }
-  }
+  },
 })
 </script>
 

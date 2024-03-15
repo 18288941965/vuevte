@@ -24,10 +24,10 @@ function appSettingsContext() {
     return {
         fontSize,
         initFontSize,
-        setHtmlFont
+        setHtmlFont,
     }
 }
 
 export {
-    appSettingsContext
+    appSettingsContext,
 }

@@ -10,14 +10,14 @@ export default function (BChannel: BroadcastChannel) {
 
     const activeChannel = reactive<ChannelData>({
         code: -1,
-        msg: ''
+        msg: '',
     })
 
     const resetChannel = () => {
         systemMessageList.value = []
         Object.assign(activeChannel, {
             code: -1,
-            msg: ''
+            msg: '',
         })
     }
 
@@ -72,6 +72,6 @@ export default function (BChannel: BroadcastChannel) {
         postMessage,
         activeChannel,
         resetChannel,
-        channelOnMessage
+        channelOnMessage,
     }
 }

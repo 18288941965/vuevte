@@ -46,7 +46,7 @@ import {defineComponent} from 'vue'
 import {doLogout, logoutContext} from '../../context/signContext'
 import {
   Discover,
-  Logouts
+  Logouts,
 } from '../svicon/publicIcon'
 import {dialogEmptyContext} from '../../context/dialogContext'
 import AppSettingsDrawer from '../settings/app-settings-drawer.vue'
@@ -57,23 +57,23 @@ export default defineComponent({
   components: {
     Discover,
     Logouts,
-    AppSettingsDrawer
+    AppSettingsDrawer,
   },
   props: {
     userName: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
    setup () {
      const {
         dialogEmpty: dialogSetting,
        dialogEmptyOpen: dialogOpenSetting,
-       dialogEmptyClose: dialogCloseSetting
+       dialogEmptyClose: dialogCloseSetting,
      } = dialogEmptyContext()
      
      const {
-       logoutSuccess
+       logoutSuccess,
      } = logoutContext()
 
      const logout = () => {
@@ -85,9 +85,9 @@ export default defineComponent({
       closeDetails,
       dialogSetting,
       dialogOpenSetting,
-      dialogCloseSetting
+      dialogCloseSetting,
     }
-   }
+   },
 })
 </script>
 

@@ -55,7 +55,7 @@ import EvSelect from '../../components/evcomp/ev-select.vue'
 export default defineComponent({
   name: 'EvSelectDemo',
   components: {
-    EvSelect
+    EvSelect,
   },
   setup () {
     const evSelectValue = reactive({
@@ -69,13 +69,13 @@ export default defineComponent({
         { mc: '1号', dm: '01' },
         { mc: '2号', dm: '02' },
         { mc: '3号', dm: '03' },
-        { mc: '4号', dm: '04' }
-      ]
+        { mc: '4号', dm: '04' },
+      ],
     })
     return {
-      evSelectValue
+      evSelectValue,
     }
-  }
+  },
 })
 </script>
 

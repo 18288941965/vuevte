@@ -24,7 +24,7 @@ import {EventType, useEventListener} from './util/event'
 
 export default defineComponent({
   components: {
-    AppMessage
+    AppMessage,
   },
   setup() {
     const router = useRouter()
@@ -35,7 +35,7 @@ export default defineComponent({
       systemMessageList,
       postMessage,
       channelOnMessage,
-      resetChannel
+      resetChannel,
     } = BChannel(channel)
 
     const reloadApp: ReloadApp = () => {
@@ -62,7 +62,7 @@ export default defineComponent({
 
     const {
       NProgressStart,
-      NProgressDone
+      NProgressDone,
     } = NProgress()
 
     router.beforeEach((to, from, next) => {
@@ -91,11 +91,11 @@ export default defineComponent({
 
     // 主题
     const {
-      initThemeModel
+      initThemeModel,
     } = themeContext()
     
     const {
-      initFontSize
+      initFontSize,
     } = appSettingsContext()
 
     useEventListener(channel, EventType.Message, onMessage)
@@ -110,8 +110,8 @@ export default defineComponent({
       postMessage,
       closeMessage,
 
-      reloadFlag
+      reloadFlag,
     }
-  }
+  },
 })
 </script>

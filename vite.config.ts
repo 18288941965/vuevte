@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, './src/assets')
-    }
+      '@assets': path.resolve(__dirname, './src/assets'),
+    },
   },
   server: {
-    open: true
+    open: true,
   },
   build: {
     rollupOptions: {
@@ -21,8 +21,8 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return 'vendor'
           }
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 })

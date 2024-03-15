@@ -18,7 +18,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
     const obj: AxiosResult = {
         code: 200,
         msg: '操作成功',
-        data: []
+        data: [],
     }
 
     const children = [
@@ -30,7 +30,7 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
             pid: '03',
             sxh: 1,
             cache: false,
-            name: `EvDicDemo${themeNum}`
+            name: `EvDicDemo${themeNum}`,
         },
         {
             label: 'pagination组件',
@@ -40,8 +40,8 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
             pid: '03',
             sxh: 2,
             cache: true,
-            name: `EvPaginationDemo${themeNum}`
-        }
+            name: `EvPaginationDemo${themeNum}`,
+        },
     ]
 
     const menus: Array<MenuBean> = []
@@ -70,9 +70,9 @@ Mock.mock('/api/admin/getMenus', 'post',(res) => {
                             { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-1', pid: '04-2', sxh: 1, cache: false, name: 'TestMenu' },
                             { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-2', pid: '04-2', sxh: 2, cache: false, name: 'TestMenu' },
                             { label: '测试菜单3层级二', icon: '', url: '/error/404', id: '04-2-3', pid: '04-2', sxh: 3, cache: false, name: 'TestMenu' },
-                        ] }
-                ] }
-        ]
+                        ] },
+                ] },
+        ],
     })
 
     obj.data = menus
@@ -95,7 +95,7 @@ Mock.mock('/api/admin/getStarMenu', 'get', () => {
                 pid: '03',
                 sxh: 1,
                 cache: false,
-                name: `EvDicDemo${themeNum}`
+                name: `EvDicDemo${themeNum}`,
             },
             {
                 label: 'pagination组件',
@@ -105,8 +105,8 @@ Mock.mock('/api/admin/getStarMenu', 'get', () => {
                 pid: '03',
                 sxh: 2,
                 cache: true,
-                name: `EvPaginationDemo${themeNum}`
-            }
-        ]
+                name: `EvPaginationDemo${themeNum}`,
+            },
+        ],
     }
 })

@@ -71,16 +71,16 @@ import menuDfs from '../../../algo/menuDfs'
 export default defineComponent({
   name: 'AdminMenu',
   components: {
-    AdminMenuChild
+    AdminMenuChild,
   },
   props: {
     collapse: {
-      type: Boolean
+      type: Boolean,
     },
     menuId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ['push-router', 'set-parent-menu', 'set-active-menu'],
   setup (props, {emit}) {
@@ -90,7 +90,7 @@ export default defineComponent({
     const {
       menus,
       menuDefaultOpeneds,
-      getMenus
+      getMenus,
     } = MenuContext()
 
     // 2、滚动到当前的元素
@@ -140,9 +140,9 @@ export default defineComponent({
       menuDefaultOpeneds,
       adminMenuRef,
       menuOpen,
-      setActivePath
+      setActivePath,
     }
-  }
+  },
 })
 </script>
 <style lang="scss">

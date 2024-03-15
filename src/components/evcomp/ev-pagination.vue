@@ -18,7 +18,7 @@ const _pagination: Pagination = {
   pageNum: 1,
   pageSize: 10,
   total: 0,
-  list: []
+  list: [],
 }
 
 const _pageSizes = [10,20,50,100,200]
@@ -28,13 +28,13 @@ export default defineComponent({
   props: {
     pageSizes: {
       type: Object as PropType<Array<number>>,
-      default: _pageSizes
+      default: _pageSizes,
     },
     pager: {
       type: Object as PropType<Pagination>,
       default: _pagination,
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ['query'],
   setup (props, { emit }) {
@@ -68,8 +68,8 @@ export default defineComponent({
       size,
       total,
       handleSizeChange,
-      handleCurrentChange
+      handleCurrentChange,
     }
-  }
+  },
 })
 </script>

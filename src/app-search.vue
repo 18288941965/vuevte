@@ -80,20 +80,18 @@
 
 <script lang="ts">
 import {defineComponent, reactive, ref} from 'vue'
-import {
-  Search
-} from './components/svicon/publicIcon'
+import {Search} from './components/svicon/publicIcon'
 import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({
   name: 'AppSearch',
   components: {
-    Search
+    Search,
   },
   setup () {
     const dialogRef = ref<HTMLDialogElement>()
     const searchParams = reactive<{ searchValue: string}>({
-      searchValue: ''
+      searchValue: '',
     })
 
     const handleOpen = () => {
@@ -113,9 +111,9 @@ export default defineComponent({
       handleClose,
       dialogRef,
       searchParams,
-      executeSearch
+      executeSearch,
     }
-  }
+  },
 })
 </script>
 

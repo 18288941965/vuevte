@@ -46,16 +46,16 @@ export default defineComponent({
       type: Array as PropType<MenuBean[]>,
       default: () => {
         return []
-      }
+      },
     },
     menuId: {
       type: String,
-      default: ''
+      default: '',
     },
     menuLevel: {
       type: Number,
-      default: 2
-    }
+      default: 2,
+    },
   },
   emits: ['push-router'],
   setup (props, {emit}) {
@@ -67,9 +67,9 @@ export default defineComponent({
     }
 
     return {
-      pushRouter
+      pushRouter,
     }
-  }
+  },
 })
 </script>
 <style scoped lang="scss">

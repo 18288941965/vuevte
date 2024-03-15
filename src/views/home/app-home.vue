@@ -126,7 +126,7 @@ import {
   GitHub,
   PersonFill,
   Expand,
-  Send
+  Send,
 } from '../../components/svicon/publicIcon'
 import BChannel from '../../BChannel'
 import {BCEnum} from '../../enum/enum'
@@ -150,13 +150,13 @@ export default defineComponent({
     Send,
     UserAvatar,
     AppSearch,
-    AppTheme
+    AppTheme,
   },
   setup () {
     const userName = ref('')
     const channel = inject('channel') as BroadcastChannel
     const {
-      postMessage
+      postMessage,
     } = BChannel(channel)
     
     const sendMessage = () => {
@@ -176,9 +176,9 @@ export default defineComponent({
       m4bg,
       logoText,
       userName,
-      sendMessage
+      sendMessage,
     }
-  }
+  },
 })
 </script>
 <style lang="scss">

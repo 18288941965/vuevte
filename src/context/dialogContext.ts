@@ -4,7 +4,7 @@ import {DialogBase, DialogEmpty, DialogParam} from '../interface/publicInterface
 // 无参对话框.
 export function dialogEmptyContext () {
   const dialogEmpty = reactive<DialogEmpty>({
-    show: false
+    show: false,
   })
   const dialogEmptyOpen = () => {
     dialogEmpty.show = true
@@ -15,7 +15,7 @@ export function dialogEmptyContext () {
   return {
     dialogEmpty,
     dialogEmptyOpen,
-    dialogEmptyClose
+    dialogEmptyClose,
   }
 }
 
@@ -23,7 +23,7 @@ export function dialogEmptyContext () {
 export function dialogBaseContext () {
   const dialogBase = reactive<DialogBase>({
     show: false,
-    dataId: undefined
+    dataId: undefined,
   })
   const dialogBaseOpen = (id? : string | undefined) => {
     dialogBase.dataId = id
@@ -36,7 +36,7 @@ export function dialogBaseContext () {
   return {
     dialogBase,
     dialogBaseOpen,
-    dialogBaseClose
+    dialogBaseClose,
   }
 }
 
@@ -44,7 +44,7 @@ export function dialogBaseContext () {
 export function dialogParamsContext () {
   const dialogParam = reactive<DialogParam>({
     show: false,
-    params: {}
+    params: {},
   })
   const dialogParamsOpen = (params: any) => {
     dialogParam.params = params
@@ -57,7 +57,7 @@ export function dialogParamsContext () {
   return {
     dialogParam,
     dialogParamsOpen,
-    dialogParamsClose
+    dialogParamsClose,
   }
 }
 
@@ -74,6 +74,6 @@ export function dialogContext (loadingShow?: boolean) {
     visible,
     fullscreen,
     loading,
-    isRefresh
+    isRefresh,
   }
 }

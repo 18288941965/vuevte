@@ -9,8 +9,8 @@ import EvDicDemo from '../demoev/ev-dic-demo.vue'
 export default defineComponent({
   name: 'EvDicDemo2',
   components: {
-    EvDicDemo
-  }
+    EvDicDemo,
+  },
 })
 
 </script>

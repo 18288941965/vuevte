@@ -130,7 +130,7 @@ import {
   Adjust,
   MenuOpen,
   Close,
-  Search
+  Search,
 } from '../../components/svicon/publicIcon'
 import AppSearch from '../../app-search.vue'
 import {useScrollSticky, useScrollHorizontalMenu} from '../../util/event'
@@ -144,13 +144,13 @@ export default defineComponent({
     Adjust,
     MenuOpen,
     Close,
-    Search
+    Search,
   },
   setup () {
     const {
       router,
       rootMenu,
-      setParentMenu
+      setParentMenu,
     } = themeBaseContext()
 
     const adminThemeMenuRef = ref()
@@ -162,7 +162,7 @@ export default defineComponent({
       cleanActiveMenus,
       keepAliveInclude,
       cleanKeepAliveInclude,
-      updateKeepAliveInclude
+      updateKeepAliveInclude,
     } = MenuStatusContext()
 
     const pushRouter = async (menu: MenuBean) => {
@@ -214,9 +214,9 @@ export default defineComponent({
       setParentMenu,
       pushRouter,
       menuOpen,
-      cleanHistory
+      cleanHistory,
     }
-  }
+  },
 })
 </script>
 

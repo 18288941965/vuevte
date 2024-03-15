@@ -1,4 +1,5 @@
 module.exports = {
+    plugins: ['@typescript-eslint'],
     parser: 'vue-eslint-parser',
     parserOptions: {
         parser: "@typescript-eslint/parser",
@@ -6,7 +7,7 @@ module.exports = {
     },
     extends: [
         'plugin:vue/base',
-        'plugin:vue/vue3-recommended'
+        'plugin:vue/vue3-recommended',
     ],
     env: {
         "es6": true,
@@ -24,6 +25,16 @@ module.exports = {
         ],
         // 结尾不可以使用分号：根据个人喜好修改规则，没有一个统一的标准
         semi: ["error", "never"],
+        // 行对象结尾不能用逗号，换行对象必须用逗号
+        'comma-dangle': ["error", 'always-multiline'],
+        // 接口不可以使用逗号
+        '@typescript-eslint/member-delimiter-style': ['error', {
+            multiline: {
+                delimiter: 'none', // 多行时禁止使用逗号结尾
+                requireLast: true,
+            }
+        }],
+
         'no-restricted-globals': 'off',
         'no-restricted-syntax': 'off'
     },

@@ -25,10 +25,10 @@ function themeContext() {
     return {
         initThemeModel,
         getThemeModel,
-        setThemeModel
+        setThemeModel,
     }
 }
 
 export {
-    themeContext
+    themeContext,
 }

@@ -26,7 +26,7 @@ interface ChannelData {
  * @param password 密码
  */
 interface LoginBean{
-    username: string,
+    username: string
     password: string
 }
 
@@ -38,9 +38,9 @@ interface LoginBean{
  * @param list 数据
  */
 interface Pagination {
-    pageNum: number,
-    pageSize: number,
-    total: number,
+    pageNum: number
+    pageSize: number
+    total: number
     list: Array<any>
 }
 
@@ -70,7 +70,7 @@ interface DialogParam extends DialogEmpty{
     }
 }
 
-export type {
+export {
     AxiosResult,
     ChannelData,
     LoginBean,
@@ -78,5 +78,5 @@ export type {
 
     DialogEmpty,
     DialogBase,
-    DialogParam
+    DialogParam,
 }

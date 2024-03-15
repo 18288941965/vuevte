@@ -33,8 +33,8 @@ export default defineComponent({
       type: Array as PropType<Array<ChannelData>>,
       default: () => {
         return []
-      }
-    }
+      },
+    },
   },
   emits: ['close-message'],
   setup (props, {emit}) {
@@ -57,9 +57,9 @@ export default defineComponent({
 
     return {
       closeMessage,
-      visible
+      visible,
     }
-  }
+  },
 })
 </script>
 

@@ -14,61 +14,61 @@ const router = createRouter({
       path: '/',
       name: 'AppLogin',
       component: () => import('../views/login/app-login.vue'),
-      meta: { title: '登录' }
+      meta: { title: '登录' },
     },
     {
       path: '/app/home',
       name: 'AppHome',
       component: () => import('../views/home/app-home.vue'),
-      meta: { title: '首页' }
+      meta: { title: '首页' },
     },
     {
       path: '/admin/theme',
       name: 'AdminTheme',
       component: () => import('../views/admin/admin-theme.vue'),
       meta: { title: '后台管理模板'},
-      children: menuDemoRouter
+      children: menuDemoRouter,
     },
     {
       path: '/admin/theme2',
       name: 'AdminTheme2',
       component: () => import('../views/admin/admin-theme2.vue'),
       meta: { title: '后台管理模板2'},
-      children: menuDemoRouter2
+      children: menuDemoRouter2,
     },
     {
       path: '/admin/theme3',
       name: 'AdminTheme3',
       component: () => import('../views/admin/admin-theme3.vue'),
       meta: { title: '后台管理模板3'},
-      children: menuDemoRouter3
+      children: menuDemoRouter3,
     },
     {
       path: '/admin/theme4',
       name: 'AdminTheme4',
       component: () => import('../views/admin/admin-theme4.vue'),
       meta: { title: '后台管理模板4'},
-      children: menuDemoRouter4
+      children: menuDemoRouter4,
     },
     {
       path: '/desktop/theme',
       name: 'DesktopTheme',
       component: () => import('../views/desktop/desktop-theme.vue'),
-      meta: { title: '桌面模板' }
+      meta: { title: '桌面模板' },
     },
     {
       path: '/desktop/theme2',
       name: 'DesktopTheme2',
       component: () => import('../views/desktop/desktop-theme2.vue'),
-      meta: { title: '桌面模板2' }
+      meta: { title: '桌面模板2' },
     },
     {
       path: '/:pathMatch(.*)',
       name: '404Error',
       component: () => import('../views/error/404-error.vue'),
-      meta: { title: '404' }
-    }
-  ]
+      meta: { title: '404' },
+    },
+  ],
 })
 
 export default router

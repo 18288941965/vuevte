@@ -16,7 +16,7 @@
 import { defineComponent, ref, onMounted } from 'vue'
 import {
   Dark,
-  Light
+  Light,
 } from './components/svicon/publicIcon'
 import {themeContext} from './AppTheme'
 
@@ -24,13 +24,13 @@ export default defineComponent({
   name: 'AppTheme',
   components: {
     Dark,
-    Light
+    Light,
   },
   setup () {
     const model = ref('')
     const {
       getThemeModel,
-      setThemeModel
+      setThemeModel,
     } = themeContext()
 
     const setTheme = () => {
@@ -46,8 +46,8 @@ export default defineComponent({
     return {
       model,
       setThemeModel,
-      setTheme
+      setTheme,
     }
-  }
+  },
 })
 </script>

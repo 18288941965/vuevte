@@ -23,14 +23,14 @@ export default defineComponent({
   name: 'EvSelect',
   components: {
     ElSelect,
-    ElOption
+    ElOption,
   },
   props: {
     ...defaultProps,
     selectLabel: {
       type: [Array, String],
-      default: undefined
-    }
+      default: undefined,
+    },
   },
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
@@ -39,7 +39,7 @@ export default defineComponent({
       dictList,
       getDataByDictType,
       getDataByReqUrl,
-      getDataByDataList
+      getDataByDataList,
     } = getEvElContext()
 
     const updateSelectLabel = (val: Array<string> | string) => {
@@ -79,8 +79,8 @@ export default defineComponent({
       attrs,
       updateSelectLabel,
       dictList,
-      uniqueKey
+      uniqueKey,
     }
-  }
+  },
 })
 </script>

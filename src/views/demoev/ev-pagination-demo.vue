@@ -91,7 +91,7 @@ import axios from 'axios'
 export default defineComponent({
   name: 'EvPaginationDemo',
   components: {
-    EvPagination
+    EvPagination,
   },
   setup () {
     const dataList = ref<Array<any>>([])
@@ -101,12 +101,12 @@ export default defineComponent({
       pageNum: 1,
       pageSize: 10,
       total: 0,
-      list: []
+      list: [],
     })
     const query = (pageNum = pager.pageNum, pageSize = pager.pageSize) => {
       Object.assign(pager, {
         pageNum,
-        pageSize
+        pageSize,
       })
      axios.post('/api/admin/getDataList', { pageNum, pageSize })
        .then((res: { data: AxiosResult }) => {
@@ -124,12 +124,12 @@ export default defineComponent({
       pageNum: 1,
       pageSize: 10,
       total: 0,
-      list: []
+      list: [],
     })
     const query2 = (pageNum = pager2.pageNum, pageSize = pager2.pageSize) => {
       Object.assign(pager2, {
         pageNum,
-        pageSize
+        pageSize,
       })
       pager2.total = dataList.value.length
       pager2.list = dataList.value.slice((pageNum - 1) * pageSize, pageNum * pageSize)
@@ -142,12 +142,12 @@ export default defineComponent({
       pageNum: 1,
       pageSize: 10,
       total: 0,
-      list: []
+      list: [],
     })
     const query3 = (pageNum = pager3.pageNum) => {
       Object.assign(pager3, {
         pageNum,
-        total: dataList.value.length
+        total: dataList.value.length,
       })
       const temp = dataList.value.slice((pageNum - 1) * pager3.pageSize, pageNum * pager3.pageSize)
       if (pageNum === 1) {
@@ -184,9 +184,9 @@ export default defineComponent({
       query2,
 
       pager3,
-      query3
+      query3,
     }
-  }
+  },
 })
 </script>
 

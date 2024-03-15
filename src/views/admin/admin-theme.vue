@@ -177,7 +177,7 @@ import {
   Search,
   Schedule,
   Expand,
-  Close
+  Close,
 } from '../../components/svicon/publicIcon'
 import appSearch from '../../app-search.vue'
 import {closeDetails} from '../../util/baseUtil'
@@ -194,13 +194,13 @@ export default defineComponent({
     Schedule,
     Expand,
     Close,
-    appSearch
+    appSearch,
   },
   setup () {
     const {
       router,
       rootMenu,
-      setParentMenu
+      setParentMenu,
     } = themeBaseContext()
 
     const adminThemeMenuRef = ref()
@@ -215,7 +215,7 @@ export default defineComponent({
       keepAliveInclude,
       cleanKeepAliveInclude,
       updateKeepAliveInclude,
-      cleanActiveMenuPath
+      cleanActiveMenuPath,
     } = MenuStatusContext()
 
     const pushRouter = async (menu: MenuBean) => {
@@ -276,9 +276,9 @@ export default defineComponent({
       pushRouter,
       menuOpen,
       cleanHistory,
-      closeDetails
+      closeDetails,
     }
-  }
+  },
 })
 </script>
 

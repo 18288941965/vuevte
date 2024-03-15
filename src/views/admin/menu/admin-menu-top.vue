@@ -60,16 +60,16 @@ export default defineComponent({
   name: 'AdminMenuTop',
   components: {
     Apps,
-    AdminMenuTopChild
+    AdminMenuTopChild,
   },
   props: {
     collapse: {
-      type: Boolean
+      type: Boolean,
     },
     menuId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ['push-router', 'set-parent-menu', 'set-active-menu'],
   setup (props, {emit}) {
@@ -79,7 +79,7 @@ export default defineComponent({
     const {
       menus,
       menuDefaultOpeneds,
-      getMenus
+      getMenus,
     } = MenuContext()
 
     const setActivePath = (menuId: string) => {
@@ -130,9 +130,9 @@ export default defineComponent({
 
       closeDetails,
       getIncludeChildren,
-      getExcludeChildren
+      getExcludeChildren,
     }
-  }
+  },
 })
 </script>
 <style lang="scss">

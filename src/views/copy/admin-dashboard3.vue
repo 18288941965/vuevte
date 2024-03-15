@@ -9,8 +9,8 @@ import AdminDashboard from '../admin/admin-dashboard.vue'
 export default defineComponent({
   name: 'AdminDashboard3',
   components: {
-    AdminDashboard
-  }
+    AdminDashboard,
+  },
 })
 
 </script>

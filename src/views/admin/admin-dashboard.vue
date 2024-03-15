@@ -23,7 +23,7 @@ export default defineComponent({
   name: 'AdminDashboard',
   setup() {
     //
-  }
+  },
 })
 </script>
 

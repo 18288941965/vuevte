@@ -96,7 +96,7 @@ import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import AdminMenuDown from './menu/admin-menu-down.vue'
 import {
-  Expand
+  Expand,
 } from '../../components/svicon/publicIcon'
 import {closeDetails} from '../../util/baseUtil'
 import menuDfs from '../../algo/menuDfs'
@@ -107,18 +107,18 @@ export default defineComponent({
     Expand,
     AdminMenu,
     AdminHeader,
-    AdminMenuDown
+    AdminMenuDown,
   },
   setup () {
     const {
       router,
       rootMenu,
-      setParentMenu
+      setParentMenu,
     } = themeBaseContext()
 
     const {
       menus,
-      getMenus
+      getMenus,
     } = MenuContext()
 
     // 激活菜单的父菜单ID
@@ -128,7 +128,7 @@ export default defineComponent({
       activeMenus,
       updateActiveMenus,
       keepAliveInclude,
-      updateKeepAliveInclude
+      updateKeepAliveInclude,
     } = MenuStatusContext()
 
     const pushRouter = async (menu: MenuBean) => {
@@ -158,9 +158,9 @@ export default defineComponent({
       menus,
       activeMenus,
       closeDetails,
-      activeMenuGroupId
+      activeMenuGroupId,
     }
-  }
+  },
 })
 </script>
 

@@ -26,22 +26,22 @@ export default defineComponent({
   name: 'AdminLogo',
   props: {
     menuCollapse: {
-      type: Boolean
+      type: Boolean,
     },
     moduleIcon: {
       type: String,
-      default: undefined
+      default: undefined,
     },
     moduleLabel: {
       type: String,
-      default: undefined
-    }
+      default: undefined,
+    },
   },
   setup () {
     return {
-      logo
+      logo,
     }
-  }
+  },
 })
 </script>
 

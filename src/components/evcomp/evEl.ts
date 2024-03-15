@@ -23,26 +23,26 @@ export const defaultProps = {
     dictType: {
         type: String,
         default: undefined,
-        require: true
+        require: true,
     },
     reqUrl: {
         type: String,
-        default: undefined
+        default: undefined,
     },
     dataList: {
         type: Array,
-        default: undefined
+        default: undefined,
     },
     labelUpdate: {
         type: Boolean,
-        default: false
+        default: false,
     },
     defaultAttr: {
         type: Object as PropType<LabelValue>,
         default: () => {
             return { label: 'label', value: 'value' }
-        }
-    }
+        },
+    },
 }
 
 export function getEvElContext () {
@@ -71,7 +71,7 @@ export function getEvElContext () {
                 dictList.value = res.data.data.map((row: any) => {
                     return {
                         label: row[defaultAttr.label],
-                        value: row[defaultAttr.label]
+                        value: row[defaultAttr.label],
                     }
                 })
             }
@@ -87,7 +87,7 @@ export function getEvElContext () {
         dictList.value = dataList.map((row: any) => {
             return {
                 label: row[defaultAttr.label],
-                value: row[defaultAttr.value]
+                value: row[defaultAttr.value],
             }
         })
     }
@@ -96,6 +96,6 @@ export function getEvElContext () {
         dictList,
         getDataByDictType,
         getDataByReqUrl,
-        getDataByDataList
+        getDataByDataList,
     }
 }

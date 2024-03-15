@@ -25,18 +25,18 @@ export default defineComponent({
   name: 'EvRadio',
   components: {
     ElRadioGroup,
-    ElRadio
+    ElRadio,
   },
   props: {
     ...defaultProps,
     border: {
       type: Boolean,
-      default: true
+      default: true,
     },
     selectLabel: {
       type: String,
-      default: undefined
-    }
+      default: undefined,
+    },
   },
   emits: ['update:selectLabel'],
   setup (props, { attrs, emit }) {
@@ -44,7 +44,7 @@ export default defineComponent({
       dictList,
       getDataByDictType,
       getDataByReqUrl,
-      getDataByDataList
+      getDataByDataList,
     } = getEvElContext()
 
     const updateSelectLabel = (val: string | number | boolean) => {
@@ -73,8 +73,8 @@ export default defineComponent({
       attrs,
       uniqueKey,
       updateSelectLabel,
-      dictList
+      dictList,
     }
-  }
+  },
 })
 </script>

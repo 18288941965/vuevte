@@ -11,7 +11,7 @@ function themeBaseContext() {
     const rootMenu = reactive<MenuBeanBase>({
         id: '',
         icon: '',
-        label: ''
+        label: '',
     })
 
     const setParentMenu = (id : string, label: string, icon = '') => {
@@ -22,11 +22,11 @@ function themeBaseContext() {
     return {
         router,
         rootMenu,
-        setParentMenu
+        setParentMenu,
     }
 }
 
 export {
     themeBaseContext,
-    updateBrowserTitle
+    updateBrowserTitle,
 }

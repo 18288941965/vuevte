@@ -108,7 +108,7 @@ import {
   StarFill,
   Search,
   Expand,
-  PersonFill
+  PersonFill,
 } from '../../../components/svicon/publicIcon'
 import LocalStorage from '../../../class/LocalStorage'
 import axios from 'axios'
@@ -127,25 +127,25 @@ export default defineComponent({
     StarFill,
     Search,
     Expand,
-    PersonFill
+    PersonFill,
   },
   props: {
     menuCollapse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     moduleIcon: {
       type: String,
-      default: undefined
+      default: undefined,
     },
     moduleLabel: {
       type: String,
-      default: undefined
+      default: undefined,
     },
     activeMenus: {
       type: Object as PropType<ActiveMenus>,
-      required: true
-    }
+      required: true,
+    },
   },
   emits: ['push-router'],
   setup (props, {emit}) {
@@ -198,9 +198,9 @@ export default defineComponent({
       isStar,
       starMenus,
       closeDetails,
-      handleStar
+      handleStar,
     }
-  }
+  },
 })
 </script>
 

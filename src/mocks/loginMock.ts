@@ -7,13 +7,13 @@ Mock.mock('/api/admin/doLogin', 'post', (res) => {
         return {
             code: 500,
             msg: '用户名或密码错误！',
-            data: null
+            data: null,
         }
     }
     return {
         code: 200,
         msg: null,
-        data: null
+        data: null,
     }
 })
 
@@ -21,5 +21,5 @@ Mock.mock('/api/admin/doLogin', 'post', (res) => {
 Mock.mock('/api/admin/doLogout', 'get', {
     code: 200,
     msg: null,
-    data: null
+    data: null,
 })
