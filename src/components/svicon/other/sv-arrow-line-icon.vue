@@ -22,13 +22,10 @@
 </template>
 
 <script lang="ts" setup>
-interface Props {
-  color?: string
-  size?: number
-}
+import { IconProps} from '@types/baseType'
 
-withDefaults(defineProps<Props>(), {
+withDefaults<IconProps>(defineProps<IconProps>() , {
   color: '',
-  size: 16
+  size: 16,
 })
 </script>

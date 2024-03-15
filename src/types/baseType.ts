@@ -8,3 +8,8 @@ export type LoginSuccess = () => void
 export type LogoutSuccess = () => void
 // 重新加载App
 export type ReloadApp = () => void
+// 自定义图标类型
+export type IconProps = {
+    color?: string
+    size?: number
+}
