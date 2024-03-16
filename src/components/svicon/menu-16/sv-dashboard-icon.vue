@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import { IconProps} from '@types/baseType'
 
-withDefaults<IconProps>(defineProps<IconProps>() , {
+withDefaults(defineProps<IconProps>() , {
   color: '',
   size: 16,
 })
