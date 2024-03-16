@@ -6,15 +6,12 @@ export enum EventType {
     Message = 'message'
 }
 
-
-type Callback<T extends Event> = (event: T) => void;
-
 export function useEventListener<T extends Event>(
     target: Window | HTMLElement | EventTarget,
     event: EventType,
-    callback: Callback<T>,
+    callback: EventListener,
     options?: boolean | AddEventListenerOptions) {
-    onMounted(() => target.addEventListener(event, callback, { ...options }))
+    onMounted(() => target.addEventListener(event, callback, options))
     onUnmounted(() => target.removeEventListener(event, callback))
 }
 
@@ -49,7 +46,7 @@ export function useScrollSticky(domId: string) {
  * @param offset 每次滚动的偏移量（像素）
  */
 export function useScrollHorizontalMenu(id: string, offset: number) {
-    let container: HTMLElement | undefined = undefined
+    let container: HTMLElement | null = null
 
     const scrollMenu = (direction: string) => {
         if (container) {
@@ -73,12 +70,10 @@ export function useScrollHorizontalMenu(id: string, offset: number) {
 
     nextTick(() => {
         container = document.querySelector(id)
-        container.addEventListener(EventType.Wheel, handleWheel, { passive: false })
+        container?.addEventListener(EventType.Wheel, handleWheel, { passive: false })
     })
 
     onUnmounted(() => {
-        if (container) {
-            container.removeEventListener(EventType.Wheel, handleWheel)
-        }
+        container?.removeEventListener(EventType.Wheel, handleWheel)
     })
 }

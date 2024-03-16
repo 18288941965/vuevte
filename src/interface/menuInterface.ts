@@ -35,7 +35,7 @@ interface ActiveMenus {
     menus: Array<MenuBean>
 }
 
-export {
+export type {
     MenuBeanBase,
     MenuBean,
     ActiveMenus,

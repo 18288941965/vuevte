@@ -70,7 +70,7 @@ interface DialogParam extends DialogEmpty{
     }
 }
 
-export {
+export type {
     AxiosResult,
     ChannelData,
     LoginBean,

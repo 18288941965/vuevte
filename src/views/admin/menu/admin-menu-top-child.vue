@@ -20,7 +20,7 @@
       </template>
 
       <li
-        v-else
+        v-else-if="menu.url"
         :style="{'--menu-level': menuLevel}"
       >
         <router-link

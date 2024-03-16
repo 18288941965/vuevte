@@ -13,12 +13,8 @@
     "skipLibCheck": true,
     "noEmit": true,
     "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@types/*": [
-        "./src/types/*"
-      ]
+      "@assets/*": ["./src/assets/*"],
+      "@tps/*": ["./src/types/*"],
     }
   },
   "include": [

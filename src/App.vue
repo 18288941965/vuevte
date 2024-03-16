@@ -10,17 +10,17 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, provide} from 'vue'
+import {defineComponent, ref, onMounted, provide, onUnmounted} from 'vue'
 import {useRouter} from 'vue-router'
 import NProgress from './NProgress'
 import BChannel from './BChannel'
 import {isLogin} from './context/signContext'
-import {ReloadApp} from './types/baseType'
+import {ReloadApp} from '@tps/baseType'
 import {BCEnum, RUEnum} from './enum/enum'
 import AppMessage from './app-message.vue'
 import {themeContext} from './AppTheme'
 import {appSettingsContext} from './components/settings/appSettings'
-import {EventType, useEventListener} from './util/event'
+import {EventType} from './util/event'
 
 export default defineComponent({
   components: {
@@ -98,11 +98,14 @@ export default defineComponent({
       initFontSize,
     } = appSettingsContext()
 
-    useEventListener(channel, EventType.Message, onMessage)
-    
     onMounted(() => {
       initThemeModel()
       initFontSize()
+      channel.addEventListener(EventType.Message, onMessage)
+    })
+
+    onUnmounted(() => {
+      channel.removeEventListener(EventType.Message, onMessage)
     })
 
     return {
