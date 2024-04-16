@@ -1,4 +1,4 @@
-/*箭头动画*/
+/*arrow animation to the right*/
 .arrow-line-svg{
   transition: transform 0.2s;
   transform: translateX(0);
@@ -15,7 +15,7 @@
   stroke-dashoffset: 34;
 }
 
-/*箭头向下动画*/
+/*arrow down animation*/
 .arrow-down svg{
     transition: all 0.3s;
 }

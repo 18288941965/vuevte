@@ -1,5 +1,4 @@
 :root{
-    /*字体*/
     --font-size-small: 14px;
     --font-size-medium: 16px;
     --font-size-large: 18px;
@@ -24,23 +23,22 @@
     --body-font-size: 0.875rem;
 
     /*
-    层级
     [
     element:
     --el-index-normal: 1;
     --el-index-top: 1000;
-    --el-index-popper: 2000; 用于对话框等，这里是动态的，2000是基础
+    --el-index-popper: 2000; for dialog boxes, etc，this is dynamic，2000 is basics
     ]
-    a:覆盖默认的层级
-    b:用于logo | ...
+    a: override default z-index
+    b: for logo | ...
     c:
     d:
-    e: 用于summary:before
-    f: 用于summary
-    g:用于搜索面板等，不能超于element弹出框
+    e: for summary:before
+    f: for summary
+    g: used to search panels and so on，can`t go past the element dialog...
     h:
     i:
-    z: 顶层用于message | 进度条等
+    z: used in progress
     */
     --z-index-a: 1;
     --z-index-b: 2;
@@ -53,7 +51,6 @@
     --z-index-i: 3000;
     --z-index-z: 9999;
 
-    /*圆角*/
     --border-radius-ultra-small: 1px;
     --border-radius-small: 2px;
     --border-radius-medium: 4px;
@@ -63,7 +60,7 @@
     --border-radius-round-small: 16px;
     --border-radius-round-medium: 20px;
 
-    /*动画周期*/
+    /*animation duration*/
     --duration-slow: 1.25s;
     --duration-medium: 0.75s;
     --duration-quick: 0.35s;
@@ -91,7 +88,7 @@
     --size-medium: 40px;
     --size-large: 60px;
 
-    /*顶部布局*/
+    /*top layout*/
     --header-height: 48px;
     --banner-height: 56px;
     --sidebar-width: 260px;
