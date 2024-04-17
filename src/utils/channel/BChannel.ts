@@ -1,6 +1,6 @@
 import {reactive, ref, inject} from 'vue'
 import {ReloadApp} from '../types'
-import {RUEnum} from '../../router/routerFind'
+import {RUEnum} from '../../router/routerModels'
 import {useRouter} from 'vue-router'
 import {ChannelData, BCEnum} from './channelModels'
 

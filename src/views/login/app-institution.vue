@@ -1,7 +1,7 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue'
 import axios from 'axios'
-import {AxiosResult, InstitutionBean} from '@util/interface'
+import {AxiosResult, InstitutionBean} from '@utils/interface'
 import LocalStorage from '../../class/LocalStorage'
 import {doLogout, logoutContext} from './loginContext'
 

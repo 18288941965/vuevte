@@ -1,6 +1,6 @@
 import  * as Mock from 'mockjs'
 import {MenuBean} from '../views/admin/menu/menuModels'
-import {AxiosResult} from '@util/interface'
+import {AxiosResult} from '@utils/interface'
 
 // 获取菜单列表：返回tree结构
 Mock.mock('/api/admin/getMenus', 'post',(res) => {

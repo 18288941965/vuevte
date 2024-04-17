@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref, watchEffect } from 'vue'
-import {ChannelData} from '@util/channel/channelModels'
+import {ChannelData} from '@utils/channel/channelModels'
 
 export default defineComponent({
   name: 'AppMessage',

@@ -128,8 +128,8 @@ import {
   Expand,
   Send,
 } from '../../components/svicon/publicIcon'
-import BChannel from '../../util/channel/BChannel'
-import {BCEnum} from '@util/channel/channelModels'
+import BChannel from '../../utils/channel/BChannel'
+import {BCEnum} from '@utils/channel/channelModels'
 import {ElMessage} from 'element-plus/es'
 import AppSearch from '../../app-search.vue'
 import LocalStorage from '../../class/LocalStorage'

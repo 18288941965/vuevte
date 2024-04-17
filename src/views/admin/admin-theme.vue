@@ -180,8 +180,8 @@ import {
   Close,
 } from '../../components/svicon/publicIcon'
 import appSearch from '../../app-search.vue'
-import {closeDetails} from '@util/baseUtil'
-import {useScrollSticky} from '@util/event'
+import {closeDetails} from '@utils/utils'
+import {useScrollSticky} from '@utils/event'
 
 export default defineComponent({
   name: 'AdminTheme',

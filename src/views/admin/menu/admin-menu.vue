@@ -65,7 +65,7 @@ import AdminMenuChild from './admin-menu-child.vue'
 import {MenuBean} from './menuModels'
 import {MenuContext} from './menuContext'
 import {useRouter} from 'vue-router'
-import {PushRouter} from '@util/types'
+import {PushRouter} from '@utils/types'
 import menuDfs from '../../../algo/menuDfs'
 
 export default defineComponent({

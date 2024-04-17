@@ -112,8 +112,8 @@ import {
 } from '../../../components/svicon/publicIcon'
 import LocalStorage from '../../../class/LocalStorage'
 import axios from 'axios'
-import {AxiosResult} from '@util/interface'
-import {closeDetails} from '@util/baseUtil'
+import {AxiosResult} from '@utils/interface'
+import {closeDetails} from '@utils/utils'
 import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({

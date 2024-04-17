@@ -48,9 +48,9 @@ import {
   Discover,
   Logouts,
 } from '../svicon/publicIcon'
-import {dialogEmptyContext} from '../../util/context/dialogContext'
+import {dialogEmptyContext} from '../../utils/context/dialogContext'
 import AppSettingsDrawer from '../settings/app-settings-drawer.vue'
-import {closeDetails} from '../../util/baseUtil'
+import {closeDetails} from '@utils/utils'
 
 export default defineComponent({
   name: 'UserAvatar',

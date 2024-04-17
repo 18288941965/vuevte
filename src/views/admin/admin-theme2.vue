@@ -133,7 +133,7 @@ import {
   Search,
 } from '../../components/svicon/publicIcon'
 import AppSearch from '../../app-search.vue'
-import {useScrollSticky, useScrollHorizontalMenu} from '@util/event'
+import {useScrollSticky, useScrollHorizontalMenu} from '@utils/event'
 
 export default defineComponent({
   name: 'AdminTheme2',

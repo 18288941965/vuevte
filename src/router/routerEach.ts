@@ -2,7 +2,7 @@
 import LocalStorage from '../class/LocalStorage'
 import NProgress from '../NProgress'
 import {useRouter} from 'vue-router'
-import {RUEnum} from './routerFind'
+import {RUEnum} from './routerModels'
 
 const routerEach = () => {
 

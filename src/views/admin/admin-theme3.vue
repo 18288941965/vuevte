@@ -98,7 +98,7 @@ import AdminMenuDown from './menu/admin-menu-down.vue'
 import {
   Expand,
 } from '../../components/svicon/publicIcon'
-import {closeDetails} from '@util/baseUtil'
+import {closeDetails} from '@utils/utils'
 import menuDfs from '../../algo/menuDfs'
 
 export default defineComponent({

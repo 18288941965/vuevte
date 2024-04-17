@@ -1,8 +1,8 @@
 import {reactive, ref} from 'vue'
 import {ActiveMenus, MenuBean} from './menuModels'
 import axios from 'axios'
-import {AxiosResult} from '@util/interface'
-import {PushRouter} from '@util/types'
+import {AxiosResult} from '@utils/interface'
+import {PushRouter} from '@utils/types'
 import menuDfs from '../../../algo/menuDfs'
 import {useRouter} from 'vue-router'
 

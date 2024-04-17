@@ -14,7 +14,7 @@
     "noEmit": true,
     "paths": {
       "@assets/*": ["./src/assets/*"],
-      "@util/*": ["./src/util/*"],
+      "@utils/*": ["./src/utils/*"],
     }
   },
   "include": [

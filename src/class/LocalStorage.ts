@@ -1,5 +1,5 @@
-import {LocalUserInfoBean} from '@util/interface'
-import {UserFieldEnum} from '@util/enum'
+import {LocalUserInfoBean} from '@utils/interface'
+import {UserFieldEnum} from '@utils/enum'
 import {LSEnum} from '../views/login/loginModels'
 
 export default class LocalStorage {

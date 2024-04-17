@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { IconProps} from '@util/types'
+import { IconProps} from '@utils/types'
 
 withDefaults(defineProps<IconProps>() , {
   color: '',

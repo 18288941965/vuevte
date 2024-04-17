@@ -12,7 +12,7 @@ export default defineConfig({
     alias: {
       '@assets': path.resolve(__dirname, './src/assets'),
       // 巨坑--> 不能使用@types估计跟内部冲突
-      '@util': path.resolve(__dirname, './src/util'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
   server: {

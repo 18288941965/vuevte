@@ -1,6 +1,6 @@
 // 登录
 import * as Mock from 'mockjs'
-import {InstitutionBean} from '@util/interface'
+import {InstitutionBean} from '@utils/interface'
 
 Mock.mock('/api/admin/doLogin', 'post', (res) => {
     const bean = JSON.parse(res.body)

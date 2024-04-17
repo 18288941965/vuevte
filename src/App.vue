@@ -12,14 +12,14 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, provide, onUnmounted} from 'vue'
 import {useRouter} from 'vue-router'
-import BChannel from './util/channel/BChannel'
-import {BCEnum} from './util/channel/channelModels'
-import {ReloadApp} from '@util/types'
-import {RUEnum} from './router/routerFind'
+import BChannel from './utils/channel/BChannel'
+import {BCEnum} from './utils/channel/channelModels'
+import {ReloadApp} from '@utils/types'
+import {RUEnum} from './router/routerModels'
 import AppMessage from './app-message.vue'
 import {themeContext} from './AppTheme'
 import {appSettingsContext} from './components/settings/appSettings'
-import {EventType} from './util/event'
+import {EventType} from './utils/event'
 import routerEach from './router/routerEach'
 
 export default defineComponent({

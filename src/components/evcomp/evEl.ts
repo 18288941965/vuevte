@@ -1,6 +1,6 @@
 import {PropType, ref} from 'vue'
 import axios from 'axios'
-import {AxiosResult} from '@util/interface'
+import {AxiosResult} from '@utils/interface'
 
 export const uniqueKey = () : string => {
     return Date.now().toString(36) + Math.random().toString(36).substring(2)

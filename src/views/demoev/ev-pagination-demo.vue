@@ -85,7 +85,7 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, reactive} from 'vue'
 import EvPagination from '../../components/evcomp/ev-pagination.vue'
-import {AxiosResult, Pagination} from '@util/interface'
+import {AxiosResult, Pagination} from '@utils/interface'
 import axios from 'axios'
 
 export default defineComponent({
