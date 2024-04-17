@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { IconProps} from '@tps/baseType'
+import { IconProps} from '@util/types'
 
 withDefaults(defineProps<IconProps>() , {
   color: '',

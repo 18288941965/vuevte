@@ -1,9 +1,9 @@
 import {reactive, ref} from 'vue'
-import {ActiveMenus, MenuBean} from '../interface/menuInterface'
+import {ActiveMenus, MenuBean} from './menuModels'
 import axios from 'axios'
-import {AxiosResult} from '../interface/publicInterface'
-import {PushRouter} from '../types/baseType'
-import menuDfs from '../algo/menuDfs'
+import {AxiosResult} from '@util/interface'
+import {PushRouter} from '@util/types'
+import menuDfs from '../../../algo/menuDfs'
 import {useRouter} from 'vue-router'
 
 export function MenuStatusContext() {
@@ -122,7 +122,7 @@ export function MenuContext() {
         menuDefaultOpeneds.value = []
         // TODO 这里是为了测试不同的模板加载不同的菜单
         const fullPath = router.currentRoute.value.fullPath
-        axios.post('/api/admin/getMenus', { fullPath }).then((res: {data: AxiosResult}) => {
+        axios.post('/admin/getMenus', { fullPath }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
                 const data = res.data.data
 

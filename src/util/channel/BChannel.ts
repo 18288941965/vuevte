@@ -1,10 +1,12 @@
-import {ChannelData} from './interface/publicInterface'
-import {reactive, ref} from 'vue'
-import {ReloadApp} from './types/baseType'
-import {BCEnum, RUEnum} from './enum/enum'
+import {reactive, ref, inject} from 'vue'
+import {ReloadApp} from '../types'
+import {RUEnum} from '../../router/routerFind'
 import {useRouter} from 'vue-router'
+import {ChannelData, BCEnum} from './channelModels'
 
-export default function (BChannel: BroadcastChannel) {
+export default function () {
+    const channel = inject('channel') as BroadcastChannel
+    
     const router = useRouter()
     const systemMessageList = ref<ChannelData[]>([])
 
@@ -38,7 +40,7 @@ export default function (BChannel: BroadcastChannel) {
     }
 
     const postMessage = (data: ChannelData) => {
-        BChannel.postMessage(data)
+        channel.postMessage(data)
     }
 
     // 接受到广播消息处理方法
@@ -68,6 +70,7 @@ export default function (BChannel: BroadcastChannel) {
     }
 
     return {
+        channel,
         systemMessageList,
         postMessage,
         activeChannel,

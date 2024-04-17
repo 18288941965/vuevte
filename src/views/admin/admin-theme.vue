@@ -168,8 +168,8 @@
 import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import AdminHeader from './header/admin-header.vue'
-import {MenuStatusContext} from '../../context/menuContext'
-import {MenuBean} from '../../interface/menuInterface'
+import {MenuStatusContext} from './menu/menuContext'
+import {MenuBean} from './menu/menuModels'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
   Adjust,
@@ -180,8 +180,8 @@ import {
   Close,
 } from '../../components/svicon/publicIcon'
 import appSearch from '../../app-search.vue'
-import {closeDetails} from '../../util/baseUtil'
-import {useScrollSticky} from '../../util/event'
+import {closeDetails} from '@util/baseUtil'
+import {useScrollSticky} from '@util/event'
 
 export default defineComponent({
   name: 'AdminTheme',

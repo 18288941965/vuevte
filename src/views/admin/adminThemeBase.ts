@@ -1,5 +1,5 @@
 import {reactive} from 'vue'
-import {MenuBeanBase} from '../../interface/menuInterface'
+import {MenuBeanBase} from './menu/menuModels'
 import {useRouter} from 'vue-router'
 
 const updateBrowserTitle = (title: string) => {

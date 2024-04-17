@@ -43,12 +43,12 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {doLogout, logoutContext} from '../../context/signContext'
+import {doLogout, logoutContext} from '../../views/login/loginContext'
 import {
   Discover,
   Logouts,
 } from '../svicon/publicIcon'
-import {dialogEmptyContext} from '../../context/dialogContext'
+import {dialogEmptyContext} from '../../util/context/dialogContext'
 import AppSettingsDrawer from '../settings/app-settings-drawer.vue'
 import {closeDetails} from '../../util/baseUtil'
 

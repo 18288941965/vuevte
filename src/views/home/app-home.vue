@@ -119,7 +119,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted, inject} from 'vue'
+import {defineComponent, ref, onMounted} from 'vue'
 import UserAvatar from '../../components/avatar/user-avatar.vue'
 import {
   Search,
@@ -128,8 +128,8 @@ import {
   Expand,
   Send,
 } from '../../components/svicon/publicIcon'
-import BChannel from '../../BChannel'
-import {BCEnum} from '../../enum/enum'
+import BChannel from '../../util/channel/BChannel'
+import {BCEnum} from '@util/channel/channelModels'
 import {ElMessage} from 'element-plus/es'
 import AppSearch from '../../app-search.vue'
 import LocalStorage from '../../class/LocalStorage'
@@ -154,10 +154,9 @@ export default defineComponent({
   },
   setup () {
     const userName = ref('')
-    const channel = inject('channel') as BroadcastChannel
     const {
       postMessage,
-    } = BChannel(channel)
+    } = BChannel()
     
     const sendMessage = () => {
       postMessage({ code: BCEnum.OTHER, msg: `系统提示消息他 — ${new Date().getTime()}` })
@@ -166,7 +165,7 @@ export default defineComponent({
 
     onMounted(() => {
       const local = new LocalStorage()
-      userName.value = local.getUserName()
+      userName.value = local.getUserInfoObj().userName
     })
     
     return {

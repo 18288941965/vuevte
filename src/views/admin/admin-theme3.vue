@@ -90,15 +90,15 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import {MenuBean} from '../../interface/menuInterface'
-import {MenuContext, MenuStatusContext} from '../../context/menuContext'
+import {MenuBean} from './menu/menuModels'
+import {MenuContext, MenuStatusContext} from './menu/menuContext'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import AdminMenuDown from './menu/admin-menu-down.vue'
 import {
   Expand,
 } from '../../components/svicon/publicIcon'
-import {closeDetails} from '../../util/baseUtil'
+import {closeDetails} from '@util/baseUtil'
 import menuDfs from '../../algo/menuDfs'
 
 export default defineComponent({

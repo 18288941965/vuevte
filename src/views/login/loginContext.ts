@@ -1,20 +1,19 @@
 import axios from 'axios'
-import {AxiosResult, LoginBean} from '../interface/publicInterface'
+import {AxiosResult} from '@util/interface'
 import {ElMessage} from 'element-plus'
-import {LoginSuccess, LogoutSuccess} from '../types/baseType'
+import {LoginSuccess, LogoutSuccess} from '@util/types'
 import {useRouter} from 'vue-router'
-import {inject} from 'vue'
-import BChannel from '../BChannel'
-import {BCEnum} from '../enum/enum'
-import LocalStorage from '../class/LocalStorage'
+import BChannel from '../../util/channel/BChannel'
+import {BCEnum} from '@util/channel/channelModels'
+import {RUEnum} from '../../router/routerFind'
+import LocalStorage from '../../class/LocalStorage'
+import {LSEnum, LoginBean} from './loginModels'
 
 // 退出系统
 export const doLogout = (logoutSuccess: LogoutSuccess) => {
-    axios.get('/api/admin/doLogout').then((res: { data: AxiosResult }) => {
+    axios.get('/admin/doLogout').then((res: { data: AxiosResult }) => {
         if (res.data.code === 200) {
             logoutSuccess()
-        } else {
-            ElMessage.error(res.data.msg)
         }
     })
 }
@@ -25,34 +24,25 @@ export const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
         ElMessage.error('用户名或密码不能为空！')
         return
     }
-    axios.post('/api/admin/doLogin', { ...loginBean }).then((res: { data: AxiosResult }) => {
+    axios.post('/admin/doLogin', { ...loginBean }).then((res: { data: AxiosResult }) => {
         if (res.data.code === 200) {
-            loginSuccess()
-        } else {
-            ElMessage.error(res.data.msg)
+            loginSuccess(res.data)
         }
     })
-}
-
-// 是否登录
-export const isLogin = () => {
-    const local = new LocalStorage()
-    return local.getLoginStatus() === '1'
 }
 
 // 退出登录的回调函数内容
 export function logoutContext () {
     const router = useRouter()
-    const channel = inject('channel') as BroadcastChannel
     const local = new LocalStorage()
     const {
         postMessage,
-    } = BChannel(channel)
+    } = BChannel()
 
     const logoutSuccess: LogoutSuccess = () => {
-        local.setLoginStatus(false)
+        local.setLoginStatus(false, LSEnum.LOG_OUT)
         postMessage({ code: BCEnum.LOGOUT, msg: '您已在其他窗口退出登录' })
-        router.replace('/')
+        router.replace(RUEnum.LOGIN)
     }
     return {
         logoutSuccess,

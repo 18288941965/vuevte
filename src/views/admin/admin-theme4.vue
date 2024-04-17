@@ -60,13 +60,13 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import {MenuBean} from '../../interface/menuInterface'
-import {MenuStatusContext} from '../../context/menuContext'
+import {MenuBean} from './menu/menuModels'
+import {MenuStatusContext} from './menu/menuContext'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import adminMenuTop from './menu/admin-menu-top.vue'
 import {Close} from '../../components/svicon/publicIcon'
-import {useScrollHorizontalMenu} from '../../util/event'
+import {useScrollHorizontalMenu} from '@util/event'
 
 export default defineComponent({
   name: 'AdminTheme4',

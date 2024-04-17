@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -13,7 +12,7 @@ export default defineConfig({
     alias: {
       '@assets': path.resolve(__dirname, './src/assets'),
       // 巨坑--> 不能使用@types估计跟内部冲突
-      '@tps': path.resolve(__dirname, './src/types'),
+      '@util': path.resolve(__dirname, './src/util'),
     },
   },
   server: {

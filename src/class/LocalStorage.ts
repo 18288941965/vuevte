@@ -1,47 +1,78 @@
+import {LocalUserInfoBean} from '@util/interface'
+import {UserFieldEnum} from '@util/enum'
+import {LSEnum} from '../views/login/loginModels'
 
 export default class LocalStorage {
-    readonly loginStatus: string =  'vv-login-status'
-    readonly userName: string =  'vv-user-name'
-    readonly fontType: string = 'vv-font-size'
-    readonly themeModel: string = 'vv-theme-model'
+    readonly USER_INFO_KEY: string = 'v-local-user-info'
+
+    getUserInfoObj () {
+        const userInfo: LocalUserInfoBean = {
+            fontType: '',
+            instCode: '',
+            instName: '',
+            loginStatus: '',
+            themeModel: '',
+            userName: '',
+        }
+        const item = localStorage.getItem(this.USER_INFO_KEY)
+        if (item) {
+            const parse = JSON.parse(item)
+            Object.assign(userInfo, parse)
+        }
+        return userInfo
+    }
+
+    getUserInfoField (field: UserFieldEnum) {
+       const userInfo = this.getUserInfoObj()
+        return userInfo[field]
+    }
+
+    // 更新用户相关信息
+    setUserInfo(userInfo: LocalUserInfoBean) {
+        localStorage.setItem(this.USER_INFO_KEY, JSON.stringify(userInfo))
+    }
 
     // Set the status and username
-    setLoginStatus (set = true, username = '') {
+    setLoginStatus (set: boolean, loginStatus: LSEnum, username = '') {
+        const userInfoObj = this.getUserInfoObj()
         if (set) {
-            localStorage.setItem(this.loginStatus, '1')
-            localStorage.setItem(this.userName, username)
+            userInfoObj.loginStatus = loginStatus
+            userInfoObj.userName = username
+
         } else {
-            localStorage.removeItem(this.loginStatus)
-            localStorage.removeItem(this.userName)
+            userInfoObj.loginStatus = loginStatus
+            userInfoObj.userName = ''
         }
+        this.setUserInfo(userInfoObj)
     }
 
     setFontType (type: string) {
-        localStorage.setItem(this.fontType, type)
+        const userInfoObj = this.getUserInfoObj()
+        userInfoObj.fontType = type
+        this.setUserInfo(userInfoObj)
     }
 
     setThemeModel (model: string | null) {
-        model === null ? localStorage.removeItem(this.themeModel) : localStorage.setItem(this.themeModel, model)
+        const userInfoObj = this.getUserInfoObj()
+        if (model === null) {
+            userInfoObj.themeModel = ''
+        } else {
+            userInfoObj.themeModel = model
+        }
+        this.setUserInfo(userInfoObj)
     }
 
     // Get the status
     getLoginStatus () {
-        const loginStatus = localStorage.getItem(this.loginStatus) 
-        return loginStatus ? loginStatus : ''
-    }
-
-    // Get username
-    getUserName () {
-        const userName = localStorage.getItem(this.userName)
-        return userName ? userName : ''
+        return this.getUserInfoField(UserFieldEnum.LOGIN_STATUS)
     }
 
     getFontType () : string | undefined {
-        const item = localStorage.getItem(this.fontType)
+        const item: string = this.getUserInfoField(UserFieldEnum.FONT_TYPE)
         return item ? item : undefined
     }
 
     getThemeModel() {
-        return localStorage.getItem(this.themeModel)
+        return this.getUserInfoField(UserFieldEnum.THEME_MODEL)
     }
 }

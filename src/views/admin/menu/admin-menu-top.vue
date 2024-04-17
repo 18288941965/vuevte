@@ -47,13 +47,13 @@
 
 <script lang="ts">
 import {defineComponent, onMounted, ref, computed} from 'vue'
-import {MenuBean} from '../../../interface/menuInterface'
-import {MenuContext} from '../../../context/menuContext'
+import {MenuBean} from './menuModels'
+import {MenuContext} from './menuContext'
 import {useRouter} from 'vue-router'
-import {PushRouter} from '../../../types/baseType'
+import {PushRouter} from '@util/types'
 import menuDfs from '../../../algo/menuDfs'
 import {Apps} from '../../../components/svicon/publicIcon'
-import {closeDetails} from '../../../util/baseUtil'
+import {closeDetails} from '@util/baseUtil'
 import AdminMenuTopChild from './admin-menu-top-child.vue'
 
 export default defineComponent({

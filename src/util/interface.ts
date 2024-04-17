@@ -11,26 +11,6 @@ interface AxiosResult {
 }
 
 /**
- * 广播消息接口.
- * @param code 代码
- * @param msg 提示消息
- */
-interface ChannelData {
-    code: number
-    msg: string
-}
-
-/**
- * 登录对象.
- * @param username 用户名
- * @param password 密码
- */
-interface LoginBean{
-    username: string
-    password: string
-}
-
-/**
  * 分页对象.
  * @param pageNum 页码
  * @param pageSize 条数
@@ -42,6 +22,33 @@ interface Pagination {
     pageSize: number
     total: number
     list: Array<any>
+}
+
+
+interface RoleBean{
+    roleCode: string
+    roleName: string
+}
+
+/**
+ * 任职机构
+ */
+interface InstitutionBean{
+    instCode: string
+    instName: string
+    roles?: Array<RoleBean>
+}
+
+/**
+ * 本次存储的用户对象
+ */
+interface LocalUserInfoBean{
+    userName: string
+    instCode: string
+    instName: string
+    loginStatus: string
+    fontType: string
+    themeModel: string
 }
 
 /**
@@ -72,9 +79,9 @@ interface DialogParam extends DialogEmpty{
 
 export type {
     AxiosResult,
-    ChannelData,
-    LoginBean,
     Pagination,
+    InstitutionBean,
+    LocalUserInfoBean,
 
     DialogEmpty,
     DialogBase,

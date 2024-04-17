@@ -12,44 +12,48 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, provide, onUnmounted} from 'vue'
 import {useRouter} from 'vue-router'
-import NProgress from './NProgress'
-import BChannel from './BChannel'
-import {isLogin} from './context/signContext'
-import {ReloadApp} from '@tps/baseType'
-import {BCEnum, RUEnum} from './enum/enum'
+import BChannel from './util/channel/BChannel'
+import {BCEnum} from './util/channel/channelModels'
+import {ReloadApp} from '@util/types'
+import {RUEnum} from './router/routerFind'
 import AppMessage from './app-message.vue'
 import {themeContext} from './AppTheme'
 import {appSettingsContext} from './components/settings/appSettings'
 import {EventType} from './util/event'
+import routerEach from './router/routerEach'
 
 export default defineComponent({
   components: {
     AppMessage,
   },
   setup() {
+    // 路由和守卫
     const router = useRouter()
+    routerEach()
+
+    // 页面重新加载
     const reloadFlag = ref(true)
-    const channel: BroadcastChannel = new BroadcastChannel('vuevte')
-
-    const {
-      systemMessageList,
-      postMessage,
-      channelOnMessage,
-      resetChannel,
-    } = BChannel(channel)
-
     const reloadApp: ReloadApp = () => {
       reloadFlag.value = false
       setTimeout(function () {
         reloadFlag.value = true
       }, 100)
     }
+    provide('reloadApp', reloadApp)
 
+    // 每个示例（每个浏览器标签）只初始化一个广播对象
+    const channel: BroadcastChannel = new BroadcastChannel('vuevte')
+    provide('channel', channel)
+    const {
+      systemMessageList,
+      postMessage,
+      channelOnMessage,
+      resetChannel,
+    } = BChannel()
     // 接收到广播消息
     const onMessage = (ev: MessageEvent) => {
       channelOnMessage(ev, reloadApp)
     }
-
     // 关闭消息窗口
     // 根据不同的消息做不同的事
     const closeMessage = () => {
@@ -59,35 +63,6 @@ export default defineComponent({
         router.replace(RUEnum.LOGIN)
       }
     }
-
-    const {
-      NProgressStart,
-      NProgressDone,
-    } = NProgress()
-
-    router.beforeEach((to, from, next) => {
-      NProgressStart(to.path)
-      const loginStatus = isLogin()
-      if (loginStatus) {
-        if (to.path === RUEnum.LOGIN) {
-          next(RUEnum.HOME)
-        } else {
-          next()
-        }
-      } else if (to.path === RUEnum.LOGIN) {
-          next()
-      } else {
-        next(RUEnum.LOGIN)
-      }
-    })
-
-    router.afterEach(() => {
-      NProgressDone()
-    })
-
-    // 注入全局对象或方法
-    provide('channel', channel)
-    provide('reloadApp', reloadApp)
 
     // 主题
     const {
@@ -112,7 +87,6 @@ export default defineComponent({
       systemMessageList,
       postMessage,
       closeMessage,
-
       reloadFlag,
     }
   },

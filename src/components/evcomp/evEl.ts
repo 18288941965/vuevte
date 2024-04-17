@@ -1,5 +1,6 @@
 import {PropType, ref} from 'vue'
 import axios from 'axios'
+import {AxiosResult} from '@util/interface'
 
 export const uniqueKey = () : string => {
     return Date.now().toString(36) + Math.random().toString(36).substring(2)
@@ -9,13 +10,6 @@ export const uniqueKey = () : string => {
 export interface LabelValue {
     label: string
     value: string
-}
-
-// 后端统一返回值接口
-export interface AxiosResult {
-    code: number
-    msg: string
-    data: any | null
 }
 
 // 默认属性
@@ -53,7 +47,7 @@ export function getEvElContext () {
      * 这里的url是固定的
      */
     const getDataByDictType = (dictType: string) => {
-        axios.post('/api/admin/getDict', { dictType }).then((res: {data: AxiosResult}) => {
+        axios.post('/admin/getDict', { dictType }).then((res: {data: AxiosResult}) => {
             if (res.data.code === 200) {
                 dictList.value = res.data.data
             }

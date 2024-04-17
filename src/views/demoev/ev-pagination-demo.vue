@@ -85,7 +85,7 @@
 <script lang="ts">
 import {defineComponent, ref, onMounted, reactive} from 'vue'
 import EvPagination from '../../components/evcomp/ev-pagination.vue'
-import {AxiosResult, Pagination} from '../../interface/publicInterface'
+import {AxiosResult, Pagination} from '@util/interface'
 import axios from 'axios'
 
 export default defineComponent({
@@ -108,7 +108,7 @@ export default defineComponent({
         pageNum,
         pageSize,
       })
-     axios.post('/api/admin/getDataList', { pageNum, pageSize })
+     axios.post('/admin/getDataList', { pageNum, pageSize })
        .then((res: { data: AxiosResult }) => {
          if (res.data.code === 200) {
            pager.total = res.data.data.total
@@ -160,7 +160,7 @@ export default defineComponent({
 
     // 加载测试数据
     const queryDataList = () => {
-      axios.post('/api/admin/getAllDataList', {})
+      axios.post('/admin/getAllDataList', {})
         .then((res: { data: AxiosResult }) => {
           if (res.data.code === 200) {
             dataList.value = res.data.data

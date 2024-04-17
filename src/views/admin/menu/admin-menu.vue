@@ -62,10 +62,10 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue'
 import AdminMenuChild from './admin-menu-child.vue'
-import {MenuBean} from '../../../interface/menuInterface'
-import {MenuContext} from '../../../context/menuContext'
+import {MenuBean} from './menuModels'
+import {MenuContext} from './menuContext'
 import {useRouter} from 'vue-router'
-import {PushRouter} from '../../../types/baseType'
+import {PushRouter} from '@util/types'
 import menuDfs from '../../../algo/menuDfs'
 
 export default defineComponent({

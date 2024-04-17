@@ -122,8 +122,8 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import {MenuBean} from '../../interface/menuInterface'
-import {MenuStatusContext} from '../../context/menuContext'
+import {MenuBean} from './menu/menuModels'
+import {MenuStatusContext} from './menu/menuContext'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
@@ -133,7 +133,7 @@ import {
   Search,
 } from '../../components/svicon/publicIcon'
 import AppSearch from '../../app-search.vue'
-import {useScrollSticky, useScrollHorizontalMenu} from '../../util/event'
+import {useScrollSticky, useScrollHorizontalMenu} from '@util/event'
 
 export default defineComponent({
   name: 'AdminTheme2',

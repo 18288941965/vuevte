@@ -99,7 +99,7 @@
 <script lang="ts">
 import {computed, defineComponent, onMounted, PropType, ref} from 'vue'
 import AdminLogo from '../../logo/admin-logo.vue'
-import {ActiveMenus, MenuBean} from '../../../interface/menuInterface'
+import {ActiveMenus, MenuBean} from '../menu/menuModels'
 import AppSearch from '../../../app-search.vue'
 import AppTheme from '../../../app-theme.vue'
 import UserAvatar from '../../../components/avatar/user-avatar.vue'
@@ -112,8 +112,8 @@ import {
 } from '../../../components/svicon/publicIcon'
 import LocalStorage from '../../../class/LocalStorage'
 import axios from 'axios'
-import {AxiosResult} from '../../../interface/publicInterface'
-import {closeDetails} from '../../../util/baseUtil'
+import {AxiosResult} from '@util/interface'
+import {closeDetails} from '@util/baseUtil'
 import {ElMessage} from 'element-plus/es'
 
 export default defineComponent({
@@ -170,7 +170,7 @@ export default defineComponent({
     // 这里可考虑自动刷新其他标签页的收藏菜单，也可让用户自动刷新页面。
     const starMenus = ref<MenuBean[]>([])
     const getStarMenus = () => {
-      axios.get('/api/admin/getStarMenu').then((res: {data: AxiosResult}) => {
+      axios.get('/admin/getStarMenu').then((res: {data: AxiosResult}) => {
         if (res.data.code === 200) {
           starMenus.value = res.data.data
         }
@@ -186,7 +186,8 @@ export default defineComponent({
 
     onMounted(() => {
       const local = new LocalStorage()
-      userName.value = local.getUserName()
+      const userInfoObj = local.getUserInfoObj()
+      userName.value = userInfoObj.userName
 
       getStarMenus()
     })

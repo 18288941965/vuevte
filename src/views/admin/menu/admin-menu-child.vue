@@ -41,7 +41,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue'
-import {MenuBean} from '../../../interface/menuInterface'
+import {MenuBean} from './menuModels'
 
 export default defineComponent({
   name: 'AdminMenuChild',

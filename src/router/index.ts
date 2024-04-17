@@ -17,6 +17,12 @@ const router = createRouter({
       meta: { title: '登录' },
     },
     {
+      path: '/app/institution',
+      name: 'AppInstitution',
+      component: () => import('../views/login/app-institution.vue'),
+      meta: { title: '选择任职单位' },
+    },
+    {
       path: '/app/home',
       name: 'AppHome',
       component: () => import('../views/home/app-home.vue'),

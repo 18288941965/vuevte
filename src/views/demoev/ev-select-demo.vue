@@ -21,7 +21,7 @@
         <ev-select
           v-model="evSelectValue.value2"
           v-model:select-label="evSelectValue.value2Text"
-          req-url="/api/admin/getDict2"
+          req-url="/admin/getDict2"
           :default-attr="{ label: 'mc', value: 'dm' }"
           :label-update="true"
           clearable

@@ -12,7 +12,7 @@
 </template>
 <script lang="ts">
 import {ref, defineComponent, watch, PropType} from 'vue'
-import {Pagination} from '../../interface/publicInterface'
+import {Pagination} from '@util/interface'
 
 const _pagination: Pagination = {
   pageNum: 1,

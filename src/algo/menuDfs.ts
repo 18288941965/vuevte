@@ -1,4 +1,4 @@
-import {MenuBean} from '../interface/menuInterface'
+import {MenuBean} from '../views/admin/menu/menuModels'
 
 let found = false
 let nodeDepth = 0

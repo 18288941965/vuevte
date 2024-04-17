@@ -31,7 +31,6 @@
         <input
           v-model.trim="loginBean.password"
           placeholder="密码"
-          size="large"
           type="password"
           @keyup.enter="login"
         >
@@ -50,24 +49,24 @@
 </template>
 
 <script lang="ts" setup>
-import {inject, reactive} from 'vue'
+import {reactive} from 'vue'
 import {useRouter} from 'vue-router'
 import logo from '@assets/logo.png'
-import {
-  GitHub,
-} from '../../components/svicon/publicIcon'
-import {LoginBean} from '../../interface/publicInterface'
-import {doLogin} from '../../context/signContext'
-import {LoginSuccess} from '../../types/baseType'
-import BChannel from '../../BChannel'
-import {BCEnum} from '../../enum/enum'
+import {GitHub} from '../../components/svicon/publicIcon'
+import {AxiosResult} from '@util/interface'
+import {doLogin} from './loginContext'
+import {LoginSuccess} from '@util/types'
+import BChannel from '../../util/channel/BChannel'
+import {BCEnum} from '@util/channel/channelModels'
+import {RUEnum} from '../../router/routerFind'
 import LocalStorage from '../../class/LocalStorage'
+import {LSEnum, LoginBean} from './loginModels'
 
 const router = useRouter()
-const channel = inject('channel') as BroadcastChannel
+
 const {
   postMessage,
-} = BChannel(channel)
+} = BChannel()
 
 const loginBean = reactive<LoginBean>({
   username: 'admin@163.com',
@@ -76,10 +75,14 @@ const loginBean = reactive<LoginBean>({
 
 const local = new LocalStorage()
 
-const loginSuccess: LoginSuccess = () => {
-  local.setLoginStatus(true, loginBean.username)
+/**
+ * 登录成功回调
+ * @param data 后端返回的登录成功相关数据
+ */
+const loginSuccess: LoginSuccess = (data: AxiosResult) => {
+  local.setLoginStatus(true, LSEnum.LOG_INST, loginBean.username)
   postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })
-  router.replace('/app/home')
+  router.replace(RUEnum.INSTITUTION)
 }
 
 const login = () => {
