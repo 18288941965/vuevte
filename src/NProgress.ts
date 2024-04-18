@@ -1,7 +1,7 @@
 import NProgress from 'nprogress'
 NProgress.configure({
     speed: 300,
-    showSpinner: false
+    showSpinner: false,
 })
 
 const excludePath = ['/', '/app/home']
@@ -19,6 +19,6 @@ export default function () {
     }
     return {
         NProgressStart,
-        NProgressDone
+        NProgressDone,
     }
 }

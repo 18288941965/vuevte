@@ -2,7 +2,7 @@
  * 登录状态.
  * LS(loginStatus).
  */
-enum LSEnum{
+export enum LSEnum{
     LOG_OUT = '',
     LOG_IN = '1',
     LOG_INST = '2'
@@ -32,8 +32,7 @@ interface InstitutionBean{
     roles?: Array<RoleBean>
 }
 
-export {
-    LSEnum,
+export type {
     LoginBean,
     InstitutionBean,
 }

@@ -21,6 +21,7 @@ import {themeContext} from './AppTheme'
 import {appSettingsContext} from './components/settings/appSettings'
 import {EventType} from '@utils/event'
 import routerEach from './router/routerEach'
+import baseAxios from '@utils/axios/baseAxios'
 
 export default defineComponent({
   components: {
@@ -30,6 +31,7 @@ export default defineComponent({
     // 路由和守卫
     const router = useRouter()
     routerEach()
+    baseAxios()
 
     // 页面重新加载
     const reloadFlag = ref(true)

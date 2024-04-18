@@ -14,13 +14,12 @@ interface ChannelData {
  * 99 : 广播消息到同域名窗口，关闭窗口不做任何操作
  * 100 ： 【弹窗提示】 关闭窗口跳转到登录页面
  */
-enum BCEnum {
+export enum BCEnum {
     LOGIN = 1,
     OTHER = 99,
     LOGOUT = 100
 }
 
-export {
+export type {
     ChannelData,
-    BCEnum,
 }
