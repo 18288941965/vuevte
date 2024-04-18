@@ -13,13 +13,13 @@
 import {defineComponent, ref, onMounted, provide, onUnmounted} from 'vue'
 import {useRouter} from 'vue-router'
 import BChannel from './utils/channel/BChannel'
-import {BCEnum} from './utils/channel/channelModels'
+import {BCEnum} from '@utils/channel/channelModels'
 import {ReloadApp} from '@utils/types'
 import {RUEnum} from './router/routerModels'
 import AppMessage from './app-message.vue'
 import {themeContext} from './AppTheme'
 import {appSettingsContext} from './components/settings/appSettings'
-import {EventType} from './utils/event'
+import {EventType} from '@utils/event'
 import routerEach from './router/routerEach'
 
 export default defineComponent({
@@ -42,6 +42,7 @@ export default defineComponent({
     provide('reloadApp', reloadApp)
 
     // 每个示例（每个浏览器标签）只初始化一个广播对象
+    // 初始化到这里的时候，虽然provide，但是还未挂载完成，所以inject紧跟着获取不到值
     const channel: BroadcastChannel = new BroadcastChannel('vuevte')
     provide('channel', channel)
     const {
@@ -49,7 +50,7 @@ export default defineComponent({
       postMessage,
       channelOnMessage,
       resetChannel,
-    } = BChannel()
+    } = BChannel(channel)
     // 接收到广播消息
     const onMessage = (ev: MessageEvent) => {
       channelOnMessage(ev, reloadApp)

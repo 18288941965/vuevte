@@ -18,7 +18,22 @@ interface LoginBean{
     password: string
 }
 
+interface RoleBean{
+    roleCode: string
+    roleName: string
+}
+
+/**
+ * 任职机构
+ */
+interface InstitutionBean{
+    instCode: string
+    instName: string
+    roles?: Array<RoleBean>
+}
+
 export {
     LSEnum,
     LoginBean,
+    InstitutionBean,
 }

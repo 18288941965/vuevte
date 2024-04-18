@@ -75,10 +75,7 @@ const loginBean = reactive<LoginBean>({
 
 const local = new LocalStorage()
 
-/**
- * 登录成功回调
- * @param data 后端返回的登录成功相关数据
- */
+// 登录成功回调
 const loginSuccess: LoginSuccess = (data: AxiosResult) => {
   local.setLoginStatus(true, LSEnum.LOG_INST, loginBean.username)
   postMessage({ code: BCEnum.LOGIN, msg: '登录成功' })

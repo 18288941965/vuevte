@@ -7,7 +7,7 @@ import BChannel from '../../utils/channel/BChannel'
 import {BCEnum} from '@utils/channel/channelModels'
 import {RUEnum} from '../../router/routerModels'
 import LocalStorage from '../../class/LocalStorage'
-import {LSEnum, LoginBean} from './loginModels'
+import {LSEnum, LoginBean, InstitutionBean} from './loginModels'
 
 // 退出系统
 export const doLogout = (logoutSuccess: LogoutSuccess) => {
@@ -29,6 +29,16 @@ export const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
             loginSuccess(res.data)
         }
     })
+}
+
+// 选择任职机构后登录系统
+export const doInstLogin = (instBean: InstitutionBean, loginSuccess: LoginSuccess) => {
+    const data: AxiosResult = {
+        code: 200,
+        data: null,
+        msg: '',
+    }
+    loginSuccess(data)
 }
 
 // 退出登录的回调函数内容

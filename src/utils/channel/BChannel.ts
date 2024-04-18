@@ -4,9 +4,9 @@ import {RUEnum} from '../../router/routerModels'
 import {useRouter} from 'vue-router'
 import {ChannelData, BCEnum} from './channelModels'
 
-export default function () {
-    const channel = inject('channel') as BroadcastChannel
-    
+export default function (BChannel?: BroadcastChannel) {
+    const channel = BChannel ? BChannel : inject('channel') as BroadcastChannel
+
     const router = useRouter()
     const systemMessageList = ref<ChannelData[]>([])
 

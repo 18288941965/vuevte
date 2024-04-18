@@ -1,6 +1,6 @@
 import {LocalUserInfoBean} from '@utils/interface'
 import {UserFieldEnum} from '@utils/enum'
-import {LSEnum} from '../views/login/loginModels'
+import {InstitutionBean, LSEnum} from '../views/login/loginModels'
 
 export default class LocalStorage {
     readonly USER_INFO_KEY: string = 'v-local-user-info'
@@ -43,6 +43,14 @@ export default class LocalStorage {
             userInfoObj.loginStatus = loginStatus
             userInfoObj.userName = ''
         }
+        this.setUserInfo(userInfoObj)
+    }
+
+    // Set select institution
+    setSelInstitution (instBean: InstitutionBean) {
+        const userInfoObj = this.getUserInfoObj()
+        userInfoObj.instName = instBean.instName
+        userInfoObj.instCode = instBean.instCode
         this.setUserInfo(userInfoObj)
     }
 

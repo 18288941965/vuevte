@@ -25,20 +25,6 @@ interface Pagination {
 }
 
 
-interface RoleBean{
-    roleCode: string
-    roleName: string
-}
-
-/**
- * 任职机构
- */
-interface InstitutionBean{
-    instCode: string
-    instName: string
-    roles?: Array<RoleBean>
-}
-
 /**
  * 本次存储的用户对象
  */
@@ -80,7 +66,6 @@ interface DialogParam extends DialogEmpty{
 export type {
     AxiosResult,
     Pagination,
-    InstitutionBean,
     LocalUserInfoBean,
 
     DialogEmpty,
