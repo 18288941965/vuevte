@@ -61,7 +61,7 @@
 import {defineComponent} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from './menu/menuModels'
-import {MenuStatusContext} from './menu/menuContext'
+import {MenuStatusContent} from './menu/menuOptions'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import adminMenuTop from './menu/admin-menu-top.vue'
@@ -90,7 +90,7 @@ export default defineComponent({
       keepAliveInclude,
       cleanKeepAliveInclude,
       updateKeepAliveInclude,
-    } = MenuStatusContext()
+    } = MenuStatusContent()
 
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
@@ -138,5 +138,5 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-  @use "@assets/scssscoped/admin/admin-theme4";
+  @use "@assets/scssscoped/theme/admin-theme4";
 </style>

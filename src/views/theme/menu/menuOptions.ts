@@ -6,7 +6,7 @@ import {PushRouter} from '@utils/types'
 import menuDfs from '../../../algo/menuDfs'
 import {useRouter} from 'vue-router'
 
-export function MenuStatusContext() {
+export function MenuStatusContent() {
     const keepAliveInclude = ref<string[]>([])
     const activeMenuPath = ref<MenuBean[]>([])
     const activeMenus = reactive<ActiveMenus>({
@@ -112,7 +112,7 @@ export function MenuStatusContext() {
  * 这里是框架为了适配多个主题做了区分，实际开发请按需求修改下列查询参数。
  * @constructor
  */
-export function MenuContext() {
+export function MenuOptions() {
     const menus = ref<MenuBean[]>([])
     const menuDefaultOpeneds = ref<String[]>([])
     const router = useRouter()

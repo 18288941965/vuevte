@@ -1,4 +1,4 @@
-import {MenuBean} from '../views/admin/menu/menuModels'
+import {MenuBean} from '../views/theme/menu/menuModels'
 import {AxiosResult} from './interface'
 
 // 路由跳转

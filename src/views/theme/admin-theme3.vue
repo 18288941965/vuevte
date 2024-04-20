@@ -91,7 +91,7 @@
 import {defineComponent, ref, onMounted} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
 import {MenuBean} from './menu/menuModels'
-import {MenuContext, MenuStatusContext} from './menu/menuContext'
+import {MenuOptions, MenuStatusContent} from './menu/menuOptions'
 import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import AdminMenuDown from './menu/admin-menu-down.vue'
@@ -119,7 +119,7 @@ export default defineComponent({
     const {
       menus,
       getMenus,
-    } = MenuContext()
+    } = MenuOptions()
 
     // 激活菜单的父菜单ID
     const activeMenuGroupId = ref('')
@@ -129,7 +129,7 @@ export default defineComponent({
       updateActiveMenus,
       keepAliveInclude,
       updateKeepAliveInclude,
-    } = MenuStatusContext()
+    } = MenuStatusContent()
 
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
@@ -165,5 +165,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-  @use "@assets/scssscoped/admin/admin-theme3";
+  @use "@assets/scssscoped/theme/admin-theme3";
 </style>

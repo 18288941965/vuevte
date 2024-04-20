@@ -1,5 +1,5 @@
 import  * as Mock from 'mockjs'
-import {MenuBean} from '../views/admin/menu/menuModels'
+import {MenuBean} from '../views/theme/menu/menuModels'
 import {AxiosResult} from '@utils/interface'
 
 // 获取菜单列表：返回tree结构

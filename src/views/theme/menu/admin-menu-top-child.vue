@@ -73,5 +73,5 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-@use "@assets/scss/admin/_admin-menu-top-child.scss";
+@use "@assets/scss/theme/_admin-menu-top-child.scss";
 </style>

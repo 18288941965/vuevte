@@ -44,11 +44,10 @@
 
 <script lang="ts">
 import {defineComponent, onMounted, ref} from 'vue'
-import axios from 'axios'
 import {AxiosResult} from '@utils/interface'
 import {InstitutionBean, LSEnum} from './loginModels'
 import LocalStorage from '../../class/LocalStorage'
-import {doLogout, doInstLogin, logoutContext} from './loginContext'
+import {doLogout, doInstLogin, getInstitutionList, logoutContext} from './loginOptions'
 import {useScrollHorizontalMenu} from '@utils/event'
 import {LoginSuccess} from '@utils/types'
 import {BCEnum} from '@utils/channel/channelModels'
@@ -64,14 +63,6 @@ export default defineComponent({
     const local = new LocalStorage()
     const userInfoObj = local.getUserInfoObj()
     const tempInst = ref<InstitutionBean>({instCode: '', instName: ''})
-
-    const getInstitutionList = () => {
-      axios.get('/admin/getInstitutionList').then((res: { data: AxiosResult }) => {
-        if (res.data.code === 200) {
-          instList.value = res.data.data
-        }
-      })
-    }
 
     const {
       logoutSuccess,
@@ -98,7 +89,7 @@ export default defineComponent({
     useScrollHorizontalMenu('#institution-ul-scroll', 280)
 
     onMounted(() => {
-      getInstitutionList()
+      getInstitutionList(instList)
     })
 
     return {

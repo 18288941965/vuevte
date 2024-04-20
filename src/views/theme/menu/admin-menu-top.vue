@@ -48,7 +48,7 @@
 <script lang="ts">
 import {defineComponent, onMounted, ref, computed} from 'vue'
 import {MenuBean} from './menuModels'
-import {MenuContext} from './menuContext'
+import {MenuOptions} from './menuOptions'
 import {useRouter} from 'vue-router'
 import {PushRouter} from '@utils/types'
 import menuDfs from '../../../algo/menuDfs'
@@ -80,7 +80,7 @@ export default defineComponent({
       menus,
       menuDefaultOpeneds,
       getMenus,
-    } = MenuContext()
+    } = MenuOptions()
 
     const setActivePath = (menuId: string) => {
       const menuPath = menuDfs(menus.value[0], menuId, false)
@@ -136,5 +136,5 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-@use "@assets/scss/admin/_admin-menu-top.scss";
+@use "@assets/scss/theme/_admin-menu-top.scss";
 </style>

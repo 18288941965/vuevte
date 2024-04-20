@@ -1,8 +1,8 @@
 import {reactive, ref} from 'vue'
-import {DialogBase, DialogEmpty, DialogParam} from '../interface'
+import {DialogBase, DialogEmpty, DialogParam} from './interface'
 
 // 无参对话框.
-export function dialogEmptyContext () {
+export function dialogEmptyContent () {
   const dialogEmpty = reactive<DialogEmpty>({
     show: false,
   })
@@ -20,7 +20,7 @@ export function dialogEmptyContext () {
 }
 
 // 一个参数对话框
-export function dialogBaseContext () {
+export function dialogBaseContent () {
   const dialogBase = reactive<DialogBase>({
     show: false,
     dataId: undefined,
@@ -41,7 +41,7 @@ export function dialogBaseContext () {
 }
 
 // 多参对话框.
-export function dialogParamsContext () {
+export function dialogParamsContent () {
   const dialogParam = reactive<DialogParam>({
     show: false,
     params: {},
@@ -62,7 +62,7 @@ export function dialogParamsContext () {
 }
 
 // 对话框基本内容
-export function dialogContext (loadingShow?: boolean) {
+export function dialogOptions (loadingShow?: boolean) {
   const visible = ref(false)
   const fullscreen = ref(false)
   const loading = ref(true)

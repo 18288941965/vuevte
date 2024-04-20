@@ -63,7 +63,7 @@
 import {defineComponent, onMounted, ref} from 'vue'
 import AdminMenuChild from './admin-menu-child.vue'
 import {MenuBean} from './menuModels'
-import {MenuContext} from './menuContext'
+import {MenuOptions} from './menuOptions'
 import {useRouter} from 'vue-router'
 import {PushRouter} from '@utils/types'
 import menuDfs from '../../../algo/menuDfs'
@@ -91,7 +91,7 @@ export default defineComponent({
       menus,
       menuDefaultOpeneds,
       getMenus,
-    } = MenuContext()
+    } = MenuOptions()
 
     // 2、滚动到当前的元素
     const scrollTarget = () => {
@@ -146,5 +146,5 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-  @import "@assets/scss/admin/_admin-menu.scss";
+  @import "@assets/scss/theme/_admin-menu.scss";
 </style>

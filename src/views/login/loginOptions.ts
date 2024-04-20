@@ -8,9 +8,10 @@ import {BCEnum} from '@utils/channel/channelModels'
 import {RUEnum} from '../../router/routerModels'
 import LocalStorage from '../../class/LocalStorage'
 import {LSEnum, LoginBean, InstitutionBean} from './loginModels'
+import {Ref, UnwrapRef} from 'vue'
 
 // 退出系统
-export const doLogout = (logoutSuccess: LogoutSuccess) => {
+const doLogout = (logoutSuccess: LogoutSuccess) => {
     axios.get('/admin/doLogout').then((res: { data: AxiosResult }) => {
         if (res.data.code === 200) {
             logoutSuccess()
@@ -19,7 +20,7 @@ export const doLogout = (logoutSuccess: LogoutSuccess) => {
 }
 
 // 登录系统
-export const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
+const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
     if (!loginBean.username || !loginBean.password) {
         ElMessage.error('用户名或密码不能为空！')
         return
@@ -32,7 +33,7 @@ export const doLogin = (loginBean: LoginBean, loginSuccess: LoginSuccess) => {
 }
 
 // 选择任职机构后登录系统
-export const doInstLogin = (instBean: InstitutionBean, loginSuccess: LoginSuccess) => {
+const doInstLogin = (instBean: InstitutionBean, loginSuccess: LoginSuccess) => {
     const data: AxiosResult = {
         code: 200,
         data: null,
@@ -41,8 +42,17 @@ export const doInstLogin = (instBean: InstitutionBean, loginSuccess: LoginSucces
     loginSuccess(data)
 }
 
+// 获取当前登录的用户任职单位
+const getInstitutionList = (refVal: Ref<UnwrapRef<InstitutionBean[]>>) => {
+    axios.get('/admin/getInstitutionList').then((res: { data: AxiosResult }) => {
+        if (res.data.code === 200) {
+            refVal.value = res.data.data
+        }
+    })
+}
+
 // 退出登录的回调函数内容
-export function logoutContext () {
+function logoutContext () {
     const router = useRouter()
     const local = new LocalStorage()
     const {
@@ -57,4 +67,12 @@ export function logoutContext () {
     return {
         logoutSuccess,
     }
+}
+
+export {
+    doLogout,
+    doLogin,
+    doInstLogin,
+    logoutContext,
+    getInstitutionList,
 }

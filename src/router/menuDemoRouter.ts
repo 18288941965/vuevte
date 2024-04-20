@@ -4,7 +4,7 @@ const menuDemoRouter: RouteRecordRaw[] = [
   {
     path: 'dashboard',
     name: 'AdminDashboard',
-    component: () => import('../views/admin/admin-dashboard.vue'),
+    component: () => import('../views/theme/admin-dashboard.vue'),
     meta: { title: 'AdminDashboard' },
   },
   {

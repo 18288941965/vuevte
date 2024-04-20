@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="admin-theme "
-  >
+  <div class="admin-theme">
     <admin-header
       class="theme-header-ht"
       :module-icon="rootMenu.icon"
@@ -12,10 +10,10 @@
     />
 
     <div
-      class="layout-fixed banner-container"
+      class="layout-fixed theme2-nav theme-header-ht__nav"
     >
       <div
-        class="banner-layout-left"
+        class="theme2-nav__left"
       >
         <button
           class="icon-button menu-collapse-icon"
@@ -27,10 +25,10 @@
         </button>
 
         <el-tooltip
-          content="找到当前菜单"
+          content="选择打开的菜单"
           placement="bottom-start"
-          :show-after="500"
           :enterable="false"
+          :show-after="500"
         >
           <button
             class="icon-button mgr-medium"
@@ -59,84 +57,42 @@
         <div class="left-split" />
       </div>
 
-      <div class="banner-layout-right">
-        <details
-          id="history-menu-container"
-          class="mgr-medium"
-          :data-disabled="activeMenus.menus.length === 0"
-        >
-          <summary
-            class="drop-down-button arrow-down hv-bg"
+      <nav class="theme2-nav__right">
+        <ul id="theme2-nav-ul-scroll">
+          <template
+            v-for="(menu, index) in activeMenus.menus"
+            :key="'header-menu-' + index"
           >
-            <Schedule />
-            <Expand
-              :size="10"
-              class="expand-mg"
-            />
-          </summary>
-          <div
-            class="history-menu-overlay"
-            @click="closeDetails('history-menu-container')"
-          >
-            <nav class="global-active card-scroll">
-              <ul class="global-overlay-base">
-                <template
-                  v-for="(menu, index) in activeMenus.menus"
-                  :key="'li-0-' + index"
-                >
-                  <li
-                    v-if="menu.url"
-                    class="global-menu-item-wrapper"
-                  >
-                    <router-link
-                      class="global-menu-item"
-                      :class="{'green-mark' : menu.cache}"
-                      :to="menu.url"
-                      @click="pushRouter(menu)"
-                    >
-                      <span>{{ menu.label }}</span>
-                    </router-link>
-
-                    <button
-                      class="menu-close-button-panel"
-                      @click.stop="cleanHistory(menu.id)"
-                    >
-                      <Close :size="8" />
-                    </button>
-                  </li>
-                </template>
-              </ul>
-            </nav>
-
-            <footer class="history-menu-overlay__footer">
-              <button
-                v-if="activeMenus.menus.length > 1"
-                @click="cleanHistory(undefined)"
+            <li
+              v-if="menu.url"
+              class="nav-item-li"
+            >
+              <router-link
+                class="nav-item"
+                :class="{'green-mark' : menu.cache }"
+                :to="menu.url"
+                @click.stop="pushRouter(menu)"
               >
-                清空历史
-              </button>
-            </footer>
-          </div>
-        </details>
+                <span>{{ menu.label }}</span>
+              </router-link>
 
-        <el-breadcrumb separator="/">
-          <el-breadcrumb-item
-            v-for="(item, index) in activeMenuPath"
-            :key="'breadcrumb-' + index"
-          >
-            <span :class="{'active-breadcrumb': activeMenuPath.length === index + 1 }">
-              {{ item.label }}
-            </span>
-          </el-breadcrumb-item>
-        </el-breadcrumb>
-      </div>
+              <button
+                class="menu-close-button-base"
+                @click="cleanHistory(menu.id)"
+              >
+                <Close :size="8" />
+              </button>
+            </li>
+          </template>
+        </ul>
+      </nav>
     </div>
     
-    <div
+    <main
       id="admin-theme-main"
-      class="layout-dynamic"
-      :class="{'layout-dynamic-collapse' : menuCollapse}"
+      class="layout-dynamic main-grid"
       style="--sticky-pane-height: calc(100vh - var(--header-banner-height));"
+      :class="{'layout-dynamic-collapse' : menuCollapse}"
     >
       <div
         class="theme-left-wrapper"
@@ -148,7 +104,6 @@
           :menu-id="activeMenus.menuId.toString()"
           @push-router="pushRouter"
           @set-parent-menu="setParentMenu"
-          @set-active-menu="setActiveMenu"
         />
       </div>
 
@@ -160,41 +115,36 @@
           <component :is="Component" />
         </keep-alive>
       </router-view>
-    </div>
+    </main>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue'
 import AdminMenu from './menu/admin-menu.vue'
-import AdminHeader from './header/admin-header.vue'
-import {MenuStatusContext} from './menu/menuContext'
 import {MenuBean} from './menu/menuModels'
+import {MenuStatusContent} from './menu/menuOptions'
+import AdminHeader from './header/admin-header.vue'
 import {themeBaseContext, updateBrowserTitle} from './adminThemeBase'
 import {
   Adjust,
   MenuOpen,
-  Search,
-  Schedule,
-  Expand,
   Close,
+  Search,
 } from '../../components/svicon/publicIcon'
-import appSearch from '../../app-search.vue'
-import {closeDetails} from '@utils/utils'
-import {useScrollSticky} from '@utils/event'
+import AppSearch from '../../app-search.vue'
+import {useScrollSticky, useScrollHorizontalMenu} from '@utils/event'
 
 export default defineComponent({
-  name: 'AdminTheme',
+  name: 'AdminTheme2',
   components: {
+    AppSearch,
     AdminMenu,
     AdminHeader,
     Adjust,
     MenuOpen,
-    Search,
-    Schedule,
-    Expand,
     Close,
-    appSearch,
+    Search,
   },
   setup () {
     const {
@@ -204,9 +154,7 @@ export default defineComponent({
     } = themeBaseContext()
 
     const adminThemeMenuRef = ref()
-
     const {
-      activeMenuPath,
       activeMenus,
       menuCollapse,
       setMenuCollapse,
@@ -215,8 +163,7 @@ export default defineComponent({
       keepAliveInclude,
       cleanKeepAliveInclude,
       updateKeepAliveInclude,
-      cleanActiveMenuPath,
-    } = MenuStatusContext()
+    } = MenuStatusContent()
 
     const pushRouter = async (menu: MenuBean) => {
       if (menu.cache && menu.name) {
@@ -226,7 +173,6 @@ export default defineComponent({
       await router.push(menu.url as string)
       updateActiveMenus(menu)
       updateBrowserTitle(`${menu.label as string} • ${rootMenu.label}`)
-      adminThemeMenuRef.value?.setActivePath(menu.id)
     }
 
     const menuOpen = () => {
@@ -240,8 +186,6 @@ export default defineComponent({
       if (activeMenus.menus.length === 0) {
         const rootPath = router.currentRoute.value.matched[0].path
         router.push(rootPath)
-        cleanActiveMenuPath()
-        closeDetails('history-menu-container')
         return
       }
       // 关闭当前打开窗口后：先右后左的切换
@@ -256,32 +200,26 @@ export default defineComponent({
       }
     }
 
-    const setActiveMenu = (menu: MenuBean[]) => {
-      activeMenuPath.value = menu
-    }
-
     useScrollSticky('#admin-theme-main')
+    useScrollHorizontalMenu('#theme2-nav-ul-scroll', 190)
 
     return {
       rootMenu,
       adminThemeMenuRef,
-      activeMenuPath,
       activeMenus,
       menuCollapse,
       setMenuCollapse,
       keepAliveInclude,
 
-      setActiveMenu,
       setParentMenu,
       pushRouter,
       menuOpen,
       cleanHistory,
-      closeDetails,
     }
   },
 })
 </script>
 
 <style scoped lang="scss">
-  @use "@assets/scssscoped/admin/admin-theme";
+  @use "@assets/scssscoped/theme/admin-theme2";
 </style>

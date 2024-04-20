@@ -43,12 +43,12 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {doLogout, logoutContext} from '../../views/login/loginContext'
+import {doLogout, logoutContext} from '../../views/login/loginOptions'
 import {
   Discover,
   Logouts,
 } from '../svicon/publicIcon'
-import {dialogEmptyContext} from '../../utils/context/dialogContext'
+import {dialogEmptyContent} from '@utils/dialogOptions'
 import AppSettingsDrawer from '../settings/app-settings-drawer.vue'
 import {closeDetails} from '@utils/utils'
 
@@ -70,7 +70,7 @@ export default defineComponent({
         dialogEmpty: dialogSetting,
        dialogEmptyOpen: dialogOpenSetting,
        dialogEmptyClose: dialogCloseSetting,
-     } = dialogEmptyContext()
+     } = dialogEmptyContent()
      
      const {
        logoutSuccess,
