@@ -1,9 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router'
 
 import baseRoutes from './baseRoutes'
-import adminRoutes from './adminRoutes'
 
-const routes = baseRoutes.concat(adminRoutes)
+const routes = baseRoutes.concat([])
 
 const router = createRouter({
   history: createWebHistory(),

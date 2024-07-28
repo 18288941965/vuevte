@@ -59,6 +59,7 @@ export default defineComponent({
     }
     // 关闭消息窗口
     // 根据不同的消息做不同的事
+
     const closeMessage = () => {
       const codes = systemMessageList.value.map(item => item.code)
       resetChannel()
